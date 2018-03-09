@@ -1,0 +1,13 @@
+{
+    "name": "private-packagist/docs",
+    "description": "Private Packagist Documentation",
+    "keywords": ["private packagist", "composer", "documentation"],
+    "type": "library",
+    "license": "CC-BY-ND-4.0",
+    "authors": [
+        {
+            "name": "Packagist Conductors UG (haftungsbeschränkt)",
+            "email": "contact@packagist.com"
+        }
+    ]
+}
