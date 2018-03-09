@@ -1,0 +1,422 @@
+# Changelog
+## Private Packagist Enterprise
+
+#### 1.4.3
+*Jan 17, 2017*
+
+**Changes**
+- Synchronized packages will always use the credentials associated with the sync now
+
+**Bugfixes**
+- Do not attempt to bind to [::] on Enterprise hosts with IPv6 disabled
+- Skip synchronization entirely for organizations that no longer exist on GitHub
+- Fix webhook installation on non-primary synchronizations
+- Properly apply deactivated user list to non-primary synchronizations
+
+#### 1.4.2
+*Jan 10, 2017*
+
+**Bugfixes**
+- Fix form submission for secondary GitHub synchronization default permission settings
+
+#### 1.4.1
+*Jan 10, 2017*
+
+**Bugfixes**
+- Fix regression on some package pages and in background workers attempting to resolve non-existent default integration configuration leading to 500 errors
+- Fix incorrect determination of mailer host configuration resulting in broken health checks
+
+#### 1.4.0
+*Jan 8, 2017*
+
+**Features**
+- Synchronize multiple external GitHub orgs, Bitbucket teams, GitLab groups with a single Private Packagist organization
+- Multiple organizations can be synchronized with the same GitHub/Bitbucket/GitLab organization
+- Allow disabling the creation of new organizations for anyone who is not a Private Packagist Admin user
+
+**Changes**
+- Synchronized team names have been updated to reflect their origin to clarify context when using synchronization with multiple sources
+- Do not allow deleting an organization on Private Packagist if the GitHub app has not been uninstalled yet
+- Improved 500 error message on Enterprise installations
+- Upgraded Replicated to 2.15.0
+- Upgraded Nginx to 1.13.8
+
+**Bugfixes**
+- Remove non-existent option from worker command calls, fixing issues with cache invalidation and download stats
+- Fix potential constraint violation when disabling synchronization on an organization
+- Don't display broken remote organization avatar if none is defined
+- Return proper error code and message if an archive cannot be created before the request timeout ends
+- Properly handle API rate limits in vcs synchronization worker
+
+#### 1.3.12
+*Jan 2, 2017*
+
+**Features**
+- Allow defining multiple mirrored Composer repositories with the same URL but different credentials
+
+**Changes**
+- Lower timeouts (2 seconds) on retrieving data from mirrored Composer repositories
+- Clarify synchronization error messages, more specific and instructional
+- Upgraded to PHP 7.2
+- Upgraded Replicated to 2.14.0
+
+#### 1.3.11
+*Dec 13, 2017*
+
+**Changes**
+- Update UI structure for mirrored repositories in organization settings to match other settings
+- Improved error messages in case Bitbucket API Limits are encountered
+- Do not warn about SSL requirement for package URLs unless a user attempted to use a non-SSL http URL
+
+**Bugfixes**
+- Fix regression in form input for default member permission for synchronized GitHub organizations
+- Display a helpful error message in case a Bitbucket organization cannot be loaded due to token issues instead of a 500 error on org settings
+
+#### 1.3.10
+*Dec 11, 2017*
+
+**Changes**
+- Increased timeouts on port listen startup events during docker orchestration
+
+#### 1.3.9
+*Dec 11, 2017*
+
+**Bugfixes**
+- Regression in GitHub Enterprise API client pagination
+
+#### 1.3.8
+*Dec 11, 2017*
+
+**Bugfixes**
+- Prevent 404 during Bitbucket privilege check in synchronization
+- Correctly follow pagination URLs on GitHub Enterprise API in all cases (second fix)
+
+#### 1.3.7
+*Dec 8, 2017*
+
+**Changes**
+- Add new denormalized columns and indexes to improve performance of dependent/suggesters calculation for packages
+
+**Bugfixes**
+- Correctly follow pagination URLs on GitHub Enterprise API in all cases
+- Don't include non-existing nginx log files in support bundle to prevent timeouts in support bundle generation
+
+#### 1.3.6
+*Dec 6, 2017*
+
+**Features**
+- Permanently display the most recent synchronization failure message and info on last successful run
+
+**Changes**
+- No requirement for 20GB on the root filesystem anymore, you should have at least 10GB mounted on /data and 10GB available to the system and replicated however
+- Only administrators of Bitbucket Teams can setup synchronization with a Private Packagist organization
+
+**Bugfixes**
+- Increase nginx server_names_hash_bucket_size to 64
+- Make sure temporary files are always cleaned up after creating an archive even in case of errors
+- Catch some unexpected potential errors returned by Bitbucket during synchronization, log them and retry later
+
+#### 1.3.5
+*Nov 30, 2017*
+
+**Features**
+- Provide a manual option in org settings for default package access for all members on synchronized GitHub organizations because the GitHub API does not yet expose this setting to applications
+- Synchronize packages in shared projects on GitLab into the Private Packagist organization like regular projects
+
+**Bugfixes**
+- If the owner of a GitLab sync auth token is not a member of the synchronized group, attempt to load all GitLab group info (only up to 20 API page requests)
+
+#### 1.3.4
+*Nov 28, 2017*
+
+**Features**
+- Errors and warnings in package update logs are now highlighted and indicated with a warning symbol
+- For organizations synchronized with GitHub, create a team containing all members which are not in any team
+
+**Changes**
+- Allow deleting a credential currently in use by packages and mirrored repositories with an option to replace it with a different existing credential
+- Retry synchronization jobs after a delay if they failed due to reaching a GitHub or Bitbucket rate limit
+- Prevent the addition of non-SSL repository URLs upfront rather than erroring during update jobs later
+- Logging in composer repository application is triggered at lower notice level now
+- Don't retry gitlab API requests after 5 attempts that all timed out
+- Schedule even github packages which have an oauth token for 12 hour updates in case the webhook isn't set up
+- Added a view button for mirrored composer repositories on the organization settings page
+- Improve debugging output in case the synchronized gitlab group cannot be found during synchronization
+- Made database migration state detection more robust and removed error output on startup
+- Updated Replicated to 2.13.1
+
+**Bugfixes**
+- Prevent race condition that could lead to broken zip files created for download from packages on Bitbucket or GitLab
+- GitHub organization listing is no longer limited to 30 (API pagination)
+
+#### 1.3.3
+*Oct 13, 2017*
+
+**Bugfixes**
+- Fix regression introduced for archive creation in last release
+
+#### 1.3.2
+*Oct 13, 2017*
+
+**Features**
+- Allow users to regenerate their personal auth token on the profile page
+
+**Changes**
+- Improve guidance through Integration setup in Enterprise admin panel
+- Enterprise Setup now checks for availability of ports 80 and 443
+- PHP base image upgrade
+
+**Bugfixes**
+- Request correct scope on login with self-hosted GitLab CE OAauth
+- Skip the account merge dialog if a user tries to login in a browser tab after having logged in on another one
+- Prevent error when deleting users in Enterprise Setup mode without being logged in
+- Fix race condition during archive generation that could lead to incorrect zip contents on download
+
+#### 1.3.1
+*Sep 25, 2017*
+
+**Features**
+- Option to delete organizations from the Enterprise admin panel without joining an organization as an owner
+- Organization memberlist now shows all inactive users who will become members as soon as they activate their Private Packagist account by logging in
+
+**Changes**
+- Package update errors now differentiate between HTTP errors that may be caused by permission issues and errors caused by other networking problems, e.g. timeouts
+- Postgres password is now read-only on the Enterprise Management Console as it was not supposed to be modified
+- GitLab subgroup names are now display with the full hierarchy path when creating a new organization
+
+**Bugfixes**
+- Prevent race condition when a user tries to setup synchronization again before previous background job finished
+- The dialog to create an organization from GitLab groups now lists all groups rathern than just the first 20
+- Prevent error when deleting a user while logged out in Enterprise setup mode
+
+#### 1.3.0
+*Sep 21, 2017*
+
+**Changes**
+- Upgraded GitLab API client library, we now require GitLab API v4 - this means **GitLab versions lower than 9.0 are no longer compatible**
+
+#### 1.2.7
+*Sep 20, 2017*
+
+**Bugfixes**
+- Allow X-Forwarded-For headers on http requests to the Enterprise health check
+
+#### 1.2.6
+*Sep 19, 2017*
+
+**Features**
+- Add SMTP connection check button to Enterprise management console settings screen
+
+**Bugfixes**
+- Ensure users are no longer tied to an integration after it's been deleted
+- Prevent synchronization from failing if teams get renamed to names of other now deleted teams
+
+#### 1.2.5
+*Sep 13, 2017*
+
+**Features**
+- Team package access page now lists synchronized packages without access to clarify which permissions are handled in external systems
+- GitLab subgroups now have individual teams for different types of access (Developer, Reporter, Owner, ...)
+- Bitbucket Server Integration Setup form now has detailed list of required settings for different dialogs
+
+**Changes**
+- Team renames are tracked on GitLab and GitHub, Bitbucket as no team identifier other than the name
+- Increased timeouts for GitLab requests to 15 seconds to circumvent their rate limiting bugs
+
+**Bugfixes**
+- GitLab permissions are now correctly inherited to subroups if they are unchanged from the parent
+- Prevent invalid composer.json on master branch from crashing package updates on other branches/tags
+
+#### 1.2.4
+*Sep 8, 2017*
+
+**Bugfixes**
+- Ensure internal random secret value is never modified on updates to prevent hook URLs from changing
+
+#### 1.2.3
+*Sep 7, 2017*
+
+**Bugfixes**
+- Fix URL added in previous release in specific cases
+
+#### 1.2.2
+*Sep 7, 2017*
+
+**Bugfixes**
+- Always show manual hook URL for packages where hook is not managed automatically
+
+#### 1.2.1
+*Sep 7, 2017*
+
+**Bugfixes**
+- Skip unnecessary query on executing workers, resulting in filling up postgres error log
+
+#### 1.2.0
+*Sep 5, 2017*
+
+**New Features**
+- Package rename handling: new package is automatically added if the package name changes in composer.json on the default branch of an existing package
+- Team members can view which packages their own team has access to (previously for admins only)
+- View full repository paths for GitLab subgroups
+- Support for Typo3 Composer Repository and t3x archive files
+- Shift-clicking update button on view package page force updates all versios
+
+**Changes**
+- Deleting a user in Enterprise Admin Panel requires confirmation
+- Better error reporting in user interface during synchronized org creation failures
+- Performance of team overview page improved for very large organizations
+- Updated to latest version of Composer for improved GitLab compatibility (API v4) and full subgroup support
+- Updated Replicated to 2.11.1
+- Improved signal handling in worker processes
+- Team page directly links to full member management page
+
+**Bugfixes**
+- Prevent deadlock in cache busting worker process
+- Mount the composer working directory into the ui container to allow manual adding mirrored packages from the web interface
+- Request OAuth Scopes on every GitLab request, fixes compatibility with new GitLab version and removes extra confirmation dialog on login
+- User account merging can no longer result in error for users with audit log entries
+- Deleting an integration properly disconnects synchronized organizations from the third party service
+- Properly clear permission cache on package deletion (low impact, as package data was gone anyway)
+
+#### 1.1.3
+*Aug 4, 2017*
+
+**New Features**
+- Option to disable email entirely for Enterprise
+- GitLab subgroup support
+
+**Bugfixes**
+- Handle GitHub Abuse responses appropriately
+- Fix suggested GitLab authentication URL
+- Do not attempt to mirror a package name that also exists publically but current user has no access to
+- Avoid duplicate initialization of packages
+
+#### 1.1.2
+*Jul 25, 2017*
+
+**Changes**
+- Upgraded Replicated to 1.9.3
+
+#### 1.1.1
+*Jul 24, 2017*
+
+**New Features**
+- Ability to search and delete user accounts completely on admin page
+- Display github rate limit issue warnings on package initialization
+- Support for nested Bitbucket and GitLab repository URLs
+
+**Changes**
+- Higher timeouts and better handling of timeouts for Bitbucket and GitLab
+- Warn users when trying to use readonly tokens to mirror new packages
+- More reliable error logging on the repo container
+- Unified job queue with priorities replaces workers separated by job type
+- Allow organization admins to manage synchronization, not just owners
+- Avoid probing for composer.json on VcsRepos that are known to work already
+- Updated GitHub links to use new apps path (formerly integrations)
+
+**Bugfixes**
+- track state of packages correctly after sync has been disabled on an organization
+- No more 403 page after removing yourself from an organization
+- Prevent duplication of synchronized repositories in add package screen
+- Package renames now invalidate cache of of composer metadata
+- Unreachable third party mirrored repositories now trigger warning instead of 500 error on composer repo
+- No 403 erros for non-admins when viewing package details of a package in their team
+
+#### 1.1.0
+*Jun 15, 2017*
+
+**New Features**
+- Allow editing of authentication token descriptions
+
+**Changes**
+- Remap all internally used ports to uncommon numbers to avoid conflicts with other services on host
+- Report Webhook error states on package details page
+- Use internal network only for internal API calls to avoid reliance on DNS or public certs
+- Switched all containers to alpine to reduce size and improve compatibility
+- Added more detailed logging to external API interaction in case of errors
+- More detailed logging of all error states in docker process stdout / support bundle
+
+**Bugfixes**
+- Removed potential race condition in database setup for Private Packagist Enterprise
+- Synchronize team memberships when manually adding a package in the synchronized organization
+- Validate from mail address in dashboard settings
+- Ensure hostname for ui and repo are distinct in dashboard settings
+- other minor changes and dependency updates
+
+#### 1.0.15
+*May 18, 2017*
+
+**Bugfixes**
+- Fix regressions in background workers
+- Fix python patch for supervisord
+
+#### 1.0.14
+*May 17, 2017*
+
+**Bugfixes**
+- Patching Python for RHEL 7.2 compatibility to run supervisord
+
+#### 1.0.13
+*May 17, 2017*
+
+**Changes**
+- System Updates
+**Bugfixes**
+- RHEL supervisord/python random syscall workaround
+
+#### 1.0.12
+*May 8, 2017*
+
+**New Features**
+- Store user join/leave activity on organizations
+
+**Bugfixes**
+- Organizations will not be created with a number suffix in their name unless necessary
+- Fix deletion of organizations which resulted in a 500 error
+- Per-organization seat-based notification emails are disabled
+- Improve Bitbucket token issue error handling
+- Ensure admin teams definitely always have access to all synchronized packages
+
+#### 1.0.11
+*Apr 23, 2017*
+
+**Bugfixes**
+- Fix GitHub Enterprise automatic webhook setup (differs from github.com)
+- Automatically correct webhook setup on manual package update if not present or incorrect
+
+#### 1.0.10
+*Apr 20, 2017*
+
+**New Features**
+- New Organization Explorer in the Admin Panel
+- Allow Deletion of Integrations
+- Collect supervisord process log files in support bundle
+
+**Bugfixes**
+- Fix an organization synchronization error
+- Allow all images in Content Security Policy to allow for external avatars
+- Improve display of Installation Counts
+
+#### 1.0.9
+*Apr 19, 2017*
+
+**New Features**
+- HTTP Port is now configurable to something other than 80
+
+#### 1.0.8
+*Apr 19, 2017*
+
+**Bugfixes**
+- Fix regression in GitHub Enterprise API Access
+- Improve Startup Time of nginx container
+
+#### 1.0.7
+*Apr 19, 2017*
+
+**New Features**
+- Added HTTPS Port Selection to allow custom HTTPS Ports
+
+#### 1.0.0
+*Mar 30, 2017*
+
+**First stable release**
