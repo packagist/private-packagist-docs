@@ -1,6 +1,38 @@
 # Changelog
 ## Private Packagist Enterprise
 
+#### 1.5.0
+*Mar 16, 2017*
+
+**Features**
+- Management console option to enter additional TLS/SSL certificates Private Packagist Enterprise should trust for connections to your VCS repositories
+- Option to trigger an update for all packages mirrored from a particular third party Composer repository
+- GitHub synchronization now supports granting external collaborators package permissions
+- Synchronization now automatically creates packages from repositories which you add a composer.json to after sync skipped the repository for lack of a composer.json
+
+**Changes**
+- Restoring an Enterprise instance from a snapshot no longer requires to run any custom commands to restore the PostgreSQL database
+- If a GitLab subgroup is synchronized with a Private Packagist organization, we now search all parent groups for members with inherited permissions
+- Increased default timeout for talking to GitLab instances to 30 seconds
+- Reaching the Bitbucket rate limit now triggers a 1 hour block on all requests sent to the Bitbucket API to restore the limit fully
+- Bitbucket requests are retried automatically on server errors because it reports timeouts as 500 Internal Server Error
+- Performance improvements to Composer repository JSON delivery
+- Provide a specific error message if someone attempts to add a package with the same name as a package that already exists
+- Setup mode now allows deleting the admin user account
+- Disabled auto-complete on password fields for external credentials
+- Upgrade to Replicated 2.17.0 amongst other things improving snapshots and restore
+
+**Bugfixes**
+- Worker processes do not fail to start up anymore if Redis is taking too long to load data into memory
+- Modified Redis backup/restore process will no longer cause extremely slow or incomplete snapshots
+- Updating the credentials on a mirrored Composer repository now ensures that all packages already mirrored from the same repository start using the updated credentials
+- Bitbucket Server configuration uses readonly instead of disabled fields for values to be copied now and made it impossible to reset client id / public key to empty
+- Do not log anything and do not return an error on metapackages which do not have a source or dist specified
+- Invitation email to new users now links to correct login/registration page instead of always refering to GitHub
+- Fix local build file cleanup to prevent disk from eventually getting too full
+- Fix mirroring of packages with names using capital letters (should be avoided and is invalid on packagist.org)
+- Prevent error on editing an organization if no platform was selected for the organization
+
 #### 1.4.3
 *Jan 17, 2017*
 
