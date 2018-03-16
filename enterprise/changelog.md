@@ -25,6 +25,7 @@
 **Bugfixes**
 - Worker processes do not fail to start up anymore if Redis is taking too long to load data into memory
 - Modified Redis backup/restore process will no longer cause extremely slow or incomplete snapshots
+- Fix GitLab Composer behavior to ensure correct commit instead of branch is used for dist generation when targeting specific commits on branches
 - Updating the credentials on a mirrored Composer repository now ensures that all packages already mirrored from the same repository start using the updated credentials
 - Bitbucket Server configuration uses readonly instead of disabled fields for values to be copied now and made it impossible to reset client id / public key to empty
 - Do not log anything and do not return an error on metapackages which do not have a source or dist specified
