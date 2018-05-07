@@ -1,6 +1,32 @@
 # Changelog
 ## Private Packagist Enterprise
 
+#### 1.5.1
+*May 8, 2017*
+
+**Features**
+- Automatically configure webhooks on Bitbucket Server (requires version 5.4 or above)
+
+**Changes**
+- Reorganized organization teams page layout
+- Separate packagist temporary data from permanent distribution files to decrease snapshot size, we recommend you use SFTP or S3 snapshots only and that you define a new empty directory to create snapshots in starting with this release to reset the differential storage mechanism
+- Composer repository now returns a 401 if auth is missing to ask for interactive authentication input
+- Upgraded to Replicated 2.20.2 with improvements to snapshot creation and restore
+
+**Bugfixes**
+- Fix key generation for Bitbucket Server and provide more detailed error messages in case of problems
+- Ensure packages with manually defined JSON always update all metadata on edits
+- Detect and ignore deleted package situation when processing a package update
+- Prevent signup errors if people double click the signup button
+- Catch 502 responses from GitLab and treat them as timeouts and retry later
+- Catch empty responses from Bitbucket and treat them as timeouts and retry later
+- If bitbucket permission API endpoint fails, try retrieving info for each team and repository individually
+- Use correct organization name for listed vcs repositories if an org is synchronized with multiple targets
+- Fix audit log entry creation for admin self-deletion
+- Ensure synchronized users are always created with a unique username
+- Find composer.json information on GitLab projects with a default branch other than master
+- Correctly disable all synchronizations if an integration on which they are based is deleted
+
 #### 1.5.0
 *Mar 16, 2017*
 
