@@ -1,6 +1,12 @@
 # Changelog
 ## Private Packagist Enterprise
 
+#### 1.5.2
+*May 8, 2017*
+
+**Bugfixes**
+- Repo container won't start up if restarted without old temporary directory present
+
 #### 1.5.1
 *May 8, 2017*
 
