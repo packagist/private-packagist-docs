@@ -1,6 +1,12 @@
 # Changelog
 ## Private Packagist Enterprise
 
+#### 1.5.3
+*May 9, 2017*
+
+**Bugfixes**
+- Fix installation of webhooks on Bitbucket Server if no webhooks are present yet
+
 #### 1.5.2
 *May 8, 2017*
 
