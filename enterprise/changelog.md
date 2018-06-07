@@ -1,20 +1,43 @@
 # Changelog
 ## Private Packagist Enterprise
 
+#### 1.5.4
+*June 7, 2018*
+
+**Features**
+- Let users know that they have to accept GitLab's new ToS if this is preventing them from logging in or synchronizing their organization
+
+**Changes**
+- Automatically generated credential names are no longer unique across all orgsnizations
+- GitHub push hooks will trigger initialization of packages that do not exist yet
+- Catch GitLab API Limit errors and display a message to users
+- Reduce amount of data requested from GitLab by using new subgroup API endpoints if available as of GitLab 10.3
+- During successful synchronization the user who set up the synchronization will not be removed from owners if no other owner has an active Private Packagist account
+
+**Bugfixes**
+- Package updates triggered by a push hook are retried after 30 seconds instead of being cancelled, if another update is already running, as a result tags pushed separately immediately after commits should now show up on Packagist faster
+- Regression preventing successful synchronization with GitHub Enterprise
+- Warn users about problems if gitlab sync credential is empty
+- Handle Bitbucket 50x errors the same as 500 during synchronization API calls
+- Attempt to retrieve smaller pieces of information with more API calls from Bitbucket if large endpoints return 500 errors for internal timeouts at Bitbucket
+- Catch 401 errors from GitLab and turn into useful message for users
+- Enterprise preflight checks test listening on 0.0.0.0 for ports 80/443 now to avoid issues with machines without a detectable public ip
+- Custom package validation now properly checks that at least one package was defined
+
 #### 1.5.3
-*May 9, 2017*
+*May 9, 2018*
 
 **Bugfixes**
 - Fix installation of webhooks on Bitbucket Server if no webhooks are present yet
 
 #### 1.5.2
-*May 8, 2017*
+*May 8, 2018*
 
 **Bugfixes**
 - Repo container won't start up if restarted without old temporary directory present
 
 #### 1.5.1
-*May 8, 2017*
+*May 8, 2018*
 
 **Features**
 - Automatically configure webhooks on Bitbucket Server (requires version 5.4 or above)
@@ -40,7 +63,7 @@
 - Correctly disable all synchronizations if an integration on which they are based is deleted
 
 #### 1.5.0
-*Mar 16, 2017*
+*Mar 16, 2018*
 
 **Features**
 - Management console option to enter additional TLS/SSL certificates Private Packagist Enterprise should trust for connections to your VCS repositories
@@ -73,7 +96,7 @@
 - Prevent error on editing an organization if no platform was selected for the organization
 
 #### 1.4.3
-*Jan 17, 2017*
+*Jan 17, 2018*
 
 **Changes**
 - Synchronized packages will always use the credentials associated with the sync now
@@ -85,20 +108,20 @@
 - Properly apply deactivated user list to non-primary synchronizations
 
 #### 1.4.2
-*Jan 10, 2017*
+*Jan 10, 2018*
 
 **Bugfixes**
 - Fix form submission for secondary GitHub synchronization default permission settings
 
 #### 1.4.1
-*Jan 10, 2017*
+*Jan 10, 2018*
 
 **Bugfixes**
 - Fix regression on some package pages and in background workers attempting to resolve non-existent default integration configuration leading to 500 errors
 - Fix incorrect determination of mailer host configuration resulting in broken health checks
 
 #### 1.4.0
-*Jan 8, 2017*
+*Jan 8, 2018*
 
 **Features**
 - Synchronize multiple external GitHub orgs, Bitbucket teams, GitLab groups with a single Private Packagist organization
@@ -120,7 +143,7 @@
 - Properly handle API rate limits in vcs synchronization worker
 
 #### 1.3.12
-*Jan 2, 2017*
+*Jan 2, 2018*
 
 **Features**
 - Allow defining multiple mirrored Composer repositories with the same URL but different credentials
