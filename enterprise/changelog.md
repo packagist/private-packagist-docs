@@ -1,6 +1,44 @@
 # Changelog
 ## Private Packagist Enterprise
 
+#### 1.5.7
+*August 7, 2018*
+
+**Features**
+- Respect the host system's PROXY environment variables which are used by replicated inside of Private Packagist and allow the definition of hostnames which should not go through the proxy on the admin page
+- Added an option to change the frequency of organization synchronization below the default 20 hours, watch out for rate limit issues if you reduce this value
+- Provide a CLI admin command to update all packages in an organization
+- Archives for the latest tages of new packages are now created immediately to speed up the first use of composer update
+- add missing links to profile page to allow editing username and email easily
+- Composer token last usage is now tracked precise to a 5 minute window
+
+**Changes**
+- Improved validation of Enterprise Integration setup values for GitHub Enterprise, Bitbucket Server and self-hosted GitLab with improved error messages
+- Provide a more specific error message if a package already exists when you are adding it with a link to the package
+- Use streaming responses for large JSON files to reduce memory consumption
+- Upgraded Replicated to version 2.25.1
+- Increased timeout for mirrored repository responses to 5 seconds to allow slower repositories to be mirrored, may slow down composer updates when adding new packages
+- Reduced default php socket timeout to 10 seconds to provide useful error messages if any external requests time out
+- moved automatic webhook creation into a worker process with automatic retries to improve reliability
+
+**Bugfixes**
+- Do not store URLs to Private Packagist in cache, so hostname changes take effect without manual regeneration of stored data
+- Synchronization of an organization with GitHub no longer stops if a repository with individual collaborators is archives
+- Display a link using custom integration domains for creating credentials instead of always using github.com, gitlab.com, bitbucket.org
+- metapackages without code no longer trigger archive creation errors
+- License overview no longer displays package names to a user which they do not have access to
+- GitLab scope missing error is now explained to users instead of crashing background workers
+- Fix internal communication between containers for SSL certificates which are not valid for IP addresses used on the internal network, could have resulted in empty download statistics
+- Fix internal SSL communication between containers when using Replicated's self signed certificate
+- Fix worker crash if synchronization setup is disabled while synchronization is running
+- Validate informational domain field for credentials
+
+#### 1.5.6
+*Release skipped*
+
+#### 1.5.5
+*Release skipped*
+
 #### 1.5.4
 *June 7, 2018*
 
