@@ -1,6 +1,28 @@
 # Changelog
 ## Private Packagist Enterprise
 
+#### 1.6.0
+*August 20, 2018*
+
+**Features**
+- Email/password based registration and login, needs to be enabled on /admin/ page under Global Settings
+- Email verification configurable per integration to set trust for emails provided by third party authentication mechanisms
+- Improved profile page with list of emails from third parties and manually defined ones, each with verification state and option to use as default address
+- Display README contents on package overview pages
+
+**Changes**
+- If a user's API rate limit on a third party service prevents login, display a specific error message explaning this circumstance
+- Team overview page lists package counts next to permissions now, so it's easier to spot teams which assign permissions to an incomplete set of packages
+- Improve Enterprise setup experience by automatically granting the first created user admin permissions
+- Automatically fill in bitbucket usernames in credential creation forms to simplify setup
+- Improved documentation layout and added enterprise troubleshooting section
+
+**Bugfixes**
+- Convert proxy URLs to correct protocol URLs for PHP streams
+- Automatically send full URIs to HTTP proxies for unencrypted HTTP, but relative paths for encrypted HTTPS to avoid problems with some specific proxy software
+- Revert modified user agent in proxy code which preventing mirroring from third party repositories blocking based on user agents
+- Disabled erroneously enabled but broken vendor/customer functionality on Private Packagist Enterprise
+
 #### 1.5.7
 *August 7, 2018*
 
