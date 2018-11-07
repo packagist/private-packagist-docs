@@ -35,7 +35,7 @@ There are two options for running Private Packagist Enterprise on a Kubernetes c
 The easiest way to install Replicated Kubernetes is the easy install script. You can run it using the following two commands:
 
 ```
-curl -sSL -o install.sh https://get.replicated.com/kubernetes-init
+curl -sSL -o install.sh https://get.replicated.com/privatepackagistkubernetes/stable/kubernetes-init
 sudo bash ./install.sh
 ```
 
