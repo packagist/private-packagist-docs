@@ -1,6 +1,47 @@
 # Changelog
 ## Private Packagist Enterprise
 
+#### 1.6.1
+*November 13, 2018*
+
+**Features**
+- Package detail page now shows information on the mirror if the package was mirrored
+- Allow specifying a custom timeout value for requests to each integration
+- Allow deactivating users in organizations even if they did not create a Private Packagist account yet
+
+**Changes**
+- Document that GitLab webhooks may require a configuration change to allow requests to a local network if Private Packagist is running in the same network
+- Speed up updates of private packages with large numbers of tags with new cache
+- Allow disconnecting the last third party authentication provider if email authentication is enabled
+- Deleting synchronization now disables but stores all authentication tokens for later reuse
+- Allow reusing existing credentials in the organization when setting up synchronization
+- read only authentication tokens no longer receive a lazy providers URL pattern in packages.json to speed up package lookups
+- Ignore Bitbucket repositories which the team admin does not have access to, instead of failing the sync process
+- Correctly detect permission errors returned by Bitbucket and presend them in an actionable way
+- Unified metadata storage and update processes for mirrored packagist.org packages across organizations to improve performance
+- Changed internal configuration of Composer to better expose error messages returned by external repositories, e.g. API rate limits
+- Deleting all packages in a mirror now runs in a background task to avoid UI timeouts
+- Improved queries used in org synchronization reduce disk i/o on the db
+- Detect and warn about credentials applied to a package with a URL that does not match the credential domain
+- Log errors with more details on repo console commands
+- Detect GitLab connection failures and retry jobs later
+- Use a lower timeout for GitHub calls than the client library default
+- Bitbucket Server: Detect and warn about our SSH key already being assigned to another user breaking our automatic setup
+- Full name for users is automatically prefilled on third party authentication if available
+- Verify API scopes of GitHub tokens and give appropriate error message if any are missing
+- Set SSH timeout to 10 seconds to prevent broken git clones over SSH from taking a very long time before they timeout
+
+**Bugfixes**
+- Replicated no longer corrupts the snapshot database on upgrade
+- Replicated now works with docker configured to use write only log drivers
+- Correctly detect and store webhook state for bitbucket.org packages
+- Ensure disabled users will not be reactivated through a synchronization in organizations with multiple syncs
+- Prevent issues resulting from double submission of user disable form
+- Fixed data fetching for bitbucket.org repositories with a default branch containing a slash in its name
+- Password reset was not possible in some configurations
+- Take no proxy list into account if the environment variable uses a lower case name
+- Synchronization for GitHub integrations may not automatically have run once a day
+
 #### 1.6.0
 *August 20, 2018*
 
