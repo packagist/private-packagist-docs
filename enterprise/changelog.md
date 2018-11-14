@@ -2,7 +2,7 @@
 ## Private Packagist Enterprise
 
 #### 1.6.1
-*November 13, 2018*
+*November 14, 2018*
 
 **Features**
 - Package detail page now shows information on the mirror if the package was mirrored
