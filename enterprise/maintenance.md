@@ -7,3 +7,10 @@ Then open the settings menu with the gear icon on the top right and select "Cons
 Save the page to apply the new certificate to the Replicated Management Console. If you are using a server path and replaced the SSL certificate without changing the path, save the page to reload the certificate.
 Go back to the dashboard on the Replicated Management Console and restart the application for the SSL certificate to be applied to the whole Private Packagist application.
 
+You can automate the reloading of an SSL certificate and restarting the application for the new certificate to be used, for example if you use letsencrypt using the following commands:
+
+```
+replicated console cert set hostname.goes.here /path/to/key /path/to/cert
+replicatedctl app apply-config
+```
+
