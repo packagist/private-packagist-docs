@@ -16,3 +16,10 @@ replicated console cert set hostname.goes.here /path/to/key /path/to/cert
 replicatedctl app apply-config
 ```
 
+### Private Packagist Enterprise CLI
+
+Private Packagist Enterprise installs a command line tool `packagist` on the host system which provides access to some administrative features via command line.
+
+#### Updating all packages
+
+Run the command `packagist package:update-all [--overwrite-data=true|false] [-only-non-updated=true|false]` to schedule update jobs on the worker for all packages on your installation. The flag `--overwrite-data` ensures that all existing version data is downloaded from the source again and version data is overwritten if it has changed. The flag `--only-non-updated` limits the set of packages to those which have only been initialized but never updated yet.
