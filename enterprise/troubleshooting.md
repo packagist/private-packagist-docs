@@ -47,3 +47,11 @@ If you are using RedHat Enterprise Linux RHEL 7.x, try setting the option
 file (usually `usr/lib/systemd/system/docker.service`). After making this
 change restart the docker service and make sure to reload the system
 configuration.
+
+#### Invalid x509 keypair: tls: failed to find any PEM data in key input
+
+If you get this error message when upload your SSL certificate you uploaded an
+incorrect certificate file. Please note that if you need to include
+intermediate certificates, the order of certificates in the certificate file
+needs to be from leaf to root. If the order of certificates does not match this
+format Replicated will fail to recognize your certificate.
