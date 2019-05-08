@@ -55,3 +55,23 @@ incorrect certificate file. Please note that if you need to include
 intermediate certificates, the order of certificates in the certificate file
 needs to be from leaf to root. If the order of certificates does not match this
 format Replicated will fail to recognize your certificate.
+
+#### Composer install/update fails with a SSL error
+
+If your composer commands fail with an TransportException like below after you
+successfully uploaded your certificate then this usually indicates that your
+certificate file is missing an intermediate certificate.
+Please see the section about `Invalid x509 keypair` for more information
+on how to add your intermediate certificates to your certificate file.
+
+```
+[Composer\Downloader\TransportException]
+The "https://repo.acme-website.com/acme/packages.json" file could not be downloaded: SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed
+Failed to enable crypto
+failed to open stream: operation failed
+```
+
+Browsers often have more up to date complete CA certificates than regular system collections
+which makes it quite common that the browser will accept the certificate even without
+the intermediate certificate but php/composer will not.
