@@ -1,5 +1,5 @@
 # How to move a Project to Private Packagist
-This guide will walk you through all steps to set up Private Packagist for your composer project. Depending on your composer.json some steps might not be necessary.
+This guide will walk you through all necessary steps to set up Private Packagist for your composer project. It contains an initial list of three steps which are required for every project to integrate with Private Packagist and an additional set of steps which will only apply to some projects.
 
 ### This is what we start with
 
@@ -56,43 +56,54 @@ This guide will walk you through all steps to set up Private Packagist for your 
 
 ### Add Private Packagist to your composer.json
 
-To make you project work with Private Packagist there are three steps required which are documented on the overview page of your organization.
+To make your project work with Private Packagist there are three steps required which are documented on the overview page of your organization.
 
 1. You need to configure authentication on your machine. This is the step that is required for every developer interacting with composer.
-2. In your composer.json Private Packagist needs to be added as a repository and packagist.org should be disabled as shown in the snippet.
+2. In your composer.json Private Packagist needs to be added as a repository and packagist.org needs be disabled as shown in the snippet.
 3. Run `composer update mirrors`. This will add all dependencies as packages in Private Packagist. To avoid any issues with outdated mirror urls or notification urls we also recommend that you delete your local vendor directory.
 
-Once these three steps are done then you running composer install/update will run against Private Packagist but there are some more steps that are required to get the full benefit out of it. Leaving it in the current step will not let you from the performance benefits that you get from using Private Packagist. 
+Once these three steps are done then running composer install/update will go against Private Packagist but there are additional steps which are required to get the full benefit out of Private Packagist.
+
+##### Creating a new composer project instead
+
+If instead of migrating an existing composer project you are creating a new composer project where you would like to use Private Packagist then these two steps are required:
+
+1. You need to configure authentication on your machine.
+2. Run `composer create-project --repository-url=https://repo.packagist/acme-company/`. This will create a new composer project for you and add Private Packagist as repository. Once the command is finished you will still have to add `{"packagist.org": false}` to your composer.json.
 
 ##### Delete your vendors directory
-As already mentioned we recommend that you delete your vendor directory when you migrate your project to use Private Packagist. The reason for this is that composer in some cases uses existing data from your vendor directory instead of the newly fetched data. If this happens during the initial “composer update mirrors” run then it can lead to mirror urls not being update which means that packages will be downloaded from the wrong mirror or it can lead to notification urls not being updated which means that your install counts will be inaccurate.
+As already mentioned, we recommend that you delete your vendor directory when you migrate your project to use Private Packagist. The reason for this is that composer in some cases uses existing data from your vendor directory instead of the newly fetched data. If this happens during the initial “composer update mirrors” run then it can lead to mirror urls not being updated which means that packages will be downloaded from the wrong mirror or it can lead to notification urls not being updated which means that your install counts will be inaccurate.
 
 ### Add VCS repository
 
-The sample composer.json file contains two vcs repositories: a fork of twig/twig that contains custom enhancements for which a pull request hasn't been created yet and a GitHub repository which contains a private package. Every time a composer update is run composer loops through all tags and branches of the two repositories. This can take quite some time.
+The sample composer.json file contains two VCS repositories: a fork of twig/twig that contains changes for which a pull request hasn't been created yet and a GitHub repository which contains a private package. Every time a composer update is run, composer loops through all tags and branches of every VCS repository. It then checks whether the branch/tag contains a validate composer.json. Especially for repositories with lots of tags and/org branches this can take quite some time.
 
-##### Add a private VCS repository which requires credentials
+If you add a repository hosted on GitHub, GitLab, Bitbucket and Bitbucket Server with a credential Private Packagist will also automatically set up a webhook to get notified about new commits and versions. Therefore it is beneficial to use a credential even if the repository is publicly available. Repositories where no webhook can be set up will only be updated once every three hour.
 
-For Private Packagist to be able to access repositories that require authentication e.g. the private GitHub repository we first need to set up a credential under Setting -> Stored Credentials. Once the credential is created the repository can be added on the Packages page via Add Package -> By Url. It is important that the credential is selected or else Private Packagist will not be able to import the repository. Repositories hosted on GitHub, GitLab, Bitbucket and Bitbucket Server Private Packagist will also set up a webhook to get notified about new commits and versions.
+##### Add a private VCS repository
 
-##### Add a VCS repository without credentials
+For Private Packagist to be able to access repositories that require authentication, e.g. a private GitHub repository, we first need to set up a credential under “Settings” -> “Stored Credentials”. Once the credential is created the repository can be added on the Packages page via “Add Package” -> “By Url”. 
 
-Importing a public repository does not require setting up credentials. But adding credentials for packages that are hosted on GitHub, GitLab or Bitbucket comes with the benefit that Private Packagist is able to set up webhooks which then notify us about new or updated versions on every push.
+Note: Even though you need to select a domain when you create a credential Private Packagist will not automatically apply the credential for all http calls to that domain. Private Packagist will only suggest it where it might be useful. Therefore it is important that you explicitly select it when you add the credential or else Private Packagist will not be able to import the repository.
 
-When importing the fork it can happen that the original package was previously added to Private Packagist. Every organization can only have the same package name once which means that in this case adding a fork will fail and you will have to delete the original package first before you add your fork. Once the changes of the fork are merged back upstream and you are ready to delete the fork you can also delete the package in Private Packagist. Private Packagist will then automatically fallback to the original twig/twig package from packagist.org
+##### Add a forked VCS repository
+
+When adding a fork to Private Packagist it can happen that the original package was previously added. Every organization can only have the same package name once which means that adding a fork when the original package is already added will fail. You will have to delete the original package first and then add your fork. Once the changes of the fork are merged back upstream and you are ready to delete the fork you can also delete the package in Private Packagist. Private Packagist will then automatically fallback to the original package from packagist.org
 
 ### Add a custom package
 
-Custom package definitions in your composer.json can be added via "Add Package" -> "Custom Package". In the textarea you are then able to paste the entire definition and select a credential if one is necessary to access the zip file.
+Custom package definitions in your composer.json can be added via "Add Package" -> "Custom Package". In the textarea you are then able to paste the entire package definition and select a credential if one is necessary to access the zip files.
+
+Once a custom package has been added to Private Packagist it will also benefit from us mirroring the zip file and provide additional endpoint to download the file in case the original storage becomes unavailable.
 
 ### Add your Satis instance
 
-If you have been using Satis before then Private Packagist also provides a way to import all your packages from your Satis instance at once via "Add Package" -> "Json Import".  Paste your satis.json into the textarea and select which credentials should be used to try to import the packages.
+Once you start using Private Packagist it usually also replaces your previous Satis set up. Via "Add Package" -> "Json Import" you can paste your satis.json into the textarea and select which credentials should be used to try to import the packages. This will add all packages from your Satis instant to Private Packagist and will make Satis obsolete and therefore one less thing you have to worry about.
 
 ### Add a mirrored third party repositories
-On your organisation’s settings page under “Manage Mirrored Repositories” you can add additional third party mirrored repositories. By default packagist.org is enabled for all organisations so there is no need to set that up again.
+On your organisation’s settings page under “Manage Mirrored Repositories” you can add additional third party mirrored repositories. By default packagist.org is enabled for all organisations so there is no need to set that up.
 
-Similar to how Private Packagist can access private vcs repositories it can also access private mirrored third party repositories e.g. repo.magento.com. First create the credentials that are necessary e.g. your Magento Marketplace access keys and then add the mirrored third party repository. Make sure to select the credential while creating the mirror. All packages added from the repository will now automatically use that credential.
+Similar to how Private Packagist can access private VCS repositories it can also access private mirrored third party repositories e.g. repo.magento.com. First create the credentials that are necessary e.g. your Magento Marketplace access keys and then add the mirrored third party repository. Make sure to select the credential while creating the mirror. All packages added from the repository will now automatically use that credential.
 
 Important note: third party repositories do not provide a way for us to get notified whenever new versions of a package appear. Therefore packages which have been added via mirror will only be updated once every three hours.
 
