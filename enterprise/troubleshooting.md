@@ -55,3 +55,30 @@ incorrect certificate file. Please note that if you need to include
 intermediate certificates, the order of certificates in the certificate file
 needs to be from leaf to root. If the order of certificates does not match this
 format Replicated will fail to recognize your certificate.
+
+#### Composer install/update fails with SSL error: failed to enable crypto
+
+If your composer commands fail with a TransportException similar to the one
+below after you successfully uploaded your certificate then this indicates that
+your local system does not trust or recognize the certificate. Accessing your
+installation in a browser may still work because browsers often use their own
+sets of CAs/certificates which are often more complete and up to date than the
+certificate collection on your operationg system which is used by PHP and
+Composer.
+
+```
+[Composer\Downloader\TransportException]
+The "https://repo.acme-website.com/acme/packages.json" file could not be downloaded: SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed
+Failed to enable crypto
+failed to open stream: operation failed
+```
+
+You either need to add your certificate or the corresponding CA'sroot
+certificate to your operating system's certificate store, or more commonly
+there is an intermediate certificate required for your system to trust the key
+you uploaded. The intermediate key should be supplied by the provider of the
+SSL certificate and may also already be present in your browser explaining why
+you can open Private Packagist pages in your browser without an error. Please
+see the section about `Invalid x509 keypair` for more information on how to add
+your intermediate certificates to your certificate file.
