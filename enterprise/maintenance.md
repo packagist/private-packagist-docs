@@ -10,6 +10,8 @@ Go back to the dashboard on the Replicated Management Console and restart the ap
 
 If your certificate requires intermediate certificates to be recognized by your browser and/or Composer you can paste them into your certificate text file. Please make sure they are sorted from leaf (your certificate) via intermediate certificate to root certificate at the bottom. Otherwise Replicated will not recognize the certificate in a combined file.
 
+Please see the [Troubleshooting](./troubleshooting.md) page for details on dealing with SSL errors.
+
 #### Automating the replacement of the SSL certificate
 
 You can automate the reloading of an SSL certificate and restarting the application for the new certificate to be used, for example if you use letsencrypt using the following commands:
