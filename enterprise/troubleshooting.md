@@ -82,3 +82,12 @@ SSL certificate and may also already be present in your browser explaining why
 you can open Private Packagist pages in your browser without an error. Please
 see the section about `Invalid x509 keypair` for more information on how to add
 your intermediate certificates to your certificate file.
+
+#### Ready state command canceled: context deadline exceeded
+
+If you move the application behind a HTTP proxy or if you change docker's config
+or your host system's network configuration in a way that the internal docker IPs
+change then replicated won't be able to check the availability of the other containers anymore.
+This can be fixed by rerunning the original replicated install script. This will
+leave your current installation in tact but rewrite the main config files and therefore
+update the host IP and the NO_PROXY environment.
