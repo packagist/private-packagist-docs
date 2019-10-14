@@ -1,6 +1,15 @@
 # Maintenance
 ## Private Packagist Enterprise
 
+### Updates
+By default Replicated checks for updates every 5 hours and you can install them from the dashboard once they are available. You can configure this behaviour under “Console Settings” when clicking on the gear icon in the management console.
+
+The [Private Packagist Enterprise Changelog](https://packagist.com/docs/enterprise/changelog) details all new features, behavior changes and major bugfixes each release introduces.
+
+If your firewall restricts external connections the following domains must be accessible from the server:
+
+REPLICATED_DOMAIN_LIST
+   
 ### Updating or Replacing the SSL Certificate
 If you would like to upload a new SSL certificate or if you would like to reload an existing SSL certification from the host filesystem please open the Replicated Management Console at port 8800.
 Then open the settings menu with the gear icon on the top right and select "Console Settings". Scroll to "TLS Key & Cert" or click on the respective option in the menu. Here you can select a new certificate.
