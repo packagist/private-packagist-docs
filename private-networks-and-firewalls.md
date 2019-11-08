@@ -1,4 +1,5 @@
-# Using Private Packagist with code in private networks
+# Private Networks and Firewalls
+## Using Private Packagist to access code in your internal company network
 
 Private Packagist requires access to your source code for several reasons:
 
@@ -12,10 +13,10 @@ If the source code for your private packages is stored in your company's private
 1. Use our on-premises product [Private Packagist Enterprise](https://packagist.com/enterprise) which you can host inside your company's private network with full access to your source code.
 1. Use our SaaS solution Private Packagist Cloud and ensure your version control system can be reached by our servers as explained below.
 
-## Granting Private Packagist Cloud access to your private network
+## Granting Private Packagist Cloud Network Access
 
 ### Public IP and DNS
 You will be adding packages to Private Packagist using a URL to the respective version control repository. You need to ensure that you either have public DNS records pointing to the machines on your internal network or you need to directly use the respective IP addresses. If your version control system server does not have a public IP, Private Packagist cannot connect to it.
 
-### Firewall configuration
+### Firewall Configuration
 You need to allow connections from Private Packagist Cloud servers to servers behind your firewall. We recommend that you accept external connections from all IPs in the document at <https://packagist-network.s3.eu-west-1.amazonaws.com/ip-address-list>. This list is frequently updated automatically to contain a current list of our IP addresses used to access your source code or your code hosting solution. For this reason we recommend that you use your firewall's mechanism to reference an external list of IPs with this URL rather than manually copying the IPs which will require frequent maintenance on your end.
