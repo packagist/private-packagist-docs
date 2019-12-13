@@ -3,7 +3,7 @@
 
 ### New versions do not appear immediately
 
-The amount of time between pushing a new version and seeing it in Private Packagist depends on how you have added the package to Private Packagist. The following sections explain each scenario. If a version does not appear within the listed time, check the update log for problems. The update log can be found on the package page via "View Log". The update log will contain information about versions which could not be loaded into Private Packagist, e.g. the composer.json file is invalid.
+The amount of time between pushing a new version and seeing it on Private Packagist depends on how you added the package to Private Packagist. The following sections explain each scenario. If a version does not appear within the listed time, check the update log for problems. The update log can be found on the package page via "View Log". The update log will contain information about versions which could not be loaded into Private Packagist, e.g. the composer.json file is invalid.
 
 ##### Packages mirrored from packagist.org
 
