@@ -16,7 +16,7 @@ A successfully set up webhook means that new versions will appear within seconds
 
 ##### All other packages
 
-For all other packages Private Packagist does not get notified about new versions and Private Packagist checks for updates at least once every three hours. Thus, new versions of these other packages will appear on Private Packagist with a delay of up to 3 hours.
+For all other packages Private Packagist does not get notified about new versions and Private Packagist checks for updates at least once every 12 hours. Thus, new versions of these other packages will appear on Private Packagist with a delay of up to 12 hours.
 
 Other packages include:
 - VCS repositories to which we have been granted access via SSH key
