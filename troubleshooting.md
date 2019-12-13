@@ -1,30 +1,25 @@
 # Troubleshooting
 ## Private Packagist
 
-### New versions do not appear instant
+### New versions do not appear immediately
 
-Depending on how the package has been added to Private Packagist it may take a different amount of time until
-new or updated versions appear in Private Packagist. The times of how long it can take for new versions to appear
-in Private Packagist can be found in the section below. In case the version does not appear within the mentioned time frame
-the update log which can be accessed on the package page via "View Log" can contain information about why a certain versions
-was not picked up by Private Packagist e.g. the composer.json file is invalid.
+The amount of time between pushing a new version and seeing it in Private Packagist depends on how you have added the package to Private Packagist. The following sections explain each scenario. If a version does not appear within the listed time, check the update log for problems. The update log can be found on the package page via "View Log". The update log will contain information about versions which could not be loaded into Private Packagist, e.g. the composer.json file is invalid.
 
-##### Packages added from packagist.org
+##### Packages mirrored from packagist.org
 
-New or updated versions for packages that are mirrored from packagist.org appear within seconds or minutes 
-after the update is available on packagist.org. The time from push to the VCS repository until it appears on Private Packagist
-depends on whether the package has a working webhook set up on packagist.org and how long it takes for GitHub/GitLab/Bitbucket
-to notify packagist.org.
+New or updated versions for packages which are mirrored from packagist.org appear within seconds after the versions are available on packagist.org. The time between pushing to the VCS repository of packagist.org package and a change appearing on Private Packagist depends on whether the package has a working webhook set up on packagist.org and on how long it takes for GitHub/GitLab/Bitbucket to notify packagist.org about the change.
 
-##### Packages added to Private Packagist either with a credential or via synchronization
+##### Packages added to Private Packagist by URL either with a credential or via synchronization
 
-For packages which are imported from GitHub/GitLab/Bitbucket where we have access to the respective API with credentials
-there we attempt to set up webhooks to get notified about new versions. This means that new versions will appear within
-seconds or a few minutes after the VCS repository push.
+If you add a package by URL or through synchronization from GitHub, GitLab, or Bitbucket, we attempt to set up a webhook on the repository. This only works if you use synchronization or if you specified credentials to access the API along with the URL. We cannot set up webhooks for public packages without credentials to access their settings through the API.
+A successfully set up webhook means that new versions will appear within seconds or a few minutes after you push to the Git repository.
 
 ##### All other packages
 
-For all other packages, this includes repositories to which we have been granted via ssh key, repositories that are hosted on
-other platforms than GitHub, GitLab and Bitbucket, packages added from a third party mirrored repository other than packagist.org
-and repositories that have been added without a credential, Private Packagist does not get notified about new versions. Therefore
-we run updates on regular intervals once every three hours. This means new or updated versions will not appear instant on Private Packagist. 
+For all other packages Private Packagist does not get notified about new versions and Private Packagist checks for updates at least once every three hours. Thus, new versions of these other packages will appear on Private Packagist with a delay of up to 3 hours.
+
+Other packages include:
+- VCS repositories to which we have been granted access via SSH key
+- repositories which are hosted on other platforms than GitHub, GitLab or Bitbucket
+- packages added from third party mirrored repositories other than packagist.org
+- repositories that have been added without a credential
