@@ -90,10 +90,52 @@ Note: Even though you need to select a domain when you create a credential Priva
 
 When adding a fork to Private Packagist it can happen that the original package was previously added. Every organization can only have the same package name once which means that adding a fork when the original package is already added will fail. You will have to delete the original package first and then add your fork. Once the changes of the fork are merged back upstream and you are ready to delete the fork you can also delete the package in Private Packagist. Private Packagist will then automatically fallback to the original package from packagist.org
 
-### Add a custom package
+###[Add a custom package](#custom-json-package)
 
 Custom package definitions in your composer.json can be added via "Add Package" -> "Custom Package". In the textarea you are then able to paste the entire package definition and select a credential if one is necessary to access the zip files.
 
+Example:
+```json
+{
+    "type": "package",
+    "package": {
+        "name": "smarty/smarty",
+        "version": "3.1.7",
+        "dist": {
+            "url": "https://www.smarty.net/files/Smarty-3.1.7.zip",
+            "type": "zip"
+        },
+        "source": {
+            "url": "http://smarty-php.googlecode.com/svn/",
+            "type": "svn",
+            "reference": "tags/Smarty_3_1_7/distribution/"
+        },
+        "autoload": {
+            "classmap": ["libs/"]
+        }
+    }
+}
+```
+
+The "package" key in a package repository may be set to an array to define multiple versions of a package:
+
+```json
+{
+    "type": "package",
+    "package": [
+        {
+            "name": "foo/bar",
+            "version": "1.0.0",
+            ...
+        },
+        {
+            "name": "foo/bar",
+            "version": "2.0.0",
+            ...
+        }
+    ]
+}
+```
 Once a custom package has been added to Private Packagist it will also benefit from us mirroring the zip file and provide additional endpoint to download the file in case the original storage becomes unavailable.
 
 ### Add your Satis instance
