@@ -90,7 +90,7 @@ Note: Even though you need to select a domain when you create a credential Priva
 
 When adding a fork to Private Packagist it can happen that the original package was previously added. Every organization can only have the same package name once which means that adding a fork when the original package is already added will fail. You will have to delete the original package first and then add your fork. Once the changes of the fork are merged back upstream and you are ready to delete the fork you can also delete the package in Private Packagist. Private Packagist will then automatically fallback to the original package from packagist.org
 
-###[Add a custom package](#custom-json-package)
+###Add a custom package
 
 Custom package definitions in your composer.json can be added via "Add Package" -> "Custom Package". In the textarea you are then able to paste the entire package definition and select a credential if one is necessary to access the zip files.
 
