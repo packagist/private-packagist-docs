@@ -81,11 +81,12 @@ a NO_PROXY list in the Private Packagist application in the Admin Panel under Gl
 ## Authentication Setup
 Within Private Packagist Enterprise you now need to set up at least one integration with a third party service for user authentication. You can either use your on-premises version of GitHub, Bitbucket, or GitLab, or their public services on github.com, bitbucket.org or gitlab.com. Follow the instructions to create the respective required identifiers, tokens and secrets.
 
-* [GitHub (Enterprise) Integration Setup](/enterprise/github-integration-setup.md)
-* [Bitbucket.org Integration Setup](/enterprise/bitbucket-integration-setup.md)
-* [Bitbucket Server (Stash) Integration Setup](/enterprise/bitbucket-server-integration-setup.md)
-* [GitLab Integration Setup](/enterprise/gitlab-integration-setup.md)
+* [GitHub (Enterprise) Integration Setup](./github-integration-setup.md)
+* [Bitbucket.org Integration Setup](./bitbucket-integration-setup.md)
+* [Bitbucket Server (Stash) Integration Setup](./bitbucket-server-integration-setup.md)
+* [GitLab Integration Setup](./gitlab-integration-setup.md)
 
+If your source coded is hosted on another platform or you do not with to set up an integration then you can also enable [login with email and password](./login-email-password-setup.md).
 ![Add Integration](/Resources/public/img/docs/enterprise/08-integration.png)
 
 ## Selecting Admins
@@ -116,4 +117,4 @@ Snapshot are stored in ``/var/lib/replicated/snapshots`` on the Replicated host.
 If you ever need to restore the application from a snapshot you need to store it on the host’s hard drive before you start the management console. You can then select a snapshot at the setup step that asks for a license key file. See [https://www.replicated.com/docs/kb/supporting-your-customers/restoring-from-a-snapshot/](https://www.replicated.com/docs/kb/supporting-your-customers/restoring-from-a-snapshot/) for screenshots of the process.
 
 ## Updates
-Please see the [Maintenance](/enterprise/maintenance.md) section for details about how to update your Private Packagist Enterprise setup.
+Please see the [Maintenance](./maintenance.md) section for details about how to update your Private Packagist Enterprise setup.
