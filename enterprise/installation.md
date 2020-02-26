@@ -3,7 +3,7 @@
 
 ### Requirements
 
-1. License Key File (file extension .rli) Don't have one yet? [Sign up for a free trial license!](https://packagist.com/enterprise)
+1. License Key File (file extension .rli)<br>Don't have one yet? [Sign up for a free trial license!](https://packagist.com/enterprise)
 2. One (sub-)domain to operate the web interface, e.g. packagist.myintranet.com
 3. One (sub-)domain to operate the composer repository, e.g. repo.packagist.myintranet.com or packagist-repo.myintranet.com
 4. An SSL certificate valid for both chosen domains
