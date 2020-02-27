@@ -79,14 +79,14 @@ a NO_PROXY list in the Private Packagist application in the Admin Panel under Gl
 ![No HTTP Proxy](/Resources/public/img/docs/enterprise/07-02-http-proxy-no-proxy.png)
 
 ## Authentication Setup
-Within Private Packagist Enterprise you now need to set up at least one integration with a third party service for user authentication or if your source code is hosted on another platform or you do not wish to set up an integration then you can also enable authentication with email addresses and passwords.
-You can either use your on-premises version of GitHub, Bitbucket, or GitLab, or their public services on github.com, bitbucket.org or gitlab.com. Follow the instructions to create the respective required identifiers, tokens and secrets.
+Within Private Packagist Enterprise you now need to set up at least one user authentication method. You have the choice between authentication with email addresses and passwords and several OAuth integrations with third party services.
+We provide integrations with on-premises versions of GitHub, Bitbucket, or GitLab, or their public services on github.com, bitbucket.org or gitlab.com. Follow the instructions to create the respective required identifiers, tokens and secrets.
 
 * [GitHub (Enterprise) Integration Setup](./github-integration-setup.md)
 * [Bitbucket.org Integration Setup](./bitbucket-integration-setup.md)
 * [Bitbucket Server (Stash) Integration Setup](./bitbucket-server-integration-setup.md)
 * [GitLab Integration Setup](./gitlab-integration-setup.md)
-* [Authentication with Email Addresses and Passwords](./authentication-email-password-setup.md).
+* [Authentication with Email Addresses and Passwords](./authentication-email-addresses-passwords-setup.md).
 
 
 ![Add Integration](/Resources/public/img/docs/enterprise/08-integration.png)
