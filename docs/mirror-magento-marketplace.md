@@ -34,7 +34,7 @@ Under Packages we can now add a package “From Mirror”.
 
 I’m going to enter just one package for the demo, but you can add as many as you like here. I’m going with “magento/module-catalog”. Make sure to select the “Magento Marketplace” Mirror repository underneath, and hit “Add”.
 
-![Packages Add Proxied](/Resources/public/img/docs/features/magento/Packages-Add-Proxies.png)
+![Packages Add Proxied](/Resources/public/img/docs/features/magento/Packages-Add-Proxied.png)
 
 Private Packagist downloads the package metadata in the background and then notifies us that the package has been initialized, and it’s now accessible through composer update & composer install and shows up on package searches in Private Packagist!
 
