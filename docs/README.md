@@ -17,7 +17,7 @@ If your organization is synchronized Private Packagist will have created package
 
 ### Configure your project to use Private Packagist
 
-To access Private Packagist you need to set up composer authentication. Copy the authentication command for your user from [your user auth page](https://packgagist.com/profile/auth). Run the command to store your user token on your machine.
+To access Private Packagist you need to set up composer authentication. Copy the authentication command for your user from [your user auth page](https://packagist.com/profile/auth). Run the command to store your user token on your machine.
 
 To grant an automated process like your continuous integration system access, create an access token for your organization under _Settings > Authentication Tokens_. Then either copy the command and add it to the steps to be executed before running composer commands, or use the instructions for defining an environment variable containing composer authentication settings.
 
