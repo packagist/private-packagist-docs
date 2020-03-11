@@ -5,7 +5,7 @@ Composer has broad support for version control systems, code hosting platforms a
 
 To simplify the initial setup and maintenance of a Private Packagist account, we offer optional synchronization for GitHub organizations, Bitbucket teams and GitLab groups. This **integration keeps teams, their members, and access permissions in sync** with a matching GitHub organization. So you only need to manage users and permissions in a single place.
 
-You can log into Private Packagist using an account on GitHub.com, Bitbucket.org, or GitLab.com. If you already have an account you can connect these services to your existing account on your [profile page](https://packgist.com/profile).
+You can log into Private Packagist using an account on GitHub.com, Bitbucket.org, or GitLab.com. If you already have an account you can connect these services to your existing account on your [profile page](https://packagist.com/profile).
 
 You can then either create a new organization directly synchronized with a GitHub organization, Bitbucket team or a GitLab group, or you can enable synchronization for an existing Organization in _Settings_.
 
