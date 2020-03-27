@@ -1,7 +1,9 @@
 # Security Monitoring
-The Private Packagist security monitoring feature analyzes the dependencies of your private packages for known
-security vulnerabilities using various databases like [sensiolabs/security-advisories](https://github.com/FriendsOfPHP/security-advisories).
+The Private Packagist security monitoring feature analyzes the dependencies of your private packages for known security vulnerabilities.
 Packages get analyzed on every commit and every time a database reports new vulnerabilities.
+
+The following databases are used to analyze your packages:
+* [sensiolabs/security-advisories](https://github.com/FriendsOfPHP/security-advisories)
 
 ### Configure monitoring settings
 The default branch of every private package gets automatically monitored if a composer.lock file is present.
