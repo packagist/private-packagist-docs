@@ -1,5 +1,6 @@
 # Security Monitoring
 The Private Packagist security monitoring feature searches the dependencies of your private packages for known security vulnerabilities.
+For Private Packagist to be able to monitor your project the project needs to be added as a package in Private Packagist even if you don't intend to install it.
 Packages are analyzed every time we find a new commit in your package and when a new vulnerability is published in one of the databases.
 
 The following databases are used to analyze your packages:
