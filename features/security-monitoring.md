@@ -1,12 +1,19 @@
 # Security Monitoring
+
 The Private Packagist security monitoring feature searches the dependencies of your private packages for known security vulnerabilities.
-For Private Packagist to be able to monitor your project the project needs to be added as a package in Private Packagist even if you don't intend to install it.
 Packages are analyzed every time we find a new commit in your package and when a new vulnerability is published in one of the databases.
 
 The following databases are used to analyze your packages:
 * [sensiolabs/security-advisories](https://github.com/FriendsOfPHP/security-advisories)
 
-### Configurating Monitoring Settings
+<div class="row column">
+    <div class="callout warning">
+        <p>Security monitoring is available for packages in your organization. To monitor your projects, you must add them to Private Packagist as packages, even if you do not intend to install them as a dependency.</p>
+    </div>
+</div>
+
+
+### Configuring Monitoring Settings
 The default branch of every private package is automatically monitored if a composer.lock file is present.
 Additional branches to be monitored can be selected on the package page.
 
@@ -14,7 +21,7 @@ Security monitoring can be disabled for individual packages on the package secur
 on the organization’s security settings page.
 Organizations using the agency add-on have the option to disable security monitoring for individual subrepositories.
 
-### Configurating Notifications
+### Configuring Notifications
 Every user receives security notifications by email for all packages they have access to by default.
 Users can unsubscribe either from individual packages, or from all security notifications, if they not wish to receive any email notifications.
 
