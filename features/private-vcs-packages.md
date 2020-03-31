@@ -20,7 +20,8 @@ If you are using our GitHub synchronization we will list all your repositories a
 ## How do I use Private Packagist in Composer?
 Add the Private Packagist repository to your composer.json and require the packages by name as you are used to. If you already had private version control system repositories configured, you can remove them to speed up composer update.
 
-```
+<pre>
+<code>
 {
     "repositories": [
         <span class="strikethrough">{"type": "vcs", "url": "https://github.com/<i>your-org-name</i>/foo"},</span>
@@ -33,5 +34,6 @@ Add the Private Packagist repository to your composer.json and require the packa
         "org/bar": "dev-master"
     }
 }
-```
+</code>
+</pre>
 **Note:** Your composer.lock file contains the download URLs for packages. You need to run composer update at least once to regenerate your composer.lock file before composer install will download files from Private Packagist.
