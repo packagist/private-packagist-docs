@@ -1,7 +1,7 @@
 # Private Composer Packages
 ## 
 
-1Private Packagist makes the code in your private repositories available for use with Composer.
+Private Packagist makes the code in your private repositories available for use with Composer.
 
 ## Where can Private Packagist get code from?
 Private Packagist can access private code in any Git, Mercurial or Subversion repository with SSH or HTTP Basic authentication. This includes code stored on any of the following systems:
