@@ -101,7 +101,7 @@ Three steps are required to use Private Packagist on an existing project. They a
         {"packagist.org": false}
     ]
     ```
-3. Run `composer update mirrors` to mirror all dependency packages into Private Packagist. We rrecommend you delete your local vendor directory before running this command to avoid any issues with cached URLs, see below for an explanation.
+3. Run `composer update mirrors` to mirror all dependency packages into Private Packagist. We recommend you delete your local vendor directory before running this command to avoid any issues with cached URLs, see below for an explanation.
 
 After these three steps Composer commands will access Private Packagist but it will only use it to download mirrored packages from packagist.org.
 
