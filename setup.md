@@ -180,11 +180,11 @@ Alternatively you may submit an array of packages to define multiple versions:
     }
 ]
 ```
-Once a custom package has been added to Private Packagist it will also benefit from us mirroring the zip file and provide additional endpoint to download the file in case the original storage becomes unavailable.
+Once a custom package has been added to Private Packagist you will benefit from mirroring the zip file. Composer will have an additional location to download the file from if the original storage becomes unavailable.
 
 ## Add your Satis instance
 
-Once you start using Private Packagist it usually also replaces your previous Satis set up. Via "Add Package" -> "Json Import" you can paste your satis.json into the textarea and select which credentials should be used to try to import the packages. This will add all packages from your Satis instance to Private Packagist and will make Satis obsolete and therefore one less thing you have to worry about.
+Once you start using Private Packagist it usually also replaces your previous Satis setup. Via *Add Package -> Json Import* you can paste your satis.json into the textarea and select which credentials should be used to try to import the packages. This will add all packages from your Satis instance to Private Packagist and will make Satis obsolete and therefore one less thing you have to worry about.
 
 ## Add a mirrored third party repositories
 On your organisation’s settings page under “Manage Mirrored Repositories” you can add additional third party mirrored repositories. By default packagist.org is enabled for all organisations so there is no need to set that up.
