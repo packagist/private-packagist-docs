@@ -147,44 +147,38 @@ Custom package definitions in your composer.json can be added via *Add Package -
 Example:
 ```json
 {
-    "type": "package",
-    "package": {
-        "name": "smarty/smarty",
-        "version": "3.1.7",
-        "dist": {
-            "url": "https://www.smarty.net/files/Smarty-3.1.7.zip",
-            "type": "zip"
-        },
-        "source": {
-            "url": "http://smarty-php.googlecode.com/svn/",
-            "type": "svn",
-            "reference": "tags/Smarty_3_1_7/distribution/"
-        },
-        "autoload": {
-            "classmap": ["libs/"]
-        }
+    "name": "smarty/smarty",
+    "version": "3.1.7",
+    "dist": {
+        "url": "https://www.smarty.net/files/Smarty-3.1.7.zip",
+        "type": "zip"
+    },
+    "source": {
+        "url": "http://smarty-php.googlecode.com/svn/",
+        "type": "svn",
+        "reference": "tags/Smarty_3_1_7/distribution/"
+    },
+    "autoload": {
+        "classmap": ["libs/"]
     }
 }
 ```
 
-The "package" key in a package repository may be set to an array to define multiple versions of a package:
+Alternatively you may submit an array of packages to define multiple versions:
 
 ```json
-{
-    "type": "package",
-    "package": [
-        {
-            "name": "foo/bar",
-            "version": "1.0.0",
-            ...
-        },
-        {
-            "name": "foo/bar",
-            "version": "2.0.0",
-            ...
-        }
-    ]
-}
+[
+    {
+        "name": "foo/bar",
+        "version": "1.0.0",
+        ...
+    },
+    {
+        "name": "foo/bar",
+        "version": "2.0.0",
+        ...
+    }
+]
 ```
 Once a custom package has been added to Private Packagist it will also benefit from us mirroring the zip file and provide additional endpoint to download the file in case the original storage becomes unavailable.
 
