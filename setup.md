@@ -138,7 +138,7 @@ Note: Even though you need to select a domain when you create a credential Priva
 
 ### Add a forked VCS repository
 
-When adding a fork to Private Packagist it can happen that the original package was previously added. Every organization can only have the same package name once which means that adding a fork when the original package is already added will fail. You will have to delete the original package first and then add your fork. Once the changes of the fork are merged back upstream and you are ready to delete the fork you can also delete the package in Private Packagist. Private Packagist will then automatically fallback to the original package from packagist.org
+When adding a fork to Private Packagist it can happen that the original package was already added. Since Composer cannot load multiple packages by the same name from one URL, the new package will be marked as uninstallable with Composer due to a conflicting name. You will have to delete the original package and then add your fork. Once the changes of the fork are merged back upstream and you are ready to delete the fork you can also delete the package in Private Packagist. Private Packagist will then automatically mirror the original package from packagist.org again.
 
 ## Add a custom package
 
