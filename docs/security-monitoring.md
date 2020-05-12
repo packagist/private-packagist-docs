@@ -22,10 +22,10 @@ on the organization’s security settings page.
 Organizations using the agency add-on have the option to disable security monitoring for individual subrepositories.
 
 ### Configuring Notifications
-Every user receives security notifications via a notification channel for all packages they have access to by default.
-Users can unsubscribe either from individual packages or from all security notifications if they do not wish to receive any notifications.
+Every user receives security notifications by email for all packages they have access to by default.
+Users can unsubscribe either from individual packages or from all security notifications if they do not wish to receive any email notifications.
 
-Create a notification channel for the desired destination and configure which notifications it should receive in the organization's security settings.
+You can create a notification channel for the desired destination and configure which notifications it should receive in the organization's security settings.
 
 The following notification channels are supported:
 * Email: send notifications to a configured email addresses list
