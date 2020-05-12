@@ -22,12 +22,15 @@ on the organization’s security settings page.
 Organizations using the agency add-on have the option to disable security monitoring for individual subrepositories.
 
 ### Configuring Notifications
-Every user receives security notifications by email for all packages they have access to by default.
-Users can unsubscribe either from individual packages, or from all security notifications, if they not wish to receive any email notifications.
+Every user receives security notifications via a notification channel for all packages they have access to by default.
+Users can unsubscribe either from individual packages or from all security notifications if they do not wish to receive any notifications.
 
-In addition to registered users receiving security notifications by email, you can configure notifications to be sent
-to other email addresses, e.g. a security mailinglist, or to a Slack channel.
 Create a notification channel for the desired destination and configure which notifications it should receive in the organization's security settings.
+
+The following notification channels are supported:
+* Email: send notifications to a configured email addresses list
+* Slack webhook: receive notifications in your configured Slack channel
+* Webhook: create a webhook with your own URL and a secret in Private Packagist. You can validate the secret using [our api client](https://github.com/packagist/private-packagist-api-client#validate-incoming-webhook-payloads) or by running ```hash_equals('sha1='.hash_hmac('sha1', (string) $request->getBody(), $SECRET_USER_CHOSEN), $response->getHeader('Packagist-Signature'));```
 
 ### Resolving Security Issues
 When Private Packagist finds a security issue it will list safe versions, which you can update to, in order to resolve the problem.
