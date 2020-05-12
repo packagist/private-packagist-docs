@@ -1,6 +1,6 @@
 # Security Monitoring
 
-The Private Packagist Security Monitoring searches the dependencies of your private packages for known security vulnerabilities.
+Private Packagist Security Monitoring searches the dependencies of your private packages for known security vulnerabilities.
 Packages are analyzed every time we find a new commit in your package and when a new vulnerability is published in one of the databases.
 
 The following databases are used to analyze your packages:
