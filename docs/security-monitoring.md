@@ -25,12 +25,14 @@ Organizations using the agency add-on have the option to disable security monito
 Every user receives security notifications by email for all packages they have access to by default.
 Users can unsubscribe either from individual packages or from all security notifications if they do not wish to receive any email notifications.
 
-The following notification channels are supported:
-* Email: send notifications to a configured email addresses list
-* Slack webhook: receive notifications in your configured Slack channel
-* Webhook: create a webhook with your own URL and a secret in Private Packagist. You can validate the secret using [our api client](https://github.com/packagist/private-packagist-api-client#validate-incoming-webhook-payloads) or by running ```hash_equals('sha1='.hash_hmac('sha1', (string) $request->getBody(), $SECRET_USER_CHOSEN), $response->getHeader('Packagist-Signature'));```
+Notification channels allow you to receive security notifications via other means than email to user accounts. The following types of notification channels are available:
+- **Email**: Sends notifications to a list of email addresses
+- **Slack** Webhook: Receives notifications in your configured Slack channel
+- **Webhook**: Creates a webhook with your own URL and a secret in Private Packagist. You can validate the secret using [our api client](https://github.com/packagist/private-packagist-api-client#validate-incoming-webhook-payloads) or by running ```hash_equals('sha1='.hash_hmac('sha1', (string) $request->getBody(), $SECRET_USER_CHOSEN), $response->getHeader('Packagist-Signature'));```
 
-Notification channels can be added on your organisation’s settings page under *Notification Channels -> Add Notification Channel*.
+Notification channels can be added on your organization’s settings page under *Notification Channels -> Add Notification Channel*.
+
+Once you create a notification channel, you can assign it to the packages to be monitored in the organization's security settings.
 
 ### Resolving Security Issues
 When Private Packagist finds a security issue it will list safe versions, which you can update to, in order to resolve the problem.
