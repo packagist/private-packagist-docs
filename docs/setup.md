@@ -187,7 +187,7 @@ Once a custom package has been added to Private Packagist you will benefit from 
 Once you start using Private Packagist it usually also replaces your previous Satis setup. Via *Add Package -> Json Import* you can paste your satis.json into the textarea and select which credentials should be used to try to import the packages. This will add all packages from your Satis instance to Private Packagist and will make Satis obsolete and therefore one less thing you have to worry about.
 
 ## Add a mirrored third party repositories
-On your organisation’s settings page under “Manage Mirrored Repositories” you can add additional third party mirrored repositories. By default packagist.org is enabled for all organisations so there is no need to set that up.
+On your organization’s settings page under “Manage Mirrored Repositories” you can add additional third party mirrored repositories. By default packagist.org is enabled for all organizations so there is no need to set that up.
 
 Similar to how Private Packagist can access private VCS repositories it can also access private mirrored third party repositories e.g. repo.magento.com. First create the credentials that are necessary e.g. your Magento Marketplace access keys and then add the mirrored third party repository. Make sure to select the credential while creating the mirror. All packages added from the repository will now automatically use that credential.
 
