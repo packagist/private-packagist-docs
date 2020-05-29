@@ -24,11 +24,11 @@ Private Packagist integrates with the following systems:
 * Synchronization:
     * Keeps team members and access permissions in sync with your GitHub organisations
     * Synced repositories use the default repository permission on GitHub
-* Credentials: GitHub API Token
+* Credentials: GitHub API Token for GitHub OAuth App or an access token for a GitHub App installation
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
 #### GitHub Enterprise
-* OAuth: Users authenticate on Private Packagist with their Bitbucket accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/github-integration-setup.md) for enterprise.
+* OAuth: Users authenticate on Private Packagist with their GitHub accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/github-integration-setup.md) for enterprise.
 * Synchronization:
     * Keeps team members and access permissions in sync with your GitHub Enterprise organisations
 * Credentials: GitHub API Token
@@ -38,36 +38,32 @@ Private Packagist integrates with the following systems:
 * OAuth: Users authenticate on Private Packagist with their Bitbucket.org accounts
 * Synchronization:
     * Keeps users permissions in sync with your Bitbucket groups
-    * Group and user changes aren't kept in sync
 * Credentials: Bitbucket API Key or Bitbucket App Password
-* Webhooks: Code changes
+* Webhooks: Code changes and releases. Group and user changes aren't supported in webhooks
 
-#### Bitbucket / Stash Server
+#### Bitbucket Server / Stash
 * OAuth: Users authenticate on Private Packagist with their Bitbucket accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/bitbucket-server-integration-setup.md) for enterprise.
 * Synchronization:
     * Keeps users and access permissions in sync with your Bitbucket projects
     * Individual collaborators aren't supported
-    * New projects or team changes aren't kept in sync
-* Credentials: SSH keys
-* Webhooks: Code changes
+* Credentials: personal access token which are available since BB Server 5.5 or username + password for older versions
+* Webhooks: Code changes and releases. No webhooks for new repos/groups/users changes.
 
 #### GitLab
 * OAuth: Users authenticate on Private Packagist with their GitLab accounts
 * Synchronization:
     * Keeps access permissions in sync with your Gitlab groups
-    * Individual collaborators aren't kept in sync
-    * New projects or team changes aren't kept in sync
+    * Individual collaborators aren't supported
 * Credentials: GitLab API token
-* Webhooks: Code changes
+* Webhooks: Code changes and releases. No webhooks for new projects/groups/users changes.
 
 #### GitLab (Self-hosted)
-* OAuth: Users authenticate on Private Packagist with their Bitbucket accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/gitlab-integration-setup.md) for enterprise.
+* OAuth: Users authenticate on Private Packagist with their GitLab accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/gitlab-integration-setup.md) for enterprise.
 * Synchronization:
     * Keeps access permissions in sync with your Gitlab groups
-    * Individual collaborators aren't kept in sync
-    * New projects or team changes aren't kept in sync
+    * Individual collaborators aren't yet supported
 * Credentials: GitLab API Token
-* Webhooks: Code changes
+* Webhooks: Code changes and releases
 
 #### AWS CodeCommit 
 * Webhook: Supports [AWS SNS subscription confirmation](https://docs.aws.amazon.com/sns/latest/dg/sns-message-and-json-formats.html)
