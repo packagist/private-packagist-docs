@@ -22,48 +22,52 @@ Private Packagist integrates with the following systems:
 #### GitHub
 * OAuth: Users authenticate on Private Packagist with their GitHub accounts
 * Synchronization:
-    * Keeps team members and access permissions in sync with your GitHub organisations
-    * Synced repositories use the default repository permission on GitHub
-* Credentials: GitHub API Token for GitHub OAuth App or an access token for a GitHub App installation
+    * Keeps teams, their members, and access permissions in sync with your GitHub organisation
+    * The default repository permissions on Github is used to grant members access to your repositories
+* Code Credentials: GitHub API Token
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
 #### GitHub Enterprise
 * OAuth: Users authenticate on Private Packagist with their GitHub accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/github-integration-setup.md) for enterprise.
 * Synchronization:
     * Keeps team members and access permissions in sync with your GitHub Enterprise organisations
-* Credentials: GitHub API Token
+* Code Credentials: GitHub API Token
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
 #### Bitbucket.org / Cloud
 * OAuth: Users authenticate on Private Packagist with their Bitbucket.org accounts
 * Synchronization:
-    * Keeps users permissions in sync with your Bitbucket groups
-* Credentials: Bitbucket API Key or Bitbucket App Password
-* Webhooks: Code changes and releases. Group and user changes aren't supported in webhooks
+    * Keeps groups, their members, and access permissions in sync with your Bitbucket team
+* Code Credentials: Bitbucket API Key or Bitbucket App Password
+* Webhooks: Code changes and releases
 
 #### Bitbucket Server / Stash
 * OAuth: Users authenticate on Private Packagist with their Bitbucket accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/bitbucket-server-integration-setup.md) for enterprise.
 * Synchronization:
     * Keeps users and access permissions in sync with your Bitbucket projects
     * Individual collaborators aren't supported
-* Credentials: personal access token which are available since BB Server 5.5 or username + password for older versions
-* Webhooks: Code changes and releases. No webhooks for new repos/groups/users changes.
+* Code Credentials: personal access token which are available since Bitbucket Server 5.5 or username and password for older versions
+* Webhooks: Code changes and releases
 
 #### GitLab
 * OAuth: Users authenticate on Private Packagist with their GitLab accounts
 * Synchronization:
     * Keeps access permissions in sync with your Gitlab groups
     * Individual collaborators aren't supported
-* Credentials: GitLab API token
-* Webhooks: Code changes and releases. No webhooks for new projects/groups/users changes.
+* Code Credentials: GitLab API token
+* Webhooks: Code changes and releases
 
 #### GitLab (Self-hosted)
 * OAuth: Users authenticate on Private Packagist with their GitLab accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/gitlab-integration-setup.md) for enterprise.
 * Synchronization:
     * Keeps access permissions in sync with your Gitlab groups
     * Individual collaborators aren't yet supported
-* Credentials: GitLab API Token
+* Code Credentials: GitLab API Token
 * Webhooks: Code changes and releases
 
 #### AWS CodeCommit 
-* Webhook: Supports [AWS SNS subscription confirmation](https://docs.aws.amazon.com/sns/latest/dg/sns-message-and-json-formats.html)
+* Synchronization:
+    * Possible after manually setting up webhooks
+    * Users need to create a subscription using the generic hooks URL (from the package page) and send an [AWS SNS subscription confirmation](https://docs.aws.amazon.com/sns/latest/dg/sns-message-and-json-formats.html)
+* Code Credentials: Amazon SNS message
+* Webhook: Code changes
