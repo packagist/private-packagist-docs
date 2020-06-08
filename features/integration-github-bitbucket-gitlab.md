@@ -22,16 +22,16 @@ Private Packagist integrates with the following systems:
 #### GitHub
 * OAuth: Users authenticate on Private Packagist with their GitHub accounts
 * Synchronization:
-    * Keeps teams, their members, and access permissions in sync with your GitHub organisation
-    * The default repository permissions on Github is used to grant members access to your repositories
+    * Keeps teams, their members, and access permissions in sync with your GitHub organization
+    * The default repository permissions on GitHub is used to grant members access to your repositories
 * Code Credentials: GitHub App or GitHub API Token
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
 #### GitHub Enterprise
 * OAuth: Users authenticate on Private Packagist with their GitHub accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/github-integration-setup.md) for enterprise.
 * Synchronization:
-    * Keeps team members and access permissions in sync with your GitHub Enterprise organisations
-    * The default repository permissions on Github is used to grant members access to your repositories
+    * Keeps team members and access permissions in sync with your GitHub Enterprise organizations
+    * The default repository permissions on GitHub is used to grant members access to your repositories
 * Code Credentials: GitHub API Token
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
@@ -53,7 +53,7 @@ Private Packagist integrates with the following systems:
 #### GitLab
 * OAuth: Users authenticate on Private Packagist with their GitLab accounts
 * Synchronization:
-    * Keeps teams, their members, and access permissions in sync with your Gitlab groups
+    * Keeps teams, their members, and access permissions in sync with your GitLab groups
     * Individual collaborators aren't supported
 * Code Credentials: GitLab API token
 * Webhooks: Code changes and releases
@@ -61,12 +61,12 @@ Private Packagist integrates with the following systems:
 #### GitLab (Self-hosted)
 * OAuth: Users authenticate on Private Packagist with their GitLab accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/gitlab-integration-setup.md) for enterprise.
 * Synchronization:
-    * Keeps teams, their members, and access permissions in sync with your Gitlab groups
+    * Keeps teams, their members, and access permissions in sync with your GitLab groups
     * Individual collaborators aren't yet supported
 * Code Credentials: GitLab API Token
 * Webhooks: Code changes and releases
 
 #### AWS CodeCommit
 * Webhook:
-    * Users need to create a subscription using the generic hooks URL (from the package page) and send an [Amazon SNS message](https://docs.aws.amazon.com/sns/latest/dg/sns-message-and-json-formats.html)
+    * Users need to [create an AWS CodeCommit Trigger](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-sns.html) using the generic hooks URL from the package page
     * Code changes are available automatically. For releases, you need to select "All repository events" for the events type. 
