@@ -23,7 +23,6 @@ Private Packagist integrates with the following systems:
 * OAuth: Users authenticate on Private Packagist with their GitHub accounts
 * Synchronization:
     * Keeps teams, their members, and access permissions in sync with your GitHub organization
-    * The default repository permissions on GitHub is used to grant members access to your repositories
 * Code Credentials: GitHub App or GitHub API Token
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
@@ -31,7 +30,6 @@ Private Packagist integrates with the following systems:
 * OAuth: Users authenticate on Private Packagist with their GitHub accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/github-integration-setup.md) for enterprise.
 * Synchronization:
     * Keeps team members and access permissions in sync with your GitHub Enterprise organizations
-    * The default repository permissions on GitHub is used to grant members access to your repositories
 * Code Credentials: GitHub API Token
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
