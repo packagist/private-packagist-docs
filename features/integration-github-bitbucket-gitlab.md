@@ -57,7 +57,7 @@ Private Packagist integrates with the following systems:
 * Webhooks: Code changes and releases
 
 #### GitLab (Self-hosted)
-* OAuth: Users authenticate on Private Packagist with their GitLab accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/gitlab-integration-setup.md) for enterprise.
+* OAuth: Users authenticate on Private Packagist with their GitLab accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/gitlab-integration-setup.md) for Enterprise.
 * Synchronization:
     * Keeps teams, their members, and access permissions in sync with your GitLab groups
     * Individual collaborators aren't yet supported
