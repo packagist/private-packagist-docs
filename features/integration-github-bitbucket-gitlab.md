@@ -68,5 +68,5 @@ Private Packagist integrates with the following systems:
 
 #### AWS CodeCommit
 * Webhook:
-    * Users need to [create an AWS CodeCommit Trigger](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-sns.html) using the generic hooks URL from the package page
+    * Users need to [create an AWS CodeCommit Trigger](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-sns.html) using the generic hook URL from the package page
     * Code changes are available automatically. For releases, you need to select "All repository events" for the events type. 
