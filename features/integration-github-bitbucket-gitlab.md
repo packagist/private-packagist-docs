@@ -1,4 +1,4 @@
-# GitHub, Bitbucket and GitLab Integration
+# GitHub, Bitbucket, GitLab and Other Integrations
 ## Synchronization of Users, Teams, Permissions and Repositories
 
 Composer has broad support for version control systems, code hosting platforms and authentication protocols. As a consequence **Private Packagist is compatible with all the same systems and platforms**, namely Git, Mercurial or Subversion using SSH access, HTTP Basic Auth over SSL, or their native protocols.
@@ -14,3 +14,59 @@ You can then either create a new organization directly synchronized with a GitHu
 Apart from synchronizing teams, users, and permissions, setting up the integration will simplify the addition of new packages to your Composer repository. When you create a **new repository** on GitHub, Bitbucket, or GitLab, it will be **added as a Composer package automatically** if it contains a _composer.json_ file. If you’d like to add existing repositories as packages, you can do so with the click of a button on the Packages tab in your organization.
 
 **Update web hooks** notifying Packagist of new code pushes will be installed in the background, and **credentials to access the package** will be **configured automatically**.
+
+## Integrations
+
+Private Packagist integrates with the following systems:
+
+#### GitHub
+* OAuth: Users authenticate on Private Packagist with their GitHub accounts
+* Synchronization:
+    * Keeps teams, their members, and access permissions in sync with your GitHub organization
+    * The default repository permissions on GitHub is used to grant members access to your repositories
+* Code Credentials: GitHub App or GitHub API Token
+* Webhooks: Code changes, releases, created repositories, team creation or member changes
+
+#### GitHub Enterprise
+* OAuth: Users authenticate on Private Packagist with their GitHub accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/github-integration-setup.md) for enterprise.
+* Synchronization:
+    * Keeps team members and access permissions in sync with your GitHub Enterprise organizations
+    * The default repository permissions on GitHub is used to grant members access to your repositories
+* Code Credentials: GitHub API Token
+* Webhooks: Code changes, releases, created repositories, team creation or member changes
+
+#### Bitbucket Cloud (bitbucket.org)
+* OAuth: Users authenticate on Private Packagist with their Bitbucket accounts
+* Synchronization:
+    * Keeps groups, their members, and access permissions in sync with your Bitbucket team
+* Code Credentials: Bitbucket API Key or Bitbucket App Password
+* Webhooks: Code changes and releases
+
+#### Bitbucket Server / Stash
+* OAuth: Users authenticate on Private Packagist with their Bitbucket Server accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/bitbucket-server-integration-setup.md) for enterprise.
+* Synchronization:
+    * Keeps users and access permissions in sync with your Bitbucket Server projects
+    * Individual collaborators aren't supported
+* Code Credentials: personal access token which are available since Bitbucket Server 5.5 or username and password for older versions
+* Webhooks: Code changes and releases
+
+#### GitLab
+* OAuth: Users authenticate on Private Packagist with their GitLab accounts
+* Synchronization:
+    * Keeps teams, their members, and access permissions in sync with your GitLab groups
+    * Individual collaborators aren't supported
+* Code Credentials: GitLab API token
+* Webhooks: Code changes and releases
+
+#### GitLab (Self-hosted)
+* OAuth: Users authenticate on Private Packagist with their GitLab accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/gitlab-integration-setup.md) for enterprise.
+* Synchronization:
+    * Keeps teams, their members, and access permissions in sync with your GitLab groups
+    * Individual collaborators aren't yet supported
+* Code Credentials: GitLab API Token
+* Webhooks: Code changes and releases
+
+#### AWS CodeCommit
+* Webhook:
+    * Users need to [create an AWS CodeCommit Trigger](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-sns.html) using the generic hook URL from the package page
+    * Code changes are available automatically. For releases, you need to select "All repository events" for the events type. 
