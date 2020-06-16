@@ -28,6 +28,7 @@ Users can unsubscribe either from individual packages or from all security notif
 Notification channels allow you to receive security notifications via other means than email to user accounts. The following types of notification channels are available:
 - **Email**: Sends notifications to a list of email addresses
 - **Slack Webhook**: Sends notifications to your configured Slack channel
+- **Microsoft Teams Webhook**: Sends notifications to your configured Microsoft Teams channel
 - **Webhook**: Sends an HTTP POST request to a defined URL optionally signed with a user supplied secret. You can validate the secret using [our api client](https://github.com/packagist/private-packagist-api-client#validate-incoming-webhook-payloads) or by running `hash_equals('sha1='.hash_hmac('sha1', (string) $request->getBody(), $SECRET_USER_CHOSEN), $response->getHeader('Packagist-Signature'));`
 
 Notification channels can be added on your organization’s settings page under *Notification Channels -> Add Notification Channel*.
