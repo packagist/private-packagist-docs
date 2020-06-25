@@ -40,4 +40,4 @@ When Private Packagist finds a security issue it will list safe versions, which 
 Once your project has been updated to use a secure version of the dependency the issue will automatically be closed.
 You can also manually close an issue for instance in the case where the affected component is not actually used in your project.
 
-![Handle security issues](/Resources/public/img/docs/feature/security-monitoring-handle-issues.png)
+![Handle security issues](/Resources/public/img/docs/features/security-monitoring-manage-issues.png)
