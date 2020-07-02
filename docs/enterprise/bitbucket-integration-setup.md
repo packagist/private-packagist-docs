@@ -3,7 +3,7 @@
 
 <div class="row column">
     <div class="callout warning">
-        <p>Note: The instructions on this page create an integration with the public Bitbucket at bitbucket.org. If you are trying to setup an integration with your own Bitbucket Server (Stash) consult the <a href="/enterprise/bitbucket-server-integration-setup.md">Bitbucket Server (Stash) setup guide</a>.</p>
+        <p>Note: The instructions on this page create an integration with the public Bitbucket at bitbucket.org. If you are trying to setup an integration with your own Bitbucket Server (Stash) consult the <a href="/docs/enterprise/bitbucket-server-integration-setup.md">Bitbucket Server (Stash) setup guide</a>.</p>
     </div>
 </div>
 
