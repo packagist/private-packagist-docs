@@ -181,6 +181,9 @@ Alternatively you may submit an array of packages to define multiple versions:
 ]
 ```
 Once a custom package has been added to Private Packagist you will benefit from mirroring the zip file. Composer will have an additional location to download the file from if the original storage becomes unavailable.
+## Add an artifact package
+
+You can upload code archives via *Add Package -> Artifact*. Your uploaded archives need to contain a valid composer.json file in its root directory and must be of type zip, gz, or bz2. Once you upload your code archives, you can save the artifact package and use it in your organization.
 
 ## Import from an existing Satis instance
 
