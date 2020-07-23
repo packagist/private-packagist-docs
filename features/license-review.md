@@ -5,7 +5,7 @@ License Review helps you understand and manage legal challenges with your depend
 
 You can find your Dependency License Review in your organization's "Packages" tab. You will find a list of all licenses used in any of your packages. License Review allows you to inspect which versions of which dependency are available under which license. Links to details on the respective open-source licenses help you find legal information regarding the licenses.
 
-![License Review](/Resources/public/img/docs/features/License-Review-20170110.png#no-spacing)
+![License Review](/Resources/public/img/docs/features/License-Review-20200723.png#no-spacing)
 Dependency License Review for the phpBB organization on Private Packagist
 
 ## Open-Source Licenses
