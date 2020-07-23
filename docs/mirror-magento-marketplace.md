@@ -8,7 +8,7 @@ Mirrored packages show up in your Private Packagist search results, your [Licens
 To setup credentials for a repository, “Magento Marketplace” in our example, head to Settings &gt; Manage Credentials in your Private Packagist organization. Afterwards you can add a new mirrored third party repository under Settings as well. From then on packages can be manually or automatically mirrored based on your configuration.
 
 ## Magento Marketplace Walkthrough
-Start by hitting “Manage Credentials” in your organizations settings. My organization is called “Magento-Demo”.
+Start by hitting “Manage Credentials” in your organizations settings. My organization is called “ACME Company”.
 
 ![Manage Credentials](/Resources/public/img/docs/features/magento/Magento-Credentials-20200723.png)
 
