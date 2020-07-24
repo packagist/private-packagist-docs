@@ -5,8 +5,8 @@ License Review helps you understand and manage legal challenges with your depend
 
 You can find your Dependency License Review in your organization's "Packages" tab. You will find a list of all licenses used in any of your packages. License Review allows you to inspect which versions of which dependency are available under which license. Links to details on the respective open-source licenses help you find legal information regarding the licenses.
 
-![License Review](/Resources/public/img/docs/features/License-Review-20170110.png#no-spacing)
-Dependency License Review for the phpBB organization on Private Packagist
+![License Review](/Resources/public/img/docs/features/License-Review-20200723.png#no-spacing)
+Dependency License Review for the "ACME Company" organization on Private Packagist
 
 ## Open-Source Licenses
 Open-source licenses come in a **lot of flavours** like weak and strong **copyleft** or **permissive** software licenses. In addition to the **great benefit** of being able to reuse code, open-source licenses present **some challenges for businesses**. With a complex project making use of open-source frameworks and libraries you will have to determine which open-source licenses allow you to incorporate which work into your own. This depends on the type of product you are building, whether you are providing a service or shipping code to customers, and the license you pick yourself.
