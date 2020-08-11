@@ -1,9 +1,9 @@
 # Security Monitoring
 
-Private Packagist Security Monitoring searches the dependencies of your private packages for known security vulnerabilities.
-Packages are analyzed every time we find a new commit in your package and when a new vulnerability is published in one of the databases.
+Private Packagist Security Monitoring searches the dependencies of your projects for known security vulnerabilities.
+Projects, which are Composer packages with a composer.lock file, are analyzed every time you push a new commit to your project and when a new vulnerability is published in one of the databases.
 
-The following databases are used to analyze your packages:
+The following databases are used to analyze your projects:
 * [FriendsOfPHP/security-advisories](https://github.com/FriendsOfPHP/security-advisories)
 
 <div class="row column">
@@ -14,16 +14,16 @@ The following databases are used to analyze your packages:
 
 
 ### Configuring Monitoring Settings
-The default branch of every private package is automatically monitored if a composer.lock file is present.
+The default branch of every project is automatically monitored if a composer.lock file is present.
 Additional branches to be monitored can be selected on the package page.
 
-Security monitoring can be disabled for individual packages on the package security page or for all packages
+Security monitoring can be disabled for individual project packages on the package security page or for all projects
 on the organization’s security settings page.
 Organizations using the agency add-on have the option to disable security monitoring for individual subrepositories.
 
 ### Configuring Notifications
-Every user receives security notifications by email for all packages they have access to by default.
-Users can unsubscribe either from individual packages or from all security notifications if they do not wish to receive any email notifications.
+Every user receives security notifications by email for all projects they have access to by default.
+Users can unsubscribe either from individual projects or from all security notifications if they do not wish to receive any email notifications.
 
 Notification channels allow you to receive security notifications via other means than email to user accounts. The following types of notification channels are available:
 - **Email**: Sends notifications to a list of email addresses
