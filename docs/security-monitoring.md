@@ -8,7 +8,7 @@ The following databases are used to analyze your projects:
 
 <div class="row column">
     <div class="callout warning">
-        <p>Security monitoring is available for projects in your organization. To monitor your projects, you must add them to Private Packagist as packages, even if you do not intend to install them as a dependency.</p>
+        <p>Security monitoring is available for packages in your organization. To monitor your projects, you must add them to Private Packagist as packages, even if you do not intend to install them as a dependency.</p>
     </div>
 </div>
 
@@ -17,7 +17,7 @@ The following databases are used to analyze your projects:
 The default branch of every project is automatically monitored if a composer.lock file is present.
 Additional branches to be monitored can be selected on the package page.
 
-Security monitoring can be disabled for individual projects on the package security page or for all projects
+Security monitoring can be disabled for individual project packages on the package security page or for all projects
 on the organization’s security settings page.
 Organizations using the agency add-on have the option to disable security monitoring for individual subrepositories.
 
