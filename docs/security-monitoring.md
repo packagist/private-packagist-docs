@@ -1,7 +1,7 @@
 # Security Monitoring
 
-Private Packagist Security Monitoring searches the dependencies of your projects (private packages with a composer.lock) for known security vulnerabilities.
-Projects are analyzed every time we find a new commit in your project and when a new vulnerability is published in one of the databases.
+Private Packagist Security Monitoring searches the dependencies of your projects for known security vulnerabilities.
+Projects, which are Composer packages with a composer.lock file, are analyzed every time you push a new commit to your project and when a new vulnerability is published in one of the databases.
 
 The following databases are used to analyze your projects:
 * [FriendsOfPHP/security-advisories](https://github.com/FriendsOfPHP/security-advisories)
