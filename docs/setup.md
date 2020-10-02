@@ -13,10 +13,10 @@ You can initialize a new Composer project using your Private Packagist repositor
 2. Assuming the organization URL name is `acme-company` run the command `composer init --repository="https://repo.packagist.com/acme-company/" --repository='{"packagist.org": false}'`
 
 ### composer create-project
-If you would like to use the `create-project` command to initialize a project using a template package in your Private Packagist repository then these steps are required:
+If you would like to use the `create-project` command to initialize a project using a template package named `acme/website` in your Private Packagist repository then these steps are required:
 
 1. Configure authentication on your machine. The command to set an authentication token is listed on the organization overview.
-2. Run `composer create-project --repository-url=https://repo.packagist.com/acme-company/`. This will create a new composer project for you.
+2. Run `composer create-project acme/website:1.0.0 --repository=https://repo.packagist.com/acme-company/`. This will create a new composer project for you.
 3. Once the command is finished you will still have to add your custom repository definition to the created composer.json file:
 
 ```
