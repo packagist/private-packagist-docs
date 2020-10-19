@@ -31,6 +31,12 @@ Notification channels allow you to receive security notifications via other mean
 - **Microsoft Teams Webhook**: Sends notifications to your configured Microsoft Teams channel
 - **Webhook**: Sends an HTTP POST request to a defined URL optionally signed with a user supplied secret. You can validate the secret using [our api client](https://github.com/packagist/private-packagist-api-client#validate-incoming-webhook-payloads) or by running `hash_equals('sha1='.hash_hmac('sha1', (string) $request->getBody(), $SECRET_USER_CHOSEN), $response->getHeader('Packagist-Signature'));`
 
+<a class="js-reveal" data-target="#webhook-sample" href="#webhook-sample">View webhook example payload</a>
+<div id="webhook-sample" class="hide">
+<h5>Security issue webhook example payload</h5>
+WEBHOOK_EXAMPLE[package:security-issue]
+</div>
+
 Notification channels can be added on your organization’s settings page under *Notification Channels -> Add Notification Channel*.
 
 Once you create a notification channel, you can assign it to the packages to be monitored on the organization's security settings.
