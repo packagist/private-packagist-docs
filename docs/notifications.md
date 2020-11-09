@@ -18,7 +18,7 @@ In addition to immediate security alerts your notification channels can also rec
 
 ### Configuring Notifications
 Every user receives security notifications by email for all projects they have access to by default.
-Users can unsubscribe either from individual projects or from all security notifications if they do not wish to receive any email notifications.
+Users can unsubscribe either from individual projects or from all security notifications if they do not wish to receive email notifications.
 
 Notification channels allow you to receive security notifications via other means than email to user accounts. The following types of notification channels are available:
 - **Email**: Sends notifications to a list of email addresses
