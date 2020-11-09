@@ -10,11 +10,11 @@ Additionally, you can filter for releases by minimum stability: "dev / any" will
 
 #### Security Alerts
 
-As part of our [security monitoring](./security-monitoring.md) feature, you can configure notification channels to receive a notification every time one or more security issues are found for one of your projects.
+[Security Monitoring](./security-monitoring.md) allows you to select notification channels to receive a notification every time security issues are found in dependencies of one of your projects.
 
 #### Security Summaries
 
-In addition to security alerts your notification channels can also receive either weekly or monthly summaries including information about all open security issues in your organization.
+In addition to immediate security alerts your notification channels can also receive either weekly or monthly summaries listing all open security issues in dependencies of your organization's projects.
 
 ### Configuring Notifications
 Every user receives security notifications by email for all projects they have access to by default.
@@ -66,7 +66,7 @@ HTTP POST payloads that are delivered to your webhook's configured URL endpoint 
 
 #### Webhook Request Validation
 
-We do recommend that you set up a webhook secret and validate the payload either using [our api client](https://github.com/packagist/private-packagist-api-client#validate-incoming-webhook-payloads) or by running `hash_equals('sha1='.hash_hmac('sha1', (string) $request->getBody(), $SECRET_USER_CHOSEN), $response->getHeader('Packagist-Signature'));`
+We recommend that you set up a webhook secret and validate the payload either using [our api client](https://github.com/packagist/private-packagist-api-client#validate-incoming-webhook-payloads) or by running `hash_equals('sha1='.hash_hmac('sha1', (string) $request->getBody(), $SECRET_USER_CHOSEN), $response->getHeader('Packagist-Signature'));`
 
 #### Webhook Example Payloads
 
