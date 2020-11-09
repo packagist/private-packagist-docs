@@ -4,9 +4,9 @@
 
 #### Package Releases
 
-Private Packagist will notify you every time we find one or more new releases for one of your packages.
-Notification channels allow you to specify about which private packages you want to get notified and whether you also want to receive notifications for mirrored packages as well.
-Additionally, you can filter for releases by minimum stability: "dev / any" will match any release including commits to a branch whereas "stable" will only match releases considered stable releases by Composer.
+Private Packagist will notify you every time we find one or more new versions for one of your packages. All tags, branches and commits with a composer.json file in the root directory are either new or modified versions.
+You can specify about which private packages you want to get notified and whether you also want to receive notifications for mirrored packages as well.
+You can filter for releases by minimum stability: "dev / any" will match any release including commits to a branch whereas "stable" will only match releases considered [stable releases by Composer](https://getcomposer.org/doc/articles/versions.md#stability-constraints).
 
 #### Security Alerts
 
@@ -20,7 +20,7 @@ In addition to immediate security alerts your notification channels can also rec
 Every user receives security notifications by email for all projects they have access to by default.
 Users can unsubscribe either from individual projects or from all security notifications if they do not wish to receive email notifications.
 
-Notification channels allow you to receive security notifications via other means than email to user accounts. The following types of notification channels are available:
+Notification channels allow you to receive notifications via other means than email to user accounts. The following types of notification channels are available:
 - **Email**: Sends notifications to a list of email addresses
 - **Slack Webhook**: Sends notifications to your configured Slack channel
 - **Microsoft Teams Webhook**: Sends notifications to your configured Microsoft Teams channel
