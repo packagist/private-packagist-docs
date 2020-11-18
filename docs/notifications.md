@@ -4,7 +4,7 @@
 
 #### Package Releases
 
-Private Packagist will notify you every time we find one or more new versions for one of your packages. All tags, branches and commits with a composer.json file in the root directory are either new or modified versions.
+Private Packagist will notify you every time a new or modified version is discovered in one of the selected packages, e.g. anytime a tag, branch or commit is created or modified in a VCS repository.
 You can specify about which private packages you want to get notified and whether you also want to receive notifications for mirrored packages as well.
 You can filter for releases by minimum stability: "dev / any" will match any release including commits to a branch whereas "stable" will only match releases considered [stable releases by Composer](https://getcomposer.org/doc/articles/versions.md#stability-constraints).
 
