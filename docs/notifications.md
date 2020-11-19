@@ -31,7 +31,7 @@ Notification channels can be added on your organization’s settings page under 
 ### Receiving Webhook Notifications
 
 Webhook notifications are sent as HTTP POST requests to the endpoint configured with the notification event data send as payload.
-Client, server, and network errors will automatically be retried up to five times.
+HTTP, server, and network errors will automatically be retried up to five times.
 
 #### Delivery Headers
 
