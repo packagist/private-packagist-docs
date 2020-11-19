@@ -25,7 +25,7 @@ Organizations using the agency add-on have the option to disable security monito
 Every user receives security notifications by email for all projects they have access to by default.
 Users can unsubscribe either from individual projects or from all security notifications if they do not wish to receive any email notifications.
 
-[Notification channels](./notifications.md) allow you to receive security notifications via other means than email to user accounts. They can be added on your organization’s settings page under *Notification Channels -> Add Notification Channel*.
+[Notification channels](./notifications.md) allow you to receive security notifications via email to other addresses, on Slack, on Microsoft Teams or through a webhook to an endpoint of your choice. They can be configured on your organization’s settings page under *Notification Channels -> Add Notification Channel*.
 
 Once you create a notification channel, you can assign it to the packages to be monitored on the organization's security settings.
 

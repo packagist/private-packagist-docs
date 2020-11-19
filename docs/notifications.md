@@ -5,16 +5,16 @@
 #### Package Releases
 
 Private Packagist will notify you every time a new or modified version is discovered in one of the selected packages, e.g. anytime a tag, branch or commit is created or modified in a VCS repository.
-You can specify about which private packages you want to get notified and whether you also want to receive notifications for mirrored packages as well.
-You can filter for releases by minimum stability: "dev / any" will match any release including commits to a branch whereas "stable" will only match releases considered [stable releases by Composer](https://getcomposer.org/doc/articles/versions.md#stability-constraints).
+You can specify which private packages you want to get notifications for and whether you want to receive notifications for mirrored packages.
+You can filter releases by stability: "dev / any" will match any release including commits to a branch, whereas "stable" will only match releases considered [stable releases by Composer](https://getcomposer.org/doc/articles/versions.md#stability-constraints).
 
 #### Security Alerts
 
-[Security Monitoring](./security-monitoring.md) allows you to select notification channels to receive a notification every time security issues are found in dependencies of one of your projects.
+[Security Monitoring](./security-monitoring.md) allows you to receive notifications when security issues are found in dependencies of selected projects.
 
 #### Security Summaries
 
-In addition to immediate security alerts your notification channels can also receive either weekly or monthly summaries listing all open security issues in dependencies of your organization's projects.
+In addition to immediate security alerts you can also receive either weekly or monthly summaries listing all open security issues in dependencies of your organization's monitored projects.
 
 ### Configuring Notifications
 Every user receives security notifications by email for all projects they have access to by default.
