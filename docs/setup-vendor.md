@@ -6,7 +6,7 @@ Customers can start using your packages in either an existing or a new Composer 
 
 ## Adding a Package to an existing Composer project
 
-To install a package named "acme-company/api" into your existing project, The following steps are required:
+To install a package named "acme-company/api" into an existing project, The following steps are required:
 
 1. Configure authentication. The command to set an authentication token is listed on the customer Composer information page.
 2. Add the customer repository in the project's composer.json. The customer repository URL is listed on the customer Composer information page. The project's composer.json should now have a new entry:
