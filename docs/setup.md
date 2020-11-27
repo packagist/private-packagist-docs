@@ -18,7 +18,7 @@ If you would like to use the `create-project` command to initialize a project us
 1. Configure authentication on your machine. The command to set an authentication token is listed on the organization overview.
 2. Run `composer create-project acme/website --add-repository --repository="https://repo.packagist.com/acme-company/" --repository='{"packagist.org": false}'`. This will create a new composer project for you.
 
-Once the command is finished, the created composer.json file will contain the added repositories:
+Once the command is finished, the created composer.json file will contain your organization's repository URL and have packagist.org disabled so mirroring is fully used.
 
 ```
 "repositories": [
