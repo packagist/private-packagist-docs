@@ -98,7 +98,7 @@ Three steps are required to use Private Packagist on an existing project. They a
 2. You need to tell Composer where to look for your packages. So you have to add Private Packagist as a repository to your composer.json file and you need to disable packagist.org because public packages will be mirrored through Private Packagist, too.
     ```
     "repositories": [
-        {"type": "composer", "url": "https://repo.packagist.com/acme-company/},
+        {"type": "composer", "url": "https://repo.packagist.com/acme-company/"},
         {"packagist.org": false}
     ]
     ```
