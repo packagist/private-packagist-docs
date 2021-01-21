@@ -23,12 +23,12 @@ Add the Private Packagist repository to your composer.json and require the packa
 <pre>
 <code>
 {
-    "repositories": [
-        <span class="strikethrough">{"type": "vcs", "url": "https://github.com/<i>your-org-name</i>/foo"},</span>
-        <span class="strikethrough">{"type": "git", "url": "https://github.com/<i>your-org-name</i>/bar.git"},</span>
-        {"type": "composer", "url": "https://repo.packagist.com/<i>your-org-name</i>/"},
+    "repositories": {
+        <span class="strikethrough">"foo": {"type": "vcs", "url": "https://github.com/<i>your-org-name</i>/foo"},</span>
+        <span class="strikethrough">"bar": {"type": "git", "url": "https://github.com/<i>your-org-name</i>/bar.git"},</span>
+        "your-org-name": {"type": "composer", "url": "https://repo.packagist.com/<i>your-org-name</i>/"},
         "packagist": false
-    ],
+    },
     "require": {
         "org/foo": "^1.2.3",
         "org/bar": "dev-master"
