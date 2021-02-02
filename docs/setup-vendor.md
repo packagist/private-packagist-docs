@@ -68,7 +68,7 @@ By Setting a minimum accessible stability you can prevent customers from having 
 production use. Composer recognizes the following [stabilities](https://getcomposer.org/doc/articles/versions.md#stabilities)
 (in order of stability): dev, alpha, beta, RC, and stable. If you have a VCS repository with the following versions:
 `dev-main`, `dev-feature-1`, `1.0-a1`, `1.0-b1`, `1.0-rc1` and `1.0` then setting the minimum stability to `RC` will only
-allow versions `1.0-rc1` and `1.0`.
+allow the customer to install versions `1.0-rc1` and `1.0`.
 
 Instead of setting this for every individual package you can also set this once for the customer which then gets applied
 to all packages the customer has access to unless otherwise specified. 
