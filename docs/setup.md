@@ -27,6 +27,8 @@ Once the command is finished, the created composer.json file will contain your o
 ]
 ```
 
+Note: Running `composer create-project` with multiple `--repository` arguments is only supported with Composer 2.
+
 ## Adding Private Packagist to an existing project with a composer.json
 
 ### Sample composer.json before moving to Private Packagist
