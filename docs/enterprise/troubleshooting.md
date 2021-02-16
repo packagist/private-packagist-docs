@@ -14,7 +14,11 @@ the logs in this file yourself as well.
 You can generate a support bundle from the Replicated Management Console on
 port 8800 by navigating to the Support tab and clicking on the "Download
 Support Bundle" button. Alternatively you can use replicated's command line
-interface to generate the support bundle on your host system: `replicatedctl support-bundle` and if that doesn't work, you can run the following command:
+interface to generate the support bundle on your host system: 
+
+`replicatedctl support-bundle`
+
+In case generating the support bundle via replicated's command line fails then you can run the following command:
 ```
 docker run -it --rm \
 --name support-bundle \
@@ -26,6 +30,7 @@ replicated/support-bundle \
 generate \
 --channel-id 6e3299f45997e91132719014584b06e4
 ```
+That command will generate a minimal support bundle that you can send us.
 
 #### Manually inspecting logs
 If you are unable to generate a support bundle through either of these mechanisms
