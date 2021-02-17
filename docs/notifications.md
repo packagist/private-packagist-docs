@@ -8,6 +8,15 @@ Private Packagist will notify you every time a new or modified version is discov
 You can specify which private packages you want to get notifications for and whether you want to receive notifications for mirrored packages.
 You can filter releases by stability: "dev / any" will match any release including commits to a branch, whereas "stable" will only match releases considered [stable releases by Composer](https://getcomposer.org/doc/articles/versions.md#stability-constraints).
 
+#### Abandoned Packages
+
+Private Packagist will notify you as soon as a package in your Private Packagist organization gets marked as abandoned.
+You can specify which private packages you want to get notifications for and whether you want to receive notifications for mirrored packages.
+
+Private packages will get marked as abandoned as soon as the [abandoned property](https://getcomposer.org/doc/04-schema.md#abandoned) is set in the composer.json or for GitHub repositories as soon the repository has been archived.
+Third party mirrored repositories can also set the abandoned property in the composer.json and Private Packagist will automatically mark packages as abandoned if they get removed from the mirrored third party repository.
+
+
 #### Security Alerts
 
 [Security Monitoring](./security-monitoring.md) allows you to receive notifications when security issues are found in dependencies of selected projects.
@@ -82,6 +91,12 @@ WEBHOOK_EXAMPLE[test]
 Triggered every time Private Packagist finds one or more releases of a single package matching the criteria of the notification channel.
 
 WEBHOOK_EXAMPLE[package:release]
+
+##### Abandoned Package Notification
+
+Triggered every time a package gets marked as abandoned.
+
+WEBHOOK_EXAMPLE[package:abandoned]
 
 ##### Security Issue Notification
 
