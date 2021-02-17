@@ -30,7 +30,7 @@ replicated/support-bundle \
 generate \
 --channel-id 6e3299f45997e91132719014584b06e4
 ```
-That command will generate a minimal support bundle, and it will ask you interactively to upload it. The minimal support bundle contains less information about the application than the support bundle generated via replicated's command line. After you generate the minimal support bundle, please contact us.
+This command will generate a support bundle with less information than the command above, but it may still be helpful if the replicated command does not work at all. It will ask you interactively to upload the file, but please contact us regardless of whether you upload the bundle through or want to send it to us separately, as we are not notified automatically.
 
 #### Manually inspecting logs
 If you are unable to generate a support bundle through either of these mechanisms
