@@ -9,7 +9,8 @@ You can find below answers for frequently-asked questions concerning synchroniza
 
 1. Add the new synchronization from Bitbucket.
 2. Delete the packages that were created from the GitHub synchronization. You can filter by the GitHub synchronization on the package list page and then you can delete the packages from that list.
-3. Make sure the new synchronization from Bitbucket successfully run. In case the old synchronization was marked as primary, you need to promote the new synchronization as primary otherwise you won't be able to delete it. Then you can safely delete the old synchronization from GitHub.
+3. Make sure the new synchronization from Bitbucket successfully run. In case the old synchronization was marked as primary, you need to promote the new synchronization as primary otherwise you won't be able to delete it. After switching the primary synchronization, a new owner team will be fetched from Bitbucket. To make sure you keep your access, you'll have to go to your profile page and connect your Private Packagist account with Bitbucket.
+4. Safely delete the old synchronization from GitHub.
 
 You can follow the same steps above in case you want to migrate from Bitbucket to GitLab or the other way around.
 
@@ -23,10 +24,10 @@ You can follow the same steps above in case you want to migrate from Bitbucket t
 
 1. Transfer your repositories in Bitbucket from the old workspace to the new one.
 2. Create a new synchronization with the new bitbucket workspace.
-3. After verifying that the new synchronization has the correct data, you can remove the old workspace synchronization.
+3. In case the old synchronization was marked as primary, you need to promote the new synchronization as primary otherwise you won't be able to delete it. After verifying that the new synchronization is in sync with Private Packagist, you can remove the old Bitbucket workspace synchronization.
 
 ## How to migrate from one group to another one in Gitlab?
 1. Create a new synchronization with the new Gitlab workspace.
 2. Transfer your repositories in Gitlab from the old group to the new one.
 3. Run the new GitLab group synchronization.
-4. After verifying that the new synchronization has the correct data, you can remove the old workspace synchronization.
+4. In case the old synchronization was marked as primary, you need to promote the new synchronization as primary otherwise you won't be able to delete it. After verifying that the new synchronization is in sync with Private Packagist, you can remove the old Gitlab group synchronization.
