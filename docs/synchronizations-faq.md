@@ -11,8 +11,8 @@ Private Packagist organizations that are synchronized with a remote organization
 
 If an organization is synchronized with multiple remote organizations then only admins and owners of the primary synchronization are added to the respective teams.
 
-When promoting a synchronization to a primary synchronization from a different integration (e.g. from GitHub to Bitbucket), new admins and owners will be added from the primary synchronization to Private Packagist.
-Users who are not in the new team will lose access to the organization. You can resotre their access by connecting the account to the new service from the profile page.
+When promoting a synchronization to a primary synchronization, new admins and owners will be added from the primary synchronization to Private Packagist.
+Users who are not in the new team will lose access to the organization. To restore their access, the user have to connect their account to the new service from the profile page.
 
 ## How to migrate a synchronization from GitHub to Bitbucket?
 
