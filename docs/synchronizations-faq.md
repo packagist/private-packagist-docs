@@ -7,12 +7,12 @@ You can find below answers for frequently-asked questions concerning synchroniza
 
 ## What happens if you promote a synchronization to a primary synchronization?
 
-Only with a primary synchronization that admins and owners teams will be added to Private Packagist.
+Private Packagist organizations that are synchronized with a remote organization have automatically all admins and owners of the synchronization assigned to the admins and owners team in Private Packagist.
 
-The following are some things to consider when promoting a synchronization to a primary synchronization:
-- Owners and Admins teams in Private Packagist will be the same ones from the primary synchronization.
-- In case you change the integration (e.g. From GitHub to Bitbucket), you'll have to go to your profile page and connect your Private Packagist account with the new integration. Otherwise, you'll lose access to your account.
-- You will not be able to delete the primary synchronization.
+If an organization is synchronized with multiple remote organizations then only admins and owners of the primary synchronization are added to the respective teams.
+
+When promoting a synchronization to a primary synchronization from a different integration (e.g. from GitHub to Bitbucket), new admins and owners will be added from the primary synchronization to Private Packagist.
+Users who are not in the new team will lose access to the organization. You can resotre their access by connecting the account to the new service from the profile page.
 
 ## How to migrate a synchronization from GitHub to Bitbucket?
 
