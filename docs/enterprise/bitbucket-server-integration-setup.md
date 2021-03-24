@@ -35,3 +35,10 @@ This is where we will need the "Client ID" and the "Public Key" that were previo
 Update the Integration on Private Packagist to save everything and finish the setup.
 
 ![Packagist Finalize](/Resources/public/img/docs/integration-setup/bitbucket-server-08-packagist-finalize.png)
+
+## Configure Bitbucket Server plugins
+
+In case the U2F & TOTP plugin by Alpha Server is installed on the Bitbucket Server then you will need to enable the OAuth whitelist
+otherwise Private Packagist will not be able to authenticate with the Bitbucket Server.
+
+![Bitbucket Server TFA Configuration](/Resources/public/img/docs/integration-setup/bitbucket-server-09-tfa.png)
