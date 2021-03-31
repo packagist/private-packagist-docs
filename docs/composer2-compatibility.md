@@ -6,7 +6,7 @@ Private Packagist is fully compatible with both Composer versions 1 and 2, you d
 In order to upgrade to a current preview release of Composer 2.0 you need to run the following command:
 
 ```
-composer.phar self-update --preview
+composer.phar self-update --2
 ```
 
 If you want to switch back to version 1 you can either use `composer self-update --rollback` right afterwards or `composer self-update --1` at any any later point.
