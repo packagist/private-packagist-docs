@@ -9,12 +9,12 @@ Customers can use your packages in either an existing or a new Composer project.
 You can manage your customers and grant them access to packages on the vendor page in Private Packagist.
 To create your first customer click on "Create Customer" and fill out the form on the next page.
 
-The customer's short name will be used in the Composer repository URL and the web UI URL where your customer sees packages
+* Customer short name: the name will be used in the Composer repository URL and the web UI URL where your customer sees packages
 they have access to and can download archives. Please be aware that changing the short name will change the web UI URL and
-the Composer repository URL and will therefore break existing Composer projects refering to the current URL. The minimum accesible stability
-setting allows you to limit which versions of a package a customer has access to. More about that in the
-["Limit package access by minimum stability"](#limit-package-access-by-minimum-stability) section. You can also
-enable package source URLs for a customer. By default, Private Packagist removes source URLs for all packages
+the Composer repository URL and will therefore break existing Composer projects referring to the current URL.
+* Minimum accesible stability: the setting allows you to limit which versions of a package a customer has access to. More about that in the
+["Limit package access by minimum stability"](#limit-package-access-by-minimum-stability) section. 
+* Deliver source code URLs to customer through Composer: by default, Private Packagist removes source URLs for all packages
 assigned to a customer, e.g. for a git repository the URL to clone the repository, and customers are only able to install
 packages as archives. If your customer has access to your repositories and you want them to be able to install
 packages from source e.g. via git clone then you can enable the source code URL delivery to customers through Composer.
@@ -28,7 +28,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $client = new \PrivatePackagist\ApiClient\Client();
 $client->authenticate('api-token', 'api-secret');
-$customer = $client->customers()->create('Customer', false, 'customer', 'beta');
+$customer = $client->customers()->create(
+    'Customer', // the customer name
+    false, // does the customer have access to the version control source
+    'customer', // the customer short name
+    'beta' // the minimum accesible stability
+);
 ```
 
 ## Giving a customer access to a package 
