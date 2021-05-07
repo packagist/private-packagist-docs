@@ -9,15 +9,15 @@ Customers can use your packages in either an existing or a new Composer project.
 You can manage your customers and grant them access to packages on the vendor page in Private Packagist.
 To create your first customer click on "Create Customer" and fill out the form on the next page.
 
-* Customer short name: the name will be used in the Composer repository URL and the web UI URL where your customer sees packages
+* Customer short name: The short name will be used in the Composer repository URL and the web UI URL where your customer sees packages
 they have access to and can download archives. Please be aware that changing the short name will change the web UI URL and
 the Composer repository URL and will therefore break existing Composer projects referring to the current URL.
-* Minimum accesible stability: the setting allows you to limit which versions of a package a customer has access to. More about that in the
+* Minimum accesible stability: This setting allows you to limit which versions of a package a customer has access to. More about that in the
 ["Limit package access by minimum stability"](#limit-package-access-by-minimum-stability) section. 
-* Deliver source code URLs to customer through Composer: by default, Private Packagist removes source URLs for all packages
+* Deliver source code URLs to customers through Composer: By default, Private Packagist removes source URLs for all packages
 assigned to a customer, e.g. for a git repository the URL to clone the repository, and customers are only able to install
 packages as archives. If your customer has access to your repositories and you want them to be able to install
-packages from source e.g. via git clone then you can enable the source code URL delivery to customers through Composer.
+packages from source, e.g. via git clone, then you can enable the source code URL delivery to customers through Composer.
 
 You can also create customers using our API through the [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
 
