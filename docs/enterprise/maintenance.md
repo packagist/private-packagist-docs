@@ -40,6 +40,6 @@ Run the command `packagist package-update-all [--overwrite-data=true|false] [-on
 
 ### Migrate Private Packagist to another server
 
-Create a snapshot either via the Replicated admin console or using the CLI tool via `replicatedctl snapshot start` and either transfer the snapshot to the new machine or make sure it is accessible from the new machine.
+Create a snapshot either via the Replicated admin console or on the CLI with `replicatedctl snapshot start` and either transfer the snapshot to the new machine or make sure it is accessible from the new machine. We recommend to use SFTP on a remote machine or S3 to store snapshots, which can then also be accessed from a new server.
 On the new machine follow the [Installation Guide](./installation.md) up to the point where you are asked to upload your license.
 Select "Restore from a snapshot" instead of "Choose license", enter the full path to your snapshot folder, and select the snapshot you want to restore from.
