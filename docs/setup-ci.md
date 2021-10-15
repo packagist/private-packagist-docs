@@ -1,11 +1,13 @@
 # Using Private Packagist in different CI/CD environments
 
-To use Private Packagist in your CI/CD environment, first you'll need to create a read-only authentication token in Private Packagist under *Settings -> Authentication Tokens*. Once the token is created, you'll need to add  add the `COMPOSER_AUTH` as an environment variable in your CI/CD.
+To use Private Packagist in your CI/CD environment, first you'll need to create a read-only authentication token in Private Packagist under *Settings -> Authentication Tokens*. Once the token is created, you'll need to add the `COMPOSER_AUTH` as an environment variable in your CI/CD.
 ```
 COMPOSER_AUTH='{"http-basic": {"repo.packagist.com": {"username": "token", "password": "TOKEN_HERE"}}}'
 ```
 
-Listed below some examples for adding this into different CI/CD environments.
+Note that read-only tokens are recommended to use with your CI/CD where you'll be running composer install commands with an existing composer.lock file.
+
+Listed below are some examples for using Private Packagist with different CI/CD environments.
 
 ## GitHub Actions
 
