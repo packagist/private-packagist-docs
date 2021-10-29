@@ -1,4 +1,4 @@
-# On-Premises Installation Guide
+# Self-Hosted Installation Guide
 ## Private Packagist Self-Hosted
 
 ## Requirements
