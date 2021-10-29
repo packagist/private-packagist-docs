@@ -1,10 +1,10 @@
 # Maintenance
-## Private Packagist Enterprise
+## Private Packagist Self-Hosted
 
 ### Updates
 By default Replicated checks for updates every 5 hours and you can install them from the dashboard once they are available. You can configure this behaviour under “Console Settings” when clicking on the gear icon in the management console.
 
-The [Private Packagist Enterprise Changelog](https://packagist.com/docs/enterprise/changelog) details all new features, behavior changes and major bugfixes each release introduces.
+The [Private Packagist Self-Hosted Changelog](https://packagist.com/docs/self-hosted/changelog) details all new features, behavior changes and major bugfixes each release introduces.
 
 If your firewall restricts external connections the following domains must be accessible from the server:
 
@@ -30,9 +30,9 @@ replicated console cert set hostname.goes.here /path/to/key /path/to/cert
 replicatedctl app apply-config
 ```
 
-### Private Packagist Enterprise CLI
+### Private Packagist Self-Hosted CLI
 
-Private Packagist Enterprise installs a command line tool `packagist` on the host system which provides access to some administrative features via command line.
+Private Packagist Self-Hosted installs a command line tool `packagist` on the host system which provides access to some administrative features via command line.
 
 #### Updating all packages
 

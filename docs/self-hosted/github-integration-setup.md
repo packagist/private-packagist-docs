@@ -1,5 +1,5 @@
 # GitHub (Enterprise) Integration Setup
-## Private Packagist Enterprise
+## Private Packagist Self-Hosted
 
 ## Initial Setup
 Hit the “Add integration“ button on the admin page to get to the form below. To setup a GitHub integration with Private Packagist start by selecting "GitHub" as the platform and enter the URL of your GitHub Enterprise Server or <i>https://github.com</i> to use the public GitHub server as seen in the example below. A link to setup the OAuth application on GitHub will automatically be displayed.

@@ -27,7 +27,7 @@ Private Packagist integrates with the following systems:
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
 #### GitHub Enterprise
-* OAuth: Users authenticate on Private Packagist with their GitHub accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/github-integration-setup.md) for enterprise.
+* OAuth: Users authenticate on Private Packagist with their GitHub accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/self-hosted/github-integration-setup.md) for self-hosted.
 * Synchronization:
     * Keeps team members and access permissions in sync with your GitHub Enterprise organizations
 * Code Credentials: GitHub API Token
@@ -41,7 +41,7 @@ Private Packagist integrates with the following systems:
 * Webhooks: Code changes and releases
 
 #### Bitbucket Server / Stash
-* OAuth: Users authenticate on Private Packagist with their Bitbucket Server accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/bitbucket-server-integration-setup.md) for enterprise.
+* OAuth: Users authenticate on Private Packagist with their Bitbucket Server accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/self-hosted/bitbucket-server-integration-setup.md) for self-hosted.
 * Synchronization:
     * Keeps users and access permissions in sync with your Bitbucket Server projects
     * Individual collaborators aren't supported
@@ -57,7 +57,7 @@ Private Packagist integrates with the following systems:
 * Webhooks: Code changes and releases
 
 #### GitLab (Self-hosted)
-* OAuth: Users authenticate on Private Packagist with their GitLab accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/enterprise/gitlab-integration-setup.md) for Enterprise.
+* OAuth: Users authenticate on Private Packagist with their GitLab accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/self-hosted/gitlab-integration-setup.md) for Self.
 * Synchronization:
     * Keeps teams, their members, and access permissions in sync with your GitLab groups
     * Individual collaborators aren't yet supported

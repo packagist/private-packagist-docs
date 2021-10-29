@@ -10,7 +10,7 @@ Private Packagist requires access to your source code for several reasons:
 
 If the source code for your private packages is stored in your company's private network behind a firewall and you would like to use Private Packagist you have two options:
 
-1. Use our on-premises product [Private Packagist Enterprise](https://packagist.com/enterprise) which you can host inside your company's private network with full access to your source code.
+1. Use our on-premises product [Private Packagist Self-Hosted](https://packagist.com/self-hosted) which you can host inside your company's private network with full access to your source code.
 1. Use our SaaS solution Private Packagist Cloud and ensure your version control system can be reached by our servers as explained below.
 
 ## Granting Private Packagist Cloud Network Access

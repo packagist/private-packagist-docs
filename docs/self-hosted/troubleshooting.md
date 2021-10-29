@@ -1,12 +1,12 @@
 # Troubleshooting
-## Private Packagist Enterprise
+## Private Packagist Self-Hosted
 
 ### System logs and information
 
 If you contact us to request support please send along a support bundle file.
 This file can be generated with Replicated and contains all relevant system
 and container logs which we may require to analyze problems with your Private
-Packagist Enterprise installation. You are welcome to download and inspect
+Packagist Self-Hosted installation. You are welcome to download and inspect
 the logs in this file yourself as well.
 
 #### Generating a support bundle
@@ -44,7 +44,7 @@ replicated-operator, repo, worker and ui.
 
 #### Waiting for app to report ready ...
 
-Once you start Private Packagist Enterprise from the Replicated Management
+Once you start Private Packagist Self-Hosted from the Replicated Management
 Console the dashboard will display a spinning icon and let you know that it is
 waiting for the application. Replicated is now waiting for the web health check
 of Private Packagist to return a 200 OK response. If this message does not
