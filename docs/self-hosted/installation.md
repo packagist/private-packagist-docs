@@ -50,7 +50,7 @@ Once validated, you will be asked to set a password for the management console o
 ![Security Console](/Resources/public/img/docs/self-hosted/04-secure-console.png)
 
 ### Server Settings
-In the management console you will have to configure a few options before you can start the Private Packagist Self Hosted application.
+In the management console you will have to configure a few options before you can start the Private Packagist Self-Hosted application.
 
 #### E-mail
 Select options for your SMTP server or use the GMail option for a simplified form if want to send email through GMail. This step is required to allow Private Packagist to send transactional email to users.
@@ -58,11 +58,11 @@ Select options for your SMTP server or use the GMail option for a simplified for
 ![Email Settings](/Resources/public/img/docs/self-hosted/05-email-settings.png)
 
 ## Application Startup
-Save and apply the settings to start Private Packagist Self Hosted. Leave the Setup mode enabled.
+Save and apply the settings to start Private Packagist Self-Hosted. Leave the Setup mode enabled.
 
 ![Start Application](/Resources/public/img/docs/self-hosted/06-save-start.png)
 
-Once the application has started, click on the open link to access the Private Packagist Self Hosted Web Interface.
+Once the application has started, click on the open link to access the Private Packagist Self-Hosted Web Interface.
 
 ![Open Application](/Resources/public/img/docs/self-hosted/07-started-open.png)
 
@@ -79,7 +79,7 @@ a NO_PROXY list in the Private Packagist application in the Admin Panel under Gl
 ![No HTTP Proxy](/Resources/public/img/docs/self-hosted/07-02-http-proxy-no-proxy.png)
 
 ## Authentication Setup
-Within Private Packagist Self Hosted you now need to set up at least one user authentication method. You have the choice between authentication with email addresses and passwords and several OAuth integrations with third party services.
+Within Private Packagist Self-Hosted you now need to set up at least one user authentication method. You have the choice between authentication with email addresses and passwords and several OAuth integrations with third party services.
 We provide integrations with on-premises versions of GitHub, Bitbucket, or GitLab, or their public services on github.com, bitbucket.org or gitlab.com. Follow the instructions to create the respective required identifiers, tokens and secrets.
 
 * [GitHub (Enterprise) Integration Setup](./github-integration-setup.md)
