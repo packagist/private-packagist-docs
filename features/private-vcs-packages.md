@@ -10,7 +10,7 @@ Private Packagist can access private code in any Git, Mercurial or Subversion re
 * GitLab.com
 * GitLab (Self-hosted)
 * Bitbucket.org / Cloud
-* Bitbucket Server / Stash
+* Bitbucket Data Center / Server
 
 ## How does the setup in Private Packagist work?
 First configure a set of credentials for the service you are using to store private code. Then add any number of packages by entering the respective repository URLs. Private Packagist will download your code, inspect all composer.json metadata and make the packages with all their versions available for browsing in your account.

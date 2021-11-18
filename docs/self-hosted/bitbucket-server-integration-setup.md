@@ -1,8 +1,8 @@
-# Bitbucket Server (Stash) Integration Setup
+# Bitbucket Data Center / Server Integration Setup
 ## Private Packagist Self-Hosted
 
 ## Initial Setup
-Hit the “Add integration“ button on the admin page to get to the form below. To setup a Bitbucket Server (Stash) integration with Private Packagist start by selecting "Bitbucket Server / Stash" as the platform and enter the URL of your on-premise Bitbucket Server into the base URL field as seen in the example below.
+Hit the “Add integration“ button on the admin page to get to the form below. To setup a Bitbucket Data Center / Server integration with Private Packagist start by selecting "Bitbucket Data Center / Server" as the platform and enter the URL of your on-premise Bitbucket Server into the base URL field as seen in the example below.
 
 ![Packagist Setup](/Resources/public/img/docs/integration-setup/bitbucket-server-01-packagist-setup.png)
 
@@ -11,7 +11,7 @@ Submit the form to see the additional information.
 ![Packagist Form](/Resources/public/img/docs/integration-setup/bitbucket-server-02-packagist-form.png)
 
 ## Configure Application link
-Click on the link to setup an Application Link on Bitbucket Server / Stash. You will need the "Client Id" and the "Public Key" shown in the form.
+Click on the link to setup an Application Link on Bitbucket Data Center / Server. You will need the "Client Id" and the "Public Key" shown in the form.
 
 ![Bitbucket Configure Application Link](/Resources/public/img/docs/integration-setup/bitbucket-server-03-bitbucket-configure-application-link.png)
 
