@@ -25,3 +25,5 @@ If you are on GitHub and use Dependabot, then you also have the option to disabl
 by Dependabot. However, we recommend keeping them on because we noticed that Dependabot will sometimes perform major
 updates to dependencies without mentioning them in the pull request description. You'd only notice them by manually
 reviewing the JSON lock file.
+
+![Pull request comment example on GitHub](/Resources/public/img/docs/features/PullRequestComment-20211125.png)
