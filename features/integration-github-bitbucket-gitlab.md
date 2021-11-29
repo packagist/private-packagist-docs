@@ -40,8 +40,8 @@ Private Packagist integrates with the following systems:
 * Code Credentials: Bitbucket API Key or Bitbucket App Password
 * Webhooks: Code changes and releases
 
-#### Bitbucket Server / Stash
-* OAuth: Users authenticate on Private Packagist with their Bitbucket Server accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/self-hosted/bitbucket-server-integration-setup.md) for Self-Hosted.
+#### Bitbucket Data Center / Server
+* OAuth: Users authenticate on Private Packagist with their Bitbucket Data Center / Server accounts. Please contact us to set this up for the cloud plan or follow [this setup](../docs/self-hosted/bitbucket-server-integration-setup.md) for Self-Hosted.
 * Synchronization:
     * Keeps users and access permissions in sync with your Bitbucket Server projects
     * Individual collaborators aren't supported

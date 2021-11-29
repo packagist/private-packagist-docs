@@ -84,7 +84,7 @@ We provide integrations with on-premises versions of GitHub, Bitbucket, or GitLa
 
 * [GitHub (Enterprise) Integration Setup](./github-integration-setup.md)
 * [Bitbucket.org Integration Setup](./bitbucket-integration-setup.md)
-* [Bitbucket Server (Stash) Integration Setup](./bitbucket-server-integration-setup.md)
+* [Bitbucket Data Center / Server Integration Setup](./bitbucket-server-integration-setup.md)
 * [GitLab Integration Setup](./gitlab-integration-setup.md)
 * [Authentication with Email Addresses and Passwords](./authentication-email-addresses-passwords-setup.md).
 
