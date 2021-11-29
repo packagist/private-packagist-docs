@@ -3,11 +3,11 @@
 Private Packagist pull request comments help you review dependency changes in your VCS repositories. Every time a
 composer.lock file changes in one of your repositories, we comment on the pull request with a human-readable summary,
 links to diffs and changelogs for you to review. Pull request comments are available for synchronizations with
-GitHub (Enterprise), GitLab and Bitbucket.
+GitHub, GitLab, and Bitbucket as well as GitHub Enterprise, and self-managed GitLab.
 
 We detect two kinds of changes:
-* Packages that are added, removed or where the version changed
-* Packages with important metadata changes, like changes to the source or dist URL or if the reference changes for a tag
+* Package changes: Additions, removals, upgrades, and downgrades
+* Important metadata changes: Changes to the source or dist download URLs or if the commit reference changes for an otherwise unmodified version number
 
 If you installed our GitHub App, then the private-packagist bot will comment on your pull requests. In all other cases, 
 the comments will be created by the credential owner. Please note that for synchronizations with Bitbucket, you will 
