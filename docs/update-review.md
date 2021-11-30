@@ -2,7 +2,7 @@
 
 Private Packagist Update Review creates comments on your pull requests to help you review dependency changes in your VCS
 repositories. Every time a composer.lock file changes in one of your repositories, we comment on the pull request with a
-human-readable summary, links to diffs and changelogs for you to review. Update reviews are available for synchronizations
+human-readable summary, links to diffs and changelogs for you to review. Update Review comments are available for synchronizations
 with GitHub, GitLab, and Bitbucket as well as GitHub Enterprise, and self-managed GitLab.
 
 We detect two kinds of changes:
