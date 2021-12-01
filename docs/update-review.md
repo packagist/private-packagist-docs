@@ -9,9 +9,7 @@ We detect two kinds of changes:
 * Package changes: Additions, removals, upgrades, and downgrades
 * Important metadata changes: Changes to the source or dist download URLs or if the commit reference changes for an otherwise unmodified version number
 
-To help you better understand why a package is used in your project, we show in bold package names of direct dependencies,
-dependencies defined in your composer.json file, and in regular font package names of transitive dependencies, dependencies
-of your dependencies.
+For a better overview, packages required directly in your composer.json are highlighted in bold. Other packages in regular font are installed as dependencies of your own composer.json dependencies.
 
 If you installed our GitHub App, then the private-packagist bot will comment on your pull requests. In all other cases, 
 the comments will be created by the credential owner. Please note that for synchronizations with Bitbucket, you will 
