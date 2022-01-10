@@ -106,8 +106,8 @@ WEBHOOK_EXAMPLE[package:security-issue]
 
 ##### Security Single Issue Notification
 
-Triggered every time Private Packagist finds a security issues for a single project. If configured, 
-this will be sent instead of the regular security issues webhook and can be used in case your target cannot parse object collections e.g. Jira.
+Triggered every time Private Packagist finds a security issue for a single project. If configured, 
+this will be sent instead of the regular security issues webhook which aggregates issues found at the same time. This is useful if your target cannot parse object collections, e.g. Jira.
 
 WEBHOOK_EXAMPLE[package:security-issue:single]
 
