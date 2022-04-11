@@ -107,3 +107,11 @@ change then replicated won't be able to check the availability of the other cont
 This can be fixed by rerunning the original replicated install script. This will
 leave your current installation in tact but rewrite the main config files and therefore
 update the host IP and the NO_PROXY environment.
+
+#### Reset replicated console authentication
+
+If you have problems logging into the replicated console then you can reset authentication (LDAP or password) on the host system by running
+
+```
+replicatedctl console-auth reset
+```
