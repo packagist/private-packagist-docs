@@ -108,9 +108,9 @@ This can be fixed by rerunning the original replicated install script. This will
 leave your current installation in tact but rewrite the main config files and therefore
 update the host IP and the NO_PROXY environment.
 
-#### Reset replicated console authentication
+#### Reset Replicated Management Console authentication
 
-If you have problems logging into the replicated console then you can reset authentication (LDAP or password) on the host system by running
+If you cannot log into the Replicated Management Console anymore, then you can reset LDAP and password authentication on the host system by running the following command:
 
 ```
 replicatedctl console-auth reset
