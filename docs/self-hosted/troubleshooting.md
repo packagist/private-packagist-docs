@@ -107,3 +107,11 @@ change then replicated won't be able to check the availability of the other cont
 This can be fixed by rerunning the original replicated install script. This will
 leave your current installation in tact but rewrite the main config files and therefore
 update the host IP and the NO_PROXY environment.
+
+#### Reset Replicated Management Console authentication
+
+If you cannot log into the Replicated Management Console anymore, then you can reset LDAP and password authentication on the host system by running the following command:
+
+```
+replicatedctl console-auth reset
+```
