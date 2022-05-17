@@ -1,5 +1,5 @@
 # Private Composer Packages
-## 
+##
 
 Private Packagist makes the code in your private repositories available for use with Composer.
 
@@ -37,3 +37,22 @@ Add the Private Packagist repository to your composer.json and require the packa
 </code>
 </pre>
 **Note:** Your composer.lock file contains the download URLs for packages. You need to run composer update at least once to regenerate your composer.lock file before composer install will download files from Private Packagist.
+
+## How do I configure a VCS repository with multiple composer.json files?
+
+Private Packagist supports multiple packages per VCS repository, but you'll need to specify where the `composer.json` files are located.
+
+When adding a new package, select the option _Repository contains multiple packages or composer.json is located in a subdirectory_. You can either specify the path to the `composer.json` file directly (if you have a single package in a subdirectory), or use a glob pattern such as `{lib,src}/**/composer.json` to specify multiple locations.
+
+### Globbing
+
+- `?` matches any character
+- `*` matches zero or more characters, except `/`
+- `/**/` matches zero or more directory names
+- `[abc]` matches a single character `a`, `b` or `c`
+- `[a-c]` matches a single character `a`, `b` or `c`
+- `[^abc]` matches any character but `a`, `b` or `c`
+- `[^a-c]` matches any character but `a`, `b` or `c`
+- `{ab,cd}` matches `ab` or `cd`
+
+A glob pattern of `**/**` will find all `composer.json` files in the repository.
