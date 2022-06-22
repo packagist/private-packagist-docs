@@ -6,15 +6,15 @@ You can use read-only tokens to grant automated systems like continuous integrat
 
 You can add read-only tokens on your organization's settings page under *Authentication Tokens*. Make sure to select "Read-only access to packages" on the access dropdown.
 
-Once the token is created, you'll need to add the `COMPOSER_AUTH` as an environment variable in your CI/CD.
+Once the token is created, you'll need to add `COMPOSER_AUTH` as an environment variable in your CI/CD.
 ```
 COMPOSER_AUTH='{"http-basic": {"repo.packagist.com": {"username": "token", "password": "TOKEN_HERE"}}}'
 ```
 
-Note that read-only tokens are recommended to use with your CI/CD where you'll be running composer install commands with an existing composer.lock file. Read-only tokens are not suitable to run `composer update` as they do not create new mirrored public packages. In case you have automated tasks that run package updates, make sure to use tokens with update access or your personal user credentials.
-Read-only tokens don't count as users in your Private Packagist account. They can only access packages in your organization. Read-access tokens created in a subrepository will only access packages in that subrepository.
+Note that read-only tokens are recommended for CI/CD where you'll be running composer install commands with an existing composer.lock file. Read-only tokens are not suitable to run `composer update` as they do not create new mirrored packages. In case you have automated tasks that run package updates, make sure to use tokens with update access.
+Read-only tokens don't count as users in your Private Packagist organization, while update tokens will be billed like an additional user account. Read-only tokens can only access packages in your organization. Read-only tokens created in a subrepository will only access packages in the respective subrepository.
 
-## Examples with some CI/CD environments
+## Instructions for CI/CD services
 
 Listed below are some examples for using Private Packagist with different CI/CD environments.
 
