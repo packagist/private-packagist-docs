@@ -26,7 +26,6 @@ If you are using [shivammathur/setup-php](https://github.com/shivammathur/setup-
 
 ```
 COMPOSER_AUTH: '{"http-basic": {"repo.packagist.com": {"username": "token", "password": "${{ secrets.PACKAGIST_TOKEN }}"}}, "github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
-
 ```
 
 ### Bitbucket Pipeline
