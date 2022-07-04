@@ -22,6 +22,12 @@ Listed below are some examples for using Private Packagist with different CI/CD 
 
 For GitHub actions, you can add the `COMPOSER_AUTH` environment variable at the repository level by going to the repository settings -> secrets -> new repository secret. Environment variables can then be used in your [workflow files](https://docs.github.com/en/actions/learn-github-actions/environment-variables#about-environment-variables).
 
+If you are using [shivammathur/setup-php](https://github.com/shivammathur/setup-php) watch out that it overwrites `COMPOSER_AUTH` if you configure a `COMPOSER_TOKEN`. Instead of using `COMPOSER_TOKEN` you can define the entire environment variable yourself including GitHub's token:
+
+```
+COMPOSER_AUTH: '{"http-basic": {"repo.packagist.com": {"username": "token", "password": "${{ secrets.PACKAGIST_TOKEN }}"}}, "github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
+```
+
 ### Bitbucket Pipeline
 
 You can add the `COMPOSER_AUTH` environment variable at the workspace, repository, and deployment levels on Bitbucket Pipelines as mentioned in [their documentation](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/).
