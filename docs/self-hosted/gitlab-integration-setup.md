@@ -13,7 +13,8 @@ Do not submit the integration form yet, but copy the content from the "Callback 
 
 Make sure the "api" and "read_user" scopes are both checked and save the new application. This will reveal the credentials required to finish the setup on Private Packagist.
 
-If you have full admin access on GitLab, then you can also create an application in the GitLab admin section under Applications.
+Instead of the user settings, you can also create an application in the settings section of a GitLab group, or if you
+have full admin access on GitLab in the GitLab admin section under Applications.
 There are two additional checkmarks on that page: "trusted" should remain unchecked, and "confidential" should remain checked.
 
 ![GitLab Credentials](/Resources/public/img/docs/integration-setup/gitlab-03-gitlab-credentials.png)
