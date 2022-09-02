@@ -31,11 +31,14 @@ There are two options for running Private Packagist Self-Hosted on a Kubernetes 
   * Ports 443 and 8800 must be accessible
   * Must be reachable at the chosen domain names from your local machine
 
-<!-- See https://kurl.sh/docs/install-with-kurl/system-requirements#networking-requirements -->
+<!-- See https://kurl.sh/docs/install-with-kurl/system-requirements#networking-requirements and https://docs.replicated.com/enterprise/installing-general-requirements -->
 * If your firewall restricts external connections the following domains must be accessible from the server:
   * amazonaws.com
   * k8s.gcr.io
   * k8s.kurl.sh
+  * hub.docker.com/
+  * proxy.replicated.com
+  * replicated.app
 
 ### Installation
 
@@ -54,6 +57,14 @@ After your Replicated Kubernetes is up and running you can follow the rest of th
 ### Requirements
 
 * A Kubernetes v1.23.x cluster
+
+<!-- See https://docs.replicated.com/enterprise/installing-general-requirements -->
+* If your firewall restricts external connections the following domains must be accessible from the server:
+  * hub.docker.com/
+  * proxy.replicated.com
+  * replicated.app
+  * kots.io (required to install the kots CLI)
+  * github.com (required to install the kots CLI)
 
 ### Installation
 
@@ -99,12 +110,20 @@ Private Packagist Self-Hosted sets up a minio instance in the cluster to store C
 
 ## Backups
 
-Installations with an embedded cluster come with [Velero](https://velero.io/), a backup solution that allows you to configure
-backups for either the entire setup or only the Private Packagist application. You can configure the snapshot frequency
-as well as the storage location in the Replicated admin UI under Snapshots once everything is up and running.
+The Replicated Admin console integrates with [Velero](https://velero.io/), a tool to back up and restore your Kubernetes
+cluster resources and persistent volumes. It is automatically installed with an embedded cluster installation.
 
-If you are installing Private Packagist Self-Hosted into an existing Kubernetes cluster then creating backups of the
-used embedded PostgreSQL and Redis database, as well as the Min.io storage is your responsibility.
+Once your Private Packagist Self-Hosted is up and running, you can configure the storage destination and the backup
+schedule in the Replicated Admin console under Snapshot settings. We recommend using an external storage solution like
+Amazon S3 and configuring full snapshots.
+
+To restore Private Packagist Self-Hosted from a snapshot, access the "Full Snapshots" and click on the "Restore from backup"
+icon. You will then see information on how to either perform a full restore or only restore the Private Packagist Self-Hosted
+application. During the restore process both Private Packagist Self-Hosted and the Replicated Admin console will become
+unavailable.
+
+If you are installing Private Packagist Self-Hosted into an existing Kubernetes cluster, then you can either install
+[Velero](https://velero.io/), and configure it as described above or create backups using your solution.
 
 ## Configuration changes
 
