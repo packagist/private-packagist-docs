@@ -67,4 +67,10 @@ Private Packagist integrates with the following systems:
 #### AWS CodeCommit
 * Webhook:
     * Users need to [create an AWS CodeCommit Trigger](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-sns.html) using the generic hook URL from the package page
-    * Code changes are available automatically. For releases, you need to select "All repository events" for the events type. 
+    * Code changes are available automatically. For releases, you need to select "All repository events" for the events type.
+
+#### Azure DevOps
+* Code Credentials: Either create a personal access token on Azure and store it as HTTP Basic credential or grant us access via SSH key
+* Webhooks:
+    * Users need to [create a Service Hook](https://docs.microsoft.com/en-us/azure/devops/service-hooks/services/webhooks?view=azure-devops) using the generic hook URL from the package page
+    * Select "Code pushed" and the repository that matches the package. No additional configuration is necessary.
