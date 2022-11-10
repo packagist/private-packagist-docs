@@ -124,9 +124,3 @@ unavailable.
 
 If you are installing Private Packagist Self-Hosted into an existing Kubernetes cluster, then you can either install
 [Velero](https://velero.io/), and configure it as described above or create backups using your solution.
-
-## Configuration changes
-
-Making changes to the Private Packagist configuration like disabling the "Setup Mode" or changing the email settings requires
-a new deployment and restart several pods. This is so because the configuration lives in a ConfigMap and signaling pods
-for ConfigMap updates is a feature still in the works. See https://github.com/kubernetes/kubernetes/issues/22368 for more details.
