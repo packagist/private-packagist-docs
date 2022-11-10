@@ -16,7 +16,7 @@ Replicated is the application which will provide you with a management interface
 
 There are two options for running Private Packagist Self-Hosted on a Kubernetes cluster:
 
-* **Start from scratch.** Installing Replicated Kubernetes on a Linux server and running Private Packagist Self-Hosted there
+* **Start from scratch.** Installing Replicated on a Linux server and running Private Packagist Self-Hosted there
 * **Use an existing Kubernetes cluster.** Installing Replicated on your existing Kubernetes cluster and running Private Packagist Self-Hosted there
 
 ## Installing Private Packagist Self-Hosted from scratch
@@ -68,19 +68,17 @@ After your Replicated Kubernetes is up and running you can follow the rest of th
 
 ### Installation
 
-If you already have a Kubernetes cluster, you can install Replicated there and use it to install Private Packagist Enterprise.
+If you already have a Kubernetes cluster, you can install Replicated there and use it to install Private Packagist Self-Hosted.
 
 ```
 curl https://kots.io/install | bash
 kubectl kots install privatepackagistkots
 ```
 
-Replicated and Private Packagist Self-Hosted use [dynamic volume provision](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) to allocate storage for the different Pods, so your cluster should have a provisioner with one or more Storage Classes defined.
-Please refer to the documentation for more information about this topic.
-
-Once you know the Storage Class you want to use for your installation, you can use the `storage_class` parameter (and disable the Host Path provisioner) to get your Replicated yaml file and apply it to your Kubernetes cluster:
-
-After replicated is installed you can follow the rest of the Packagist guide, making sure you configure the same Storage Class in the Packagist configuration too.
+### Dynamic Volumes
+Private Packagist Self-Hosted uses [dynamic volume provision](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) to allocate storage for the different Pods,
+your cluster should have a provisioner with one or more Storage Classes defined. Please refer to the documentation for more information about this topic.
+Configure the Storage Class under the Kubernetes Settings on Config page.
 
 ### Security
 
@@ -88,25 +86,15 @@ The Private Packagist Self-Hosted application terminates TLS at the Ingress leve
 
 Make sure your Kubernetes network plugin encrypts connections between pods to avoid potential security issues.
 
-### GKE quirks
+## Database and storage
 
-When running Private Packagist Self-Hosted on Google Kubernetes Engine, there are some quirks that have to be taken into account.
+Private Packagist Self-Hosted will set up PostgreSQL, Redis, and MinIO to store application data and Composer packages.
+Each of them requires one or more volumes if you prefer to avoid that then you can configure to use your own PostgreSQL,
+Redis, and blob storage. For blob storage, we currently support Azure Blob Storage, Google Cloud Storage, AWS S3, and
+other S3-compatible storage solutions.
 
-#### Replicated
-
-When the Replicated yaml is generated, it exposes a `NodePort` service for the Replicated UI, you might want to change it to a `LoadBalancer` so you can access the setup URL.
-
-After applying the Replicated yaml, you might see that some of the `retraced-` pods are marked as `Pending`. This is caused by Pod affinity rules, simply edit the corresponding deployments and remove the affinity rules to make it work.
-
-#### Packagist
-
-The Load Balancer for the minio Ingress endpoint won't be properly configured because there's no readiness probe in the minio Stateful Set, see https://github.com/minio/minio/pull/5650 and https://github.com/kubernetes/kubernetes/issues/27114 for details.
-
-To fix it, you need to configure the Health Check for the minio Backend service to point to the `/minio/health/live` path. To access the Health Check configuration you need to go to the `web-front` service in the GKE console, select the minio Backend service, and then edit the Health check.
-
-## Minio
-
-Private Packagist Self-Hosted sets up a minio instance in the cluster to store Composer packages. You can access the minio instance on path `/minio` under your chosen domain, the credentials can be found in the `minio-secret-key` Kubernetes Secret.
+Please note that the backup solution provided only covers the built-in services and you are responsible for creating backups
+of any services that you run yourself.
 
 ## Backups
 
