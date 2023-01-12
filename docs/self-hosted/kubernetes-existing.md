@@ -1,22 +1,23 @@
 # Installing Private Packagist Self-Hosted on an existing Kubernetes cluster
 ##
 
-Private Packagist Self-Hosted can run on a Kubernetes cluster. To do that, Private Packagist Self-Hosted uses Replicated.
+Private Packagist Self-Hosted leverages the [kots](https://docs.replicated.com/reference/kots-cli-getting-started)
+kubectl plugin by Replicated to run on a Kubernetes cluster. The plugin provides a management interface to your
+Private Packagist Self-Hosted installation and allows you to monitor the application and perform maintenance operations
+such as backups or updates.
 
-Replicated is the application which will provide you with a management interface to your Private Packagist Self-Hosted installation
-and allow you to monitor the task and perform maintenance operations such as backups or updates.
-
-To install Private Packagist Self-Hosted without an existing Kubernetes cluster follow [this guide](./kubernetes-embedded.md).
+This will guide you through an installation with an existing cluster, to instead install Private Packagist Self-Hosted
+without an existing Kubernetes cluster follow [this guide](./kubernetes-embedded.md).
 
 ## General requirements
 
+1. A Kubernetes cluster v1.23 or v1.24 
 1. License Key File (file extension .yaml) Don't have one yet? [Sign up for a free trial license!](https://packagist.com/self-hosted)
-2. One (sub-)domain to operate the web interface, e.g. packagist.myintranet.com
-3. One (sub-)domain to operate the Composer repository, e.g. repo.packagist.myintranet.com or packagist-repo.myintranet.com
-4. An SSL certificate valid for both chosen domains or something like [cert-manager](https://cert-manager.io/) to generate a certificate
-5. An SMTP server or a GMail account for Private Packagist Self-Hosted to send email
-6. A Kubernetes v1.23 or v1.24 cluster
-7. If your firewall restricts external connections the following domains must be accessible from the server:
+1. One (sub-)domain to operate the web interface, e.g. packagist.myintranet.com
+1. One (sub-)domain to operate the Composer repository, e.g. repo.packagist.myintranet.com or packagist-repo.myintranet.com
+1. An SSL certificate valid for both chosen domains or a way to generate one in your cluster like [cert-manager](https://cert-manager.io/)
+1. An SMTP server or a GMail account for Private Packagist Self-Hosted to send email
+1. If your firewall restricts external connections the following domains must be accessible from the server:
     * hub.docker.com
     * proxy.replicated.com
     * replicated.app
@@ -29,13 +30,14 @@ To install Private Packagist Self-Hosted without an existing Kubernetes cluster 
 Private Packagist requires the installation of the [kots](https://docs.replicated.com/reference/kots-cli-getting-started)
 kubectl plugin from Replicated. The plugin provides an admin console to configure and update Private Packagist Self-Hosted.
 
-The commands below will install the kots plugin and add the Private Packagist Self-Hosted application to your cluster.
-At the end of the install script, kots will set up a port-forward to localhost:8800 where you can continue to setup
-Private Packagist Self-Hosted. Once Private Packagist is fully set up it is recommended to stop the port forwarding and
-only start it again to make changes to the configuration or update the application.
+The commands below will install the kots plugin and add the Private Packagist Self-Hosted application.
+At the end of the install script, kots will set up a port-forward to localhost:8800 where you can continue with the Private
+Packagist Self-Hosted setup. Once Private Packagist is fully configured and setup, it is recommended to stop the port
+forwarding and only start it again to make changes to the configuration or update the application.
 
-Please note: by default the install command will set up a MinIO instance for storage use by the admin console, to skip this
-set this `--with-minio` flag to `false`. For a full list of configuration options see [CLI documentation](https://docs.replicated.com/reference/kots-cli-install).
+Please note: by default the install command will set up a MinIO instance for storage used by the admin console. You can
+skip this by setting the `--with-minio` flag to `false`. For a full list of configuration options see the 
+[CLI documentation](https://docs.replicated.com/reference/kots-cli-install).
 
 ```
 curl https://kots.io/install | bash
@@ -45,10 +47,11 @@ kubectl kots --help
 kubectl kots install privatepackagistkots
 ```
 
-To login to the admin console you will need the password shown at the end of the install command. You can also always
+To log in to the admin console you will need the password shown at the end of the install command. You can also always
 regenerate the admin console password via `sudo kubectl kots reset-password privatepackagistkots`.
 
-### Login to Admin Console and Configure Private Packagist Self-Hosted
+### Replicated Configuration
+#### Replicated Setup
 
 Login to the admin console using the password generated during the kots application installation.
 
@@ -59,9 +62,10 @@ you can download it from https://packagist.com.
 
 ![Upload License](/Resources/public/img/docs/self-hosted-kubernetes/console-license.png)
 
+#### Configure Private Packagist Self-Hosted
 The configuration screen is where you can setup the domains used for Private Packagist and the email configuration. It
 is also the place where you can configure if Private Packagist should use an existing Redis, PostgreSQL, or blob storage.
-![Upload License](/Resources/public/img/docs/self-hosted-kubernetes/console-config.png)
+![Configuration](/Resources/public/img/docs/self-hosted-kubernetes/console-config.png)
 
 Every configuration change or application update will trigger a preflight check. Once the preflight check passed, the changes
 can be applied to your Kubernetes cluster.
@@ -120,7 +124,7 @@ Make sure your Kubernetes network plugin encrypts connections between pods to av
 
 ## Backups
 
-The Replicated Admin console integrates with [Velero](https://velero.io/), a tool to back up and restore your Kubernetes
+The Replicated admin console integrates with [Velero](https://velero.io/), a tool to back up and restore your Kubernetes
 cluster resources and persistent volumes and Private Packagist Self-Hosted provides annotations to help back up and restore
 the application with Velero.
 
