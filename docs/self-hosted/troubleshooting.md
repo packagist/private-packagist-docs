@@ -120,14 +120,15 @@ replicatedctl console-auth reset
 
 #### Issues with Multi-factor Authentication
 
-If you have set up MFA and you can't log in with your generated codes, there may
-be a time-drift issue with either the Self-hosted Private Packagist server or
-the device you are using to generate the codes.
+If you are having problems setting up MFA, or are unable to login via MFA, with
+your generated codes, there may be a time-drift issue with either the
+Self-hosted Private Packagist server or the device you are using to generate the
+codes.
 
-To make sure that the Self-hosted Private Packagist server is correctly
-synchronized to the correct time, you should check that both the current server
-time and timezone are set to correct values. If you can enable Network Time
-Protocol (NTP) for the server, we also recommend doing that.
+To make sure that the Self-hosted Private Packagist server is synchronized to
+the correct time, you should check that both the current server time and
+timezone are set to correct values. If you can enable Network Time Protocol
+(NTP) for the server, we also recommend doing that.
 
 The methods for doing so will vary depending on the underlying server Operating
 System.
