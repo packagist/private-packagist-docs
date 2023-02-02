@@ -14,7 +14,7 @@ the logs in this file yourself as well.
 You can generate a support bundle from the Replicated Management Console on
 port 8800 by navigating to the Support tab and clicking on the "Download
 Support Bundle" button. Alternatively you can use replicated's command line
-interface to generate the support bundle on your host system: 
+interface to generate the support bundle on your host system:
 
 `replicatedctl support-bundle`
 
@@ -55,7 +55,7 @@ management console). Look up the container id using `docker ps -as` and then
 view the logs using `docker logs <container-id>`. If the health check is
 failing the log will contain a JSON structure with all system checks and their
 respective status and error messages.
- 
+
 #### devicemapper I/O errors on docker service
 
 If you are using RedHat Enterprise Linux RHEL 7.x, try setting the option
@@ -110,8 +110,30 @@ update the host IP and the NO_PROXY environment.
 
 #### Reset Replicated Management Console authentication
 
-If you cannot log into the Replicated Management Console anymore, then you can reset LDAP and password authentication on the host system by running the following command:
+If you cannot log into the Replicated Management Console anymore, then you can
+reset LDAP and password authentication on the host system by running the
+following command:
 
 ```
 replicatedctl console-auth reset
 ```
+
+#### Issues with Multi-factor Authentication
+
+If you are having problems setting up MFA, or are unable to login via MFA, with
+your generated codes, there may be a time-drift issue with either the
+Self-hosted Private Packagist server or the device you are using to generate the
+codes.
+
+To make sure that the Self-hosted Private Packagist server is synchronized to
+the correct time, you should check that both the current server time and
+timezone are set to correct values. If you can enable Network Time Protocol
+(NTP) for the server, we also recommend doing that.
+
+The methods for doing so will vary depending on the underlying server Operating
+System.
+
+> Please be aware that offline-based TOTP hardware can drift up to a few minutes
+> a year. As Private Packagist only allows time-drift of up to one (1) minute, we
+> recommend using TOTP devices that have the ability to stay synchronized with
+> the correct time (such as a phone, or re-programmable TOTP hardware devices).
