@@ -95,6 +95,48 @@ they keep access to those versions beyond the specified date. If you want to rem
 This is useful if your customers buy a license from you for a certain timeframe e.g. a full year and therefore should get
 access to all versions that are released within that year.
 
+## Using vendor bundles to manage customer access to packages
+
+Vendor bundles allow you to group packages and grant multiple customers access to the same packages. Instead of having to
+grant customers access to every package individually, you grant them access to a vendor bundle, and they will automatically
+receive access to all packages in the bundle. Adding additional packages to that bundle will then automatically grant
+all customers with access to the bundle access to these packages as well.
+
+Vendor bundles can be managed on the Vendor Bundles section from the Vendor tab, and they can be assigned to customers on the bundle section of a customer.
+
+Vendor bundles can also be created and customer access can be granted via our API using our [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
+
+```
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$customerId = 42;
+
+$client = new \PrivatePackagist\ApiClient\Client();
+$client->authenticate('api-token', 'api-secret');
+
+// Create a vendor bundle if not yet existing
+$vendorBundle = $client->vendorBundles()->create('Acme Bundle');
+
+// Add one or more packages to the vendor bundle
+$packages = [
+    [
+        'name' => 'acme/website',
+        'versionConstraint' => '^1.0 | ^2.0', // optional version constraint to limit updates the customer receives
+        'minimumAccessibleStability' => 'beta', // optional stability to restrict customers to specific package version stabilities like alpha, beta, or RC
+    ],
+];
+$packages = $client->vendorBundles()->packages()->addOrEditPackages($vendorBundle['id'], $packages); 
+
+// Grant a customer access to the vendor bundle and all its packages
+$client->customers()->vendorBundles()->addOrEditVendorBundle(
+   $customerId,
+   $vendorBundle['id'],
+   (new \DateTime('+1 year'))->format('c'), // optional expiration date to limit updates the customer receives
+);
+```
+
 ## Adding a package to an existing Composer project
 
 To install a package named "acme-company/api" into an existing project, the following steps are required:
