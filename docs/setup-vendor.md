@@ -98,11 +98,11 @@ access to all versions that are released within that year.
 ## Using vendor bundles to manage customer access to packages
 
 Vendor bundles allow you to group packages and grant multiple customers access to the same packages. Instead of having to
-grant customers access to every package individually, you grant them access to the vendor bundle, and they will automatically
+grant customers access to every package individually, you grant them access to a vendor bundle, and they will automatically
 receive access to all packages in the bundle. Adding additional packages to that bundle will then automatically grant
-all customer with access to the bundle access to those packages as well.
+all customers with access to the bundle access to these packages as well.
 
-Vendor bundles can be managed on Vendor Bundles section from the Vendor tab, and they can be assigned to customers on the bundle section of a customer.
+Vendor bundles can be managed on the Vendor Bundles section from the Vendor tab, and they can be assigned to customers on the bundle section of a customer.
 
 Vendor bundles can also be created and customer access can be granted via our API using our [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
 
