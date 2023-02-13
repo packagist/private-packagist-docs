@@ -133,7 +133,7 @@ $packages = $client->vendorBundles()->packages()->addOrEditPackages($vendorBundl
 $client->customers()->vendorBundles()->addOrEditVendorBundle(
    $customerId,
    $vendorBundle['id'],
-   (new \DateTime())->add(new \DateInterval('P1Y'))->format('c'), // optional expiration date to limit updates the customer receives
+   (new \DateTime('+1 year'))->format('c'), // optional expiration date to limit updates the customer receives
 );
 ```
 
