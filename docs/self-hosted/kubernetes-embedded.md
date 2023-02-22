@@ -1,4 +1,4 @@
-## Installing Private Packagist Self-Hosted with an embeded Kubernetes cluster
+## Installing Private Packagist Self-Hosted with an embeded Kubernetes cluster (Beta)
 ##
 
 Private Packagist Self-Hosted leverages the [kots](https://docs.replicated.com/reference/kots-cli-getting-started)
@@ -53,7 +53,7 @@ Once Replicated’s services are installed on your server you need to access the
 It’s available via SSL on port 8800. Open https://packagist.myintranet.com:8800/ in your browser (replace the domain with your own).
 You will have to proceed despite the security warning (since your certificate is still missing).
 
-![SSL Warning](/Resources/public/img/docs/self-hosted/console-tls-warning.png)
+![SSL Warning](/Resources/public/img/docs/self-hosted-kubernetes/console-tls-warning.png)
 
 Upload your SSL certificate on the next screen. SSL should work correctly from the next page.
 If your certificate requires intermediate certificates to be recognized by your browser and/or Composer,
@@ -65,7 +65,7 @@ If instead you would like to use Let's Encrypt to automatically generate a certi
 continue with the self-signed certificate for now. Please note that the Let's Encrypt certificate won't be used for the
 admin console.
 
-![SSL Setup](/Resources/public/img/docs/self-hosted/tls-configuration.png)
+![SSL Setup](/Resources/public/img/docs/self-hosted-kubernetes/console-tls-configuration.png)
 
 Login to the admin console using the password generated during the kots application installation.
 
@@ -79,11 +79,11 @@ you can download it from https://packagist.com.
 #### Configure Private Packagist Self-Hosted
 The configuration screen is where you can set up the domains used for Private Packagist and the email configuration. It
 is also the place where you can configure if Private Packagist should use an existing Redis, PostgreSQL, or blob storage.
-![Configuration](/Resources/public/img/docs/self-hosted-kubernetes/console-config.png)
+![Configuration](/Resources/public/img/docs/self-hosted-kubernetes/console-configure-application.png)
 
 Every configuration change or application update will trigger a preflight check. Once the preflight check have passed,
 the changes can be applied to your Kubernetes cluster.
-![Preflight Check](/Resources/public/img/docs/self-hosted-kubernetes/console-preflight.png)
+![Preflight Check](/Resources/public/img/docs/self-hosted-kubernetes/console-preflight-check.png)
 
 The application overview in the admin console shows you the application status, your current license information, and any
 available updates for Private Packagist. Once the application has entered the ready state, you can access Private Packagist
