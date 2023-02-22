@@ -6,7 +6,7 @@ kubectl plugin by Replicated to run on a Kubernetes cluster. The plugin provides
 Private Packagist Self-Hosted installation and allows you to monitor the application and perform maintenance operations
 such as backups or updates.
 
-This will guide you through an installation without an existing cluster, to instead install Private Packagist Self-Hosted
+This page will guide you through an installation without an existing cluster. To instead install Private Packagist Self-Hosted
 in an existing Kubernetes cluster follow [this guide](./kubernetes-existing.md).
 
 ## General requirements
@@ -42,15 +42,15 @@ To learn more about options for the easy install script, please refer to the [Re
 curl -sSL https://kurl.sh/privatepackagistkots | sudo bash
 ```
 
-To log in to the admin console you will need the password shown at the end of the install command. You can also always
-regenerate the admin console password via `sudo kubectl kots reset-password default`.
+To log in to the admin console, you will need the password shown at the end of the install command. You can also always
+regenerate the admin console password via `sudo kubectl kots reset-password privatepackagistkots`.
 
-After your Replicated Kubernetes is up and running you can follow the rest of the Packagist guide.
+After your Replicated Kubernetes cluster is up and running you can follow the rest of the Packagist guide.
 
 ### Replicated Configuration
 #### Replicated Setup
 Once Replicated’s services are installed on your server you need to access the management console on your browser.
-It’s available via SSL on port 8800. So open https://packagist.myintranet.com:8800/ in your browser (replace the domain with your own).
+It’s available via SSL on port 8800. Open https://packagist.myintranet.com:8800/ in your browser (replace the domain with your own).
 You will have to proceed despite the security warning (since your certificate is still missing).
 
 ![SSL Warning](/Resources/public/img/docs/self-hosted/console-tls-warning.png)
@@ -71,18 +71,18 @@ Login to the admin console using the password generated during the kots applicat
 
 ![Login to Admin Console](/Resources/public/img/docs/self-hosted-kubernetes/console-login.png)
 
-On the next screen you can upload the supplied .yaml license key file. If you don't have the license key file yet then
+On the next screen, you can upload the supplied .yaml license key file. If you don't have the license key file yet then
 you can download it from https://packagist.com.
 
 ![Upload License](/Resources/public/img/docs/self-hosted-kubernetes/console-license.png)
 
 #### Configure Private Packagist Self-Hosted
-The configuration screen is where you can setup the domains used for Private Packagist and the email configuration. It
+The configuration screen is where you can set up the domains used for Private Packagist and the email configuration. It
 is also the place where you can configure if Private Packagist should use an existing Redis, PostgreSQL, or blob storage.
 ![Configuration](/Resources/public/img/docs/self-hosted-kubernetes/console-config.png)
 
-Every configuration change or application update will trigger a preflight check. Once the preflight check passed, the changes
-can be applied to your Kubernetes cluster.
+Every configuration change or application update will trigger a preflight check. Once the preflight check have passed,
+the changes can be applied to your Kubernetes cluster.
 ![Preflight Check](/Resources/public/img/docs/self-hosted-kubernetes/console-preflight.png)
 
 The application overview in the admin console shows you the application status, your current license information, and any
@@ -93,8 +93,10 @@ via the domain configured for the web interface e.g. packagist.myintranet.com an
 ### Setup authenticateion and Select Admin
 
 #### Authentication Setup
-Within Private Packagist Self-Hosted you now need to set up at least one user authentication method. You have the choice between authentication with email addresses and passwords and several OAuth integrations with third party services.
-We provide integrations with on-premises versions of GitHub, Bitbucket, or GitLab, or their public services on github.com, bitbucket.org or gitlab.com. Follow the instructions to create the respective required identifiers, tokens and secrets.
+Within Private Packagist Self-Hosted, you now need to set up at least one user authentication method.
+You have the choice between authentication with email addresses and passwords and several OAuth integrations with third-party services.
+We provide integrations with on-premises versions of GitHub, Bitbucket, GitLab, or their public services on github.com, bitbucket.org,
+or gitlab.com. Follow the instructions to create the respective required identifiers, tokens, and secrets.
 
 * [GitHub (Enterprise) Integration Setup](./github-integration-setup.md)
 * [Bitbucket.org Integration Setup](./bitbucket-integration-setup.md)
@@ -106,7 +108,7 @@ We provide integrations with on-premises versions of GitHub, Bitbucket, or GitLa
 ![Add Integration](/Resources/public/img/docs/self-hosted/08-integration.png)
 
 #### Selecting Admins
-After setting up an integration you can login through the top menu. Register an account and pick a username.
+After setting up an integration, you can log in through the top menu. Register an account and pick a username.
 
 ![Register Admin](/Resources/public/img/docs/self-hosted/09-register-admin.png)
 

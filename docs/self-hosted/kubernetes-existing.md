@@ -3,10 +3,10 @@
 
 Private Packagist Self-Hosted leverages the [kots](https://docs.replicated.com/reference/kots-cli-getting-started)
 kubectl plugin by Replicated to run on a Kubernetes cluster. The plugin provides a management interface to your
-Private Packagist Self-Hosted installation and allows you to monitor the application and perform maintenance operations
+Private Packagist Self-Hosted installation. It also allows you to monitor the application and perform maintenance operations
 such as backups or updates.
 
-This will guide you through an installation with an existing cluster, to instead install Private Packagist Self-Hosted
+This page will guide you through an installation with an existing cluster, to instead install Private Packagist Self-Hosted
 without an existing Kubernetes cluster follow [this guide](./kubernetes-embedded.md).
 
 ## General requirements
@@ -31,7 +31,7 @@ Private Packagist requires the installation of the [kots](https://docs.replicate
 kubectl plugin from Replicated. The plugin provides an admin console to configure and update Private Packagist Self-Hosted.
 
 The commands below will install the kots plugin and add the Private Packagist Self-Hosted application.
-At the end of the install script, kots will set up a port-forward to localhost:8800 where you can continue with the Private
+At the end of the install script, kots will set up a port forward to localhost:8800 where you can continue with the Private
 Packagist Self-Hosted setup. Once Private Packagist is fully configured and setup, it is recommended to stop the port
 forwarding and only start it again to make changes to the configuration or update the application.
 
@@ -47,7 +47,7 @@ kubectl kots --help
 kubectl kots install privatepackagistkots
 ```
 
-To log in to the admin console you will need the password shown at the end of the install command. You can also always
+To log in to the admin console, you will need the password shown at the end of the install command. You can also always
 regenerate the admin console password via `sudo kubectl kots reset-password privatepackagistkots`.
 
 ### Replicated Configuration
@@ -57,18 +57,18 @@ Login to the admin console using the password generated during the kots applicat
 
 ![Login to Admin Console](/Resources/public/img/docs/self-hosted-kubernetes/console-login.png)
 
-On the next screen you can upload the supplied .yaml license key file. If you don't have the license key file yet then
+On the next screen, you can upload the supplied .yaml license key file. If you don't have the license key file yet then
 you can download it from https://packagist.com.
 
 ![Upload License](/Resources/public/img/docs/self-hosted-kubernetes/console-license.png)
 
 #### Configure Private Packagist Self-Hosted
-The configuration screen is where you can setup the domains used for Private Packagist and the email configuration. It
+The configuration screen is where you can set up the domains used for Private Packagist and the email configuration. It
 is also the place where you can configure if Private Packagist should use an existing Redis, PostgreSQL, or blob storage.
 ![Configuration](/Resources/public/img/docs/self-hosted-kubernetes/console-config.png)
 
-Every configuration change or application update will trigger a preflight check. Once the preflight check passed, the changes
-can be applied to your Kubernetes cluster.
+Every configuration change or application update will trigger a preflight check. Once the preflight check have passed,
+the changes can be applied to your Kubernetes cluster.
 ![Preflight Check](/Resources/public/img/docs/self-hosted-kubernetes/console-preflight.png)
 
 The application overview in the admin console shows you the application status, your current license information, and any
@@ -76,11 +76,13 @@ available updates for Private Packagist. Once the application has entered the re
 via the domain configured for the web interface e.g. packagist.myintranet.com and finish the setup there.
 ![Application Overview](/Resources/public/img/docs/self-hosted-kubernetes/console-application-overview.png)
 
-### Setup authenticateion and Select Admin
+### Setup authentication and Select Admin
 
 #### Authentication Setup
-Within Private Packagist Self-Hosted you now need to set up at least one user authentication method. You have the choice between authentication with email addresses and passwords and several OAuth integrations with third party services.
-We provide integrations with on-premises versions of GitHub, Bitbucket, or GitLab, or their public services on github.com, bitbucket.org or gitlab.com. Follow the instructions to create the respective required identifiers, tokens and secrets.
+Within Private Packagist Self-Hosted, you now need to set up at least one user authentication method.
+You have the choice between authentication with email addresses and passwords and several OAuth integrations with third-party services.
+We provide integrations with on-premises versions of GitHub, Bitbucket, GitLab, or their public services on github.com, bitbucket.org,
+or gitlab.com. Follow the instructions to create the respective required identifiers, tokens, and secrets.
 
 * [GitHub (Enterprise) Integration Setup](./github-integration-setup.md)
 * [Bitbucket.org Integration Setup](./bitbucket-integration-setup.md)
@@ -92,7 +94,7 @@ We provide integrations with on-premises versions of GitHub, Bitbucket, or GitLa
 ![Add Integration](/Resources/public/img/docs/self-hosted/08-integration.png)
 
 #### Selecting Admins
-After setting up an integration you can login through the top menu. Register an account and pick a username.
+After setting up an integration, you can log in through the top menu. Register an account and pick a username.
 
 ![Register Admin](/Resources/public/img/docs/self-hosted/09-register-admin.png)
 
@@ -110,9 +112,9 @@ That’s it! Private Packagist Self-Hosted is now ready to be used! You’ll fin
 
 Private Packagist Self-Hosted will set up PostgreSQL, Redis, and MinIO to store application data and Composer packages.
 Each of them requires one or more volumes using [dynamic volume provision](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) to allocate storage for the different Pods.
-Configure the Storage Class under the Kubernetes Settings on Config page in the admin console
+Configure the Storage Class under the Kubernetes Settings on the Config page in the admin console.
 
-Alternately, you can configure Private Packagist Self-Hosted to use your own PostgreSQL, Redis, and blob storage.
+Alternatively, you can configure Private Packagist Self-Hosted to use your own PostgreSQL, Redis, and blob storage.
 For blob storage, we currently support Azure Blob Storage, Google Cloud Storage, AWS S3, and other S3-compatible storage solutions.
 
 ## Security
@@ -125,8 +127,8 @@ Make sure your Kubernetes network plugin encrypts connections between pods to av
 ## Backups
 
 The Replicated admin console integrates with [Velero](https://velero.io/), a tool to back up and restore your Kubernetes
-cluster resources and persistent volumes and Private Packagist Self-Hosted provides annotations to help back up and restore
+cluster resources and persistent volumes. Private Packagist Self-Hosted provides annotations to help back up and restore
 the application with Velero.
 
-If you are using your own backup solution we recommend to make regular backups of PostgreSQL, Redis, and the used blob
+If you are using your own backup solution, we recommend making regular backups of PostgreSQL, Redis, and the used blob
 storage.
