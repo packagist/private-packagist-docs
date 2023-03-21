@@ -6,6 +6,9 @@ kubectl plugin by Replicated to run on a Kubernetes cluster. The plugin provides
 Private Packagist Self-Hosted installation. It also allows you to monitor the application and perform maintenance operations
 such as backups or updates.
 
+This page will guide you through an installation with an existing cluster, to instead install Private Packagist Self-Hosted
+without an existing Kubernetes cluster follow [this guide](./kubernetes-embedded.md).
+
 ## General requirements
 
 1. A Kubernetes cluster v1.23 or v1.24 
