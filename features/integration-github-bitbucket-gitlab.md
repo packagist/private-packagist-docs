@@ -73,4 +73,4 @@ Private Packagist integrates with the following systems:
 * Code Credentials: Either create a personal access token on Azure and store it as HTTP Basic credential or grant us access via SSH key
 * Webhooks:
     * Users need to [create a Service Hook](https://docs.microsoft.com/en-us/azure/devops/service-hooks/services/webhooks?view=azure-devops) using the generic hook URL from the package page
-    * Select "Code pushed" and the repository that matches the package. No additional configuration is necessary.
+    * Select the "Code pushed" event (includes commits and tags) and the repository that matches the package. No authentication or additional configuration is necessary.
