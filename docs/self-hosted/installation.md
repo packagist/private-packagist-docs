@@ -88,11 +88,8 @@ We provide integrations with on-premises versions of GitHub, Bitbucket, or GitLa
 * [GitLab Integration Setup](./gitlab-integration-setup.md)
 * [Authentication with Email Addresses and Passwords](./authentication-email-addresses-passwords-setup.md).
 
-
-![Add Integration](/Resources/public/img/docs/self-hosted/08-integration.png)
-
 ## Selecting Admins
-After setting up an integration you can login through the top menu. Register an account and pick a username.
+After setting up at least one authentication mechanism you can login through the top menu. Register an account and pick a username.
 
 ![Register Admin](/Resources/public/img/docs/self-hosted/09-register-admin.png)
 
