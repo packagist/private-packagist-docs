@@ -8,7 +8,11 @@
 </div>
 
 ## Initial Setup
-Hit the “Add integration“ button on the admin page to get to the form below. To setup a Bitbucket Integration with Private Packagist start by selecting "Bitbucket" as the platform and enter <i>https://bitbucket.org</i> as the base URL, as seen in the example below.
+Hit the “Add integration“ button on the admin page to get to the form below.
+
+![Add Integration](/Resources/public/img/docs/self-hosted/08-integration.png)
+
+To setup a Bitbucket Integration with Private Packagist start by selecting "Bitbucket" as the platform and enter <i>https://bitbucket.org</i> as the base URL, as seen in the example below.
 
 ![Packagist Setup](/Resources/public/img/docs/integration-setup/bitbucket-01-packagist-setup.png)
 
