@@ -27,9 +27,9 @@ curl -sSL -o install.sh https://get.replicated.com/docker/privatepackagist/stabl
 sudo bash ./install.sh
 ```
 
-Alternatively you can manually install the required tools and services and you can install Replicated onto a machine that is not connected to the internet. Replicated on Kubernetes or Docker Swarm is not currently supported for use with Private Packagist Self-Hosted.
+Alternatively you can [manually install the required tools and services](https://help.replicated.com/docs/native/customer-installations/installing-manually/). Replicated on Kubernetes or Docker Swarm is not currently supported for use with Private Packagist Self-Hosted.
 
-To learn more about the different methods of Installing Replicated and options for the easy install script, please refer to the Replicated manual on Installing the application at [https://www.replicated.com/docs/distributing-an-application/installing/](https://www.replicated.com/docs/distributing-an-application/installing/).
+To learn more about the different methods of Installing Replicated and options for the easy install script, please refer to the [Replicated manual on Installing the application.](https://help.replicated.com/docs/native/customer-installations/installing-via-script/#flags)
 
 ## Replicated Configuration
 ### Replicated Setup
