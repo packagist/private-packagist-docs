@@ -5,7 +5,7 @@ This guide explains how to setup an OAuth integration for Private Packagist Self
 If you are using our cloud product at packagist.com, [use this guide](../cloud/gitlab-integration-setup.md).
 
 ## Initial Setup
-Hit the "Add integration" button on the admin page in Private Packagist Self-Hosted to get to the form below. 
+Hit the "Add Integration" button on the admin page in Private Packagist Self-Hosted to get to the form below. 
 
 ![Add Integration](/Resources/public/img/docs/self-hosted/08-integration.png)
 
