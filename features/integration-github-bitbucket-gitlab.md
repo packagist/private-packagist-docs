@@ -27,7 +27,7 @@ Private Packagist integrates with the following systems:
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
 #### GitHub Enterprise
-* OAuth: Users authenticate on Private Packagist with their GitHub accounts. Follow [this setup](../docs/cloud/github-integration-setup.md) for the cloud plan or [this setup](../docs/self-hosted/github-integration-setup.md) for Self-Hosted.
+* OAuth: Users authenticate on Private Packagist with their GitHub accounts. Follow [this setup](../docs/cloud/github-integration-setup.md) for Cloud plans or [this setup](../docs/self-hosted/github-integration-setup.md) for Self-Hosted.
 * Synchronization:
     * Keeps team members and access permissions in sync with your GitHub Enterprise organizations
 * Code Credentials: GitHub API Token
@@ -41,7 +41,7 @@ Private Packagist integrates with the following systems:
 * Webhooks: Code changes and releases
 
 #### Bitbucket Data Center / Server
-* OAuth: Users authenticate on Private Packagist with their Bitbucket Data Center / Server accounts. Follow [this setup](../docs/cloud/bitbucket-server-integration-setup.md) for the cloud plan or [this setup](../docs/self-hosted/bitbucket-server-integration-setup.md) for Self-Hosted.
+* OAuth: Users authenticate on Private Packagist with their Bitbucket Data Center / Server accounts. Follow [this setup](../docs/cloud/bitbucket-server-integration-setup.md) for Cloud plans or [this setup](../docs/self-hosted/bitbucket-server-integration-setup.md) for Self-Hosted.
 * Synchronization:
     * Keeps users and access permissions in sync with your Bitbucket Server projects
     * Individual collaborators aren't supported
@@ -57,7 +57,7 @@ Private Packagist integrates with the following systems:
 * Webhooks: Code changes and releases
 
 #### GitLab (Self-hosted)
-* OAuth: Users authenticate on Private Packagist with their GitLab accounts. Follow [this setup](../docs/cloud/gitlab-integration-setup.md) for the cloud plan or [this setup](../docs/self-hosted/gitlab-integration-setup.md) for Self-Hosted.
+* OAuth: Users authenticate on Private Packagist with their GitLab accounts. Follow [this setup](../docs/cloud/gitlab-integration-setup.md) for Cloud plans or [this setup](../docs/self-hosted/gitlab-integration-setup.md) for Self-Hosted.
 * Synchronization:
     * Keeps teams, their members, and access permissions in sync with your GitLab groups
     * Individual collaborators aren't yet supported
