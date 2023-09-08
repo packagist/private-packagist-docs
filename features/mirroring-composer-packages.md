@@ -16,10 +16,10 @@ Further, mirroring gives you a copy of all dependencies your production system r
 ## Mirrored Repositories on Private Packagist
 When you create a new organization on Private Packagist, it is **automatically set up to mirror** all your dependencies from the open-source package archive **Packagist.org**. But you can mirror any number of public or private repositories, e.g. the Drupal package repository or Magento Marketplace (see “[Mirroring Magento Marketplace Packages](./../docs/mirror-magento-marketplace.md)”).
 
-![Packagist.org Mirroring](/Resources/public/img/docs/features/Packagist.org-Mirror-20170119.png)
+![Packagist.org Mirroring](/Resources/public/img/docs/features/Packagist.org-Mirror-20230908.png)
 
 By default packages are automatically mirrored and added to your Private Packagist repository the first time they are accessed through composer update. Automated systems using Private Packagist access tokens cannot mirror new packages to ensure that build processes do not have unintended consequences.
 
-![Packagist.org Mirroring](/Resources/public/img/docs/features/Packagist.org-Mirror-Edit-20170119.png)
+![Packagist.org Mirroring](/Resources/public/img/docs/features/Packagist.org-Mirror-Edit-20230908.png)
 
 You can configure the mirroring policy on a per-repository basis. For example you can ensure new open-source dependencies are discussed or reviewed before they are manually added by an administrator, making them available to all developers in the organization.
