@@ -65,11 +65,11 @@ you can download it from https://packagist.com.
 #### Configure Private Packagist Self-Hosted
 The configuration screen is where you can set up the domains used for Private Packagist and the email configuration. It
 is also the place where you can configure if Private Packagist should use an existing Redis, PostgreSQL, or blob storage.
-![Configuration](/Resources/public/img/docs/self-hosted-kubernetes/console-config.png)
+![Configuration](/Resources/public/img/docs/self-hosted-kubernetes/console-configure-application.png)
 
 Every configuration change or application update will trigger a preflight check. Once the preflight check have passed,
 the changes can be applied to your Kubernetes cluster.
-![Preflight Check](/Resources/public/img/docs/self-hosted-kubernetes/console-preflight.png)
+![Preflight Check](/Resources/public/img/docs/self-hosted-kubernetes/console-preflight-check.png)
 
 The application overview in the admin console shows you the application status, your current license information, and any
 available updates for Private Packagist. Once the application has entered the ready state, you can access Private Packagist
