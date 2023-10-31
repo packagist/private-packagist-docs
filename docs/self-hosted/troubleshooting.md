@@ -1,5 +1,5 @@
 # Troubleshooting
-## Private Packagist Self-Hosted
+## Private Packagist Self-Hosted (Replicated Native)
 
 ### System logs and information
 
