@@ -1,5 +1,5 @@
 # Self-Hosted Installation Guide
-## Private Packagist Self-Hosted
+## Private Packagist Self-Hosted (Replicated Native)
 
 ## Requirements
 

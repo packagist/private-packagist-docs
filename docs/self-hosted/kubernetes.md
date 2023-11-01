@@ -1,4 +1,4 @@
-# Private Packagist Self-Hosted Kubernetes (Beta)
+# Private Packagist Self-Hosted
 ##
 
 Private Packagist Self-Hosted Kubernetes is the next iteration of our Self-Hosted product, allowing you to run

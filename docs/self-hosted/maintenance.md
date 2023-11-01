@@ -1,5 +1,5 @@
 # Maintenance
-## Private Packagist Self-Hosted
+## Private Packagist Self-Hosted (Replicated Native)
 
 ### Updates
 By default Replicated checks for updates every 5 hours and you can install them from the dashboard once they are available. You can configure this behaviour under “Console Settings” when clicking on the gear icon in the management console.
