@@ -41,7 +41,7 @@ To grant Dependabot access to the packages on Private Packagist, you need to pro
 
 ![Dependabot Secrets](/Resources/public/img/docs/articles/dependabot-secret.png)
 
-Create a Team Authentication Token under “Settings” and “Authentication Tokens” on Private Packagist. Copy the secret into the GitHub form.
+Create a Team Authentication Token under “Settings” and “Authentication Tokens” on Private Packagist with update access. Copy the secret into the GitHub form.
 
 ## Troubleshooting
 
