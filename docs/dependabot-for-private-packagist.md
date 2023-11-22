@@ -3,7 +3,7 @@
 
 [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide) informs you about vulnerabilities in the dependencies that you use in your repository and can automatically raise pull requests to keep your dependencies up-to-date.  
 
-This guide explains how to configure and set up Dependabot if you want to use it for packages hosted on [Private Packagist](https://packagist.com) step by step.  
+This guide explains how to configure and set up Dependabot if you want to use it with [Private Packagist](https://packagist.com).
 
 
 ## Enable Dependabot in GitHub
@@ -35,9 +35,9 @@ registries:
     password: ${{secrets.PRIVATE_PACKAGIST_PASSWORD}}
 ```
 
-Replace the Composer URL `https://repo.packagist.com/acme/` with your own organization's Composer URL on packagist.com. In the example, the repository URL is for the organization on Private Packagist Cloud with the name `acme`.
+Replace the Composer URL `https://repo.packagist.com/acme/` with your organization's Composer URL on packagist.com. In the example, the repository URL is for the organization on Private Packagist Cloud with the name `acme`.
 
-To grant Dependabot access to the packages on Private Packagist, you need to provide the secret `PRIVATE_PACKAGIST_PASSWORD` in your GitHub repository. In Settings under the section “Security,” there is “Secrets and Variables” for Dependabot.
+To grant Dependabot access to the packages on Private Packagist, you need to provide the secret `PRIVATE_PACKAGIST_PASSWORD` in your GitHub repository. In Settings, under the section “Security,” there is “Secrets and Variables” for Dependabot.
 
 ![Dependabot Secrets](/Resources/public/img/docs/articles/dependabot-secret.png)
 
@@ -45,7 +45,7 @@ Create a Team Authentication Token under “Settings” and “Authentication To
 
 ## Troubleshooting
 
-To check if Dependabot is able to access your packages, you need to navigate to “Insights”, then “Dependency Graph” and then activate the tab “Dependabot”.
+To check if Dependabot is able to access your packages, navigate to “Insights”, then “Dependency Graph” and then activate the tab “Dependabot”.
 
 ![Dependabot Insights](/Resources/public/img/docs/articles/dependabot-insights.png)
 
@@ -53,6 +53,7 @@ There is a link “Recent update jobs”, that will show the last jobs from Depe
 
 ![Dependabot Jobs](/Resources/public/img/docs/articles/dependabot-jobs.png)
 
-- Make sure the secret name matches the one that you referenced in dependabot.yaml
-- Check if the token from Private Packagist is still valid and has not expired.
-- Make sure the names under `updates[x].registries` are matching a key for credentials in `registries` on the top level of the [dependabot.yaml](#dependabotyaml).
+Make sure that:
+- the secret name matches the one that you referenced in dependabot.yaml
+- the Private Packagist authentication token is still valid and has not expired.
+- the names under `updates[x].registries` are matching a key for credentials in `registries` on the top level of the [dependabot.yaml](#dependabotyaml).
