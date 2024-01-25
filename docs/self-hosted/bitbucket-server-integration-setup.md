@@ -22,6 +22,8 @@ Click on the link to setup an Application Link on Bitbucket Data Center / Server
 
 ![Bitbucket Configure Application Link](/Resources/public/img/docs/integration-setup/bitbucket-server-03-bitbucket-configure-application-link.png)
 
+For Bitbucket Data Center versions 7.21 and newer, select "Atlassian product" and not "External application" to be able to set up an OAuth1 link.
+
 After you hit the button to create a new Application Link a configuration window may appear. If it does, verify that the url matches your Private Packagist URL and hit "Continue", otherwise skip this step.
 
 ![Bitbucket Invalid Url](/Resources/public/img/docs/integration-setup/bitbucket-server-04-bitbucket-invalid-url.png)
