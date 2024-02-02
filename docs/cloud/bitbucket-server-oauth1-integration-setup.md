@@ -6,7 +6,7 @@
 From the organization settings page, select the "Integrations" subtab.
 Hit the "Add Integration" button on the integrations listing page to get to the form below.
 To set up a Bitbucket Data Center / Server integration with Private Packagist start by selecting "Bitbucket Data Center / Server"
-as the platform, OAuth 1 as OAuth version, and enter the URL of your on-premise Bitbucket Data Center / Server into the base URL field as seen in the example below.
+as the platform, enter the URL of your on-premise Bitbucket Data Center / Server into the base URL field, and select OAuth 1 as OAuth version as seen in the example below.
 
 ![Packagist Setup](/Resources/public/img/docs/integration-setup/cloud/bitbucket-server-oauth1-01-packagist-setup.png)
 
