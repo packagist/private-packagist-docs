@@ -33,7 +33,9 @@ Click on the pen icon to the right of the application you just created to edit t
 
 ![Bitbucket Data Center / Server Incoming Auth](/Resources/public/img/docs/integration-setup/bitbucket-server-oauth1-07-bitbucket-incoming-auth.png)
 
-This is where we will need the "Client ID" and the "Public Key" that were previously generated on the Private Packagist integration form. Make sure the entire content of the "Public Key" field gets copied and the "Consumer Callback" field stays empty. Submit the form and go back to Private Packagist.
+This is where we will need the "Client ID" and the "Public Key" that were previously generated on the Private Packagist integration form.
+Enter the "Client ID" into the "Consumer Key" field, make sure the entire content of the "Public Key" field gets copied and the "Consumer Callback" field stays empty.
+Submit the form and go back to Private Packagist.
 
 ## Finish the Setup
 Update the Integration on Private Packagist to save everything and finish the setup.
