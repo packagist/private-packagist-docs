@@ -23,6 +23,7 @@ Click on the link to setup an Application Link on Bitbucket Data Center / Server
 ![Bitbucket Create Application Link](/Resources/public/img/docs/integration-setup/bitbucket-server-02-bitbucket-create-application-link.png)
 
 After you click the button to continue, enter a name and the content from the "Callback URL / Redirect URL" from the Private Packagist form.
+Select Repositories "Read" as application permission and save the form.
 
 ![Bitbucket Configure Application Link](/Resources/public/img/docs/integration-setup/bitbucket-server-03-bitbucket-configure-application-link.png)
 
