@@ -108,6 +108,13 @@ This can be fixed by rerunning the original replicated install script. This will
 leave your current installation in tact but rewrite the main config files and therefore
 update the host IP and the NO_PROXY environment.
 
+#### Replicated Management Console shows "Stopped" after upgrading to 1.12.4
+
+You just upgraded to SelfHosted version 1.12.4 and now the Replicated Management Console 
+only shows "Stopped" in the top left corner of the dashboard? In this SelfHosted update PostgreSQL is upgraded from 9.6 to 12. Depending on the size of your database, this will cause increased disk IO and might take a few minutes during which the application won't be available.   
+The upgrade is done in the docker container `packagist-postgres-update` which should be first started then `stopped`. You can check the `Cluster` section: all containers should be started except the upgrade container should be stopped. The Replicated Management Console is just showing the wrong state.  
+Pressing the button `Start now` on the dashboard would then show the correct state, but you can leave it as is.
+
 #### Reset Replicated Management Console authentication
 
 If you cannot log into the Replicated Management Console anymore, then you can
