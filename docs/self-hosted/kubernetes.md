@@ -13,11 +13,11 @@ such as backups or updates.
 Private Packagist Self-Hosted Kubernetes can either be installed in an existing cluster or using an installer that creates
 an embedded Kubernetes cluster on a linux machine.
 
-#### Installing Private Packagist Self-Hosted Kubernetes in an exsting cluster
+#### Installing Private Packagist Self-Hosted Kubernetes in an existing cluster
 
 If you already have an existing Kubernetes cluster running, follow [this guide](./kubernetes-existing.md).
 
-#### Installing Private Packagist Self-Hosted Kubernetes without an exsting cluster
+#### Installing Private Packagist Self-Hosted Kubernetes without an existing cluster
 
 Don't use Kubernetes? Use the installer that takes care of installing Private Packagist Self-Hosted on a linux
 machine following [this guide](./kubernetes-embedded.md).
