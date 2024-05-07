@@ -37,7 +37,7 @@ in an existing Kubernetes cluster follow [this guide](./kubernetes-existing.md).
 ## Installation
 
 To install Private Packagist Self-Hosted and Replicated run the command below.
-To learn more about options for the easy install script, please refer to the [Replicated manual on Installing Replicated](https://help.replicated.com/docs/kubernetes/customer-installations/installing/).
+To learn more about options for the easy install script, please refer to the [kURL documentation](https://kurl.sh/docs/install-with-kurl/advanced-options).
 ```
 curl -sSL https://kurl.sh/privatepackagistkots | sudo bash
 ```
