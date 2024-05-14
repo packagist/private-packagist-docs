@@ -3,7 +3,7 @@
 
 <div class="row column">
     <div class="callout warning">
-        <p>Note: Application Links using OAuth 2 are available since Bitbucket Data Center / Server v7.21. If you are using an older Bitbucket Data Center / Server version then consult the<a href="/docs/cloud/bitbucket-server-oauth1-integration-setup.md">Bitbucket Data Center / Server OAuth 1 setup guide</a>.</p>
+        <p>Note: Application Links using OAuth 2 are available since Bitbucket Data Center / Server v7.21. If you are using an older Bitbucket Data Center / Server version then consult the <a href="/docs/cloud/bitbucket-server-oauth1-integration-setup.md">Bitbucket Data Center / Server OAuth 1 setup guide</a>.</p>
     </div>
 </div>
 

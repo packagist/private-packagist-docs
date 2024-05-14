@@ -1,6 +1,17 @@
 # Bitbucket Data Center / Server Integration Setup (OAuth 1)
 ## Private Packagist Cloud
 
+<div class="row column">
+    <div class="callout warning">
+        <p>
+            Note: As of Bitbucket Data Center / Server v8 Application Links using OAuth 1 can no longer be used to set up synchronizations in Private Packagist.
+            Consult the <a href="/docs/cloud/bitbucket-server-integration-setup.md">Bitbucket Data Center / Server OAuth 2 setup guide</a> to set up an Application Link using OAuth 2 instead.
+            <br>
+            If you have an existing OAuth 1 Application Link, create an OAuth 2 Application Link and edit the existing integration in Private Packagist.
+        </p>
+    </div>
+</div>
+
 ## Initial Setup
 
 From the organization settings page, select the "Integrations" subtab.
