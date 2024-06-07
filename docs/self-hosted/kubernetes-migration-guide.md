@@ -146,9 +146,9 @@ Please note that depending on the size of the `packagist_storage.tar.gz` file an
 it can take several minutes for this command to finish.
 
 ```
-kubectl cp packagist_storage.tar.gz ui:/tmp/packagist_storage.tar.gz
-kubectl exec ui /srv/manager/bin/console packagist:self-hosted:migrate-storage import /tmp/packagist_storage.tar.gz && rm /tmp/packagist_storage.tar.gz 
-
+export UI_POD=$(kubectl get pods --no-headers -o custom-columns=":metadata.name"|grep ui-)
+kubectl cp packagist_storage.tar.gz $UI_POD:/tmp/packagist_storage.tar.gz -c ui
+kubectl exec $UI_POD -c ui -- /bin/sh -c "/srv/manager/bin/console packagist:self-hosted:migrate-storage import /tmp/packagist_storage.tar.gz && rm /tmp/packagist_storage.tar.gz" 
 ```
 
 ### Start the Private Packagist application
