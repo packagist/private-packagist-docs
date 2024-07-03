@@ -17,7 +17,7 @@ an embedded Kubernetes cluster on a linux machine.
 
 If you already have an existing Kubernetes cluster running, follow [this guide](./kubernetes-existing.md).
 
-#### Installing Private Packagist Self-Hosted Kubernetes without an existing cluster
+#### Installing Private Packagist Self-Hosted Kubernetes in a Kubernetes cluster installed with kURL
 
 Don't use Kubernetes? Use the installer that takes care of installing Private Packagist Self-Hosted on a linux
 machine following [this guide](./kubernetes-embedded.md).

@@ -1,4 +1,4 @@
-# Installing Private Packagist Self-Hosted with an embeded Kubernetes cluster
+# Installing Private Packagist Self-Hosted in a Kubernetes cluster installed with kURL
 ##
 
 Private Packagist Self-Hosted leverages the [kots](https://docs.replicated.com/reference/kots-cli-getting-started)
