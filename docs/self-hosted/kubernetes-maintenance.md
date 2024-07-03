@@ -3,7 +3,8 @@
 
 ### Updates
 
-By default Replicated checks for updates every 4 hours and you can install them from the dashboard once they are available.
+By default Replicated checks for updates every 4 hours and you can install them from the dashboard in the Replicated
+Management Console on port 8800 once they are available.
 You can configure this behaviour under “Configure automatic updates” on the dashboard.
 
 The [Private Packagist Self-Hosted Changelog](https://packagist.com/docs/self-hosted/changelog) details all new features,
@@ -14,7 +15,8 @@ require that you download and rerun the install script via the command below.
 
 #### Update KOTS for Private Packagist Self-Hosted Kubernetes without an existing cluster
 
-Please note that running the command will take a while and that Private Packagist and the Replicated Management Console will become temporarily unavailable.
+Please note that running the command will take a while as it will also updates Kubernetes and other dependencies of Private Packagist Self-Hosted.
+Private Packagist and the Replicated Management Console will become temporarily unavailable.
 
 ```
 curl -sSL https://k8s.kurl.sh/privatepackagistkots | bash -s
@@ -24,4 +26,8 @@ curl -sSL https://k8s.kurl.sh/privatepackagistkots | bash -s
 
 ```
 curl https://kots.io/install | bash
+kubectl kots admin-console upgrade -n NAMESPACE
 ```
+
+Replace `NAMESPACE` with the namespace in your cluster where KOTS is installed.
+
