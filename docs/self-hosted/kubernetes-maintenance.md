@@ -3,9 +3,9 @@
 
 ### Updates
 
-By default Replicated checks for updates every 4 hours and you can install them from the dashboard in the Replicated
+By default Replicated checks for updates every 4 hours and you can install updates from the dashboard in the Replicated
 Management Console on port 8800 once they are available.
-You can configure this behaviour under “Configure automatic updates” on the dashboard.
+You can configure this behavior under “Configure automatic updates” on the dashboard.
 
 The [Private Packagist Self-Hosted Changelog](https://packagist.com/docs/self-hosted/changelog) details all new features,
 behavior changes and major bugfixes each release introduces.
