@@ -14,13 +14,13 @@ certain components used by your current Private Packagist Self-Hosted installati
 
 ## Backing up the data
 
-Private Packagist Self-Hosted uses three different storages. A PostgreSQL database used as primary storage,
+Private Packagist Self-Hosted stores data in three different ways. A PostgreSQL database used as primary storage,
 a Redis database used as secondary storage, cache, and job queue, and a file/blob storage for uploaded artifacts and dist
 files used during composer install.
 
 To avoid any data inconsistency and random errors during application usage all three of them need to be backed up and restored at the same time.
 
-Please note that you won't be able to restore Private Packagist Self-Hosted Kubernetes from snapshots created via Private Packagist Self-Hosted Replicated Native.
+Please note that you won't be able to restore Private Packagist Self-Hosted Kubernetes from snapshots created by Private Packagist Self-Hosted Replicated Native.
 
 ### Stop the Private Packagist application
 
@@ -96,7 +96,7 @@ once all the data has been restored.
 kubectl scale deployment ui repo worker --replicas 0
 ```
 
-To verify that all ui, repo, and worker pods have been run the command below and verify that the pods don't appear in the list anymore.
+To verify that all ui, repo, and worker pods have been run execute the command below and verify that the pods don't appear in the list anymore.
 ```
 kubectl get pods
 ```
@@ -106,7 +106,7 @@ kubectl get pods
 Follow the instructions below to restore the PostgreSQL database in the cluster.
 If you are using your own PostgreSQL instance, use the `packagist_db.sql` file directly to import the data into your instance.
 
-Please note that the backup will overwrite any existing data in the database and any changes you made during setup will be lost.
+Please note that the backup will overwrite any existing data in the database and any changes you made during the setup will be lost.
 
 After each scale command, use `kubectl get pods` again to verify that the postgres pod is in the correct running state.
 
@@ -135,7 +135,7 @@ kubectl scale statefulset redis --replicas 1
 
 ### Import the dist and artifact files
 
-Importing the dist and artifact files requires the UI pods to be back online via the command below. This will take a few seconds.
+Importing the dist and artifact files requires the UI pods to be back online. Start them with the command below. This will take a few seconds.
 You can use the second command to verify once 2/2 pods are running.
 ```
 kubectl scale statefulset ui --replicas 1
@@ -172,4 +172,4 @@ background workers run as expected.
 ### Adjust domain names
 
 In case you initially set up Private Packagist Self-Hosted Kubernetes with a different domain name, you can now edit the
-domain names in the Admin panel, if necessary adjust your DNS entries, and shut down the old Private Packagist Self-Hosted instance.
+domain names in the admin panel. If necessary, adjust your DNS entries, and shut down the old Private Packagist Self-Hosted instance.
