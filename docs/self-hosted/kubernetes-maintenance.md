@@ -15,7 +15,7 @@ require that you download and rerun the install script via the command below.
 
 #### Update KOTS for Private Packagist Self-Hosted Kubernetes in a Kubernetes cluster installed with kURL
 
-Please note that running the command will take a while as it will also updates Kubernetes and other dependencies of Private Packagist Self-Hosted.
+Please note that running the command will take a while as it will also update Kubernetes and other dependencies of Private Packagist Self-Hosted.
 Private Packagist and the Replicated Management Console will become temporarily unavailable.
 
 ```
