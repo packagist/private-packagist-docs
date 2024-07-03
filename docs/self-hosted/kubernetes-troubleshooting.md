@@ -2,6 +2,10 @@
 ## Private Packagist Self-Hosted (Kubernetes)
 
 #### Private Packagist Self-Hosted update requires KOTS upgrade
+If the dashboard shows: 
+
+'This version of Private Packagist Self-Hosted requires a version of KOTS that is different than what you currently have installed.'
+
 Please refer to the "[Updates](./kubernetes-maintenance.md#updates)" section in our maintenance guide.
 
 #### Generating a support bundle
