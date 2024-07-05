@@ -165,8 +165,8 @@ This can take a few minutes. You can run the command below to see when all pods 
 kubectl get pods -w
 ```
 
-Once the all pods are back up and running. Log in to Private Packagist and verify that your organization is shown in the UI.
-Ideally, run a `composer update` command in one of your projects to assert that the Composer repository run as expected.
+Once all the pods are back up and running, log in to Private Packagist and verify that your organization is shown in the UI.
+Ideally, run a `composer update` command in one of your projects to assert that the Composer repository responds as expected.
 
 ### Adjust domain names
 
