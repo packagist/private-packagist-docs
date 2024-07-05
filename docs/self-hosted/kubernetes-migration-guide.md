@@ -14,8 +14,8 @@ certain components used by your current Private Packagist Self-Hosted installati
 
 ## Backing up the data
 
-Private Packagist Self-Hosted stores data in three different ways. A PostgreSQL database used as primary storage,
-a Redis database used as secondary storage, cache, and job queue, and a file/blob storage for uploaded artifacts and dist
+Private Packagist Self-Hosted stores data in three different ways. A PostgreSQL database, a Redis database used as storage 
+for installation and usage statistics, cache, and job queue, and a file/blob storage for uploaded artifacts and dist
 files used during composer install.
 
 To avoid any data inconsistency and random errors during application usage all three of them need to be backed up and restored at the same time.
