@@ -13,9 +13,14 @@ such as backups or updates.
 Private Packagist Self-Hosted Kubernetes can either be installed in an existing cluster or using an installer that creates
 an embedded Kubernetes cluster on a linux machine.
 
+#### Installing the Private Packagist Self-Hosted Kubernetes Helm chart in an existing cluster
+
+If you already have an existing Kubernetes cluster running, and are comfortable installing Helm charts then follow [this guide](./kubernetes-helm.md).
+
 #### Installing Private Packagist Self-Hosted Kubernetes in an existing cluster
 
-If you already have an existing Kubernetes cluster running, follow [this guide](./kubernetes-existing.md).
+If you already have an existing Kubernetes cluster running, and would like to manage the application with a full fledged
+admin interface then follow [this guide](./kubernetes-existing.md).
 
 #### Installing Private Packagist Self-Hosted Kubernetes in a Kubernetes cluster installed with kURL
 
