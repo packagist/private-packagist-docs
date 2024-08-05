@@ -20,7 +20,7 @@ a subrepository only grant you access to the subrepository the token was created
 
 #### Read-only vs update tokens
 There are two kinds of organization authentication tokens: read-only and update tokens.
-Read-only tokens are only meant to be used with an existing composer.lock file. So they are not suitable to run `composer update` and running `composer install` without a composr.lock file is the same as running `composer update`. They do not allow automatic mirroring of new packages and thus may prevent updating to latest versions if these add any new requirements.
+Read-only tokens are only meant to be used with an existing composer.lock file. So they are not suitable to run `composer update` and running `composer install` without a composer.lock file is the same as running `composer update`. They do not allow automatic mirroring of new packages and thus may prevent updating to latest versions if these add any new requirements.
 If you need to run `composer update`, then either use a token with update access or your personal access token.
 Please note that you will be charged for authentication tokens with update access as if they were user accounts.
 
