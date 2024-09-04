@@ -6,8 +6,8 @@ to instead install Private Packagist Self-Hosted without an existing Kubernetes 
 
 ## General requirements
 
-1. A Kubernetes cluster v1.23 or v1.24
-1. Your username and password to log in to the registry. Don't have one yet? [Sign up for a free trial license!](https://packagist.com/self-hosted)
+1. A Kubernetes cluster v1.23 or newer
+1. Your username and password to log in to the Helm registry on registry.replicated.com. You can find your credentials with your Private Packagist account on https://packagist.com. Don't have one yet? [Sign up for a free trial license!](https://packagist.com/self-hosted)
 1. One (sub-)domain to operate the web interface, e.g. packagist.myintranet.com
 1. One (sub-)domain to operate the composer repository, e.g. repo.packagist.myintranet.com or packagist-repo.myintranet.com
 1. An SSL certificate valid for both chosen domains
@@ -23,7 +23,7 @@ to instead install Private Packagist Self-Hosted without an existing Kubernetes 
 ## Installation
 
 Private Packagist Self-Hosted requires PostgreSQL, Redis, and blob storage to store application data and Composer packages.
-You can either use the build-in options to come with the Helm chart or use your own PostgreSQL, Redis, and blob storage.
+You can either use the built-in options that come with the Helm chart or use your own PostgreSQL, Redis, and blob storage.
 For blob storage, we currently support Azure Blob Storage, Google Cloud Storage, AWS S3, and other S3-compatible storage solutions.
 
 Please note that if you chose to use the built-int solution then each of the storage requires one or more volumes using
@@ -32,16 +32,18 @@ Configure the Storage Class in global values section.
 
 ### Annotated configuration
 
+To install the Private Packagist Self-Hosted Helm Chart configure values based on your setup, store them in a YAML file, e.g. values.yaml, and then run the commands below.
+
 HELM_CHART_VALUES_FILE
 
 #### Login to the Helm registry and install the chart
 
-To install the Private Packagist Self-Hosted Helm Chart configure values based on your setup and then run the commands below.
-Make sure you replace `YOUR_USERNAME`, `YOUR_PASSWORD`, `YOURVALUES.yaml`, and `VERSION` with your values before running the commands.
+Make sure you replace `YOUR_USERNAME`, `YOUR_PASSWORD`, `values.yaml`, and `VERSION` with your values before running the commands.
+You can find the latest Private Packagist version on our [changelog page](/docs/self-hosted/changelog).
 
 ```
 helm registry login registry.replicated.com --username YOUR_USERNAME --password YOUR_PASSWORD
-helm install -f YOURVALUES.yaml private-packagist oci://registry.replicated.com/privatepackagistkots/unstable/private-packagist --version VERSION
+helm install -f values.yaml private-packagist oci://registry.replicated.com/privatepackagistkots/private-packagist --version VERSION
 ```
 
 #### Authentication Setup
@@ -78,10 +80,11 @@ That’s it! Private Packagist Self-Hosted is now ready to be used! You’ll fin
 
 Private Packagist Self-Hosted will set up PostgreSQL, Redis, and MinIO to store application data and Composer packages.
 Each of them requires one or more volumes using [dynamic volume provision](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) to allocate storage for the different Pods.
-Configure the Storage Class under the Kubernetes Settings on the Config page in the admin console.
+Configure the Storage Class in the values.yaml under `global.storageClass`.
 
 Alternatively, you can configure Private Packagist Self-Hosted to use your own PostgreSQL, Redis, and blob storage.
 For blob storage, we currently support Azure Blob Storage, Google Cloud Storage, AWS S3, and other S3-compatible storage solutions.
+You can configure the blog storage in the values.yaml under `storage.type`.
 
 ## Security
 
@@ -92,7 +95,7 @@ Make sure your Kubernetes network plugin encrypts connections between pods to av
 
 ## Backups
 
-The Replicated admin console integrates with [Velero](https://velero.io/), a tool to back up and restore your Kubernetes
+The Private Packagist Self-Hosted application integrates with [Velero](https://velero.io/), a tool to back up and restore your Kubernetes
 cluster resources and persistent volumes. Private Packagist Self-Hosted provides annotations to help back up and restore
 the application with Velero.
 
