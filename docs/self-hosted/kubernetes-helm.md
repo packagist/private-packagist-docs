@@ -46,6 +46,9 @@ helm registry login registry.replicated.com --username YOUR_USERNAME --password 
 helm install -f values.yaml private-packagist oci://registry.replicated.com/privatepackagistkots/private-packagist --version VERSION
 ```
 
+Verify that the helm chart is deployed by running `kubectl get pods` and verifying that the `repo`, `ui`, and `worker` pods are running.
+You should then be able to access the web interface by opening the configured domain in the browser, e.g. https://packagist.myintranet.com.
+
 #### Authentication Setup
 Within Private Packagist Self-Hosted, you now need to set up at least one user authentication method.
 You have the choice between authentication with email addresses and passwords and several OAuth integrations with third-party services.
