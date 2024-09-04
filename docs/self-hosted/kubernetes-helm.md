@@ -2,17 +2,17 @@
 ##
 
 The Private Packagist Self-Hosted Helm chart allows you to install Private Packagist in an existing Kubernetes cluster,
-to instead install Private Packagist Self-Hosted without an existing Kubernetes cluster follow [this guide](./kubernetes-embedded.md).
+to instead install Private Packagist Self-Hosted without an existing Kubernetes cluster, follow [this guide](./kubernetes-embedded.md).
 
 ## General requirements
 
 1. A Kubernetes cluster v1.23 or newer
-1. Your username and password to log in to the Helm registry on registry.replicated.com. You can find your credentials with your Private Packagist account on https://packagist.com. Don't have one yet? [Sign up for a free trial license!](https://packagist.com/self-hosted)
+1. Your username and password to log in to the Helm registry on registry.replicated.com. You can find your credentials in your Private Packagist account at https://packagist.com. Don't have one yet? [Sign up for a free trial license!](https://packagist.com/self-hosted)
 1. One (sub-)domain to operate the web interface, e.g. packagist.myintranet.com
 1. One (sub-)domain to operate the composer repository, e.g. repo.packagist.myintranet.com or packagist-repo.myintranet.com
 1. An SSL certificate valid for both chosen domains
 1. An SMTP server or a GMail account for Private Packagist Self-Hosted to send email
-1. If your firewall restricts external connections the following domains must be accessible from the server:
+1. If your firewall restricts external connections then the following domains must be accessible from the server:
   * hub.docker.com
   * proxy.replicated.com
   * registry.replicated.com
@@ -26,13 +26,13 @@ Private Packagist Self-Hosted requires PostgreSQL, Redis, and blob storage to st
 You can either use the built-in options that come with the Helm chart or use your own PostgreSQL, Redis, and blob storage.
 For blob storage, we currently support Azure Blob Storage, Google Cloud Storage, AWS S3, and other S3-compatible storage solutions.
 
-Please note that if you chose to use the built-int solution then each of the storage requires one or more volumes using
+Please note that if you choose to use the built-in solution then each of the storage requires one or more volumes using
 [dynamic volume provision](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) to allocate storage for the different Pods.
-Configure the Storage Class in global values section.
+Configure the Storage Class in the values.yaml under `global.storageClass`.
 
 ### Annotated configuration
 
-To install the Private Packagist Self-Hosted Helm Chart configure values based on your setup, store them in a YAML file, e.g. values.yaml, and then run the commands below.
+To install the Private Packagist Self-Hosted Helm Chart configure values based on your setup, store them in a YAML file, e.g. `values.yaml`, and then run the commands below.
 
 HELM_CHART_VALUES_FILE
 
@@ -91,7 +91,7 @@ You can configure the blog storage in the values.yaml under `storage.type`.
 The Private Packagist Self-Hosted application expects that TLS termination happens at or before the Ingress level.
 All traffic within the cluster is unencrypted.
 
-Make sure your Kubernetes network plugin encrypts connections between pods to avoid potential security issues.
+Ensure your Kubernetes network plugin encrypts connections between pods to avoid potential security issues.
 
 ## Backups
 
