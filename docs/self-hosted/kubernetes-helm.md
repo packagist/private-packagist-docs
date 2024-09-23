@@ -87,7 +87,7 @@ Configure the Storage Class in the values.yaml under `global.storageClass`.
 
 Alternatively, you can configure Private Packagist Self-Hosted to use your own PostgreSQL, Redis, and blob storage.
 For blob storage, we currently support Azure Blob Storage, Google Cloud Storage, AWS S3, and other S3-compatible storage solutions.
-You can configure the blog storage in the values.yaml under `storage.type`.
+You can configure the blob storage in the values.yaml under `storage.type`.
 
 ## Security
 
