@@ -74,8 +74,11 @@ The first user is granted admin permissions automatically. You can grant admin p
 ![Add Admin](/Resources/public/img/docs/self-hosted/10-add-admin.png)
 
 #### Switching to Production Mode
-Head back to the admin console to disable the Setup Mode in the configuration. Once the preflight checks passed, you can
-apply the changes.
+Edit your values.yaml to disable the Setup Mode.
+
+* Change `application.setupMode.enabled` in the values.yaml
+* Apply the changes in your cluster with `helm upgrade`
+* Restart the ui deployment to apply the changes in the application `kubectl rollout restart deployment ui`
 
 That’s it! Private Packagist Self-Hosted is now ready to be used! You’ll find all further information in the web interface.
 
