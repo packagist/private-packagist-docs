@@ -7,7 +7,7 @@ Private Packagist Self-Hosted installation and allows you to monitor the applica
 such as backups or updates.
 
 This page will guide you through an installation without an existing cluster. To instead install Private Packagist Self-Hosted
-in an existing Kubernetes cluster follow [this guide](./kubernetes-existing.md).
+in an existing Kubernetes cluster using Helm follow [this guide](./kubernetes-helm.md).
 
 ## General requirements
 
