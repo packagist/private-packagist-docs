@@ -90,7 +90,7 @@ available updates for Private Packagist. Once the application has entered the re
 via the domain configured for the web interface e.g. packagist.myintranet.com and finish the setup there.
 ![Application Overview](/Resources/public/img/docs/self-hosted-kubernetes/console-application-overview.png)
 
-### Setup authenticateion and Select Admin
+### Setup authentication and Select Admin
 
 #### Authentication Setup
 Within Private Packagist Self-Hosted, you now need to set up at least one user authentication method.
