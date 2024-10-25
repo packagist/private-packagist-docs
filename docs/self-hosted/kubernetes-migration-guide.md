@@ -138,7 +138,7 @@ kubectl scale statefulset redis --replicas 1
 Importing the dist and artifact files requires the UI pods to be back online. Start them with the command below. This will take a few seconds.
 You can use the second command to verify once 2/2 pods are running.
 ```
-kubectl scale statefulset ui --replicas 1
+kubectl scale deployment ui --replicas 1
 kubectl get pods -w
 ```
 
@@ -148,7 +148,7 @@ it can take several minutes for this command to finish.
 ```
 export UI_POD=$(kubectl get pods --no-headers -o custom-columns=":metadata.name"|grep ui-)
 kubectl cp packagist_storage.tar.gz $UI_POD:/tmp/packagist_storage.tar.gz -c ui
-kubectl exec $UI_POD -c ui -- /bin/sh -c "/srv/manager/bin/console packagist:self-hosted:migrate-storage import /tmp/packagist_storage.tar.gz && rm /tmp/packagist_storage.tar.gz" 
+kubectl exec $UI_POD -c ui -- /bin/sh -c "/srv/manager/bin/console packagist:self-hosted:migrate-storage import /tmp/packagist_storage.tar.gz && rm /tmp/packagist_storage.tar" 
 ```
 
 ### Start the Private Packagist application
@@ -156,7 +156,7 @@ kubectl exec $UI_POD -c ui -- /bin/sh -c "/srv/manager/bin/console packagist:sel
 Once your data has been restored. Start the application:
 
 ```
-kubectl scale deployment ui --replicas 1
+kubectl scale deployment ui repo worker --replicas 1
 ```
 
 This can take a few minutes. You can run the command below to see when all pods are back up and running.
