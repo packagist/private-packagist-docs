@@ -3,7 +3,7 @@
 
 ## Requirements
 
-To start the migration process, your Private Packagist Self-Hosted Replicated Native instance needs to run version 1.12.5 or newer.
+To start the migration process, your Private Packagist Self-Hosted Replicated Native instance needs to run version 1.12.8 or newer.
 To reduce the disruption to a minimum, we recommend that you set up your Private Packagist Self-Hosted Kubernetes
 instance on a different machine before you start the migration process.
 
