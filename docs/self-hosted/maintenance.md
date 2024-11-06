@@ -1,6 +1,18 @@
 # Maintenance
 ## Private Packagist Self-Hosted (Replicated Native)
 
+This guide explains how to maintain the now deprecated Private Packagist Self-Hosted (Replicated Native).  
+If you are using our product Private Packagist Self-Hosted Kubernetes, [use this guide](./kubernetes-maintenance.md).
+
+<div class="row column">
+    <div class="callout warning">
+        <p>Replicated Native shuts down November 30th, 2024.</p>
+        <p>
+            To keep using Private Packagist Self-Hosted, you need to migrate to the next iteration of our Self-Hosted product: <a href="/docs/self-hosted/kubernetes">Private Packagist Self-Hosted Kubernetes</a>.        
+        </p>
+    </div>
+</div>
+
 ### Updates
 By default Replicated checks for updates every 5 hours and you can install them from the dashboard once they are available. You can configure this behaviour under “Console Settings” when clicking on the gear icon in the management console.
 
