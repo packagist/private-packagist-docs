@@ -1,6 +1,18 @@
 # Self-Hosted Installation Guide
 ## Private Packagist Self-Hosted (Replicated Native)
 
+This guide explains how to set up the now deprecated Private Packagist Self-Hosted (Replicated Native).  
+If you are using our product Private Packagist Self-Hosted Kubernetes, [use this guide](./kubernetes.md).
+
+<div class="row column">
+    <div class="callout warning">
+        <p>Replicated Native shuts down November 30th, 2024.</p>
+        <p>
+            To keep using Private Packagist Self-Hosted, you need to migrate to the next iteration of our Self-Hosted product: <a href="/docs/self-hosted/kubernetes">Private Packagist Self-Hosted Kubernetes</a>.        
+        </p>
+    </div>
+</div>
+
 ## Requirements
 
 1. License Key File (file extension .rli)<br>Don't have one yet? [Sign up for a free trial license!](https://packagist.com/self-hosted)
