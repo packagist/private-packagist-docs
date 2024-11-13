@@ -17,11 +17,6 @@ an embedded Kubernetes cluster on a linux machine.
 
 If you already have an existing Kubernetes cluster running, and are comfortable installing Helm charts then follow [this guide](./kubernetes-helm.md).
 
-#### Installing Private Packagist Self-Hosted Kubernetes in an existing cluster
-
-If you already have an existing Kubernetes cluster running, and would like to manage the application with a full fledged
-admin interface then follow [this guide](./kubernetes-existing.md).
-
 #### Installing Private Packagist Self-Hosted Kubernetes in a Kubernetes cluster installed with kURL
 
 Don't use Kubernetes? Use the installer that takes care of installing Private Packagist Self-Hosted on a linux
