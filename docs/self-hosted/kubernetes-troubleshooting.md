@@ -36,3 +36,27 @@ System.
 > a year. As Private Packagist only allows a time-drift of up to one (1) minute, we
 > recommend using TOTP devices that have the ability to stay synchronized with
 > the correct time (such as a phone, or re-programmable TOTP hardware devices).
+
+#### Issues with Reverse-Proxy running in front of the Kubernetes Cluster
+
+Please follow the instructions below, if you are experiencing problems with the reverse-proxy not being able to connect to
+the cluster and encountering errors like this:
+```
+Peer closed connection in SSL handshake (104: Connection reset by peer) while SSL handshaking to upstream
+```
+
+Ensure that the SNI (Server Name Indication) TLS Extension is properly passed in requests to the cluster
+for SNI to work correctly on the ingress. When using IPs as upstream hostnames on the reverse-proxy, this is not the case
+by default and will result in a certificate error.
+
+To pass the SNI hostname from the incoming request to the upstream server, apply the following settings when using
+NGINX as a reverse-proxy:
+``` 
+proxy_ssl_name $host;
+proxy_ssl_server_name on;
+```
+
+If you are using different hostnames on the upstream and on the reverse-proxy, set the value in the
+`proxy_ssl_name` directive to the corresponding hostname of the upstream server.
+
+Please consult the documentation of other reverse-proxy servers to achieve the same result.
