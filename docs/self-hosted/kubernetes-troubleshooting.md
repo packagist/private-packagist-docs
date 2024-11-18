@@ -45,10 +45,13 @@ the cluster and encountering errors like this:
 Peer closed connection in SSL handshake (104: Connection reset by peer) while SSL handshaking to upstream
 ```
 
-Ensure that the SNI (Server Name Indication) TLS Extension is properly set for requests to the ingress controller of the Kubernetes Cluster.
-This is not the case when using IPs in `proxy_pass` on the reverse proxy and will result in an SSL handshake error.
+The following examples assume you are using nginx as a reverse-proxy. Please consult the documentation of other 
+reverse-proxy servers to achieve the same result.
 
-To pass the SNI hostname from the incoming request to the upstream server, add the following directives to NGINX:
+Ensure that the SNI (Server Name Indication) TLS Extension is properly set for requests to the ingress controller of the Kubernetes Cluster.
+This is not the case when using IPs in `proxy_pass` and will result in an SSL handshake error.
+
+To pass the SNI hostname from the incoming request to the upstream server, add the following directives to nginx:
 ``` 
 proxy_ssl_name $host;
 proxy_ssl_server_name on;
@@ -57,4 +60,4 @@ proxy_ssl_server_name on;
 If you are using different hostnames on the upstream and on the reverse-proxy, set the value in the
 `proxy_ssl_name` directive to the corresponding hostname of the upstream server.
 
-Please consult the documentation of other reverse-proxy servers to achieve the same result.
+
