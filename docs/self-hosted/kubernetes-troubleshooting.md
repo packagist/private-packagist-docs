@@ -46,8 +46,7 @@ Peer closed connection in SSL handshake (104: Connection reset by peer) while SS
 ```
 
 Ensure that the SNI (Server Name Indication) TLS Extension is properly passed in requests to the cluster
-for SNI to work correctly on the ingress. When using IPs as upstream hostnames on the reverse-proxy, this is not the case
-by default and will result in a certificate error.
+for SNI to work correctly on the ingress. This is not the case when using IPs in `proxy_pass` on the reverse proxy and will result in an SSL handshake error.
 
 To pass the SNI hostname from the incoming request to the upstream server, apply the following settings when using
 NGINX as a reverse-proxy:
