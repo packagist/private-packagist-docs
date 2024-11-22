@@ -13,12 +13,13 @@ to instead install Private Packagist Self-Hosted without an existing Kubernetes 
 1. An SSL certificate valid for both chosen domains
 1. An SMTP server or a GMail account for Private Packagist Self-Hosted to send email
 1. If your firewall restricts external connections then the following domains must be accessible from the server:
-  * hub.docker.com
+  * index.docker.io
+  * cdn.auth0.com
+  * *.docker.io
+  * *.docker.com
+  * replicated.app
   * proxy.replicated.com
   * registry.replicated.com
-  * replicated.app
-  * amazonaws.com
-  * k8s.gcr.io
 
 ## Installation
 
