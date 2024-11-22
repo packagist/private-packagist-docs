@@ -24,14 +24,19 @@ in an existing Kubernetes cluster using Helm follow [this guide](./kubernetes-he
     * Ports 80, 443, and 8800 must be accessible, for a full list of ports
     * Must be reachable at the chosen domain names from your local machine
 1. If your firewall restricts external connections the following domains must be accessible from the server:
-  * hub.docker.com
-  * proxy.replicated.com
+  * index.docker.io
+  * cdn.auth0.com
+  * *.docker.io
+  * *.docker.com
   * replicated.app
-  * amazonaws.com
-  * k8s.gcr.io
-  * k8s.kurl.sh (required to install the kots CLI)
+  * proxy.replicated.com
+  * registry.replicated.com
   * kots.io (required to install the kots CLI)
   * github.com (required to install the kots CLI)
+  * k8s.kurl.sh (required to install the kots CLI)
+  * s3.kurl.sh (required to install the kots CLI)
+  * amazonaws.com (required to install the kots CLI)
+
 <!-- See https://docs.replicated.com/enterprise/installing-general-requirements and https://kurl.sh/docs/install-with-kurl/system-requirements -->
 
 ## Installation
