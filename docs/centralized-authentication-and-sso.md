@@ -43,7 +43,7 @@ flow, and associate your Private Packagist account with your GitHub, GitLab or B
 Now we can continue to set up the synchronization. In your organization, go to _Settings > Synchronizations_ and press the 
 "Add Synchronization" button. Follow the steps to complete the configuration.
 
-![Create synchronization](/Resources/public/img/docs/articles/centralized-authentication-and-sso/configure-synchronization.png)
+![Create a synchronization](/Resources/public/img/docs/articles/centralized-authentication-and-sso/configure-synchronization.png)
 
 Once the synchronization is set up, Private Packagist will retrieve your users and their permissions from the code hosting platform. 
 Private Packagist now knows which users have access to your organization and which repositories and teams/groups they can access 
@@ -56,7 +56,7 @@ If you want to control which of your users should be allowed to access Private P
 users discovered by the synchronization by default. Then, only users that you activate manually will be able to log in. 
 To enable this behavior, go to the _Teams_ tab, and click on "View and manage all members of this organization" and check the box:
 
-![Deactivate users discovered by sync](/Resources/public/img/docs/articles/centralized-authentication-and-sso/deactivate-sync-members.png)
+![Deactivate users discovered by synchronization](/Resources/public/img/docs/articles/centralized-authentication-and-sso/deactivate-sync-members.png)
 
 ### 4 - Enforce OAuth authentication
 
@@ -77,10 +77,10 @@ Look for the "Login link" button in _Settings > Integrations_ page.
 ![Login link settings](/Resources/public/img/docs/articles/centralized-authentication-and-sso/login-link-settings.png)
 
 This link presents the option to authenticate with your configured integration. Once the user clicks on the
-"Login with &lt;integration name&gt;" button, the authentication process is initiated and your users are redirected to your 
-code-hosting platform to log in. . 
+"Log in with &lt;integration name&gt;" button, the authentication process is initiated and your users are redirected to your 
+code-hosting platform to log in.
 
 ![Login link example](/Resources/public/img/docs/articles/centralized-authentication-and-sso/login-link-example.png)
 
 If you are using one of the default platforms on Private Packagist Cloud, there is no
-need for a custom login link
+need for a custom login link.
