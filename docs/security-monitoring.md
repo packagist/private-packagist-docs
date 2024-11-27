@@ -19,7 +19,7 @@ Additional branches to be monitored can be selected on the package page.
 
 Security monitoring can be disabled for individual project packages on the package security page or for all projects
 on the organization’s security settings page.
-Organizations using the agency add-on have the option to disable security monitoring for individual subrepositories.
+Organizations using subrepositories have the option to disable security monitoring for individual subrepositories.
 
 ### Configuring Notifications
 Every user receives security notifications by email for all projects they have access to by default.
