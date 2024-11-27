@@ -42,6 +42,22 @@ docker exec -it packagist-ui rm /tmp/storage.tar.gz
 docker stop packagist-ui
 ```
 
+In case you run into timeout problems while running the `migrate-storage` command, we offer an alternative approach
+using only the `tar` command.
+
+```
+# The following commands may require root permissions
+docker stop packagist-ui
+cd /data/packagist
+
+# Ensure all needed folders are present
+mkdir -p artifacts composer
+
+# Replace YOUR_BACKUP_PATH with the path you wish to save the backup to
+tar -cvzf YOUR_BACKUP_PATH/packagist_storage.tar.gz --transform s/^composer/dist/ --transform s/^artifacts/artifact/ composer artifacts
+```
+
+
 ### Backup the PostgreSQL database
 
 At the end of this step, you should have a `packagist_db.sql` file in your working directory.
