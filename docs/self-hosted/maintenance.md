@@ -31,9 +31,6 @@ Go back to the dashboard on the Replicated Management Console and restart the ap
 
 If your certificate requires intermediate certificates to be recognized by your browser and/or Composer you can paste them into your certificate text file. Please make sure they are sorted from leaf (your certificate) via intermediate certificate to root certificate at the bottom. Otherwise Replicated will not recognize the certificate in a combined file.
 
-> In order to replace the certificate, you will first need to restore the ability to upload new TLS certificates as described in the 
-> [Replicated Documentation](https://docs.replicated.com/enterprise/updating-tls-cert#update-custom-tls-certificates)
-
 Please see the [Troubleshooting](./troubleshooting.md) page for details on dealing with SSL errors.
 
 #### Automating the replacement of the SSL certificate
