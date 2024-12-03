@@ -1,6 +1,9 @@
 # Maintenance
 ## Private Packagist Self-Hosted (Kubernetes)
 
+This page describes common maintenance tasks for Private Packagist Self-Hosted in a Kubernetes cluster installed with [kURL](kubernetes-embedded). 
+This page is not relevant if you installed the application with [Helm](kubernetes-helm). 
+
 ### Updates
 
 By default Replicated checks for updates every 4 hours and you can install updates from the dashboard in the Replicated
