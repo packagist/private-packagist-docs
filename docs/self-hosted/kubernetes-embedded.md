@@ -37,6 +37,11 @@ in an existing Kubernetes cluster using Helm follow [this guide](./kubernetes-he
   * s3.kurl.sh (required to install the kots CLI)
   * amazonaws.com (required to install the kots CLI)
 
+> Please note that a multi-node setup with kURL is only possible if no built-in services (postgres, minio, redis) are used.
+> Consult the documentation of your Cloud Provider what managed services can replace the built-in services 
+> (eg. for AWS RDS, S3 and ElastiCache)
+
+
 <!-- See https://docs.replicated.com/enterprise/installing-general-requirements and https://kurl.sh/docs/install-with-kurl/system-requirements -->
 
 ## Installation
