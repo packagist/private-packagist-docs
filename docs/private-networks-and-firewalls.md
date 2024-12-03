@@ -21,3 +21,7 @@ You will be adding packages to Private Packagist using a URL to the respective v
 
 ### Firewall Configuration
 You need to allow connections from Private Packagist Cloud servers to servers behind your firewall. We recommend that you accept external connections from all IPs in the document at <https://packagist-network.s3.eu-west-1.amazonaws.com/ip-address-list>. This list is updated automatically to contain a current list of our IP addresses used to access your source code or your code hosting solution. While it does not change frequently, we may modify it at any time. For this reason, we recommend that you use your firewall's mechanism to reference an external list of IPs with this URL rather than manually copying the IPs which will require frequent maintenance on your end. Additionally the DNS name `outgoing.packagist.com` resolves to a full list of all these IPv4 and IPv6 addresses as well, so if your firewall can use a DNS name instead to grant us access, you may use this record.
+
+## Further Firewall Configuration Documentation
+
+For additional instructions regarding firewall configuration, please consult the [Replicated Documentation](https://docs.replicated.com/enterprise/installing-general-requirements#firewall-openings-for-online-installations). 
