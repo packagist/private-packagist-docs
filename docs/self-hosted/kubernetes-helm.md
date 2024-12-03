@@ -20,7 +20,7 @@ to instead install Private Packagist Self-Hosted without an existing Kubernetes 
   * replicated.app
   * proxy.replicated.com
   * registry.replicated.com
-  * please also consult the list in [Replicated Documentation](https://docs.replicated.com/enterprise/installing-general-requirements#firewall-openings-for-online-installations).
+  * Please also consult the list in the [Replicated documentation](https://docs.replicated.com/enterprise/installing-general-requirements#firewall-openings-for-online-installations).
 
 ## Installation
 
