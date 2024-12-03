@@ -188,3 +188,24 @@ Ideally, run a `composer update` command in one of your projects to assert that 
 
 In case you initially set up Private Packagist Self-Hosted Kubernetes with a different domain name, you can now edit the
 domain names in the admin panel. If necessary, adjust your DNS entries, and shut down the old Private Packagist Self-Hosted instance.
+
+### Clear the cache
+
+The final step is to clear the Composer endpoint cache. If you are not using the built-in Redis database, check your internal documentation how to connect to the Redis instance.
+
+**Important:** Please note that there are multiple databases created in your Redis instance, and that Redis is not solely used for caching.
+Be careful not to flush any of the other migrated databases.
+
+```
+kubectl exec -it redis-0 -- redis-cli -p 9869 
+select 5
+flushdb
+```
+
+### Update Composer projects
+
+Update the Composer projects that use your self-hosted Private Packagist instance to make sure all repository references are up-to-date:
+
+```
+composer update mirrors
+```

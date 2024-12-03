@@ -60,4 +60,21 @@ proxy_ssl_server_name on;
 If you are using different hostnames on the upstream and on the reverse-proxy, set the value in the
 `proxy_ssl_name` directive to the corresponding hostname of the upstream server.
 
+#### Issues with missing package versions after migrating to Kubernetes
+
+If you've migrated from Private Packagist Self-Hosted (Replicated Native) and you are unable to require new package versions in your Composer projects, 
+you can try clearing the Composer endpoint Redis cache. If you are not using the built-in Redis database, check your internal 
+documentation how to connect to the Redis instance.
+
+**Important:** Please note that there are multiple databases created in your Redis instance, and that Redis is not solely used for caching.
+Be careful not to flush any of the other migrated databases.
+
+```
+kubectl exec -it redis-0 -- redis-cli -p 9869
+select 5
+flushdb
+```
+
+Afterwards, run `composer update mirrors` to make sure all repository references are up-to-date. 
+
 
