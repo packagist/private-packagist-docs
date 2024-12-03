@@ -36,6 +36,7 @@ in an existing Kubernetes cluster using Helm follow [this guide](./kubernetes-he
   * k8s.kurl.sh (required to install the kots CLI)
   * s3.kurl.sh (required to install the kots CLI)
   * amazonaws.com (required to install the kots CLI)
+  * Please also consult the list in the [Replicated documentation](https://docs.replicated.com/enterprise/installing-general-requirements#firewall-openings-for-online-installations).
 
 
 
