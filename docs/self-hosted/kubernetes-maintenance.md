@@ -15,6 +15,12 @@ You can configure this behavior under “Configure automatic updates” on the d
 The [Private Packagist Self-Hosted Changelog](https://packagist.com/docs/self-hosted/changelog) details all new features,
 behavior changes and major bugfixes each release introduces.
 
+You can safely bump multiple versions at once, it's not required to install individual versions consecutively. If we ever 
+release a version that needs to be installed specifically, we will make sure to communicate this first.
+
+We recommend backing up your database before each update. We cannot guarantee that downgrading to a previous release will always work
+due to database migrations. In case of upgrade failure, the most reliable way to rollback to the previous version is via backup.
+
 New versions that ask you to upgrade KOTS (Kubernetes Off-The-Shelf), the Replicated tool used to distribute Private Packagist,
 require that you download and rerun the install script via the command below.
 
@@ -29,10 +35,16 @@ curl -sSL https://k8s.kurl.sh/privatepackagistkots | bash -s
 
 ### Updating Helm installations 
 
-If you installed Private Packagist Self-Hosted with Helm into your existing cluster, you can update the application with this command:
+If you installed Private Packagist Self-Hosted with Helm into your existing cluster, you can update the application with the command 
+below. Make sure to compare your existing `values.yaml` file to the [current one](http://packagist.com.lo/docs/self-hosted/kubernetes-helm#annotated-configuration) first.
 
 ``` 
 helm upgrade -f values.yaml private-packagist oci://registry.replicated.com/privatepackagistkots/private-packagist --version VERSION
 ```
 
-You can find the latest version in the [changelog](changelog). Make sure to compare your existing `values.yaml` file to the [current one](http://packagist.com.lo/docs/self-hosted/kubernetes-helm#annotated-configuration).  
+You can find the latest version in the [changelog](changelog). You can safely bump multiple versions at once, it's not required to
+install individual versions consecutively. If we ever release a version that needs to be installed specifically, 
+we will make sure to communicate this first. 
+
+We recommend backing up your database before each update. We cannot guarantee that downgrading to a previous release will always work 
+due to database migrations. In case of upgrade failure, the most reliable way to rollback to the previous version is via backup.
