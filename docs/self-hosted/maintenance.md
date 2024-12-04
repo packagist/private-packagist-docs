@@ -22,7 +22,7 @@ If your firewall restricts external connections the following domains must be ac
 
 REPLICATED_DOMAIN_LIST
    
-### Updating or Replacing the SSL Certificate
+### Update or replace the SSL certificate
 If you would like to upload a new SSL certificate or if you would like to reload an existing SSL certification from the host filesystem please open the Replicated Management Console at port 8800.
 Then open the settings menu with the gear icon on the top right and select "Console Settings". Scroll to "TLS Key & Cert" or click on the respective option in the menu. Here you can select a new certificate.
 Save the page to apply the new certificate to the Replicated Management Console. If you are using a server path and replaced the SSL certificate without changing the path, save the page to reload the certificate.

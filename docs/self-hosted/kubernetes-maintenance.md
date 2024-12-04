@@ -31,3 +31,10 @@ kubectl kots admin-console upgrade -n NAMESPACE
 
 Replace `NAMESPACE` with the namespace in your cluster where KOTS is installed.
 
+### Update or replace the SSL certificate
+
+To update or replace the certificate, you must first restore the ability to upload new TLS certificates and then reupload 
+the certificate through the user interface. Please refer to the 
+[Replicated documentation](https://docs.replicated.com/enterprise/updating-tls-cert#update-custom-tls-certificates) 
+for detailed instructions.
+
