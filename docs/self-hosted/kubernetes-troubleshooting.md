@@ -60,4 +60,21 @@ proxy_ssl_server_name on;
 If you are using different hostnames on the upstream and on the reverse-proxy, set the value in the
 `proxy_ssl_name` directive to the corresponding hostname of the upstream server.
 
+#### Issues after changing the Private Packagist Self-Hosted domain name
+
+If you've changed the domain name used to access your Private Packagist Self-Hosted Kubernetes installation, you'll need to clear the Composer endpoint Redis cache.
+
+**Important:** Please note that there are multiple databases created in your Redis instance, and that Redis is not solely used for caching.
+Be careful not to flush any of the other databases.
+
+If you are not using the built-in Redis database, check your internal documentation how to connect to the Redis instance.
+
+```
+kubectl exec -it redis-0 -- redis-cli -p 9869
+select 5
+flushdb
+```
+
+Afterwards, run `composer update mirrors` to make sure all repository references are up-to-date. 
+
 
