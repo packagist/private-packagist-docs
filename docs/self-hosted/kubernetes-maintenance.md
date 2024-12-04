@@ -1,10 +1,12 @@
 # Maintenance
 ## Private Packagist Self-Hosted (Kubernetes)
 
-This page describes common maintenance tasks for Private Packagist Self-Hosted in a Kubernetes cluster installed with [kURL](kubernetes-embedded). 
-This page is not relevant if you installed the application with [Helm](kubernetes-helm). 
+## Updates
 
-### Updates
+### Updating kURL installations
+
+This section describes how to update a Private Packagist Self-Hosted in a Kubernetes cluster installed with [kURL](kubernetes-embedded).
+This section is not relevant if you installed the application with [Helm](kubernetes-helm).
 
 By default Replicated checks for updates every 4 hours and you can install updates from the dashboard in the Replicated
 Management Console on port 8800 once they are available.
@@ -25,12 +27,12 @@ Private Packagist and the Replicated Management Console will become temporarily 
 curl -sSL https://k8s.kurl.sh/privatepackagistkots | bash -s
 ```
 
-#### Update KOTS for Private Packagist Self-Hosted Kubernetes in an existing cluster
+### Updating Helm installations 
 
+If you installed Private Packagist Self-Hosted with Helm into your existing cluster, you can update the application with this command:
+
+``` 
+helm upgrade -f values.yaml private-packagist oci://registry.replicated.com/privatepackagistkots/private-packagist --version VERSION
 ```
-curl https://kots.io/install | bash
-kubectl kots admin-console upgrade -n NAMESPACE
-```
 
-Replace `NAMESPACE` with the namespace in your cluster where KOTS is installed.
-
+You can find the latest version in the [changelog](changelog). Make sure to compare your existing `values.yaml` file to the [current one](http://packagist.com.lo/docs/self-hosted/kubernetes-helm#annotated-configuration).  
