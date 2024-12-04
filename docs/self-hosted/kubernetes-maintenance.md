@@ -1,9 +1,9 @@
 # Maintenance
 ## Private Packagist Self-Hosted (Kubernetes)
 
-## Updates
+## kURL installations
 
-### Updating kURL installations
+### Updates
 
 This section describes how to update a Private Packagist Self-Hosted in a Kubernetes cluster installed with [kURL](kubernetes-embedded).
 This section is not relevant if you installed the application with [Helm](kubernetes-helm).
@@ -33,7 +33,9 @@ Private Packagist and the Replicated Management Console will become temporarily 
 curl -sSL https://k8s.kurl.sh/privatepackagistkots | bash -s
 ```
 
-### Updating Helm installations 
+## Helm installations
+
+### Updates
 
 If you installed Private Packagist Self-Hosted with Helm into your existing cluster, you can update the application with the command 
 below. Make sure to compare your existing `values.yaml` file to the [current one](http://packagist.com.lo/docs/self-hosted/kubernetes-helm#annotated-configuration) first.
