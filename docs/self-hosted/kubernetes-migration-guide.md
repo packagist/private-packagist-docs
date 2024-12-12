@@ -144,9 +144,10 @@ After each scale command, use `kubectl get pods` again to verify that the redis 
 ```
 export PV_NAME=$(kubectl get pvc redis-data-redis-0 -ojsonpath='{.spec.volumeName}')
 kubectl scale statefulset -n default redis --replicas 0
-sudo rm -f /var/openebs/local/$PV_NAME/appendonly.aof
-sudo rm -rf /var/openebs/local/$PV_NAME/appendonlydir
-sudo cp packagist_redis.rdb /var/openebs/local/$PV_NAME/dump.rdb
+# Depending on your setup, you might need to run the following three commands as `root`
+rm -f /var/openebs/local/$PV_NAME/appendonly.aof
+rm -rf /var/openebs/local/$PV_NAME/appendonlydir
+cp packagist_redis.rdb /var/openebs/local/$PV_NAME/dump.rdb
 kubectl scale statefulset redis --replicas 1
 ```
 
