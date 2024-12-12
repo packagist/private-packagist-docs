@@ -144,7 +144,9 @@ After each scale command, use `kubectl get pods` again to verify that the redis 
 ```
 export PV_NAME=$(kubectl get pvc redis-data-redis-0 -ojsonpath='{.spec.volumeName}')
 kubectl scale statefulset -n default redis --replicas 0
-rm /var/openebs/local/$PV_NAME/appendonly.aof
+# Depending on your setup, you might need to run the following three commands as `root`
+rm -f /var/openebs/local/$PV_NAME/appendonly.aof
+rm -rf /var/openebs/local/$PV_NAME/appendonlydir
 cp packagist_redis.rdb /var/openebs/local/$PV_NAME/dump.rdb
 kubectl scale statefulset redis --replicas 1
 ```
@@ -162,7 +164,7 @@ Please note that depending on the size of the `packagist_storage.tar.gz` file an
 it can take several minutes for this command to finish.
 
 ```
-export UI_POD=$(kubectl get pods --no-headers -o custom-columns=":metadata.name"|grep ui-)
+export UI_POD=$(kubectl get pods --field-selector=status.phase=Running --no-headers -o custom-columns=":metadata.name"|grep ui-)
 kubectl cp packagist_storage.tar.gz $UI_POD:/tmp/packagist_storage.tar.gz -c ui
 kubectl exec $UI_POD -c ui -- /bin/sh -c "/srv/manager/bin/console packagist:self-hosted:migrate-storage import /tmp/packagist_storage.tar.gz && rm /tmp/packagist_storage.tar" 
 ```
