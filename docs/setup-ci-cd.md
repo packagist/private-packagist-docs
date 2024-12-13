@@ -12,7 +12,7 @@ COMPOSER_AUTH='{"http-basic": {"repo.packagist.com": {"username": "token", "pass
 ```
 
 Note that read-only tokens are recommended for CI/CD where you'll be running composer install commands with an existing composer.lock file. Read-only tokens are not suitable to run `composer update` as they do not create new mirrored packages. In case you have automated tasks that run package updates, make sure to use tokens with update access.
-Read-only tokens don't count as users in your Private Packagist organization, while update tokens will be billed like an additional user account. Read-only tokens can only access packages in your organization. Read-only tokens created in a subrepository will only access packages in the respective subrepository.
+Read-only tokens don't count as users in your Private Packagist organization, while update tokens will be billed like an additional user account. Read-only tokens can only access packages in your organization. Read-only tokens created in a suborganization will only access packages in the respective suborganization.
 
 ## Instructions for CI/CD services
 

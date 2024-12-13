@@ -8,15 +8,15 @@ Three different types of authentication tokens can be used to access Private Pac
 
 ### User access token
 Every user has their own token that they can access either on the profile page or on the overview page of their organizations.
-The token grants the user access to all organizations and subrepositories they are a member of.
+The token grants the user access to all organizations and suborganizations they are a member of.
 
 ### Organization authentication tokens
 Admins and owners of an organization can create additional tokens on the organization settings page.
 Organization authentication tokens are ideal for automated systems like your CI environment or deployments. A token's access can be restricted to any set of packages which any of the organization's teams has access to.
 
-If your organization uses subrepositories then you can also create additional tokens in subrepositories.
-Tokens created in the organization settings do not grant you access to any of your subrepositories and tokens created in
-a subrepository only grant you access to the subrepository the token was created in.
+If your organization uses suborganizations then you can also create additional tokens in suborganizations.
+Tokens created in the organization settings do not grant you access to any of your suborganizations and tokens created in
+a suborganization only grant you access to the suborganization the token was created in.
 
 #### Read-only vs update tokens
 There are two kinds of organization authentication tokens: read-only and update tokens.
