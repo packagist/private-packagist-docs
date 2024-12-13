@@ -1,4 +1,4 @@
-# Private Packagist Suborgnaizations
+# Private Packagist Suborganizations
 ##
 
 Suborganizations are additional Composer repositories in an organization with their own URL, authentication tokens, and a separate list of packages.
@@ -29,7 +29,7 @@ one for Drupal 7 and one for Drupal 8. Then change your composer.json in all Com
 
 ## Setting up a suborganization in Private Packagist
 
-Organization owners and admins can create suborganizations on the suborganizations page via the "Create suborganizations" button.
+Organization owners and admins can create suborganizations on the suborganizations page via the "Create suborganization" button.
 On the settings page of an individual team you can grant all members of a team permission to create suborganizations.
 
 Alternatively, you can create suborganizations using our API through the [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
