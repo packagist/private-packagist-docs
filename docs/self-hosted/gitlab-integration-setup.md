@@ -36,7 +36,7 @@ Instead of the user settings, you can also create an application in the settings
 have full admin access on GitLab in the GitLab admin section under Applications.
 There are two additional checkmarks on that page: `trusted` should remain unchecked, and `confidential` should remain checked.
 
-![GitLab Credentials](/Resources/public/img/docs/integration-setup/gitlab-03-gitlab-credentials.png)
+![GitLab Credentials](/Resources/public/img/docs/integration-setup/self-hosted/gitlab-03-gitlab-credentials.png)
 
 ## Create the integration
 Copy and paste the "Application Id" and "Secret" value back into the Private Packagist integration form and submit the form with the "Create Integration" button.
