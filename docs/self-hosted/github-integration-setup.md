@@ -3,7 +3,7 @@
 
 <div class="row column">
     <div class="callout success">
-        <p>This guide explains how to setup an OAuth integration for Private Packagist Self-Hosted with either the on-premises version of GitHub, or their public service on GitHub.com.</p>
+        <p>This guide explains how to set up an OAuth integration for Private Packagist Self-Hosted with either the on-premises version of GitHub, or their public service on GitHub.com.</p>
         <p>If you are using our Cloud product at packagist.com, <a href="/docs/cloud/github-integration-setup">use this guide</a>.</p>
     </div>
 </div>

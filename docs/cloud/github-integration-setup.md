@@ -4,7 +4,7 @@
 <div class="row column">
     <div class="callout success">
         <p>
-            This guide explains how to setup an OAuth integration for Private Packagist Cloud with GitHub Enterprise Cloud/Server.
+            This guide explains how to set up an OAuth integration for Private Packagist Cloud with GitHub Enterprise Cloud/Server.
             If you use their public service on GitHub.com, these instructions are not relevant to you. 
         </p>
         <p>If you are using our Self-Hosted product, please <a href="/docs/self-hosted/github-integration-setup">use this guide</a>.</p>
@@ -18,7 +18,7 @@ an integration in Private Packagist. This document walks you through the require
 
 From the organization settings page, select the "Integrations" subtab. Hit the "Add Integration" button on the integrations listing page to get to the form below.
 To set up a GitHub Enterprise integration with Private Packagist start by selecting "GitHub" as the platform and enter the URL of your GitHub Enterprise server, as seen in the example below.
-A link to create a new OAuth application on your GitHub enterprise server will automatically be displayed.
+A link to create a new OAuth application on your GitHub Enterprise server will automatically be displayed.
 
 ![Packagist Setup](/Resources/public/img/docs/integration-setup/cloud/github-enterprise-01-packagist-setup.png)
 
