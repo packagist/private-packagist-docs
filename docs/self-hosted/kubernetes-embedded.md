@@ -118,7 +118,7 @@ or gitlab.com. Follow the instructions to create the respective required identif
 * [Authentication with Email Addresses and Passwords](./authentication-email-addresses-passwords-setup.md).
 
 
-![Add Integration](/Resources/public/img/docs/self-hosted/08-integration.png)
+![Add Integration](/Resources/public/img/docs/self-hosted/08-integration-create.png)
 
 #### Selecting Admins
 After setting up an integration, you can log in through the top menu. Register an account and pick a username.

@@ -20,7 +20,7 @@ From the organization settings page, select the "Integrations" subtab. Hit the "
 To set up a GitHub Enterprise integration with Private Packagist start by selecting "GitHub" as the platform and enter the URL of your GitHub Enterprise server, as seen in the example below.
 A link to create a new OAuth application on your GitHub Enterprise server will automatically be displayed.
 
-![Packagist Setup](/Resources/public/img/docs/integration-setup/cloud/github-enterprise-01-packagist-setup.png)
+![Packagist Setup](/Resources/public/img/docs/integration-setup/cloud/github-enterprise-01-packagist-setup-20241219.png)
 
 ## Create a GitHub Enterprise OAuth Application
 
@@ -33,7 +33,7 @@ Client ID and Client Secret remain empty for now.
 Register a new application on GitHub Enterprise. You'll be redirected to the application's page. Click the "Generate a new client secret" button 
 to get a new secret. You'll need the client ID and client secret to finish the setup on Private Packagist.
 
-![GitHub Credentials](/Resources/public/img/docs/integration-setup/github-03-github-credentials.png)
+![GitHub Credentials](/Resources/public/img/docs/integration-setup/github-03-github-credentials-20241219.png)
 
 ## Create the integration
 

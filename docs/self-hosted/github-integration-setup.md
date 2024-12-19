@@ -13,9 +13,11 @@ first need to create an integration in Private Packagist. This document walks yo
 
 ## Open the Add Integration form
 
-Log in with an admin account, go to the Admin section and hit the “Add Integration“ button to open the form to create your integration.
+Go to the Admin section and hit the “Add Integration“ button to open the form to create your integration. If you've just 
+installed Private Packagist Self-Hosted and it is still running in Setup Mode, you do not need to log in. If the application
+is no longer in Setup mode, you will have to log in with an admin account first. 
 
-![Add Integration](/Resources/public/img/docs/self-hosted/08-integration.png)
+![Add Integration](/Resources/public/img/docs/self-hosted/08-integration-create.png)
 
 To setup a GitHub integration with Private Packagist start by selecting "GitHub" as the platform and enter the URL of 
 your GitHub Enterprise Server or <i>https://github.com</i> to use the public GitHub server as seen in the example below. 
@@ -33,7 +35,7 @@ Client ID and Client Secret remain empty for now.
 Register a new application on GitHub Enterprise. You'll be redirected to the application's page. Click the "Generate a new client secret" button
 to get a new secret. You'll need the client ID and client secret to finish the setup on Private Packagist.
 
-![GitHub Credentials](/Resources/public/img/docs/integration-setup/github-03-github-credentials.png)
+![GitHub Credentials](/Resources/public/img/docs/integration-setup/github-03-github-credentials-20241219.png)
 
 ## Finish the Setup
 Copy and paste the "Client ID" and "Client Secret" values back into the Private 
