@@ -7,7 +7,7 @@ If you are using our cloud product at packagist.com, [use this guide](../cloud/g
 ## Initial Setup
 Hit the "Add Integration" button on the admin page in Private Packagist Self-Hosted to get to the form below. 
 
-![Add Integration](/Resources/public/img/docs/self-hosted/08-integration.png)
+![Add Integration](/Resources/public/img/docs/self-hosted/08-integration-create.png)
 
 To setup a GitLab integration with Private Packagist start by selecting "GitLab" as the platform and enter the URL of your own GitLab server or use <i>https://gitlab.com</i> for the public GitLab server as seen in the example below. A link to setup the oauth application on GitLab will automatically be displayed.
 

@@ -70,7 +70,7 @@ Select options for your SMTP server or use the GMail option for a simplified for
 ![Email Settings](/Resources/public/img/docs/self-hosted/05-email-settings.png)
 
 ## Application Startup
-Save and apply the settings to start Private Packagist Self-Hosted. Leave the Setup mode enabled.
+Save and apply the settings to start Private Packagist Self-Hosted. Leave the Setup Mode enabled.
 
 ![Start Application](/Resources/public/img/docs/self-hosted/06-save-start.png)
 
