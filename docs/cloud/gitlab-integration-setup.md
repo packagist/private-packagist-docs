@@ -36,7 +36,7 @@ Make sure the `api` and `read_user` scopes are both checked and save the new app
 If you have full admin access on GitLab, then you can also create an application in the GitLab admin section under Applications.
 There are two additional checkmarks on that page: `trusted` should remain unchecked, and `confidential` should remain checked.
 
-After you create the application, you will get a new Application ID and Secret. You'll need both these values to continue the set up in Private PackagisT.
+After you create the application, you will get a new Application ID and Secret. You'll need both these values to continue the set up in Private Packagist.
 
 ![GitLab Credentials](/Resources/public/img/docs/integration-setup/cloud/gitlab-self-managed-03-gitlab-credentials.png)
 
