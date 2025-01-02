@@ -25,7 +25,7 @@ A link to set up the OAuth application on GitHub will automatically be displayed
 
 ![Packagist Setup](/Resources/public/img/docs/integration-setup/self-hosted/github-01-packagist-setup.png)
 
-## Creating an OAuth Application
+## Create a GitHub OAuth Application
 Do not submit the integration form yet, but copy the content from the "Callback 
 URL / Redirect URL" and follow the setup link to your GitHub server. The fields 
 Client ID and Client Secret remain empty for now.
@@ -37,7 +37,7 @@ to get a new secret. You'll need the client ID and client secret to finish the s
 
 ![GitHub Credentials](/Resources/public/img/docs/integration-setup/github-03-github-credentials-20241219.png)
 
-## Finish the Setup
+## Create the integration
 Copy and paste the "Client ID" and "Client Secret" values back into the Private 
 Packagist integration form and submit the form with the "Create Integration" 
 button.
