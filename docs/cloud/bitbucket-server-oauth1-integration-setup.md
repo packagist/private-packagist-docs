@@ -2,6 +2,16 @@
 ## Private Packagist Cloud
 
 <div class="row column">
+    <div class="callout success">
+        <p>
+            This guide explains how to set up an OAuth 1 integration for Private Packagist Cloud with Bitbucket Data Center / Server.
+            If you use their public service on bitbucket.org, these instructions are not relevant to you. 
+        </p>
+        <p>If you are using our Self-Hosted product, please <a href="/docs/self-hosted/bitbucket-server-oauth1-integration-setup.md">use this guide</a>.</p>
+    </div>
+</div>
+
+<div class="row column">
     <div class="callout warning">
         <p>
             Note: As of Bitbucket Data Center / Server v8 Application Links using OAuth 1 can no longer be used to set up synchronizations in Private Packagist.
@@ -12,18 +22,20 @@
     </div>
 </div>
 
-## Initial Setup
+To allow your users to authenticate to Private Packagist with their Bitbucket Data Center / Server account, you'll
+first need to create an integration in Private Packagist. This document walks you through the required steps.
 
+## Open the Add Integration form
 From the organization settings page, select the "Integrations" subtab.
 Hit the "Add Integration" button on the integrations listing page to get to the form below.
 To set up a Bitbucket Data Center / Server integration with Private Packagist, start by selecting "Bitbucket Data Center / Server"
 as the platform, enter the URL of your on-premise Bitbucket Data Center / Server into the base URL field and select OAuth 1 as the OAuth version as seen in the example below.
 
-![Packagist Setup](/Resources/public/img/docs/integration-setup/cloud/bitbucket-server-oauth1-01-packagist-setup.png)
+![Packagist Setup](/Resources/public/img/docs/integration-setup/cloud/bitbucket-server-oauth1-01-packagist-setup-20250103.png)
 
 Submit the form to see the additional information.
 
-![Packagist Form](/Resources/public/img/docs/integration-setup/cloud/bitbucket-server-oauth1-02-packagist-details.png)
+![Packagist Form](/Resources/public/img/docs/integration-setup/cloud/bitbucket-server-oauth1-02-packagist-details-20250103.png)
 
 ## Configure Application link
 Click on the link to setup an Application Link on Bitbucket Data Center / Server. You will need the "Client Id" and the "Public Key" shown in the form.
@@ -32,7 +44,7 @@ Click on the link to setup an Application Link on Bitbucket Data Center / Server
 
 For Bitbucket Data Center versions 7.21 and newer, select "Atlassian product" and not "External application" to be able to set up an OAuth1 link.
 
-After you hit the button to create a new Application Link a configuration window may appear. If it does, verify that the url matches your Private Packagist URL and hit "Continue", otherwise skip this step.
+After you hit the button to create a new Application Link a configuration window may appear. If it does, verify that the url matches the "Application URL for Link" (_https://packagist.com_) and hit "Continue", otherwise skip this step.
 
 ![Bitbucket Data Center / Server Invalid Url](/Resources/public/img/docs/integration-setup/bitbucket-server-oauth1-04-bitbucket-invalid-url.png)
 
@@ -48,7 +60,15 @@ Click on the pen icon to the right of the application you just created to edit t
 
 This is where we will need the "Client ID" and the "Public Key" that were previously generated on the Private Packagist integration form.
 Enter the "Client ID" into the "Consumer Key" field, make sure the entire content of the "Public Key" field gets copied and the "Consumer Callback" field stays empty.
-Submit the form and go back to Private Packagist.
+Submit the form and go back to the list of integrations in Private Packagist.
+
+### Share the Bitbucket login link
+The final step is sharing your organization-specific login link with your users. Look for the "Login link" button next to
+your newly created Bitbucket Data Center / Server integration on the integrations page, and copy the URL.
+
+![Bitbucket Data Center / Server integrations](/Resources/public/img/docs/integration-setup/cloud/bitbucket-server-oauth1-08-integrations-overview.png)
+
+This link presents the option to authenticate with your Bitbucket Data Center / Server account and can now be used to log in to Private Packagist.
 
 ## Configure Bitbucket Server plugins
 

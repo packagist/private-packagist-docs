@@ -34,7 +34,7 @@ Private Packagist integrates with the following systems:
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
 #### Bitbucket Cloud (bitbucket.org)
-* OAuth: Users authenticate on Private Packagist with their Bitbucket accounts
+* OAuth: Users authenticate on Private Packagist with their Bitbucket accounts. If you use Private Packagist Self-Hosted, first create a Bitbucket app by following these [steps](../docs/self-hosted/bitbucket-integration-setup.md).
 * Synchronization:
     * Keeps groups, their members, and access permissions in sync with your Bitbucket workspace
 * Code Credentials: Bitbucket API Key or Bitbucket App Password

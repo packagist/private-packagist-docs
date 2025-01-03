@@ -2,6 +2,16 @@
 ## Private Packagist Self-Hosted
 
 <div class="row column">
+    <div class="callout success">
+        <p>
+            This guide explains how to set up an OAuth 1 integration for Private Packagist Self-Hosted with Bitbucket Data Center / Server.
+            If you use their public service on bitbucket.org, these instructions are not relevant to you. 
+        </p>
+        <p>If you are using our Cloud product at packagist.com, please <a href="/docs/cloud/bitbucket-server-oauth1-integration-setup.md">use this guide</a>.</p>
+    </div>
+</div>
+
+<div class="row column">
     <div class="callout warning">
         <p>
             Note: As of Bitbucket Data Center / Server v8 Application Links using OAuth 1 can no longer be used to set up synchronizations in Private Packagist.
@@ -12,16 +22,24 @@
     </div>
 </div>
 
-## Initial Setup
-Hit the “Add integration“ button on the admin page to get to the form below.
+To allow your users to authenticate to Private Packagist with their Bitbucket Data Center / Server account, you'll
+first need to create an integration in Private Packagist. This document walks you through the required steps.
+
+## Open the Add Integration form
+Go to the Admin section and hit the “Add Integration“ button to open the form to create your integration. If you've just
+installed Private Packagist Self-Hosted and it is still running in Setup Mode, you do not need to log in. If the application
+is no longer in Setup mode, you will have to log in with an admin account first.
+
+![Add Integration](/Resources/public/img/docs/self-hosted/08-integration-create.png)
+
 To setup a Bitbucket Data Center / Server integration with Private Packagist, start by selecting "Bitbucket Data Center / Server"
 as the platform, enter the URL of your on-premise Bitbucket Data Center / Server into the base URL field and select OAuth 1 as the OAuth version as seen in the example below.
 
-![Packagist Setup](/Resources/public/img/docs/integration-setup/bitbucket-server-oauth1-01-packagist-setup.png)
+![Packagist Setup](/Resources/public/img/docs/integration-setup/self-hosted/bitbucket-server-oauth1-01-packagist-setup.png)
 
 Submit the form to see the additional information.
 
-![Packagist Form](/Resources/public/img/docs/integration-setup/bitbucket-server-oauth1-02-packagist-form.png)
+![Packagist Form](/Resources/public/img/docs/integration-setup/self-hosted/bitbucket-server-oauth1-02-packagist-form.png)
 
 ## Configure Application link
 Click on the link to setup an Application Link on Bitbucket Data Center / Server. You will need the "Client Id" and the "Public Key" shown in the form.
@@ -49,9 +67,9 @@ Enter the "Client ID" into the "Consumer Key" field, make sure the entire conten
 Submit the form and go back to Private Packagist.
 
 ## Finish the Setup
-Update the Integration on Private Packagist to save everything and finish the setup.
+The integration is now ready to be used and is shown in the list of integrations on the admin page.
 
-![Packagist Finalize](/Resources/public/img/docs/integration-setup/bitbucket-server-oauth1-08-packagist-finalize.png)
+![Packagist Finalize](/Resources/public/img/docs/integration-setup/self-hosted/bitbucket-server-oauth1-08-integrations-overview.png)
 
 ## Configure Bitbucket Data Center / Server plugins
 
