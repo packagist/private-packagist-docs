@@ -3,7 +3,10 @@
 
 <div class="row column">
     <div class="callout success">
-        <p>This guide explains how to set up an OAuth integration for Private Packagist Self-Hosted with Bitbucket Data Center / Server.</p>
+        <p>
+            This guide explains how to set up an OAuth integration for Private Packagist Self-Hosted with Bitbucket Data Center / Server.
+            If you use their public service on bitbucket.org, follow <a href="/docs/self-hosted/bitbucket-integration-setup.md">these instructions</a>.
+        </p>
         <p>If you are using our Cloud product at packagist.com, <a href="/docs/cloud/bitbucket-server-integration-setup.md">use this guide</a>.</p>
     </div>
 </div>
