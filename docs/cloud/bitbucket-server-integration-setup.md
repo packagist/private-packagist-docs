@@ -17,7 +17,7 @@
     </div>
 </div>
 
-To allow your users to authenticate to Private Packagist Self-Hosted with their Bitbucket Data Center / Server account, you'll
+To allow your users to authenticate to Private Packagist with their Bitbucket Data Center / Server account, you'll
 first need to create an integration in Private Packagist. This document walks you through the required steps.
 
 ## Open the Add Integration form
