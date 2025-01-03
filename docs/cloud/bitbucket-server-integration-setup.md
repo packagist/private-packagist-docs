@@ -54,10 +54,10 @@ button.
 
 You'll be redirected back to the list of integrations.
 
-### Share the GitHub Enterprise login link
+### Share the Bitbucket login link
 
 The final step is sharing your organization-specific login link with your users. Look for the "Login link" button next to
-your newly created GitHub Enterprise integration on the integrations page, and copy the URL.
+your newly created Bitbucket Data Center / Server integration on the integrations page, and copy the URL.
 
 ![Bitbucket Data Center / Server integrations](/Resources/public/img/docs/integration-setup/cloud/bitbucket-server-05-integrations-overview.png)
 

@@ -22,7 +22,7 @@
     </div>
 </div>
 
-To allow your users to authenticate to Private Packagistwith their Bitbucket Data Center / Server account, you'll
+To allow your users to authenticate to Private Packagist with their Bitbucket Data Center / Server account, you'll
 first need to create an integration in Private Packagist. This document walks you through the required steps.
 
 ## Open the Add Integration form
@@ -62,7 +62,7 @@ This is where we will need the "Client ID" and the "Public Key" that were previo
 Enter the "Client ID" into the "Consumer Key" field, make sure the entire content of the "Public Key" field gets copied and the "Consumer Callback" field stays empty.
 Submit the form and go back to the list of integrations in Private Packagist.
 
-### Share the GitHub Enterprise login link
+### Share the Bitbucket login link
 The final step is sharing your organization-specific login link with your users. Look for the "Login link" button next to
 your newly created Bitbucket Data Center / Server integration on the integrations page, and copy the URL.
 
