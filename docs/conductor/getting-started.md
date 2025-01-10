@@ -15,8 +15,6 @@ Once you have a Private Packagist organization and Conductor is enabled for you,
 
 Conductor will manage dependencies for packages added to Private Packagist [via synchronization](/features/integration-github-bitbucket-gitlab.md) that have a composer.lock file committed to the repository.
 
-If you do not see your package, follow the instructions on your organization page to add the custom repository to the composer.json of your package.  
-
 ## Create a workflow on your CI
 
 ### GitHub Actions
@@ -29,7 +27,7 @@ CONDUCTOR_GITHUB_ACTIONS_WORKFLOW
 2. Commit and push the workflow to your main branch of your package repository
 
 Create a secret `COMPOSER_AUTH` with the Composer authentication configuration [as described here](https://getcomposer.org/doc/articles/authentication-for-private-packages.md#authentication-using-the-composer-auth-environment-variable) to access Private Packagist.  
-We recommend to create a dedicated authentication token with update access. You can copy and paste the contents for the secret from the Private Packagist UI while creating the token in "Settings" -> "Authentication Tokens". Remove the single quotes around the value.
+We recommend to create a dedicated authentication token with update access. You can copy and paste the contents for the secret from the "Environment variable" tab in the Private Packagist UI while creating the token in "Settings" -> "Authentication Tokens". Remove the single quotes around the value.
 
 ![Create Authentication Token](/Resources/public/img/docs/conductor/authentication-token.png)
 
@@ -39,7 +37,24 @@ The contents of the variable should look like
 {"http-basic": {"repo.packagist.com": {"username": "token", "password": "packagist_out_73a81c..." }}}
 ```
 
-Conductor needs to [verify your CI setup](#verify-your-ci-setup) before you can start receiving pull requests.
+Conductor needs to verify your CI setup before you can start receiving pull requests.
+
+## Verify your CI setup
+
+![Task list with verification task](/Resources/public/img/docs/conductor/verification-task-list.png)
+
+Right now all tasks are waiting for the CI verification task on top of the list. Conductor will not start with the regular schedule until this verification task was successful.
+The verification task will only execute `composer update nothing` and will not result in a PR to be sent to your code hosting platform.
+
+- Click on the task "Verify the continuous integration setup"
+- Use the "Schedule now" button to test your setup
+
+You can see the state of your task and the last events for the task. Once the task is executed, watch your CI platform:
+You should see a run for the just added workflow. Examine the run to see if it succeeded.
+
+If it was successful your CI configuration is verified and complete. Conductor will trigger your workflow with the next task in the list. This time it will send a pull request.
+
+When you run into errors, troubleshoot and fix them. You can trigger the workflow again by restarting the CI verification task. The restart button is available after the first execution.
 
 ## How scheduling works
 
@@ -59,7 +74,7 @@ The workflow consists of several steps:
 6. Push commits to a new branch (or force push an existing branch)
 7. Send the status of the workflow to Private Packagist
 
-If all these steps succeeded, Private Packagist creates a pull request for the just pushed branch. The PR description will contain details about the update and changelogs from your dependencies. Conductor integrates with [Update Review](https://packagist.com/features/update-review) to present a reviewable list of all updated dependencies.
+If all these steps succeeded, Private Packagist creates a pull request for the newly pushed branch. The PR description will contain details about the update and changelogs from your dependencies. Conductor integrates with [Update Review](https://packagist.com/features/update-review) to present a reviewable list of all updated dependencies.
 
 ![Conductor Pull Request](https://packagist.com/img/features/auto-updates/merged-PR-for-a-security-updated.png)
 
@@ -70,19 +85,3 @@ If you want to schedule any other task in the list, click on its name and use th
 
 Tasks fixing security issues have a higher priority. They will be moved to the top of the list and scheduled right away even if there already is a PR for another task open.
 
-## Verify your CI setup
-
-![Task list with verification task](/Resources/public/img/docs/conductor/verification-task-list.png)
-
-Right now all tasks are waiting for the CI verification task on top of the list. Conductor will not start with the regular schedule until this verification task was successful.
-The verification task will only execute `composer update nothing` and will not result in a PR to be sent to your code hosting platform.  
-
-- Click on the task "Verify the continuous integration setup"
-- Use the "Schedule now" button to test your setup
-
-You can see the state of your task and the last events for the task. Once the task is executed, watch your CI platform:
-You should see a run for the just added workflow. Examine the run if it succeeded.
-
-If it was successful your CI configuration is verified and complete. Conductor will trigger your workflow with the next task in the list. This time it will send a pull request. 
-
-When you run into errors, troubleshoot and fix them. You can trigger the workflow again by restarting the CI verification task. The restart button is available after the first execution.  
