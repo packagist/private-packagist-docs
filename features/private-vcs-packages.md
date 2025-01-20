@@ -8,7 +8,7 @@ Private Packagist can access private code in any Git, Mercurial or Subversion re
 * GitHub
 * GitHub Enterprise
 * GitLab.com
-* GitLab (Self-hosted)
+* GitLab Self-Managed
 * Bitbucket.org / Cloud
 * Bitbucket Data Center / Server
 

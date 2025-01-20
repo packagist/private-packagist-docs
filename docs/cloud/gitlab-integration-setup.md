@@ -1,4 +1,4 @@
-# GitLab (Self-Managed) Integration Setup
+# GitLab Self-Managed Integration Setup
 ## Private Packagist Cloud
 
 <div class="row column">
