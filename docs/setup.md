@@ -1,4 +1,4 @@
-# Using Private Packagist in a Composer project
+# Composer Project Setup
 
 You can use Private Packagist in a new or in an existing Composer project. Some of the steps in this guide will only apply if your project needs the respective Composer feature explained in that step.
 

@@ -26,7 +26,7 @@ Private Packagist integrates with the following systems:
 * Code Credentials: GitHub App or GitHub API Token
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
-#### GitHub Enterprise
+#### GitHub Enterprise Server
 * OAuth: Users authenticate on Private Packagist with their GitHub accounts. Follow [this setup](../docs/cloud/github-integration-setup.md) for Cloud plans or [this setup](../docs/self-hosted/github-integration-setup.md) for Self-Hosted.
 * Synchronization:
     * Keeps team members and access permissions in sync with your GitHub Enterprise organizations
@@ -57,7 +57,7 @@ Private Packagist integrates with the following systems:
 * Code Credentials: GitLab API token
 * Webhooks: Code changes and releases
 
-#### GitLab (Self-hosted)
+#### GitLab Self-Managed
 * OAuth: Users authenticate on Private Packagist with their GitLab accounts. Follow [this setup](../docs/cloud/gitlab-integration-setup.md) for Cloud plans or [this setup](../docs/self-hosted/gitlab-integration-setup.md) for Self-Hosted.
 * Synchronization:
     * Keeps teams, their members, and access permissions in sync with your GitLab groups
