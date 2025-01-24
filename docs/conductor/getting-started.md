@@ -19,7 +19,7 @@ This is how you grant us access to your repositories. Once done we will automati
 ## Configure Conductor for your packages
 
 Access the "Conductor" tab in the main navigation to see a list of available packages that can be managed via Conductor.
-Each package shown is linked to a repository where you would like to receive pull requests from Conductor. This usually includes all your Composer projects.
+Each package shown is linked to a repository where you can receive pull requests from Conductor. This usually includes all your Composer projects.
 Conductor will manage dependencies for packages added to Private Packagist [via synchronization](/features/integration-github-bitbucket-gitlab.md) that have a composer.lock file committed to the repository.
 
 To get started, click on the configure link displayed for the package where you want to use Conductor and follow the instructions for your Continuous Integration platform.
