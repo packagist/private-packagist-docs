@@ -48,6 +48,9 @@ Conductor needs to verify your CI setup before you can start receiving PRs.
 
 ## Verify your CI setup
 
+- Navigate to the "Conductor" tab in your Private Packagist organization
+- Click on the name of your package
+
 ![Task list with verification task](/Resources/public/img/docs/conductor/verification-task-list.png)
 
 Right now all tasks are waiting for the CI verification task on top of the list. Conductor will not start with the regular schedule until this verification task was successful.
@@ -64,9 +67,6 @@ If it was successful your CI configuration is verified and complete. Conductor w
 When you run into errors, troubleshoot and fix them. You can trigger the workflow again by restarting the CI verification task. The restart button is available after the first execution.
 
 ## How scheduling works
-
-- Navigate to the "Conductor" tab in your Private Packagist organization
-- Click on the name of your package
 
 The list shows groups of all available updates to be scheduled. Each group of updates is called a task. Conductor will schedule only one task at a time. All others are waiting for the task on top of the list to be successful or paused.  
 Once Conductor schedules a task it sends a payload to your CI platform that triggers the workflow you just added. The payload contains the commands Composer will run to update a group of dependencies from your package.
