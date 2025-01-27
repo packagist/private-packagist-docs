@@ -1,4 +1,4 @@
-# Synchronization
+# Synchronizations
 ## Synchronization of users, teams, permissions and repositories
 
 To simplify the initial setup and maintenance of a Private Packagist organization, we offer optional synchronization for GitHub organizations, 
