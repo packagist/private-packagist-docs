@@ -12,33 +12,48 @@ You can log into Private Packagist using an account on GitHub.com, Bitbucket.org
 Private Packagist integrates with the following systems:
 
 #### GitHub
-* OAuth: Users authenticate on Private Packagist with their GitHub accounts. If you use Private Packagist Self-Hosted, first create a GitHub app by following these [steps](../docs/self-hosted/github-integration-setup.md).
+* OAuth: Users authenticate on Private Packagist with their GitHub accounts. If you use Private Packagist Self-Hosted, first create a GitHub app by following these [steps](../docs/self-hosted/github-integration-setup.md). 
+* Synchronization:
+    * Keeps teams, their members, and access permissions in sync with your GitHub organization
 * Code Credentials: GitHub App or GitHub API Token
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
 #### GitHub Enterprise Server
 * OAuth: Users authenticate on Private Packagist with their GitHub accounts. Follow [this setup](../docs/cloud/github-integration-setup.md) for Cloud plans or [this setup](../docs/self-hosted/github-integration-setup.md) for Self-Hosted.
+* Synchronization:
+    * Keeps team members and access permissions in sync with your GitHub Enterprise organizations
 * Code Credentials: GitHub API Token
 * Webhooks: Code changes, releases, created repositories, team creation or member changes
 
 #### Bitbucket Cloud (bitbucket.org)
 * OAuth: Users authenticate on Private Packagist with their Bitbucket accounts. If you use Private Packagist Self-Hosted, first create a Bitbucket app by following these [steps](../docs/self-hosted/bitbucket-integration-setup.md).
+* Synchronization:
+    * Keeps groups, their members, and access permissions in sync with your Bitbucket workspace
 * Code Credentials: Bitbucket API Key or Bitbucket App Password
 * Webhooks: Code changes and releases
 
 #### Bitbucket Data Center / Server
 
 * OAuth: Users authenticate on Private Packagist with their Bitbucket Data Center / Server accounts. Follow [this setup](../docs/cloud/bitbucket-server-integration-setup.md) for Cloud plans or [this setup](../docs/self-hosted/bitbucket-server-integration-setup.md) for Self-Hosted.
+* Synchronization:
+    * Keeps users and access permissions in sync with your Bitbucket Server projects
+    * Individual collaborators aren't supported
 * Code Credentials: personal access token which are available since Bitbucket Server 5.5 or username and password for older versions
 * Webhooks: Code changes and releases
 
 #### GitLab
 * OAuth: Users authenticate on Private Packagist with their GitLab accounts. If you use Private Packagist Self-Hosted, first create a GitLab app by following these [steps](../docs/self-hosted/gitlab-integration-setup.md).
+* Synchronization:
+    * Keeps teams, their members, and access permissions in sync with your GitLab groups
+    * Individual collaborators aren't supported
 * Code Credentials: GitLab API token
 * Webhooks: Code changes and releases
 
 #### GitLab Self-Managed
 * OAuth: Users authenticate on Private Packagist with their GitLab accounts. Follow [this setup](../docs/cloud/gitlab-integration-setup.md) for Cloud plans or [this setup](../docs/self-hosted/gitlab-integration-setup.md) for Self-Hosted.
+* Synchronization:
+    * Keeps teams, their members, and access permissions in sync with your GitLab groups
+    * Individual collaborators aren't yet supported
 * Code Credentials: GitLab API Token
 * Webhooks: Code changes and releases
 
