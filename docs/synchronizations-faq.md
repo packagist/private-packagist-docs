@@ -1,11 +1,11 @@
 # Synchronization
-## Synchronization of Users, Teams, Permissions and Repositories
+## Synchronization of users, teams, permissions and repositories
 
-To simplify the initial setup and maintenance of a Private Packagist account, we offer optional synchronization for GitHub organizations, 
+To simplify the initial setup and maintenance of a Private Packagist organization, we offer optional synchronization for GitHub organizations, 
 Bitbucket workspaces and GitLab groups. This synchronization keeps teams, their members, and access permissions in sync. 
 So you only need to manage users and permissions in a single place.
 
-Apart from synchronizing teams, users, and permissions, setting up the integration will simplify the addition of new packages 
+Apart from synchronizing teams, users, and permissions, setting up the synchronization will simplify the addition of new packages 
 to your Composer repository. When you create a **new repository** on GitHub, Bitbucket, or GitLab, it will be **added as a 
 Composer package automatically** if it contains a _composer.json_ file. If you’d like to add existing repositories as packages, 
 you can do so with the click of a button on the Packages tab in your organization.
