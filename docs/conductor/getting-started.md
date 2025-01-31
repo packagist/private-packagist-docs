@@ -33,7 +33,7 @@ CONDUCTOR_GITHUB_ACTIONS_WORKFLOW
 1. Adjust the PHP Version used in the "Install PHP" step
 2. Commit and push the workflow to your main branch of your package repository
 
-Create a secret `COMPOSER_AUTH` with the Composer authentication configuration [as described here](https://getcomposer.org/doc/articles/authentication-for-private-packages.md#authentication-using-the-composer-auth-environment-variable) to access Private Packagist.  
+Create a secret `CONDUCTOR_COMPOSER_AUTH` with the Composer authentication configuration [as described here](https://getcomposer.org/doc/articles/authentication-for-private-packages.md#authentication-using-the-composer-auth-environment-variable) to access Private Packagist.  
 We recommend to create a dedicated authentication token with update access. You can copy and paste the contents for the secret from the "Environment variable" tab in the Private Packagist UI while creating the token in "Settings" -> "Authentication Tokens". Remove the single quotes around the value.
 
 ![Create Authentication Token](/Resources/public/img/docs/conductor/authentication-token.png)
