@@ -31,21 +31,13 @@ Create a new GitHub Actions workflow in `.github/workflows/conductor.yaml` of yo
 CONDUCTOR_GITHUB_ACTIONS_WORKFLOW
 
 1. Adjust the PHP Version used in the "Install PHP" step
-2. Commit and push the workflow to your main branch of your package repository
+2. Commit and push the workflow to your main branch of your GitHub repository
 
-Create a secret `CONDUCTOR_COMPOSER_AUTH` with the Composer authentication configuration [as described here](https://getcomposer.org/doc/articles/authentication-for-private-packages.md#authentication-using-the-composer-auth-environment-variable) to access Private Packagist.  
-We recommend to create a dedicated authentication token with update access. You can copy and paste the contents for the secret from the "Environment variable" tab in the Private Packagist UI while creating the token in "Settings" -> "Authentication Tokens". Remove the single quotes around the value.
+If your package requires access to your Private Packagist Composer repository then Conductor will automatically create
+[short-lived authentication tokens](../composer-authentication.md#conductor-authentication-tokens) to run Composer commands in your CI environment.
+Similar to organization authentication tokens, access can be restricted to any set of packages to which any of the organization's teams has access.
 
-![Create Authentication Token](/Resources/public/img/docs/conductor/authentication-token.png)
-
-The contents of the variable should look like this:
-
-```json
-{"http-basic": {"repo.packagist.com": {"username": "token", "password": "packagist_out_73a81c..." }}}
-```
-
-Conductor needs to verify your CI setup before you can start receiving PRs.
-
+Once the workflow is added to your GitHub repository, Conductor needs to verify your CI setup before you can start receiving PRs.
 ## Verify your CI setup
 
 - Navigate to the "Conductor" tab in your Private Packagist organization.

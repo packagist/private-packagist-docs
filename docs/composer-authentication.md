@@ -4,7 +4,7 @@
 Running Composer commands against Private Packagist always requires authentication.
 
 ## Different types of tokens
-Three different types of authentication tokens can be used to access Private Packagist.
+Four different types of authentication tokens can be used to access Private Packagist.
 
 ### User access token
 Every user has their own token that they can access either on the profile page or on the overview page of their organizations.
@@ -24,6 +24,10 @@ Read-only tokens are only meant to be used with an existing composer.lock file. 
 If you need to run `composer update`, then either use a token with update access or your personal access token.
 Please note that you will be charged for authentication tokens with update access as if they were user accounts.
 
+### Conductor authentication tokens
+Conductor creates short-lived authentication tokens with update access for each CI run that gets scheduled. Similar to
+organization authentication tokens, access can be restricted to any set of packages which any of the organization's teams has access to. 
+
 ### Private Packagist vendor customer tokens
 Every Private Packagist for Vendors customer receives their own authentication token.
 The token can only be used to install packages from the matching customer URL.
@@ -37,6 +41,7 @@ There are currently three different prefixes:
 * `packagist_ort_`: Organization tokens with read-only access
 * `packagist_out_`: Organization tokens with update access
 * `packagist_uut_`: User tokens with update access
+* `packagist_cut_`: Conductor tokens with update access
 
 This format doesn't apply to authentication tokens generated for Private Packagist for Vendors customers and older tokens that haven't been regenerated recently.
 These tokens only consist of the 60 hexadecimal character random part.
