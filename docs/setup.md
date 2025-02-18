@@ -27,6 +27,9 @@ Once the command is finished, the created composer.json file will contain your o
 ]
 ```
 
+Alternatively, it is possible to configure your template package to already include your Private Packagist repository in its composer.json. We do not encourage this approach, because this pre-defined repository
+will cause conflicts if you rely on functionality that uses different private repositories, such as suborganizations or vendor customers. If you do prefer to take this approach, you should remove the `--add-repository` option from the `create-project` command.  
+
 Note: Running `composer create-project` with multiple `--repository` arguments is only supported with Composer 2.
 
 ## Adding Private Packagist to an existing project with a composer.json
