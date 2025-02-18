@@ -26,7 +26,8 @@ Please note that you will be charged for authentication tokens with update acces
 
 ### Conductor authentication tokens
 Conductor creates short-lived authentication tokens with update access for each CI run that gets scheduled. Similar to
-organization authentication tokens, access can be restricted to any set of packages which any of the organization's teams has access to. 
+organization authentication tokens, access can be restricted to any set of packages which any of the organization's teams 
+has access to which can be configured when enabling Conductor for your packages.
 
 ### Private Packagist vendor customer tokens
 Every Private Packagist for Vendors customer receives their own authentication token.
