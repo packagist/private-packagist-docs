@@ -37,7 +37,12 @@ in an existing Kubernetes cluster using Helm follow [this guide](./kubernetes-he
   * s3.kurl.sh (required to install the kots CLI)
   * amazonaws.com (required to install the kots CLI)
   * Please also consult the list in the [Replicated documentation](https://docs.replicated.com/enterprise/installing-general-requirements#firewall-openings-for-online-installations).
-
+  * To mirror Composer packages in Private Packagist, the following domains must also be accessible:
+     - packagist.org (required to fetch package metadata)
+     - *.packagist.org (required to fetch package metadata)
+     - github.com (required to download ZIP files for mirrored packages)
+     - api.github.com (required to download ZIP files for mirrored packages)
+     - Any other mirrored third-party repository you use like drupal.org, asset-packagist.org, or repo.magento.com
 
 
 <!-- See https://docs.replicated.com/enterprise/installing-general-requirements and https://kurl.sh/docs/install-with-kurl/system-requirements -->
