@@ -26,7 +26,8 @@ To get started, click on the configure link displayed next to the package which 
 
 ### GitHub Actions
 
-Create a new GitHub Actions workflow in `.github/workflows/conductor.yaml` of your GitHub repository using the template below:
+Create a new GitHub Actions workflow in `.github/workflows/conductor.yaml` of your GitHub repository to use the 
+[Conductor GitHub Action](https://github.com/packagist/conductor-github-action) with the template below:
 
 CONDUCTOR_GITHUB_ACTIONS_WORKFLOW
 
@@ -38,6 +39,7 @@ If your package requires access to your Private Packagist Composer repository th
 Similar to organization authentication tokens, access can be restricted to any set of packages to which any of the organization's teams has access.
 
 Once the workflow is added to your GitHub repository, Conductor needs to verify your CI setup before you can start receiving PRs.
+
 ## Verify your CI setup
 
 - Navigate to the "Conductor" tab in your Private Packagist organization.
