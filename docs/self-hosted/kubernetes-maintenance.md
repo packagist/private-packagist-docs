@@ -57,3 +57,17 @@ we will make sure to communicate this first.
 
 We recommend backing up your database before each update. We cannot guarantee that downgrading to a previous release will always work 
 due to database migrations. In case of upgrade failure, the most reliable way to rollback to the previous version is via backup.
+
+## Private Packagist Self-Hosted CLI
+
+### Updating all packages
+
+Run the commands below to schedule update jobs on the worker for all packages on your installation. The flag `--overwrite-data` ensures 
+that all existing version data is downloaded from the source again and version data is overwritten if it has changed. The 
+flag `--only-non-updated` limits the set of packages to those which have only been initialized but never updated yet.
+
+```
+export UI_POD=$(kubectl get pods --field-selector=status.phase=Running --no-headers -o custom-columns=":metadata.name"|grep ui-)
+kubectl exec $UI_POD -c ui -- /bin/sh -c "/srv/manager/bin/console packagist:package:update-all --env=prod --no-debug [--overwrite-data] [--only-non-updated]" 
+```
+
