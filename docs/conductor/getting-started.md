@@ -40,6 +40,23 @@ Similar to organization authentication tokens, access can be restricted to any s
 
 Once the workflow is added to your GitHub repository, Conductor needs to verify your CI setup before you can start receiving PRs.
 
+### Skip Composer scripts
+
+If you've configured Composer to run scripts for certain events that make changes which are irrelevant for the Conductor PR, you can skip 
+these script handlers by setting the [COMPOSER_SKIP_SCRIPTS](https://getcomposer.org/doc/03-cli.md#composer-skip-scripts) environment variable.
+
+For example, if you use `npm` to build static assets in your `post-install-cmd` script you can update your GitHub action to skip it:
+
+```yaml
+- name: "Running Conductor"
+  uses: packagist/conductor-github-action@v1
+  env:
+    COMPOSER_SKIP_SCRIPTS: "post-install-cmd"
+```
+
+Please note that this feature is only available since [Composer 2.8.6](https://github.com/composer/composer/releases/tag/2.8.6), so make sure your CI 
+installs the latest version.
+
 ## Verify your CI setup
 
 - Navigate to the "Conductor" tab in your Private Packagist organization.
