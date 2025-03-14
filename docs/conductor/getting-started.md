@@ -55,7 +55,7 @@ For example, if you use `npm` to build static assets when the `post-install-cmd`
 ```
 
 Please note that this feature is only available since [Composer 2.8.6](https://github.com/composer/composer/releases/tag/2.8.6), so make sure your CI 
-install the latest version.
+installs the latest version.
 
 ## Verify your CI setup
 
