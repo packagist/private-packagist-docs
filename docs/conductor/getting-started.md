@@ -45,7 +45,7 @@ Once the workflow is added to your GitHub repository, Conductor needs to verify 
 If you've configured Composer to run scripts for certain events that make changes which are irrelevant for the Conductor PR, you can skip 
 these script handlers by setting the [COMPOSER_SKIP_SCRIPTS](https://getcomposer.org/doc/03-cli.md#composer-skip-scripts) environment variable.
 
-For example, if you use `npm` to build static assets when the `post-install-cmd` command event is triggered, update your GitHub action like this:
+For example, if you use `npm` to build static assets in your `post-install-cmd` script you can update your GitHub action to skip it:
 
 ```yaml
 - name: "Running Conductor"
