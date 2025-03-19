@@ -8,6 +8,15 @@ If the dashboard shows:
 
 Please refer to the "[Updates](./kubernetes-maintenance.md#updates)" section in our maintenance guide.
 
+#### Installer fails during update
+
+If the kURL installer exits with the error message `Kurl has unhealthy Pod(s)` before starting the actual upgrade, it usually means
+there are older pods stuck in an invalid state from previous runs. You can remove these with this command and try again:
+
+```
+kubectl delete pods --field-selector status.phase=Failed -n kurl
+```
+
 #### Generating a support bundle
 
 You can generate a support bundle from the Replicated Management Console on port
