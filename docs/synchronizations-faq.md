@@ -25,7 +25,7 @@ or you can enable synchronization for an existing Organization in _Settings_.
 
 ## Accessing packages from Synchronizations across multiple integrations
 
-**Note: Organization members can only access packages from synchronizations from integrations connected to their account.**
+Organization members can only access packages from synchronizations with integrations connected to their account.
 
 To make sure members can access the packages from all synchronizations from multiple integrations:
 
