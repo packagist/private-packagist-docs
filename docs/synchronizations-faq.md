@@ -23,6 +23,15 @@ or you can enable synchronization for an existing Organization in _Settings_.
 
 ![Synchronization](/Resources/public/img/docs/features/Sync-20241218.png)
 
+## Accessing packages from Synchronizations across multiple integrations
+
+**Note: Organization members can only access packages from synchronizations from integrations connected to their account.**
+
+To make sure members can access the packages from all synchronizations from multiple integrations:
+
+1. All members should go to their User Profile
+2. Under "Connected Accounts" connect to each integration that powers the synchronizations they need
+
 ## Supported providers 
 
 ### GitHub
@@ -76,9 +85,10 @@ So keep in mind that if you switch the primary synchronization to a different se
 ### How to migrate a synchronization from GitHub to Bitbucket?
 
 1. Add a new synchronization with your Bitbucket workspace.
-2. Delete the packages that were created by the GitHub synchronization. You can filter by the GitHub synchronization on the package list page and then you can delete the packages from that list.
-3. Make sure the new synchronization with your Bitbucket workspace successfully ran. In case the old synchronization was primary, you need to promote the new synchronization to primary. Otherwise you won't be able to delete your old synchronization. Please refer to ["What happens if you promote a synchronization to a primary synchronization?"](#what-happens-if-you-promote-a-synchronization-to-a-primary-synchronization) for more details about promoting a synchronization to primary.
-4. Delete the old synchronization from GitHub.
+2. Ensure that all members keep the access to the packages by following:  ["Accessing packages from Synchronizations across multiple integrations"](#accessing-packages-from-synchronizations-across-multiple-integrations)
+3. Delete the packages that were created by the GitHub synchronization. You can filter by the GitHub synchronization on the package list page and then you can delete the packages from that list.
+4. Make sure the new synchronization with your Bitbucket workspace successfully ran. In case the old synchronization was primary, you need to promote the new synchronization to primary. Otherwise you won't be able to delete your old synchronization. Please refer to ["What happens if you promote a synchronization to a primary synchronization?"](#what-happens-if-you-promote-a-synchronization-to-a-primary-synchronization) for more details about promoting a synchronization to primary.
+5. Delete the old synchronization from GitHub.
 
 You can follow the same steps above in case you want to migrate from Bitbucket to GitLab or the other way around.
 
