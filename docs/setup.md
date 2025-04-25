@@ -187,6 +187,23 @@ Alternatively you may submit an array of packages to define multiple versions:
 ]
 ```
 Once a custom package has been added to Private Packagist you will benefit from mirroring the zip file. Composer will have an additional location to download the file from if the original storage becomes unavailable.
+
+### Prevent a package from being used with custom packages
+
+While there is no direct "block package" feature in Packagist, you can effectively prevent a specific package from being used by creating a placeholder package. Setting its type to `metapackage` ensures no code is associated with it.
+
+```json 
+{
+  "name": "acme/blocked-package",
+  "version": "0.0.1",
+  "type": "metapackage"
+}
+```
+
+If necessary, make sure the package is added to all relevant suborganizations. 
+ 
+This placeholder package will prevent any other package with the same name from being mirrored automatically, effectively blocking the problematic package from being used in your projects.
+
 ## Add an artifact package
 
 You can upload code archives via *Add Package -> Artifact*. Your uploaded archives need to contain a valid composer.json file in its root directory and must be of type zip, gz, or bz2. Once you upload your code archives, you can save the artifact package and use it in your organization.
