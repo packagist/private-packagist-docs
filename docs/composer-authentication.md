@@ -38,7 +38,7 @@ Please note that neither user tokens nor organization tokens can be used to inst
 ## Token format
 An authentication token consists of three parts: a prefix, a 60 hexadecimal character long random part, and an eight hexadecimal character long checksum. The prefix and checksum are designed to increase reliability of automatic scanning for secrets in your code base or leaked documents.
 
-There are currently three different prefixes:
+There are currently four different prefixes:
 * `packagist_ort_`: Organization tokens with read-only access
 * `packagist_out_`: Organization tokens with update access
 * `packagist_uut_`: User tokens with update access
