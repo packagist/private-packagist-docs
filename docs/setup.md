@@ -190,9 +190,9 @@ Once a custom package has been added to Private Packagist you will benefit from 
 
 ### Prevent a package from being used with custom packages
 
-While there is no direct "block package" feature in Packagist, you can effectively prevent a specific package from being used by creating a placeholder package. 
+While there is no direct "block package" feature in Packagist, you can effectively prevent a specific package from being used in your project by creating a placeholder package. 
 
-The package type [metapackage](https://getcomposer.org/doc/04-schema.md#type) ensures no code is associated with it. Optionally, you can mark the package as [abandoned](https://getcomposer.org/doc/04-schema.md#abandoned) and suggest an alternative. 
+The package type [metapackage](https://getcomposer.org/doc/04-schema.md#type) ensures no code is associated with it. Optionally, you can mark the package as [abandoned](https://getcomposer.org/doc/04-schema.md#abandoned) and optionally suggest an alternative. 
 
 ```json 
 {
