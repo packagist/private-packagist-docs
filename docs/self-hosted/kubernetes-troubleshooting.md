@@ -86,7 +86,7 @@ flushdb
 
 Afterwards, run `composer update mirrors` to make sure all repository references are up-to-date. 
 
-#### The application is not able to resolve the hostnames of internal services - for example when accessing a GitLab server in a local network
+#### Issues with internal hostname resolution
 
 Kubernetes clusters use their own DNS resolution mechanism. Even if the host server can resolve local hostnames (through 
 local DNS servers or `/etc/resolv.conf`), these names are not resolvable within the cluster.
