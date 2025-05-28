@@ -86,4 +86,66 @@ flushdb
 
 Afterwards, run `composer update mirrors` to make sure all repository references are up-to-date. 
 
+#### Issues with internal hostname resolution
 
+Kubernetes clusters use their own DNS resolution mechanism. Even if the host server can resolve local hostnames (through 
+local DNS servers or `/etc/resolv.conf`), these names are not resolvable within the cluster.
+
+You can configure additional hostnames to be resolved by the cluster by following the instructions below.
+
+Make a backup of the current CoreDNS config to a yaml file in case you need to revert changes or want to keep it as
+a reference:
+```
+kubectl -n kube-system get configmap coredns -o yaml > coredns-config.yaml
+```
+
+Start editing the CoreDNS config by issuing the following command:
+```
+kubectl -n kube-system edit configmap coredns
+```
+
+This will open the current CoreDNS config in your default editor. Add all additional hostnames with corresponding IPs to the `hosts` config block. 
+If the `hosts` config block doesn't exist yet, please add it. 
+
+**Important:** Add the `fallthrough` entry as the last entry in order to resolve all other hostnames that are not listed in the `hosts` config block!
+
+The full configuration should look similar to this:
+```
+data:
+  Corefile: |
+    .:53 {
+        errors
+        health {
+           lameduck 5s
+        }
+        ready
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+           pods insecure
+           fallthrough in-addr.arpa ip6.arpa
+           ttl 30
+        }
+        prometheus :9153
+        forward . /etc/resolv.conf {
+           max_concurrent 1000
+        }
+        hosts {
+          10.1.2.3 your-gitlab-server-hostname.local
+          fallthrough
+        }
+        cache 30
+        loop
+        reload
+        loadbalance
+    }
+```
+
+
+Restart CoreDNS to apply the changes:
+```
+kubectl -n kube-system rollout restart deployment coredns
+```
+
+To verify that the configured hostnames can now be correctly resolved, use this command:
+```
+kubectl exec -it $(kubectl get pods -o name | grep worker | head -1 | cut -d'/' -f2) -- nslookup your-gitlab-server-hostname.local
+```
