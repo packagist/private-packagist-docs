@@ -93,18 +93,18 @@ local DNS servers or `/etc/resolv.conf`), these names are not resolvable within 
 
 You can configure additional hostnames to be resolved by the cluster by following the instructions below.
 
-Make a backup of the current `coredns` config to a yaml file in case you need to revert changes or want to keep it as
+Make a backup of the current CoreDNS config to a yaml file in case you need to revert changes or want to keep it as
 a reference:
 ```
 kubectl -n kube-system get configmap coredns -o yaml > coredns-config.yaml
 ```
 
-Start editing the `coredns` config by issuing the following command:
+Start editing the CoreDNS config by issuing the following command:
 ```
 kubectl -n kube-system edit configmap coredns
 ```
 
-This will open the current `coredns` config in your default editor. Add all additional hostnames with corresponding IPs to the `hosts` config block. 
+This will open the current CoreDNS config in your default editor. Add all additional hostnames with corresponding IPs to the `hosts` config block. 
 If the `hosts` config block doesn't exist yet, please add it. 
 
 **Important:** Add the `fallthrough` entry as the last entry in order to resolve all other hostnames that are not listed in the `hosts` config block!
@@ -140,7 +140,7 @@ data:
 ```
 
 
-Restart coredns to apply the changes:
+Restart CoreDNS to apply the changes:
 ```
 kubectl -n kube-system rollout restart deployment coredns
 ```
