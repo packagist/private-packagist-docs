@@ -257,3 +257,24 @@ Once all the repository entries have been added to Private Packagist the setup i
     }
 }
 ```
+
+## General webhook setup
+
+Webhooks are automatically configured for packages from GitHub, GitLab, and Bitbucket when added through synchronization. 
+
+See integration specific information on webhooks here: [Integrations](http://packagist.com.lo/features/integration-github-bitbucket-gitlab)
+
+For other code-hosting platforms or custom setups, you can also configure the webhook manually.
+
+Find your unique webhook URL on the package details page:
+
+![Webhook Setup](/Resources/public/img/docs/integration-setup/webhook-setup.png)
+
+Configure your webhook to trigger on the following repository events:
+- On each push
+- When a branch is created
+- When a branch is deleted
+- When a tag is created
+- When a tag is deleted
+
+These events ensure your package metadata stays synchronized with your repository changes, enabling automatic updates when you publish new versions or modify your codebase.
