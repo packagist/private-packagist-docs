@@ -68,3 +68,20 @@ Private Packagist integrates with the following systems:
 * Webhooks:
     * Users need to [create a Service Hook](https://docs.microsoft.com/en-us/azure/devops/service-hooks/services/webhooks?view=azure-devops) using the generic hook URL from the package page
     * Select the "Code pushed" event (includes commits and tags) and the repository that matches the package. No authentication or additional configuration is necessary.
+
+## General webhook setup 
+
+If automatic webhook configuration isn't available for your repository, you'll need to set up webhooks manually.
+
+Find your unique webhook URL on the package details page. It will look like this:
+
+ `Hook URL: POST https://packagist.com/hooks/generic/1234567/a1b2c3d4e5f6g7h8i9a1b2c3d4e5f6g7h8i9`
+
+Configure your webhook to trigger on the following repository events:
+- On each push
+- When a branch is created
+- When a branch is deleted
+- When a tag is created
+- When a tag is deleted
+
+These events ensure your package metadata stays synchronized with your repository changes, enabling automatic updates when you publish new versions or modify your codebase.
