@@ -75,5 +75,3 @@ Private Packagist integrates with the following systems:
   * Users need to [create a Modular Webhooks Integration](https://support.beanstalkapp.com/article/56-modular-webhooks-integration) using the generic hook URL from the package page
   * Following events need to be selected: `push`, `create_branch`, `delete_branch`, `create_tag`, `delete_tag`
   
-
-
