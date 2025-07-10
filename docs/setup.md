@@ -260,9 +260,9 @@ Once all the repository entries have been added to Private Packagist the setup i
 
 ## General webhook setup
 
-Webhooks are automatically configured for packages from GitHub, GitLab, and Bitbucket when added through synchronization. 
+Webhooks are automatically configured for packages from GitHub, GitLab, and Bitbucket when added through a synchronization or added by URL with a credential with permissions to configure a webhook.
 
-See integration specific information on webhooks here: [Integrations](http://packagist.com.lo/features/integration-github-bitbucket-gitlab)
+See integration specific information on webhooks here: [Integrations](/features/integration-github-bitbucket-gitlab)
 
 For other code-hosting platforms or custom setups, you can also configure the webhook manually.
 
