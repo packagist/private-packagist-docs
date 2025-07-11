@@ -142,6 +142,27 @@ For Private Packagist to be able to access repositories that require authenticat
 
 Note: Even though you need to select a domain when you create a credential Private Packagist will not automatically apply the credential for all HTTP calls to that domain. Private Packagist will only suggest it where it might be useful. Therefore it is important that you explicitly select it when you add the credential or else Private Packagist will not be able to import the repository.
 
+### General webhook setup
+
+Webhooks are automatically configured for packages from GitHub, GitLab, and Bitbucket when added through a synchronization or added by URL with a credential with permissions to configure a webhook.
+
+See integration specific information on webhooks here: [Integrations](/features/integration-github-bitbucket-gitlab)
+
+For other code-hosting platforms or custom setups, you can also configure the webhook manually.
+
+Find your unique webhook URL on the package details page:
+
+![Webhook Setup](/Resources/public/img/docs/integration-setup/webhook-setup.png)
+
+Configure your webhook to trigger on the following repository events:
+- On each pus
+- When a branch is created
+- When a branch is deleted
+- When a tag is created
+- When a tag is deleted
+
+These events ensure your package metadata stays synchronized with your repository changes, enabling automatic updates when you publish new versions or modify your codebase.
+
 ### Add a forked VCS repository
 
 When adding a fork to Private Packagist it can happen that the original package was already added. Since Composer cannot load multiple packages by the same name from one URL, the new package will be marked as uninstallable with Composer due to a conflicting name. You will have to delete the original package and then add your fork. Once the changes of the fork are merged back upstream and you are ready to delete the fork you can also delete the package in Private Packagist. Private Packagist will then automatically mirror the original package from packagist.org again.
@@ -257,3 +278,4 @@ Once all the repository entries have been added to Private Packagist the setup i
     }
 }
 ```
+

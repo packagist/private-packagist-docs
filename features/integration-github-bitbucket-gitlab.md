@@ -68,3 +68,10 @@ Private Packagist integrates with the following systems:
 * Webhooks:
     * Users need to [create a Service Hook](https://docs.microsoft.com/en-us/azure/devops/service-hooks/services/webhooks?view=azure-devops) using the generic hook URL from the package page
     * Select the "Code pushed" event (includes commits and tags) and the repository that matches the package. No authentication or additional configuration is necessary.
+
+#### Beanstalk 
+* Code Credentials: Grant us access via SSH key
+* Webhooks:
+  * Users need to [create a Modular Webhooks Integration](https://support.beanstalkapp.com/article/56-modular-webhooks-integration) using the generic hook URL from the package page
+  * Following events need to be selected: `push`, `create_branch`, `delete_branch`, `create_tag`, `delete_tag`
+  
