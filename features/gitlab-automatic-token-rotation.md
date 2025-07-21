@@ -15,14 +15,11 @@ When a token is about to expire, Private Packagist uses GitLab's official rotati
 
 ### Requirements for automatic rotation
 
-Your GitLab token must have these scopes:
-- `api` - Required for GitLab API access
-- `read_user` - Required to read user information  
-- `self_rotate` - Required for automatic token rotation
+Your GitLab token must have either the `api` scope (which includes rotation capabilities) or the `self_rotate` scope for rotation-only permission.
 
 <div class="row column">
     <div class="callout warning">
-        <p>Tokens without the <code>self_rotate</code> scope cannot be automatically rotated and may cause service interruptions when they expire.</p>
+        <p>Most GitLab integrations already use the <code>api</code> scope, which supports automatic rotation. Tokens without either <code>api</code> or <code>self_rotate</code> scope cannot be automatically rotated.</p>
     </div>
 </div>
 
@@ -38,7 +35,7 @@ Your GitLab token must have these scopes:
 3. Create a new token:
    - Enter a descriptive name like "Private Packagist"
    - Set your preferred expiration date
-   - Check the scopes: `api`, `read_user`, and `self_rotate`
+   - Check the required scopes: `api` and `read_user` (the `api` scope enables automatic rotation)
 4. Generate the token and copy it immediately
 5. Add the token to Private Packagist in your credentials section
 
@@ -65,12 +62,7 @@ Scoped to specific projects with project-level permissions.
 
 ## Monitoring your tokens
 
-Check your credentials section in Private Packagist to view:
-- Token expiration dates
-- Available scopes
-- Last rotation date
-
-Rotation activities are logged in your organization log for audit and security purposes.
+Private Packagist displays a warning icon with expiration information for credentials that are expiring soon or have already expired.
 
 ## Troubleshooting rotation issues
 
