@@ -26,7 +26,7 @@ Once the analysis is done, either download the bundle and manually send it to us
 or click on the send icon which will send us the bundle. Please always notify us
 if you send us a support bundle!
 
-In cases where the Replicated management console isn't accessible you can also generate a https://docs.replicated.com/vendor/support-host-support-bundles
+In cases where the Replicated management console isn't accessible you can also generate a [host support bundle](https://docs.replicated.com/vendor/support-host-support-bundles)
 using the following command and send it to us:
 ```
 kubectl support-bundle https://raw.githubusercontent.com/replicatedhq/troubleshoot-specs/main/host/default.yaml
