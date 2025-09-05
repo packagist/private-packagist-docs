@@ -19,12 +19,20 @@ kubectl delete pods --field-selector status.phase=Failed -n kurl
 
 #### Generating a support bundle
 
-You can generate a support bundle from the Replicated Management Console on port
+You can generate a support bundle from the Replicated management console on port
 8800 by navigating to the Troubleshoot tab, clicking "Generate a support bundle",
 and selecting "Analyze".
 Once the analysis is done, either download the bundle and manually send it to us
 or click on the send icon which will send us the bundle. Please always notify us
 if you send us a support bundle!
+
+In cases where the Replicated management console isn't accessible you can also generate a [host support bundle](https://docs.replicated.com/vendor/support-host-support-bundles)
+using the following command and send it to us:
+```
+kubectl support-bundle https://raw.githubusercontent.com/replicatedhq/troubleshoot-specs/main/host/default.yaml
+```
+
+Alternatively, you can also download the YAML file first and run `kubectl support-bundle PATH/FILE.yaml`.
 
 #### Issues with Multi-factor Authentication
 
