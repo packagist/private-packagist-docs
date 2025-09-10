@@ -7,8 +7,7 @@ defined by the Open Source Security Foundation (OpenSSF) and implemented by vari
 
 ## How does it work?
 
-OIDC identity providers, CI services like GitHub Actions, can issue short-lived credentials, OIDC tokens, that Private Packagist
-can verify came from the CI service. Organizations on Private Packagist can configure to trust a workflow in a repository to publish a package. 
+OIDC identity providers (in this context CI services like GitHub Actions), can issue short-lived credentials (OIDC tokens), that Private Packagist can verify came from a trusted CI service run. Organizations on Private Packagist can configure to trust a workflow in a repository to publish a package. 
 The workflow sends an OIDC token to Private Packagist, where the token is matched against configured trusted publishers.
 If there is a match, Private Packagist will issue a short-lived API credential with limited scope. 
 The issued API credential is valid for 15 minutes and can only access endpoints required to publish the artifact.
