@@ -9,7 +9,7 @@ defined by the Open Source Security Foundation (OpenSSF) and implemented by vari
 
 OIDC identity providers, CI services like GitHub Actions, can issue short-lived credentials, OIDC tokens, that Private Packagist
 can verify came from the CI service. Organizations on Private Packagist can configure to trust a workflow in a repository to publish a package. 
-The workflow send an OIDC token to Private Packagist, where the token is matched against configured trusted publishers.
+The workflow sends an OIDC token to Private Packagist, where the token is matched against configured trusted publishers.
 If there is a match, Private Packagist will issue a short-lived API credential with limited scope. 
 The issued API credential is valid for 15 minutes and can only access endpoints required to publish the artifact.
 
@@ -34,14 +34,14 @@ Fill in the form fields to configure the publisher:
 * Owner name: The GitHub user or organization name that owns the repository.
 * Repository name: The name of the GitHub repository that contains the publishing workflow.
 * Continuous integration file: The filename of the publishing workflow, e.g. `publish.yaml`. The file must exist in the `.github/workflows/` directory.
-* Continuous integration environment name (optional): The name of the [GitHub Actions environment]((https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments)) that the workflow uses.
+* Continuous integration environment name (optional): The name of the [GitHub Actions environment](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments) that the workflow uses.
 
 ## Configure your CI/CD workflow
 
 ### GitHub Actions
 
-Private Packagist provides a GitHub Action, [packagist/artifact-publish-github-action](https://github.com/packagist/artifact-publish-github-action),
-that takes care of publishing the artifact for you. Just build the artifact and hand it over to the action. The action
+Private Packagist provides a GitHub Action [packagist/artifact-publish-github-action](https://github.com/packagist/artifact-publish-github-action),
+that takes care of publishing the artifact for you. Just build the artifact and hand its path over to the action. The action
 requires the `id-token: write` permission to generate OIDC tokens, more info about this in [GitHub's OIDC documentation](https://docs.github.com/en/actions/concepts/security/openid-connect).
 
 ```yaml
