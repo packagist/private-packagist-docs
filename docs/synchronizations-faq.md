@@ -49,7 +49,7 @@ To make sure members can access the packages from all synchronizations from mult
 ### Bitbucket Cloud (bitbucket.org)
 * Synchronization:
     * Keeps groups, their members, and access permissions in sync with your Bitbucket workspace
-* Code Credentials: Bitbucket API Key or Bitbucket App Password
+* Code Credentials: Bitbucket API Token
 * Webhooks: Code changes and releases
 
 ### Bitbucket Data Center / Server
