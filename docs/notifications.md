@@ -90,29 +90,29 @@ WEBHOOK_EXAMPLE[test]
 
 Triggered every time Private Packagist finds one or more releases of a single package matching the criteria of the notification channel.
 
-WEBHOOK_EXAMPLE[package:release]
+WEBHOOK_EXAMPLE[package-release]
 
 ##### Abandoned Package Notification
 
 Triggered every time a package gets marked as abandoned.
 
-WEBHOOK_EXAMPLE[package:abandoned]
+WEBHOOK_EXAMPLE[package-abandoned]
 
 ##### Security Issue Notification
 
 Triggered every time Private Packagist finds one or more security issues for a single project.
 
-WEBHOOK_EXAMPLE[package:security-issue]
+WEBHOOK_EXAMPLE[package-security-issue]
 
 ##### Security Single Issue Notification
 
 Triggered every time Private Packagist finds a security issue for a single project. If configured, 
 this will be sent instead of the regular security issues webhook which aggregates issues found at the same time. This is useful if your target cannot parse object collections, e.g. Jira.
 
-WEBHOOK_EXAMPLE[package:security-issue:single]
+WEBHOOK_EXAMPLE[package-security-issue-single]
 
 ##### Security Summary Notification
 
 A weekly or monthly summary notification containing all open security issues for all projects in your organization.
 
-WEBHOOK_EXAMPLE[package:security-issue:summary]
+WEBHOOK_EXAMPLE[package-security-issue-summary]
