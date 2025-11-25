@@ -56,12 +56,3 @@ The response body contains a JSON array of resources, just like non-paginated re
   ...
 ]
 ```
-
-## Using the PHP Client
-
-The PHP client includes an AutoPaginator plugin that:
-
-1. **Automatically detects pagination**: Checks for Link headers with `rel="next"` in API responses
-2. **Fetches all pages**: Makes additional requests to retrieve all pages (using 500 items per page)
-3. **Merges results**: Combines all pages into a single array
-4. **Returns complete data**: Your code receives all results, no matter how many pages exist
