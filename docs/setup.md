@@ -237,13 +237,15 @@ You can upload code archives via *Add Package -> Artifact*. Your uploaded archiv
 Once you start using Private Packagist it usually also replaces your previous Satis setup. Via *Add Package -> Json Import* you can paste your satis.json into the textarea and select which credentials should be used to try to import the packages. This will add all packages from your Satis instance to Private Packagist and will make Satis obsolete and therefore one less thing you have to worry about.
 
 ## Add mirrored third party repositories
-On your organization’s settings page under “Manage Mirrored Repositories” you can add additional third party mirrored repositories. By default packagist.org is enabled for all organizations so there is no need to set that up.
+On your organization's settings page under "Mirroring" you can add additional third party mirrored repositories. By default packagist.org is enabled for all organizations so there is no need to set that up.
 
-Similar to how Private Packagist can access private VCS repositories it can also access private mirrored third party repositories e.g. repo.magento.com. First create the credentials that are necessary e.g. your Magento Marketplace access keys and then add the mirrored third party repository. Make sure to select the credential while creating the mirror. All packages added from the repository will now automatically use that credential.
+Similar to how Private Packagist can access private VCS repositories it can also access private mirrored third party repositories e.g. [repo.magento.com](mirror-magento-marketplace.md). First create the credentials that are necessary e.g. your Magento Marketplace access keys and then add the mirrored third party repository. Make sure to select the credential while creating the mirror. All packages added from the repository will now automatically use that credential.
 
 If you are moving one of the additional Composer repositories to Private Packagist after you already started to use Private Packagist, make sure to run `composer update mirrors` again to update the download locations for packages from the mirror in your lock file.
 
 *Important Note:* Third party repositories do not provide a way for us to get notified whenever new versions of a package appear. Therefore packages which have been added via mirror will only be updated once every 12 hours.
+
+For more information on permission levels, managing repositories, and troubleshooting, see [Mirrored Third-Party Repositories](mirrored-repositories.md).
 
 ## Cleanup
 Once all the repository entries have been added to Private Packagist the setup is complete and you can remove all the repositories so it will look exactly like what you see in the snippet on your Organization’s overview page.
