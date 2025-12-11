@@ -7,17 +7,17 @@ By default, packagist.org is enabled as a mirrored repository for all organizati
 
 ## Adding a Mirrored Repository
 
-You can add additional mirrored repositories on your organization's settings page under "Mirroring".
+You can add additional mirrored repositories on your organization's settings page under *Mirroring*.
 
-For private repositories that require authentication, first create credentials under Settings &gt; Manage Credentials, then add the mirrored repository and select the credential during setup.
+For private repositories that require authentication, first create credentials under *Settings > Manage Credentials*, then add the mirrored repository and select the credential during setup.
 
 After adding a new mirrored repository, run `composer update mirrors` in your projects to update the download locations in your lock file to point to your Private Packagist repository instead. 
 
-See also: [Mirroring Magento Marketplace Packages](mirror-magento-marketplace.md) for a detailed walkthrough.
+See also: [Mirroring Magento Marketplace Packages](mirror-magento-marketplace) for a detailed walkthrough.
 
 ## Repository Priority
 
-When you have multiple mirrored repositories, you can reorder them by dragging and dropping on the Mirroring settings page. The order determines which repository's packages are used when multiple repositories provide the same package.
+When you have multiple mirrored repositories, you can reorder them by dragging and dropping on the *Mirroring* settings page. The order determines which repository's packages are used when multiple repositories provide the same package.
 
 Repositories at the top of the list have higher priority. When a package exists in multiple repositories, the repository higher in the list will be used to mirror that package. Once a package is mirrored from one repository, it cannot be added from another repository.
 
@@ -87,3 +87,8 @@ Mirrored repositories do not provide webhook notifications. Packages from third-
 ##### Can't remove a repository with existing packages
 
 To prevent accidental data loss, you must explicitly choose to delete a repository's packages during the deletion process. If you want to keep the packages, disable the repository instead.
+
+## See Also
+
+- [Mirroring Magento Marketplace Packages](mirror-magento-marketplace) - Detailed walkthrough for setting up Magento Marketplace mirroring
+- [Composer Authentication](composer-authentication) - Authentication token types and their permissions
