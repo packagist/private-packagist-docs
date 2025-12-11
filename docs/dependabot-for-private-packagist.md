@@ -8,7 +8,7 @@ This guide explains how to configure and set up Dependabot if you want to use it
 
 ## Enable Dependabot in GitHub
 
-Start in your GitHub repository and go to “Settings”. In the “Security” section of the sidebar go to “Code security and analysis”, where you can enable Dependabot. In this process, you will create a dependabot.yaml [as shown as below](#dependabotyaml). Follow [this guide on GitHub](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide#enabling-dependabot-for-your-repository) for the complete steps to enable Dependabot.
+Start in your GitHub repository and go to _Settings_. In the _Security_ section of the sidebar go to _Code security and analysis_, where you can enable Dependabot. In this process, you will create a dependabot.yaml [as shown as below](#dependabotyaml). Follow [this guide on GitHub](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide#enabling-dependabot-for-your-repository) for the complete steps to enable Dependabot.
 
 ![enable dependabot](/Resources/public/img/docs/articles/dependabot-secret.png)
 
@@ -37,19 +37,19 @@ registries:
 
 Replace the Composer URL `https://repo.packagist.com/acme/` with your organization's Composer URL on packagist.com. The example URL is for the organization named `acme`.
 
-To grant Dependabot access to the packages on Private Packagist, you need to provide the secret `PRIVATE_PACKAGIST_AUTH_TOKEN` to your GitHub repository. In Settings, under the section “Security,” there is a “Secrets and Variables” page for Dependabot.
+To grant Dependabot access to the packages on Private Packagist, you need to provide the secret `PRIVATE_PACKAGIST_AUTH_TOKEN` to your GitHub repository. In _Settings_, under the section _Security_, there is a _Secrets and Variables_ page for Dependabot.
 
 ![Dependabot Secrets](/Resources/public/img/docs/articles/dependabot-secret.png)
 
-Now, on Private Packagist, create an authentication token with update access under “Settings” and “Authentication Tokens”. Copy the secret token into the GitHub form.
+Now, on Private Packagist, create an authentication token with update access under _Settings_ and _Authentication Tokens_. Copy the secret token into the GitHub form.
 
 ## Troubleshooting
 
-To check if Dependabot is able to access your packages, navigate to “Insights” on your GitHub repository, then “Dependency Graph” and then activate the tab “Dependabot”.
+To check if Dependabot is able to access your packages, navigate to _Insights_ on your GitHub repository, then _Dependency Graph_ and then activate the tab _Dependabot_.
 
 ![Dependabot Insights](/Resources/public/img/docs/articles/dependabot-insights.png)
 
-There is a link “Recent update jobs”, that will show the last jobs from Dependabot and logs. The last job should be green now.
+There is a link _Recent update jobs_, that will show the last jobs from Dependabot and logs. The last job should be green now.
 
 ![Dependabot Jobs](/Resources/public/img/docs/articles/dependabot-jobs.png)
 

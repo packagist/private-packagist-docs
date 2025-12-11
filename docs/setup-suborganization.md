@@ -29,7 +29,7 @@ one for Drupal 7 and one for Drupal 8. Then change your composer.json in all Com
 
 ## Setting up a suborganization in Private Packagist
 
-Organization owners and admins can create suborganizations on the suborganizations page via the "Create suborganization" button.
+Organization owners and admins can create suborganizations on the suborganizations page via the _Create suborganization_ button.
 On the settings page of an individual team you can grant all members of a team permission to create suborganizations.
 
 Alternatively, you can create suborganizations using our API through the [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
@@ -83,8 +83,8 @@ $client->suborganizations()->mirroredRepositories()->add($suborganizationName, [
 
 ### Adding packages
 
-Existing packages can be shared into the suborganization via "Add Package" -> "Organization Packages".
-Select all necessary packages and add them to the suborganization, you can select to add their dependencies too. If you need to create new packages in a suborganization you can add them using the "Add Package" dialog and the previously set up credentials.
+Existing packages can be shared into the suborganization via _Add Package > Organization Packages_.
+Select all necessary packages and add them to the suborganization, you can select to add their dependencies too. If you need to create new packages in a suborganization you can add them using the _Add Package_ dialog and the previously set up credentials.
 
 Mirrored packages will automatically be added to your suborganization on use via composer commands. We do not recommend manually adding them to your suborganization.
 
@@ -142,7 +142,7 @@ Working on a Composer project with external developers might sometimes require t
 to make sure they can run composer install and update and help manage the project's dependencies. Adding them as suborganization
 collaborators will only grant them access to selected suborganizations and not give them access to you your Private Packagist organization.
 
-You can invite via email suborganization collaborators on the suborganization's team page via the "Manage Collaborators" button.
+You can invite via email suborganization collaborators on the suborganization's team page via the _Manage Collaborators_ button.
 
 
 ## Setting up CI / CD environments

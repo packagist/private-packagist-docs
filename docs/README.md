@@ -13,7 +13,7 @@ Alternatively you can copy the SSH public key for your organization on the same 
 
 ### Add packages
 
-If your organization is synchronized Private Packagist will have created packages for all of your private repositories containing a composer.json. Otherwise or if you would like to add additional packages you can add them in the _Packages_ section of your organization with the Add button. Follow the instructions to pick the right option for your package.
+If your organization is synchronized Private Packagist will have created packages for all of your private repositories containing a composer.json. Otherwise or if you would like to add additional packages you can add them in the _Packages_ section of your organization with the _Add_ button. Follow the instructions to pick the right option for your package.
 
 ### Configure your project to use Private Packagist
 

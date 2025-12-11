@@ -20,8 +20,8 @@ kubectl delete pods --field-selector status.phase=Failed -n kurl
 #### Generating a support bundle
 
 You can generate a support bundle from the Replicated management console on port
-8800 by navigating to the Troubleshoot tab, clicking "Generate a support bundle",
-and selecting "Analyze".
+8800 by navigating to the _Troubleshoot_ tab, clicking _Generate a support bundle_,
+and selecting _Analyze_.
 Once the analysis is done, either download the bundle and manually send it to us
 or click on the send icon which will send us the bundle. Please always notify us
 if you send us a support bundle!
