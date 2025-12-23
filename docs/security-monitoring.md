@@ -3,8 +3,12 @@
 Private Packagist Security Monitoring searches the dependencies of your projects for known security vulnerabilities.
 Projects, which are Composer packages with a composer.lock file, are analyzed every time you push a new commit to your project and when a new vulnerability is published in one of the databases.
 
-The following databases are used to analyze your projects:
+Private Packagist uses the [Packagist Security Advisory Feed](https://packagist.org/security-advisories/) from packagist.org to analyze your projects, which aggregates security advisories from the following databases:
+
+* [GitHub Advisory Database](https://github.com/advisories)
 * [FriendsOfPHP/security-advisories](https://github.com/FriendsOfPHP/security-advisories)
+
+We also include any vulnerabilities made available through the Composer API by third-party mirrors. For example, if you add packages.drupal.org as a mirrored repository, we'll monitor for any issues with packages provided by Drupal's Composer repository too. 
 
 <div class="row column">
     <div class="callout warning">
