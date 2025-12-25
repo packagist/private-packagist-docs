@@ -5,22 +5,22 @@ Private Packagist supports mirroring Composer repositories which require authent
 
 Mirrored packages show up in your Private Packagist search results, your [License Review](../features/license-review.d), and can be installed from your Private Packagist repository with Composer. Their distribution files are cached in your Private Packagist organization to make downloads redundant and faster.
 
-To setup credentials for a repository, “Magento Marketplace” in our example, head to Settings &gt; Manage Credentials in your Private Packagist organization. Afterwards you can add a new mirrored third party repository under Settings as well. From then on packages can be manually or automatically mirrored based on your configuration.
+To setup credentials for a repository, "Magento Marketplace" in our example, head to _Settings > Manage Credentials_ in your Private Packagist organization. Afterwards you can add a new mirrored third party repository under _Settings_ as well. From then on packages can be manually or automatically mirrored based on your configuration.
 
 ## Magento Marketplace Walkthrough
-Start by hitting “Manage Credentials” in your organizations settings. My organization is called “ACME Company”.
+Start by hitting _Manage Credentials_ in your organizations settings. My organization is called "ACME Company".
 
 ![Manage Credentials](/Resources/public/img/docs/features/magento/Magento-Credentials-20200723.png)
 
-Next enter a description, I’m going with “Magento Marketplace Credentials”, and select “Magento Marketplace” as the authentication type. The domain “repo.magento.com” will be filled in automatically. Now we need the Magento Marketplace Public and Private Key, we’ll click on “My Access Keys” to get to the Magento Marketplace website.
+Next enter a description, I'm going with "Magento Marketplace Credentials", and select "Magento Marketplace" as the authentication type. The domain "repo.magento.com" will be filled in automatically. Now we need the Magento Marketplace Public and Private Key, we'll click on _My Access Keys_ to get to the Magento Marketplace website.
 
 ![Create Credentials](/Resources/public/img/docs/features/magento/Magento-Credentials-Edit-20200723.png)
 
-Make sure you’re on the Magento 2 Access Keys page, and then copy and paste the Private and Public keys into the respective fields on Private Packagist. Once you’re done, hit “Create” on the Private Packagist Credentials page.
+Make sure you're on the Magento 2 Access Keys page, and then copy and paste the Private and Public keys into the respective fields on Private Packagist. Once you're done, hit _Create_ on the Private Packagist Credentials page.
 
 ![Magento Access Keys](/Resources/public/img/docs/features/magento/Magento-Access-Keys.png)
 
-With the credentials set up we can now mirror a new Composer repository under Settings in the Private Packagist organization.
+With the credentials set up we can now mirror a new Composer repository under _Settings_ in the Private Packagist organization.
 
 ![Mirror Settings](/Resources/public/img/docs/features/magento/Magento-Settings-Mirror-20200723.png)
 
@@ -28,11 +28,11 @@ Pick a name for the repository, I picked “Magento Marketplace”, enter the UR
 
 ![Mirror Add](/Resources/public/img/docs/features/magento/Magento-Mirror-Add-20200723.png)
 
-Under Packages we can now add a package “From Mirror”.
+Under Packages we can now add a package _From Mirror_.
 
 ![Packages Add](/Resources/public/img/docs/features/magento/Magento-Packages-Add-2020723.png)
 
-I’m going to enter just one package for the demo, but you can add as many as you like here. I’m going with “magento/module-catalog”. Make sure to select the “Magento Marketplace” Mirror repository underneath, and hit “Add”.
+I'm going to enter just one package for the demo, but you can add as many as you like here. I'm going with "magento/module-catalog". Make sure to select the "Magento Marketplace" Mirror repository underneath, and hit _Add_.
 
 ![Packages Add Proxied](/Resources/public/img/docs/features/magento/Magento-Add-Mirrored-20200723.png)
 

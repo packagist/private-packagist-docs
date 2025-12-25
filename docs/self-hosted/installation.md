@@ -70,7 +70,7 @@ Select options for your SMTP server or use the GMail option for a simplified for
 ![Email Settings](/Resources/public/img/docs/self-hosted/05-email-settings.png)
 
 ## Application Startup
-Save and apply the settings to start Private Packagist Self-Hosted. Leave the Setup Mode enabled.
+Save and apply the settings to start Private Packagist Self-Hosted. Leave the _Setup Mode_ enabled.
 
 ![Start Application](/Resources/public/img/docs/self-hosted/06-save-start.png)
 
@@ -80,13 +80,13 @@ Once the application has started, click on the open link to access the Private P
 
 ## Configuring an HTTP Proxy
 If accessing websites outside of your network, e.g. packagist.org, requires an HTTP proxy then you can
-enable and configure this in the Console Settings under the HTTP Proxy section which you can access in
+enable and configure this in the _Console Settings_ under the _HTTP Proxy_ section which you can access in
 the Replicated management console by clicking on the gear icon in the menu bar.
 
 ![HTTP Proxy](/Resources/public/img/docs/self-hosted/07-01-http-proxy.png)
 
 In case the HTTP proxy should not be used to access certain domains or IPs then you can configure such
-a NO_PROXY list in the Private Packagist application in the Admin Panel under Global Configuration.
+a NO_PROXY list in the Private Packagist application in the _Admin Panel_ under _Global Configuration_.
 
 ![No HTTP Proxy](/Resources/public/img/docs/self-hosted/07-02-http-proxy-no-proxy.png)
 
@@ -110,7 +110,7 @@ The first user is granted admin permissions automatically. You can grant admin p
 ![Add Admin](/Resources/public/img/docs/self-hosted/10-add-admin.png)
 
 ## Switching to Production Mode
-Head back to the Replicated management console to disable the Setup Mode in Settings.
+Head back to the Replicated management console to disable the _Setup Mode_ in _Settings_.
 
 ![Startup Mode](/Resources/public/img/docs/self-hosted/11-startup-mode.png)
 
@@ -121,7 +121,7 @@ Apply the changes and wait while the application restarts.
 That’s it! Private Packagist Self-Hosted is now ready to be used! You’ll find all further information in the web interface.
 
 ## Backups
-Once the application is running you can create a snapshot in the management console using the “Start Snapshot” button. You can view a list of all snapshots created under “Snapshots” when you click on the gear icon on the menu bar. Further you can configure automatic regular snapshots in the “Console Settings” after clicking on the gear icon. We recommend you configure Snapshots to store files via SFTP or on S3 instead of locally to avoid a very slow snapshot process.
+Once the application is running you can create a snapshot in the management console using the _Start Snapshot_ button. You can view a list of all snapshots created under _Snapshots_ when you click on the gear icon on the menu bar. Further you can configure automatic regular snapshots in the _Console Settings_ after clicking on the gear icon. We recommend you configure Snapshots to store files via SFTP or on S3 instead of locally to avoid a very slow snapshot process.
 
 Snapshot are stored in ``/var/lib/replicated/snapshots`` on the Replicated host. This location may not be suitable for keeping large amounts of data. Additionally, by default, it is likely to be on the same physical volume as all other critical data. We highly recommend this location is configured to be on a separate volume with large capacity to ensure data can be recovered in case of a disaster.
 

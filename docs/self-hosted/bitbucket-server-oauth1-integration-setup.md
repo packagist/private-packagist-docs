@@ -26,7 +26,7 @@ To allow your users to authenticate to Private Packagist with their Bitbucket Da
 first need to create an integration in Private Packagist. This document walks you through the required steps.
 
 ## Open the Add Integration form
-Go to the Admin section and hit the “Add Integration“ button to open the form to create your integration. If you've just
+Go to the Admin section and hit the _Add Integration_ button to open the form to create your integration. If you've just
 installed Private Packagist Self-Hosted and it is still running in Setup Mode, you do not need to log in. If the application
 is no longer in Setup mode, you will have to log in with an admin account first.
 
@@ -42,17 +42,17 @@ Submit the form to see the additional information.
 ![Packagist Form](/Resources/public/img/docs/integration-setup/self-hosted/bitbucket-server-oauth1-02-packagist-form.png)
 
 ## Configure Application link
-Click on the link to setup an Application Link on Bitbucket Data Center / Server. You will need the "Client Id" and the "Public Key" shown in the form.
+Click on the link to setup an Application Link on Bitbucket Data Center / Server. You will need the _Client Id_ and the _Public Key_ shown in the form.
 
 ![Bitbucket Data Center / Server Configure Application Link](/Resources/public/img/docs/integration-setup/bitbucket-server-oauth1-03-bitbucket-configure-application-link.png)
 
 For Bitbucket Data Center versions 7.21 and newer, select "Atlassian product" and not "External application" to be able to set up an OAuth1 link.
 
-After you hit the button to create a new Application Link a configuration window may appear. If it does, verify that the url matches your Private Packagist URL and hit "Continue", otherwise skip this step.
+After you hit the button to create a new Application Link a configuration window may appear. If it does, verify that the url matches your Private Packagist URL and hit _Continue_, otherwise skip this step.
 
 ![Bitbucket Data Center / Server Invalid Url](/Resources/public/img/docs/integration-setup/bitbucket-server-oauth1-04-bitbucket-invalid-url.png)
 
-Now setup a "Generic Application". The only field required is the "Application Name". Submit the form to finish creating the Application Link.
+Now setup a _Generic Application_. The only field required is the _Application Name_. Submit the form to finish creating the Application Link.
 
 ![Bitbucket Data Center / Server Setup Link](/Resources/public/img/docs/integration-setup/bitbucket-server-oauth1-05-bitbucket-setup-link.png)
 
@@ -62,8 +62,8 @@ Click on the pen icon to the right of the application you just created to edit t
 
 ![Bitbucket Data Center / Server Incoming Auth](/Resources/public/img/docs/integration-setup/bitbucket-server-oauth1-07-bitbucket-incoming-auth.png)
 
-This is where we will need the "Client ID" and the "Public Key" that were previously generated on the Private Packagist integration form.
-Enter the "Client ID" into the "Consumer Key" field, make sure the entire content of the "Public Key" field gets copied and the "Consumer Callback" field stays empty.
+This is where we will need the _Client ID_ and the _Public Key_ that were previously generated on the Private Packagist integration form.
+Enter the _Client ID_ into the _Consumer Key_ field, make sure the entire content of the _Public Key_ field gets copied and the _Consumer Callback_ field stays empty.
 Submit the form and go back to Private Packagist.
 
 ## Finish the Setup

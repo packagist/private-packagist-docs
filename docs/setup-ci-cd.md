@@ -4,7 +4,7 @@ You can use read-only tokens to grant automated systems like continuous integrat
 
 ## Adding a read-only token to your organization
 
-You can add read-only tokens on your organization's settings page under *Authentication Tokens*. Make sure to select "Read-only access to packages" on the access dropdown.
+You can add read-only tokens on your organization's settings page under _Authentication Tokens_. Make sure to select _Read-only access to packages_ on the access dropdown.
 
 Once the token is created, you'll need to add `COMPOSER_AUTH` as an environment variable in your CI/CD.
 ```
@@ -20,7 +20,7 @@ Listed below are some examples for using Private Packagist with different CI/CD 
 
 ### GitHub Actions
 
-For GitHub actions, you can add the `COMPOSER_AUTH` environment variable at the repository level by going to the repository settings -> secrets -> new repository secret. Environment variables can then be used in your [workflow files](https://docs.github.com/en/actions/learn-github-actions/environment-variables#about-environment-variables).
+For GitHub actions, you can add the `COMPOSER_AUTH` environment variable at the repository level by going to _repository settings > secrets > new repository secret_. Environment variables can then be used in your [workflow files](https://docs.github.com/en/actions/learn-github-actions/environment-variables#about-environment-variables).
 
 If you are using [shivammathur/setup-php](https://github.com/shivammathur/setup-php) watch out that it overwrites `COMPOSER_AUTH` if you configure a `COMPOSER_TOKEN`. Instead of using `COMPOSER_TOKEN` you can define the entire environment variable yourself including GitHub's token:
 
