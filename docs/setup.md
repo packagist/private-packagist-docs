@@ -241,6 +241,7 @@ On your organization's settings page under "Mirroring" you can add additional th
 
 Similar to how Private Packagist can access private VCS repositories it can also access private mirrored third party repositories e.g. [repo.magento.com](mirror-magento-marketplace). First create the credentials that are necessary e.g. your Magento Marketplace access keys and then add the mirrored third party repository. Make sure to select the credential while creating the mirror. All packages added from the repository will now automatically use that credential.
 
+You can then remove the third party mirored repository from your "repositories" section of your composer.json.  
 If you are moving one of the additional Composer repositories to Private Packagist after you already started to use Private Packagist, make sure to run `composer update mirrors` again to update the download locations for packages from the mirror in your lock file.
 
 *Important Note:* Third party repositories do not provide a way for us to get notified whenever new versions of a package appear. Therefore packages which have been added via mirror will only be updated once every 12 hours.
