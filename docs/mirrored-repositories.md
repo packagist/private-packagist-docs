@@ -11,7 +11,8 @@ You can add additional mirrored repositories on your organization's settings pag
 
 For private repositories that require authentication, first create credentials under *Settings > Manage Credentials*, then add the mirrored repository and select the credential during setup.
 
-After adding a new mirrored repository, run `composer update mirrors` in your projects to update the download locations in your lock file to point to your Private Packagist repository instead. 
+After adding the new mirrored repository, you can then remove the third party mirored repository from your "repositories" section of your composer.json.  
+Run `composer update mirrors` in your projects to update the download locations in your lock file to point to your Private Packagist repository instead. 
 
 See also: [Mirroring Magento Marketplace Packages](mirror-magento-marketplace) for a detailed walkthrough.
 
