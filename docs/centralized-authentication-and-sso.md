@@ -27,21 +27,21 @@ you can skip this step. Otherwise, the first step is making sure your users can 
 OAuth authentication with the cloud versions of the default code hosting platforms (github.com, bitbucket.org and gitlab.com) is 
 preconfigured on Private Packagist Cloud, but not on Private Packagist Self-Hosted.
 
-Go to _Settings > Integrations_ and press the "Add Integration" button.
+Go to _Settings > Integrations_ and press the _Add Integration_ button.
 
 ![Create an integration](/Resources/public/img/docs/articles/centralized-authentication-and-sso/configure-integration.png)
 
 ### 2 - Connect your account via OAuth
 
-Go to your [profile](/profile) and find the _Connected Accounts_ section. Click on the "Connect" button to go through the OAuth authentication 
+Go to your [profile](/profile) and find the _Connected Accounts_ section. Click on the _Connect_ button to go through the OAuth authentication
 flow, and associate your Private Packagist account with your GitHub, GitLab or Bitbucket account.
 
 ![Connect your account via OAuth](/Resources/public/img/docs/articles/centralized-authentication-and-sso/profile-connect.png)
 
 ### 3 - Set up the synchronization
 
-Now we can continue to set up the synchronization. In your organization, go to _Settings > Synchronizations_ and press the 
-"Add Synchronization" button. Follow the steps to complete the configuration.
+Now we can continue to set up the synchronization. In your organization, go to _Settings > Synchronizations_ and press the
+_Add Synchronization_ button. Follow the steps to complete the configuration.
 
 ![Create a synchronization](/Resources/public/img/docs/articles/centralized-authentication-and-sso/configure-synchronization.png)
 
@@ -52,9 +52,9 @@ once they log in via OAuth. Only users who have logged into Private Packagist us
 Whether or not you are using automatic user provisioning, Private Packagist will always manage the same users as those provisioned 
 in your code hosting platform. If a user is removed, that same user will also be removed from Private Packagist.
 
-If you want to control which of your users should be allowed to access Private Packagist at all, you can opt to deactivate 
-users discovered by the synchronization by default. Then, only users that you activate manually will be able to log in. 
-To enable this behavior, go to the _Teams_ tab, and click on "View and manage all members of this organization" and check the box:
+If you want to control which of your users should be allowed to access Private Packagist at all, you can opt to deactivate
+users discovered by the synchronization by default. Then, only users that you activate manually will be able to log in.
+To enable this behavior, go to the _Teams_ tab, and click on _View and manage all members of this organization_ and check the box:
 
 ![Deactivate users discovered by synchronization](/Resources/public/img/docs/articles/centralized-authentication-and-sso/deactivate-sync-members.png)
 
@@ -64,20 +64,20 @@ Now we can enforce OAuth authentication for all users in the organization, to en
 identity system configured on the code hosting platform in order to access Private Packagist and cannot use an alternative 
 method to log into Private Packagist.
 
-Go to _Settings > Access_ and apply the changes. From now on, everyone - including yourself - will be required to 
+Go to _Settings > Access_ and apply the changes. From now on, everyone - including yourself - will be required to
 authenticate via your configured integration. 
 
 ![Enforce OAuth authentication](/Resources/public/img/docs/articles/centralized-authentication-and-sso/enforce-oauth.png)
 
 ### 5 - Share the organization-specific login link
 
-If you set up your own integration in Step 1, the final step is sharing your organization-specific login link with your users. 
-Look for the "Login link" button in _Settings > Integrations_ page.
+If you set up your own integration in Step 1, the final step is sharing your organization-specific login link with your users.
+Look for the _Login link_ button in _Settings > Integrations_ page.
 
 ![Login link settings](/Resources/public/img/docs/articles/centralized-authentication-and-sso/login-link-settings.png)
 
 This link presents the option to authenticate with your configured integration. Once the user clicks on the
-"Log in with &lt;integration name&gt;" button, the authentication process is initiated and your users are redirected to your 
+_Log in with &lt;integration name&gt;_ button, the authentication process is initiated and your users are redirected to your
 code-hosting platform to log in.
 
 ![Login link example](/Resources/public/img/docs/articles/centralized-authentication-and-sso/login-link-example.png)

@@ -132,13 +132,13 @@ Without Private Packagist, every time you run `composer update` Composer loops t
 It then checks whether the branch/tag contains a valid composer.json.
 Especially for repositories with lots of tags or branches this can take a long time.
 
-You can add repositories to Private Packagist on the Packages page by clicking on *Add Package -> By Url*, selecting the type *VCS* and entering its URL. For private repositories requiring authentication you need to select a credential as explained in the next section.
+You can add repositories to Private Packagist on the Packages page by clicking on _Add Package > By Url_, selecting the type _VCS_ and entering its URL. For private repositories requiring authentication you need to select a credential as explained in the next section.
 
 If you add a repository hosted on GitHub, GitLab, Bitbucket or Bitbucket Server using a credential, then Private Packagist will automatically set up a webhook to get notified about new commits and versions. Therefore it is beneficial to use a credential even if the repository is publicly available. Repositories where no webhook can be set up will only be updated once every 12 hours.
 
 ### Private VCS repository requiring authentication
 
-For Private Packagist to be able to access repositories that require authentication, e.g. a private GitHub repository, we first need to set up a credential under *Settings -> Stored Credentials*. Once the credential is created the repository can be added on the Packages page via *Add Package -> By Url*. 
+For Private Packagist to be able to access repositories that require authentication, e.g. a private GitHub repository, we first need to set up a credential under _Settings > Stored Credentials_. Once the credential is created the repository can be added on the Packages page via *Add Package > By Url*. 
 
 Note: Even though you need to select a domain when you create a credential Private Packagist will not automatically apply the credential for all HTTP calls to that domain. Private Packagist will only suggest it where it might be useful. Therefore it is important that you explicitly select it when you add the credential or else Private Packagist will not be able to import the repository.
 
@@ -169,7 +169,7 @@ When adding a fork to Private Packagist it can happen that the original package 
 
 ## Add a custom package
 
-Custom package definitions in your composer.json can be added via *Add Package -> Custom Package*. In the textarea you are then able to paste the entire package definition and select a credential if one is necessary to access the zip files.
+Custom package definitions in your composer.json can be added via _Add Package > Custom Package_. In the textarea you are then able to paste the entire package definition and select a credential if one is necessary to access the zip files.
 
 Example:
 ```json
@@ -230,11 +230,11 @@ This placeholder package will prevent any other package with the same name from 
 
 ## Add an artifact package
 
-You can upload code archives via *Add Package -> Artifact*. Your uploaded archives need to contain a valid composer.json file in its root directory and must be of type zip, gz, or bz2. Once you upload your code archives, you can save the artifact package and use it in your organization.
+You can upload code archives via _Add Package > Artifact_. Your uploaded archives need to contain a valid composer.json file in its root directory and must be of type zip, gz, or bz2. Once you upload your code archives, you can save the artifact package and use it in your organization.
 
 ## Import from an existing Satis instance
 
-Once you start using Private Packagist it usually also replaces your previous Satis setup. Via *Add Package -> Json Import* you can paste your satis.json into the textarea and select which credentials should be used to try to import the packages. This will add all packages from your Satis instance to Private Packagist and will make Satis obsolete and therefore one less thing you have to worry about.
+Once you start using Private Packagist it usually also replaces your previous Satis setup. Via _Add Package > Json Import_ you can paste your satis.json into the textarea and select which credentials should be used to try to import the packages. This will add all packages from your Satis instance to Private Packagist and will make Satis obsolete and therefore one less thing you have to worry about.
 
 ## Add mirrored third party repositories
 On your organization’s settings page under “Manage Mirrored Repositories” you can add additional third party mirrored repositories. By default packagist.org is enabled for all organizations so there is no need to set that up.
@@ -243,7 +243,7 @@ Similar to how Private Packagist can access private VCS repositories it can also
 
 If you are moving one of the additional Composer repositories to Private Packagist after you already started to use Private Packagist, make sure to run `composer update mirrors` again to update the download locations for packages from the mirror in your lock file.
 
-*Important Note:* Third party repositories do not provide a way for us to get notified whenever new versions of a package appear. Therefore packages which have been added via mirror will only be updated once every 12 hours.
+**Important:** Third party repositories do not provide a way for us to get notified whenever new versions of a package appear. Therefore packages which have been added via mirror will only be updated once every 12 hours.
 
 ## Cleanup
 Once all the repository entries have been added to Private Packagist the setup is complete and you can remove all the repositories so it will look exactly like what you see in the snippet on your Organization’s overview page.

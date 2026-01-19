@@ -24,8 +24,8 @@ the logs in this file yourself as well.
 #### Generating a support bundle
 
 You can generate a support bundle from the Replicated Management Console on
-port 8800 by navigating to the Support tab and clicking on the "Download
-Support Bundle" button. Alternatively you can use replicated's command line
+port 8800 by navigating to the _Support_ tab and clicking on the _Download
+Support Bundle_ button. Alternatively you can use replicated's command line
 interface to generate the support bundle on your host system:
 
 `replicatedctl support-bundle`
@@ -124,8 +124,8 @@ update the host IP and the NO_PROXY environment.
 
 You just updated to Self-Hosted version 1.12.4 and now the Replicated Management Console 
 only shows "Stopped" in the top left corner of the dashboard? As part of this this Self-Hosted update PostgreSQL is upgraded from 9.6 to 12. Depending on the size of your database, this will cause increased disk IO and might take a few minutes during which the application won't be available.   
-The upgrade is done in the docker container `packagist-postgres-update` which only runs for the duration of the upgrade and then stops. You can check the `Cluster` section in the Replicated Management Console: all containers should be started except the upgrade container, which should be stopped. The Replicated Management Console is just showing the wrong state on the dashboard.  
-Pressing the button `Start now` on the dashboard will correct the displayed application state, but you can also leave it as is.
+The upgrade is done in the docker container `packagist-postgres-update` which only runs for the duration of the upgrade and then stops. You can check the _Cluster_ section in the Replicated Management Console: all containers should be started except the upgrade container, which should be stopped. The Replicated Management Console is just showing the wrong state on the dashboard.
+Pressing the _Start now_ button on the dashboard will correct the displayed application state, but you can also leave it as is.
 
 #### Reset Replicated Management Console authentication
 
