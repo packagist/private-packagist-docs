@@ -7,9 +7,9 @@ By default, packagist.org is enabled as a mirrored repository for all organizati
 
 ## Adding a Mirrored Repository
 
-You can add additional mirrored repositories on your organization's settings page under *Mirroring*.
+You can add additional mirrored repositories on your organization's settings page under _Mirroring_.
 
-For private repositories that require authentication, first create credentials under *Settings > Manage Credentials*, then add the mirrored repository and select the credential during setup.
+For private repositories that require authentication, first create credentials under _Settings > Manage Credentials_, then add the mirrored repository and select the credential during setup.
 
 After adding the new mirrored repository, you can then remove the third party mirored repository from your "repositories" section of your composer.json.  
 Run `composer update mirrors` in your projects to update the download locations in your lock file to point to your Private Packagist repository instead. 
@@ -18,7 +18,7 @@ See also: [Mirroring Magento Marketplace Packages](mirror-magento-marketplace) f
 
 ## Repository Priority
 
-When you have multiple mirrored repositories, you can reorder them by dragging and dropping on the *Mirroring* settings page. The order determines which repository's packages are used when multiple repositories provide the same package.
+When you have multiple mirrored repositories, you can reorder them by dragging and dropping on the _Mirroring_ settings page. The order determines which repository's packages are used when multiple repositories provide the same package.
 
 Repositories at the top of the list have higher priority. When a package exists in multiple repositories, the repository higher in the list will be used to mirror that package. Once a package is mirrored from one repository, it cannot be added from another repository.
 
