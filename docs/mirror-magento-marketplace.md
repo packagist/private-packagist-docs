@@ -3,7 +3,7 @@
 
 Private Packagist supports mirroring Composer repositories which require authentication. This expands on the mirroring functionality we provide for Packagist.org and other open Composer repositories like Drupal’s or Wordpress’.
 
-Mirrored packages show up in your Private Packagist search results, your [License Review](../features/license-review.d), and can be installed from your Private Packagist repository with Composer. Their distribution files are cached in your Private Packagist organization to make downloads redundant and faster.
+Mirrored packages show up in your Private Packagist search results, your [License Review](../features/license-review), and can be installed from your Private Packagist repository with Composer. Their distribution files are cached in your Private Packagist organization to make downloads redundant and faster.
 
 To setup credentials for a repository, "Magento Marketplace" in our example, head to _Settings > Manage Credentials_ in your Private Packagist organization. Afterwards you can add a new mirrored third party repository under _Settings_ as well. From then on packages can be manually or automatically mirrored based on your configuration.
 

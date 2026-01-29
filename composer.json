@@ -1,5 +1,6 @@
 {
     "name": "private-packagist/docs",
+    "version": "1.0.0",
     "description": "Private Packagist Documentation",
     "keywords": ["private packagist", "composer", "documentation"],
     "type": "library",
