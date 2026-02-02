@@ -92,7 +92,7 @@ To illustrate the process we'll refer to the following example Composer project 
 
 Three steps are required to use Private Packagist on an existing project. They are also documented on the overview page of your organization.
 
-1. You need to configure authentication on your machine. Every developer on your team must do this, so they can access code stored in Private Packagist.
+* You need to configure authentication on your machine. Every developer on your team must do this, so they can access code stored in Private Packagist.
     ```
     composer config --global --auth http-basic.repo.packagist.com your-username your-secret-token-here
     ```
@@ -100,14 +100,11 @@ Three steps are required to use Private Packagist on an existing project. They a
     ```
     COMPOSER_AUTH='{"http-basic":{"repo.packagist.com":{"username":"token","password":"your-authentication-token-here"}}}'
     ```
-2. You need to tell Composer where to look for your packages. So you have to add Private Packagist as a repository to your composer.json file and you need to disable packagist.org because public packages will be mirrored through Private Packagist, too.
-    ```
-    "repositories": [
-        {"type": "composer", "url": "https://repo.packagist.com/acme-company/"},
-        {"packagist.org": false}
-    ]
-    ```
-3. Run `composer update mirrors` to mirror all dependency packages into Private Packagist. We recommend you delete your local vendor directory before running this command to avoid any issues with cached URLs, see below for an explanation.
+* You need to tell Composer where to look for your packages. So you have to add Private Packagist as a repository to your composer.json file and you need to disable packagist.org because public packages will be mirrored through Private Packagist, too.
+
+COMPOSER_REPOSITORY_SETUP
+   
+* Run `composer update mirrors` to mirror all dependency packages into Private Packagist. We recommend you delete your local vendor directory before running this command to avoid any issues with cached URLs, see below for an explanation.
 
 After these three steps Composer commands will access Private Packagist but it will only use it to download mirrored packages from packagist.org.
 
