@@ -1,7 +1,9 @@
 # Getting started with Conductor
 ##
 
-Conductor will group and schedule automated dependency updates on your own continuous integration platform. If the update succeeds, Conductor will send you a pull request to your code hosting platform (GitHub, GitLab, Bitbucket) with the changed composer.lock file and, if necessary, other files modified by Composer plugins or scripts.
+Conductor will group and schedule automated dependency updates on your own continuous integration platform. If the update succeeds, Conductor will send you a pull request to your code hosting platform with the changed composer.lock file and, if necessary, other files modified by Composer plugins or scripts.
+
+Conductor currently supports GitHub. Support for additional code hosting platforms like GitLab and Bitbucket is planned for the future.
 
 Prerequisites for receiving dependency update PRs from Conductor:
 
