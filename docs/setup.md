@@ -278,3 +278,8 @@ Once all the repository entries have been added to Private Packagist the setup i
 }
 ```
 
+## See Also
+
+- [Package Lifecycle](package-lifecycle) - How Private Packagist handles version detection, updates, and deletions
+- [Mirrored Third-Party Repositories](mirrored-repositories) - Adding and managing mirrored repositories
+

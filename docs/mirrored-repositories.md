@@ -91,5 +91,6 @@ To prevent accidental data loss, you must explicitly choose to delete a reposito
 
 ## See Also
 
+- [Package Lifecycle](package-lifecycle#mirrored-packages) - What happens when mirrored packages or versions are removed
 - [Mirroring Magento Marketplace Packages](mirror-magento-marketplace) - Detailed walkthrough for setting up Magento Marketplace mirroring
 - [Composer Authentication](composer-authentication) - Authentication token types and their permissions
