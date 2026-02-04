@@ -1,7 +1,7 @@
 # Mirrored Third-Party Repositories
 ##
 
-Private Packagist can mirror packages from third-party Composer repositories like packagist.org, repo.magento.com, or any other Composer repository. Mirrored packages are stored in your Private Packagist organization, making your deployments independent of third-party repository uptime and ensuring faster, more reliable downloads.
+Private Packagist can mirror packages from packagist.org and mirrored third-party repositories like repo.magento.com or packages.drupal.org. Mirrored packages are stored in your Private Packagist organization, making your deployments independent of upstream repository uptime and ensuring faster, more reliable downloads.
 
 By default, packagist.org is enabled as a mirrored repository for all organizations.
 
@@ -24,7 +24,15 @@ Repositories at the top of the list have higher priority. When a package exists 
 
 packagist.org always appears at the bottom of the list and has the lowest priority, ensuring that packages from your private repositories or other mirrors are preferred over the public versions.
 
-Note that all repositories are still queried for their metadata and to check if they have the package being mirrored, regardless of their priority order. Priority only determines which repository's package gets used when multiple repositories have it.
+## Finding Packages in Mirrored Repositories
+
+When mirroring a new package, Private Packagist queries **all enabled mirrored repositories in parallel** to find which ones have the package, regardless of their priority order. Priority only determines which repository's package gets used when multiple repositories have it.
+
+This happens because Private Packagist doesn't know in advance which repository contains a specific package. Querying all repositories at once is much faster than checking them one by one - it only takes as long as the slowest response instead of the sum of all response times. For example, if you have 20 repositories and the package is only in the last one, parallel querying is significantly faster than checking each repository sequentially.
+
+This is why you may see credential errors for all configured repositories when running Composer commands, even if a package could be satisfied from a single repository. All repositories are being queried simultaneously to locate the package.
+
+Once a package is mirrored from one repository, all versions come from that single source. Private Packagist does not combine versions from multiple repositories.
 
 ## Permission Levels
 
@@ -39,16 +47,6 @@ Note: Automatic mirroring requires authentication tokens with update access. Rea
 **Packages must be managed by Admins or Owners** - Packages are not automatically mirrored. Only organization admins or owners can add packages from this repository. Useful for repositories that require approval before use.
 
 **Mirror is disabled** - No packages can be added from this repository. The repository will not be queried for new packages. Existing packages from this repository remain accessible.
-
-## Finding Packages in Mirrored Repositories
-
-When mirroring a new package, Private Packagist queries **all enabled mirrored repositories in parallel** to find which ones have the package.
-
-This happens because Private Packagist doesn't know in advance which repository contains a specific package. Querying all repositories at once is much faster than checking them one by one - it only takes as long as the slowest response instead of the sum of all response times. For example, if you have 20 repositories and the package is only in the last one, parallel querying is significantly faster than checking each repository sequentially.
-
-This is why you may see credential errors for all configured repositories when running Composer commands, even if a package could be satisfied from a single repository. All repositories are being queried simultaneously to locate the package.
-
-Once a package is mirrored from one repository, all versions come from that single source. Private Packagist does not combine versions from multiple repositories.
 
 ## Managing Repositories
 
@@ -83,7 +81,7 @@ If you see credential errors for multiple repositories when running Composer com
 
 ##### Packages not updating
 
-Mirrored repositories do not provide webhook notifications. Packages from third-party repositories (other than packagist.org) are automatically updated every 12 hours. You can manually trigger an update for a package at any time through the package page or API.
+Repositories that provide a `metadata-changes-url` in their packages.json (like packagist.org and packages.drupal.org) publish a changes feed. Private Packagist monitors this feed to keep mirrored packages up to date. For other repositories, Private Packagist automatically checks for updates every 12 hours. You can manually trigger an update for a package at any time through the package page or API.
 
 ##### Can't remove a repository with existing packages
 
