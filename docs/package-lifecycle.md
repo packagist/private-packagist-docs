@@ -4,33 +4,33 @@ This page explains how Private Packagist handles package versions, updates, and 
 
 ## Private Packages
 
-### How Versions Are Created
+### How versions are created
 
 For packages added from VCS repositories, Private Packagist reads version information from tags and branches:
 
-- **Tags** become versions (e.g., tag `v1.2.3` becomes version `1.2.3`)
+- **Tags** become versions (e.g., tag `v1.2.3` becomes version `v1.2.3`, but you can refer to it as `1.2.3`)
 - **Branches** become dev versions (e.g., branch `main` becomes `dev-main`)
 
 See [Troubleshooting](troubleshooting) if versions are not appearing as expected.
 
-### Deleting a Package
+### Deleting a package
 
 When you delete a private package from Private Packagist:
 
 - The package can no longer be installed via Composer
 - The package no longer appears in search results
-- Dist files are retained, so existing lock files continue to work
+- Dist files are deleted, so the package can no longer be downloaded from Private Packagist
 
-If the package was originally added through a [synchronization](synchronizations-faq) and the repository still exists, it will **not** be re-added automatically. To add it again, go to _Packages > Add Package > Organization Packages_. Otherwise, go to _Packages > Add Package > By URL_ to add it back manually.
+If the package was a synchronized package (originally added through a [synchronization](synchronizations-faq)) and the repository still exists, it will **not** be re-added automatically during the next synchronization. To add it again, go to _Packages > Add Package_ and select your synchronization. Otherwise, go to _Packages > Add Package > By URL_ to add it back manually.
 
-### When the Source Repository is Deleted
+### When the VCS repository of a package is deleted
 
-When the source repository is deleted on your code hosting platform:
+When the VCS repository is deleted on your code hosting platform:
 
-- Private Packagist deletes the package once it receives a webhook notification or during the next synchronization
-- The same effects apply as manual deletion: the package cannot be installed and no longer appears in search
+- **Synchronized packages:** Private Packagist deletes the package once it receives a webhook notification or during the next synchronization. The same effects apply as manual deletion.
+- **Packages added by URL:** The package is not automatically removed. It remains in your organization but updates will fail.
 
-### When a Tag is Deleted
+### When a tag is deleted
 
 When a tag is removed from the repository:
 
@@ -38,14 +38,14 @@ When a tag is removed from the repository:
 - The version is removed from repository metadata (`composer show --available` will not list it)
 - Existing lock files can still install the version because dist files are retained
 
-### When a Tag is Force-Pushed
+### When a tag is force-pushed
 
 When a tag is force-pushed to point to a different commit:
 
 - Private Packagist updates the metadata to reference the new commit
 - Both the old and new dist files are preserved
-- Existing lock files referencing the old commit continue to install the original code
-- New installations of that version receive the updated code
+- Existing lock files referencing the old commit continue to download the original code
+- New or updated lock files reference the new commit and download the updated code
 
 This behavior preserves deployment stability while allowing version updates when needed.
 
@@ -53,7 +53,7 @@ This behavior preserves deployment stability while allowing version updates when
 
 This section describes how Private Packagist handles packages or versions that are deleted on packagist.org or other mirrored third-party repositories.
 
-### When a Package is Removed
+### When a package is removed
 
 When a package is removed from packagist.org or another mirrored third-party repository, Private Packagist does **not** delete the package. Instead:
 
@@ -63,15 +63,16 @@ When a package is removed from packagist.org or another mirrored third-party rep
 
 This protects your deployments from third-party deletions - one of the core benefits of mirroring.
 
-### When a Version is Removed
+### When a version is removed
 
 When a specific version is removed from packagist.org or another mirrored third-party repository:
 
 - The version is removed from the package metadata and no longer appears in `composer show --available`
+- The version is not shown on the package page on packagist.com
+- The version is no longer available during `composer update`
 - Existing lock files can still install the version because dist files are retained
-- New installations cannot select this version
 
-### When a Version is Republished with Different Content
+### When a version is republished with different content
 
 Different mirrored repositories handle version integrity differently:
 
