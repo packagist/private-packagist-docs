@@ -32,7 +32,8 @@ Users can unsubscribe either from individual projects or from all security notif
 Notification channels allow you to receive notifications via other means than email to user accounts. The following types of notification channels are available:
 - **Email**: Sends notifications to a list of email addresses
 - **Slack Webhook**: Sends notifications to your configured Slack channel
-- **Microsoft Teams Webhook**: Sends notifications to your configured Microsoft Teams channel
+- **Microsoft Teams Webhook (deprecated)**: Sends notifications to your configured Microsoft Teams channel, using the deprecated Office 365 Connectors.
+- **Microsoft Teams Webhook (Workflows)**: Sends notifications to your configured Microsoft Teams channel, using the new Power Automate Workflows.
 - **Webhook**: Sends an HTTP POST request to a defined URL optionally signed with a user supplied secret.
 
 Notification channels can be added on your organization’s settings page under _Notification Channels -> Add Notification Channel_.
