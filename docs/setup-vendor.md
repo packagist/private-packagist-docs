@@ -11,7 +11,8 @@ To create your first customer click on "Create Customer" and fill out the form o
 
 * Customer short name: The short name will be used in the Composer repository URL and the web UI URL where your customer sees packages
 they have access to and can download archives. Please be aware that changing the short name will change the web UI URL and
-the Composer repository URL and will therefore break existing Composer projects referring to the current URL.
+the Composer repository URL and will therefore break existing Composer projects referring to the current URL. Your customers will then have 
+to update their projects as explained in [renaming the organization short name](organization-short-name#renaming).
 * Minimum accesible stability: This setting allows you to limit which versions of a package a customer has access to. More about that in the
 ["Limit package access by minimum stability"](#limit-package-access-by-minimum-stability) section. 
 * Deliver source code URLs to customers through Composer: By default, Private Packagist removes source URLs for all packages

@@ -82,15 +82,17 @@ Synchronized Private Packagist organizations automatically have all admins and o
 When promoting a synchronization to primary, admins and owners of the corresponding remote organization will now be the sole members of the admins and owners teams on Private Packagist.
 So keep in mind that if you switch the primary synchronization to a different service (e.g. from GitHub to Bitbucket), all admins and owners who do not have their user accounts connected to the new service yet (Bitbucket in the example) will lose admin/owner access to the Private Packagist organization. To restore their access, the users have to connect their account to the new service on the profile page.
 
-### How to migrate a synchronization from GitHub to Bitbucket?
+### How to migrate a synchronization to another code hosting platform?
+
+You can follow these same steps in case you want to migrate between two different code hosting platforms. For example, from Bitbucket to GitLab or the other way around, from GitHub to Bitbucket or from one self-hosted GitLab instance to another.
+
+In the steps below, we'll consider a migration from GitHub to Bitbucket as an example: 
 
 1. Add a new synchronization with your Bitbucket workspace.
 2. Ensure that all members keep the access to the packages by following:  ["Accessing packages from Synchronizations across multiple integrations"](#accessing-packages-from-synchronizations-across-multiple-integrations)
 3. Delete the packages that were created by the GitHub synchronization. You can filter by the GitHub synchronization on the package list page and then you can delete the packages from that list.
 4. Make sure the new synchronization with your Bitbucket workspace successfully ran. In case the old synchronization was primary, you need to promote the new synchronization to primary. Otherwise you won't be able to delete your old synchronization. Please refer to ["What happens if you promote a synchronization to a primary synchronization?"](#what-happens-if-you-promote-a-synchronization-to-a-primary-synchronization) for more details about promoting a synchronization to primary.
 5. Delete the old synchronization from GitHub.
-
-You can follow the same steps above in case you want to migrate from Bitbucket to GitLab or the other way around.
 
 ### How to migrate from one organization to another one in GitHub?
 

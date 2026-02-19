@@ -49,6 +49,15 @@ When a tag is force-pushed to point to a different commit:
 
 This behavior preserves deployment stability while allowing version updates when needed.
 
+### Renaming a package
+
+When you change the package's `name` property in composer.json, from `acme/package` to `acme-inc/other-package` for example: 
+
+- Private Packagist marks `acme/package` as abandoned
+- Private Packagist creates a new package with the new name `acme-inc/other-package`
+- The old package `acme/package` suggests the new package `acme-inc/other-package` as a replacement
+- Existing lock files referencing the old `acme/package` versions continue to download the correct code
+
 ## Mirrored Packages
 
 This section describes how Private Packagist handles packages or versions that are deleted on packagist.org or other mirrored third-party repositories.
