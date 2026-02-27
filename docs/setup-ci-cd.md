@@ -20,13 +20,27 @@ Listed below are some examples for using Private Packagist with different CI/CD 
 
 ### GitHub Actions
 
-For GitHub actions, you can add the `COMPOSER_AUTH` environment variable at the repository level by going to _repository settings > secrets > new repository secret_. Environment variables can then be used in your [workflow files](https://docs.github.com/en/actions/learn-github-actions/environment-variables#about-environment-variables).
+For GitHub actions, you can add the `COMPOSER_AUTH` environment variable at the repository level by going to _repository settings > secrets > new repository secret_. Environment variables can then be used in your [workflow files](https://docs.github.com/en/actions/learn-github-actions/environment-variables#about-environment-variables) to run `composer install`:
 
-If you are using [shivammathur/setup-php](https://github.com/shivammathur/setup-php) watch out that it overwrites `COMPOSER_AUTH` if you configure a `COMPOSER_TOKEN`. Instead of using `COMPOSER_TOKEN` you can define the entire environment variable yourself including GitHub's token:
+```yaml
+- name: Install Composer dependencies
+  run: composer install --no-progress --prefer-dist --no-dev --no-scripts
+  env:
+      COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+```
 
+If you are using [shivammathur/setup-php](https://github.com/shivammathur/setup-php), add the `PACKAGIST_TOKEN` environment variable containing your read-only token:
+
+```yaml
+- name: Setup PHP
+  uses: shivammathur/setup-php@v2
+  with:
+    php-version: '8.5'
+  env:
+    PACKAGIST_TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
 ```
-COMPOSER_AUTH: '{"http-basic": {"repo.packagist.com": {"username": "token", "password": "${{ secrets.PACKAGIST_TOKEN }}"}}, "github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
-```
+
+Please refer to the [shivammathur/setup-php documentation](https://github.com/shivammathur/setup-php?tab=readme-ov-file#github-composer-authentication) for more details. 
 
 ### Bitbucket Pipeline
 
