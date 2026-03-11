@@ -30,7 +30,7 @@ setup link to your GitLab server. The fields Client ID and Client Secret remain 
 
 ![GitLab Form](/Resources/public/img/docs/integration-setup/self-hosted/gitlab-02-gitlab-form.png)
 
-Make sure the `api` and `read_user` scopes are both checked and save the new application. This will reveal the credentials required to finish the setup on Private Packagist.
+Make sure the `read_api` and `read_user` scopes are both checked and save the new application. This will reveal the credentials required to finish the setup on Private Packagist.
 
 Instead of the user settings, you can also create an application in the settings section of a GitLab group, or if you
 have full admin access on GitLab in the GitLab admin section under Applications.

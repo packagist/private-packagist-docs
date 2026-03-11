@@ -31,7 +31,7 @@ On the GitLab applications page, click the "Add new application" button and fill
 
 ![GitLab Form](/Resources/public/img/docs/integration-setup/cloud/gitlab-self-managed-02-gitlab-form.png)
 
-Make sure the `api` and `read_user` scopes are both checked and save the new application. This will reveal the credentials required to finish the setup on Private Packagist.
+Make sure the `read_api` and `read_user` scopes are both checked and save the new application. This will reveal the credentials required to finish the setup on Private Packagist.
 
 If you have full admin access on GitLab, then you can also create an application in the GitLab admin section under Applications.
 There are two additional checkmarks on that page: `trusted` should remain unchecked, and `confidential` should remain checked.
