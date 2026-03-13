@@ -13,7 +13,7 @@ Please refer to the "[Updates](./kubernetes-maintenance.md#updates)" section in 
 If the kURL installer exits with the error message `Kurl has unhealthy Pod(s)` before starting the actual upgrade, it usually means
 there are older pods stuck in an invalid state from previous runs. You can remove these with this command and try again:
 
-```
+```bash
 kubectl delete pods --field-selector status.phase=Failed -n kurl
 ```
 
@@ -28,7 +28,7 @@ if you send us a support bundle!
 
 In cases where the Replicated management console isn't accessible you can also generate a [host support bundle](https://docs.replicated.com/vendor/support-host-support-bundles)
 using the following command and send it to us:
-```
+```bash
 kubectl support-bundle https://raw.githubusercontent.com/replicatedhq/troubleshoot-specs/main/host/default.yaml
 ```
 
@@ -58,7 +58,7 @@ System.
 
 Please follow the instructions below, if you are experiencing problems with the reverse-proxy not being able to connect to
 the cluster and encountering errors like this:
-```
+```text
 Peer closed connection in SSL handshake (104: Connection reset by peer) while SSL handshaking to upstream
 ```
 
@@ -69,7 +69,7 @@ Ensure that the SNI (Server Name Indication) TLS Extension is properly set for r
 This is not the case when using IPs in `proxy_pass` and will result in an SSL handshake error.
 
 To pass the SNI hostname from the incoming request to the upstream server, add the following directives to nginx:
-``` 
+```nginx
 proxy_ssl_name $host;
 proxy_ssl_server_name on;
 ```
@@ -86,7 +86,7 @@ Be careful not to flush any of the other databases.
 
 If you are not using the built-in Redis database, check your internal documentation how to connect to the Redis instance.
 
-```
+```bash
 kubectl exec -it redis-0 -- redis-cli -p 9869
 select 5
 flushdb
@@ -103,12 +103,12 @@ You can configure additional hostnames to be resolved by the cluster by followin
 
 Make a backup of the current CoreDNS config to a yaml file in case you need to revert changes or want to keep it as
 a reference:
-```
+```bash
 kubectl -n kube-system get configmap coredns -o yaml > coredns-config.yaml
 ```
 
 Start editing the CoreDNS config by issuing the following command:
-```
+```bash
 kubectl -n kube-system edit configmap coredns
 ```
 
@@ -118,7 +118,7 @@ If the `hosts` config block doesn't exist yet, please add it.
 **Important:** Add the `fallthrough` entry as the last entry in order to resolve all other hostnames that are not listed in the `hosts` config block!
 
 The full configuration should look similar to this:
-```
+```yaml
 data:
   Corefile: |
     .:53 {
@@ -149,11 +149,11 @@ data:
 
 
 Restart CoreDNS to apply the changes:
-```
+```bash
 kubectl -n kube-system rollout restart deployment coredns
 ```
 
 To verify that the configured hostnames can now be correctly resolved, use this command:
-```
+```bash
 kubectl exec -it $(kubectl get pods -o name | grep worker | head -1 | cut -d'/' -f2) -- nslookup your-gitlab-server-hostname.local
 ```

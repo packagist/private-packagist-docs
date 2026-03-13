@@ -31,7 +31,7 @@ interface to generate the support bundle on your host system:
 `replicatedctl support-bundle`
 
 In case generating the support bundle via replicated's command line fails then you can run the following command:
-```
+```bash
 docker run -it --rm \
 --name support-bundle \
 --volume $PWD:/out \
@@ -94,7 +94,7 @@ sets of CAs/certificates which are often more complete and up to date than the
 certificate collection on your operationg system which is used by PHP and
 Composer.
 
-```
+```text
 [Composer\Downloader\TransportException]
 The "https://repo.acme-website.com/acme/packages.json" file could not be downloaded: SSL operation failed with code 1. OpenSSL Error messages:
 error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed
@@ -133,7 +133,7 @@ If you cannot log into the Replicated Management Console anymore, then you can
 reset LDAP and password authentication on the host system by running the
 following command:
 
-```
+```bash
 replicatedctl console-auth reset
 ```
 

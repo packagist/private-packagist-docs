@@ -7,7 +7,7 @@ You can use read-only tokens to grant automated systems like continuous integrat
 You can add read-only tokens on your organization's settings page under _Authentication Tokens_. Make sure to select _Read-only access to packages_ on the access dropdown.
 
 Once the token is created, you'll need to add `COMPOSER_AUTH` as an environment variable in your CI/CD.
-```
+```bash
 COMPOSER_AUTH='{"http-basic": {"repo.packagist.com": {"username": "token", "password": "TOKEN_HERE"}}}'
 ```
 
@@ -40,7 +40,7 @@ If you are using [shivammathur/setup-php](https://github.com/shivammathur/setup-
     PACKAGIST_TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
 ```
 
-Please refer to the [shivammathur/setup-php documentation](https://github.com/shivammathur/setup-php?tab=readme-ov-file#github-composer-authentication) for more details. 
+Please refer to the [shivammathur/setup-php documentation](https://github.com/shivammathur/setup-php?tab=readme-ov-file#github-composer-authentication) for more details.
 
 ### Bitbucket Pipeline
 

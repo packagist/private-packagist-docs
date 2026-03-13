@@ -34,7 +34,7 @@ On the settings page of an individual team you can grant all members of a team p
 
 Alternatively, you can create suborganizations using our API through the [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
 
-```
+```php
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -59,7 +59,7 @@ you create to facilitate the setup of new suborganizations.
 
 Alternatively, mirrored third-party repositories can be added to a suborganization via our API using our [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
 
-```
+```php
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -90,7 +90,7 @@ Mirrored packages will automatically be added to your suborganization on use via
 
 Alternatively, packages can be added via our API using our [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
 
-```
+```php
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -114,7 +114,7 @@ You do not have to manually grant access to packages.
 
 Alternatively, teams can be added to a suborganization via our API using our [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
 
-```
+```php
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -155,7 +155,7 @@ and tokens created in a suborganization will only have access to that specific s
 
 Alternatively, authentication tokens can be created via our API using our [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
 
-```
+```php
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';

@@ -28,7 +28,7 @@ This fetches the second page of packages with 300 packages per page.
 
 Paginated responses include an [RFC 5988](https://tools.ietf.org/html/rfc5988) Link header containing pagination navigation URLs:
 
-```
+```http
 Link: <https://packagist.com/api/packages/?page=3&limit=300>; rel="next",
       <https://packagist.com/api/packages/?page=1&limit=300>; rel="prev",
       <https://packagist.com/api/packages/?page=1&limit=300>; rel="first",

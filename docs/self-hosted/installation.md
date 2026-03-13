@@ -34,7 +34,7 @@ REPLICATED_DOMAIN_LIST
 Replicated is the application which will provide you with a management interface to your Private Packagist Self-Hosted installation and allow you to monitor the task and perform maintenance operations such as backups or updates.
 
 The easiest way to install replicated is the easy install script. You can run it using the following two commands:
-```
+```bash
 curl -sSL -o install.sh https://get.replicated.com/docker/privatepackagist/stable
 sudo bash ./install.sh
 ```

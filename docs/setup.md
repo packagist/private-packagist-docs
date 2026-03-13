@@ -20,7 +20,7 @@ If you would like to use the `create-project` command to initialize a project us
 
 Once the command is finished, the created composer.json file will contain your organization's repository URL and have packagist.org disabled so mirroring is fully used.
 
-```
+```json
 "repositories": [
     {"type": "composer", "url": "https://repo.packagist.com/acme-company/"},
     {"packagist.org": false}
@@ -93,11 +93,11 @@ To illustrate the process we'll refer to the following example Composer project 
 Three steps are required to use Private Packagist on an existing project. They are also documented on the overview page of your organization.
 
 * You need to configure authentication on your machine. Every developer on your team must do this, so they can access code stored in Private Packagist.
-    ```
+    ```bash
     composer config --global --auth http-basic.repo.packagist.com your-username your-secret-token-here
     ```
     Alternatively, for example for CI environments, you can use an environment variable:
-    ```
+    ```bash
     COMPOSER_AUTH='{"http-basic":{"repo.packagist.com":{"username":"token","password":"your-authentication-token-here"}}}'
     ```
 * You need to tell Composer where to look for your packages. So you have to add Private Packagist as a repository to your composer.json file and you need to disable packagist.org because public packages will be mirrored through Private Packagist, too.
@@ -152,7 +152,7 @@ Find your unique webhook URL on the package details page:
 ![Webhook Setup](/Resources/public/img/docs/integration-setup/webhook-setup.png)
 
 Configure your webhook to trigger on the following repository events:
-- On each pus
+- On each push
 - When a branch is created
 - When a branch is deleted
 - When a tag is created

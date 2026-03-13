@@ -49,7 +49,7 @@ HELM_CHART_VALUES_FILE
 Make sure you replace `YOUR_USERNAME`, `YOUR_PASSWORD`, `values.yaml`, and `VERSION` with your values before running the commands.
 You can find the latest Private Packagist version on our [changelog page](/docs/self-hosted/changelog).
 
-```
+```bash
 helm registry login registry.replicated.com --username YOUR_USERNAME --password YOUR_PASSWORD
 helm install -f values.yaml private-packagist oci://registry.replicated.com/privatepackagistkots/private-packagist --version VERSION
 ```

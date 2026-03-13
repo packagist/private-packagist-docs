@@ -32,7 +32,7 @@ These are the different prefixes:
 
 The API expects a PACKAGIST-HMAC-SHA256 Authorization header to be present for every request.
 
-```
+```http
 Authorization: PACKAGIST-HMAC-SHA256
 Key=packagist_ack_ffce048835c6cdea47bcc4b73c79,
 Timestamp=1522925488,
@@ -108,6 +108,6 @@ The signature validation sent with the **Authorization** header is invalid. Issu
                 
 GET requests can also use a PACKAGIST-TOKEN Authorization header using your API key without generating a signature.
 
-```
+```http
 Authorization: PACKAGIST-TOKEN ffce048835c6cdea47bc
 ```

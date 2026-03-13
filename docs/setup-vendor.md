@@ -22,7 +22,7 @@ packages from source, e.g. via git clone, then you can enable the source code UR
 
 You can also create customers using our API through the [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
 
-```
+```php
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -43,7 +43,7 @@ The packages section of a customer allows you to manage which packages and which
 
 Access to packages can also be granted via our API using our [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
 
-```
+```php
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -107,7 +107,7 @@ Vendor bundles can be managed on the Vendor Bundles section from the Vendor tab,
 
 Vendor bundles can also be created and customer access can be granted via our API using our [API client](https://github.com/packagist/private-packagist-api-client) with the following code snippet:
 
-```
+```php
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -144,7 +144,7 @@ To install a package named "acme-company/api" into an existing project, the foll
 
 1. Configure authentication: The command to set an authentication token is listed under the vendor tab on the customer's "Composer Instructions" page.
 2. Add the customer repository in the project's composer.json. The customer repository URL is listed under the vendor tab on the customer's "Composer Instructions" page. The project's composer.json should now have a new entry (assuming your organization is called `acme` and your customer is called `customer`):
-    ```
+    ```json
     "repositories": [
         {"type": "composer", "url": "https://acme.repo.packagist.com/customer/"}
     ]
@@ -174,7 +174,7 @@ If you wish to provide a template package for new projects to your customers, th
 
 Once the command is finished, the created composer.json file will contain the customer's Private Packagist repository URL:
 
-```
+```json
 "repositories": [
     {"type": "composer", "url": "https://acme.repo.packagist.com/customer/"}
 ]

@@ -37,7 +37,7 @@ Please see the [Troubleshooting](./troubleshooting.md) page for details on deali
 
 You can automate the reloading of an SSL certificate and restarting the application for the new certificate to be used, for example if you use letsencrypt using the following commands:
 
-```
+```bash
 replicated console cert set hostname.goes.here /path/to/key /path/to/cert
 replicatedctl app apply-config
 ```

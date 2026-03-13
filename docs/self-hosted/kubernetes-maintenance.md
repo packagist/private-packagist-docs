@@ -29,7 +29,7 @@ require that you download and rerun the install script via the command below.
 Please note that running the command will take a while as it will also update Kubernetes and other dependencies of Private Packagist Self-Hosted.
 Private Packagist and the Replicated Management Console will become temporarily unavailable.
 
-```
+```bash
 curl -sSL https://k8s.kurl.sh/privatepackagistkots | bash -s
 ```
 
@@ -47,7 +47,7 @@ for detailed instructions.
 If you installed Private Packagist Self-Hosted with Helm into your existing cluster, you can update the application with the command 
 below. Make sure to compare your existing `values.yaml` file to the [current one](http://packagist.com.lo/docs/self-hosted/kubernetes-helm#annotated-configuration) first.
 
-``` 
+```bash
 helm upgrade -f values.yaml private-packagist oci://registry.replicated.com/privatepackagistkots/private-packagist --version VERSION
 ```
 
@@ -66,8 +66,8 @@ Run the commands below to schedule update jobs on the worker for all packages on
 that all existing version data is downloaded from the source again and version data is overwritten if it has changed. The 
 flag `--only-non-updated` limits the set of packages to those which have only been initialized but never updated yet.
 
-```
+```bash
 export UI_POD=$(kubectl get pods --field-selector=status.phase=Running --no-headers -o custom-columns=":metadata.name"|grep ui-)
-kubectl exec $UI_POD -c ui -- /bin/sh -c "/srv/manager/bin/console packagist:package:update-all --env=prod --no-debug [--overwrite-data] [--only-non-updated]" 
+kubectl exec $UI_POD -c ui -- /bin/sh -c "/srv/manager/bin/console packagist:package:update-all --env=prod --no-debug [--overwrite-data] [--only-non-updated]"
 ```
 
