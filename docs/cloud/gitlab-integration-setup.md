@@ -20,7 +20,7 @@ From the organization settings page, select the "Integrations" subtab. Hit the "
 To set up a GitLab Self-Managed integration with Private Packagist, start by selecting "GitLab" as the platform and enter the URL of your own GitLab server. 
 A link to setup the OAuth application on your GitLab server will automatically be displayed.
 
-![Packagist Setup](/Resources/public/img/docs/integration-setup/cloud/gitlab-self-managed-01-packagist-setup-20241219.png)
+![Packagist Setup](/Resources/public/img/docs/integration-setup/cloud/gitlab-self-managed-01-packagist-setup-20260422.png)
 
 ## Add an OAuth Application
 
@@ -44,7 +44,7 @@ After you create the application, you will get a new Application ID and Secret. 
 
 Copy and paste the "Application Id" and "Secret" value back into the Private Packagist integration form and submit the form with the "Save Integration" button.
 
-![Complete integration form](/Resources/public/img/docs/integration-setup/cloud/gitlab-self-managed-04-packagist-form-20241219.png)
+![Complete integration form](/Resources/public/img/docs/integration-setup/cloud/gitlab-self-managed-04-packagist-form-20260422.png)
 
 You'll be redirected back to the list of integrations.
 
@@ -56,4 +56,3 @@ your newly created GitLab integration on the integrations page, and copy the URL
 ![GitLab integration](/Resources/public/img/docs/integration-setup/cloud/gitlab-self-managed-05-integration.png)
 
 This link presents the option to authenticate with your GitLab account and can now be used to log in to Private Packagist. 
-
