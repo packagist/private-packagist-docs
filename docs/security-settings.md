@@ -4,9 +4,17 @@ Your organization's security settings page (_Settings > Security_) controls how 
 
 In organizations with suborganizations, these settings can only be changed on the top-level organization. The chosen values are propagated to all suborganizations so the whole organization tree shares the same fallback behavior.
 
-## Why Composer's download fallbacks are a risk
+### Malware install blocking
 
-### Composer download fallback behavior
+By default, Private Packagist does not serve package versions flagged as malware to Composer: its download is blocked because Private Packagist will return a 410 response for the dist file and so it cannot be installed on any Composer version.
+
+You can change this with the _Block installs of package versions flagged as malware_ setting, but we recommend leaving it on. Turning it off lets your organization install versions that have been flagged as malware.
+
+If a flagged version was already installed before it was flagged, run `composer update` to remove it from your lock file. On Composer versions older than 2.10, also keep the _Legacy insecure package download fallback_ disabled and hide the source code checkout URLs for mirrored packages so an install from an existing lock file cannot fetch the version from its original location.
+
+### Why Composer's download fallbacks are a risk
+
+#### Composer download fallback behavior
 
 Composer is built for resilience: if the preferred download location is unavailable, it tries the next one. For a project mirrored through Private Packagist, a single package in `composer.lock` can point at up to three download paths:
 
@@ -16,13 +24,13 @@ Composer is built for resilience: if the preferred download location is unavaila
 
 This rarely helps in practice. CI and deployment environments usually hold credentials for Private Packagist only, so when it is unreachable the fallbacks fail on authentication anyway. They succeed silently only for public third-party packages, which is where supply chain risk lives.
 
-### Supply chain attack example
+#### Supply chain attack example
 
-Suppose a malicious version of `psr/log` is published. Private Packagist detects it and returns a 404 for that version. Without the settings below, Composer treats the 404 as a transient failure, picks the next URL, and downloads the malicious artifact directly from GitHub. If that also fails, it falls back to a source checkout. Every protection Private Packagist applied is bypassed.
+Suppose a malicious version of `psr/log` is published. Private Packagist detects it and returns a 410 for that version. Without the settings below, Composer treats the 410 as a transient failure, picks the next URL, and downloads the malicious artifact directly from GitHub. If that also fails, it falls back to a source checkout. Every protection Private Packagist applied is bypassed.
 
 On the client side this is governed by `preferred-install` (prefers `dist` since Composer 2.1) and `source-fallback` (deprecated, defaults to `false` since Composer 2.10). Because these are client settings, you cannot rely on every environment configuring them securely. The settings below remove the fallback paths from the package metadata itself, so the protection applies regardless of the Composer version or client configuration.
 
-## Legacy insecure package download fallback
+### Legacy insecure package download fallback
 
 Private Packagist replaces all dist/artifact download URLs with its own, so every download goes through Private Packagist and benefits from its access controls, mirroring, and integrity guarantees.
 
@@ -32,7 +40,7 @@ It is disabled by default for new organizations, and we recommend leaving it dis
 
 After changing this setting, run `composer update mirrors` in your projects to rewrite their lock files so the dist URLs match the selected option.
 
-### How your lock file changes
+#### How your lock file changes
 
 With the fallback enabled, the upstream URL is advertised as a dist mirror:
 
@@ -60,13 +68,13 @@ With it disabled, the `mirrors` array is removed and Private Packagist is the so
 }
 ```
 
-## Hide source code checkout URLs from Composer
+### Hide source code checkout URLs from Composer
 
 Each version in a Composer repository can advertise a source code checkout URL alongside its dist URLs. The source references a commit in the upstream VCS repository and is persisted in `composer.lock`. Composer uses it as a fallback when the dist URL is inaccessible, bypassing Private Packagist's access controls.
 
 Removing the `source` block prevents this fallback regardless of the Composer version or the client's `preferred-install` and `source-fallback` settings.
 
-### Options
+#### Options
 
 The _Hide source code checkout URLs_ setting offers:
 
@@ -79,7 +87,7 @@ New organizations default to _For all mirrored packages_, which we recommend. Or
 
 After changing this setting, run `composer update mirrors` in your projects to rewrite their lock files so the source URLs match the selected option.
 
-### How your lock file changes
+#### How your lock file changes
 
 When the source is hidden, the `source` block is dropped and a third-party package keeps only its dist entry:
 
