@@ -4,13 +4,33 @@ Your organization's security settings page (_Settings > Security_) controls how 
 
 In organizations with suborganizations, these settings can only be changed on the top-level organization. The chosen values are propagated to all suborganizations so the whole organization tree shares the same fallback behavior.
 
-### Malware install blocking
+### When Composer's malware policy isn't enough
 
-By default, Private Packagist does not serve package versions flagged as malware to Composer: its download is blocked because Private Packagist will return a 410 response for the dist file and so it cannot be installed on any Composer version.
+#### How Composer handles flagged malware
 
-You can change this with the _Block installs of package versions flagged as malware_ setting, but we recommend leaving it on. Turning it off lets your organization install versions that have been flagged as malware.
+Composer 2.10 introduced [dependency policies](https://getcomposer.org/doc/06-config.md#policy) that handle malware on the client side. With the default policy, it removes flagged versions from the pool used by `composer update`, `composer require` and `composer create-project`, blocks them during `composer install` even when they're already present in a lock file, and reports them through `composer audit`. Combined with the Packagist.org malware feed, powered by [Aikido](https://www.aikido.dev/), this gives every Composer 2.10 user installing from Packagist.org rapid malware blocking by default.
 
-If a flagged version was already installed before it was flagged, run `composer update` to remove it from your lock file. On Composer versions older than 2.10, also keep the _Legacy insecure package download fallback_ disabled and hide the source code checkout URLs for mirrored packages so an install from an existing lock file cannot fetch the version from its original location.
+That covers a developer running a current Composer with the default configuration, but two limitations remain:
+
+- A project can disable the policy in its own `composer.json` with `"config": {"policy": {"malware": {"block": false}}}`.
+- Composer versions older than 2.10 have no concept of dependency policies and continue installing flagged versions normally.
+
+Because these are client settings, you cannot rely on every environment configuring them securely. Different environments could be running outdated Composer versions. The repository-wide settings below block Composer from installing flagged versions, so the protection applies regardless of the Composer version or client configuration.
+
+### Block installs of package versions flagged as malware
+
+Private Packagist refuses to serve the dist/artifact file for a malware-flagged version regardless of which Composer version requests it. When Composer requests the dist for a flagged version through `composer install` against an existing lock file or through `composer update` or `composer require`, Private Packagist responds with HTTP 410 and a JSON body naming the package and version and explaining that the download was refused. No flagged version can be installed this way on any Composer client, so a Composer 2.4 installation gets the same protection as a current Composer 2.10 installation.
+
+The repository-wide blocking hooks directly into the Aikido malware feed, so a refusal takes effect across your entire Private Packagist repository the moment a version is flagged, with no manual intervention. Packagist.org also removes malware versions after manual review and those deletions propagate to Private Packagist, but that review can take hours, during which the version would otherwise still be installable.
+
+Malware install blocking is enabled by default for all organizations. You can turn it off with the _Block installs of package versions flagged as malware_ setting, but we recommend leaving it on.
+
+**Please note that this repository-wide install blocking is only effective combined with closed fallback paths.** If Composer cannot get the dist from Private Packagist, it can still fetch the same code from the upstream dist URL or a source checkout on any client that has not adopted the Composer 2.10 source-fallback default. To get the full malware protection make sure the following two config options are configured accordingly:
+
+* [Legacy insecure package download fallback](#legacy-insecure-package-download-fallback) setting should be disabled
+* [Hide source code checkout URLs from Composer](#hide-source-code-checkout-urls-from-composer) should be enabled for mirrored packages so there is no upstream location left to fall back to. 
+
+See the two sections below for details.
 
 ### Why Composer's download fallbacks are a risk
 
