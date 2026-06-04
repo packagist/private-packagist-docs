@@ -1,6 +1,6 @@
 # Security settings
 
-Your organization's security settings page (_Settings > Security_) controls how Private Packagist serves packages to Composer. The options let you close the download fallback paths Composer would otherwise use when a package cannot be downloaded from Private Packagist.
+Your organization's security settings page (_Settings > Security_) controls how Private Packagist serves packages to Composer. The options let you close the download fallback paths Composer would otherwise use when a package cannot be downloaded from Private Packagist, and restrict which Composer clients may access your Composer repository.
 
 In organizations with suborganizations, these settings can only be changed on the top-level organization. The chosen values are propagated to all suborganizations so the whole organization tree shares the same fallback behavior.
 
@@ -117,4 +117,28 @@ When the source is hidden, the `source` block is dropped and a third-party packa
     "url": "https://repo.packagist.com/my-org/dists/psr/log/abc1234.zip",
     "reference": "abc1234"
 }
+```
+
+### Composer client version restriction
+
+Older Composer clients carry known vulnerabilities and predate newer protections such as dependency policies and malware handling. Keeping your organization on an up-to-date Composer version ensures it benefits from the latest security features and fixes.
+
+The _Composer client version restriction_ setting controls which Composer client versions may access your organization's Composer repository:
+
+- **All Composer versions allowed**: no restriction.
+- **Composer 2.2.\* (LTS) and 2.10.\* (latest)**: only the long-term-support and latest release lines are accepted.
+- **Composer 2.10.\* (latest only)**: only the latest release line is accepted.
+
+A future update will make the versions for the _Composer client version restriction_ dynamic, automatically tracking the current LTS and latest Composer release lines and filtering out any version with known security vulnerabilities.
+
+The restriction currently matches on the major and minor version only and ignores the patch version, so any patch release within an allowed line (for example `2.10.0` or `2.10.3`) is accepted. This is the first iteration of the setting, and we plan to make it more granular and configurable over time.
+
+New organizations default to _Composer 2.2.\* (LTS) and 2.10.\* (latest)_, which we recommend as a minimum. If your team can stay on the newest release, _Composer 2.10.\* (latest only)_ is better still. Existing organizations keep _All Composer versions allowed_ until you change it. We recommend switching to a more restricted policy once your developers, CI pipelines, and AI coding agents are on a supported version.
+
+The restriction applies only to Composer clients, identified from the request's user agent. All other tooling keeps working as before. When a restricted Composer client tries to fetch metadata or download an archive, the request is refused and Composer shows the reason:
+
+```
+COMPOSER VERSION NOT ALLOWED
+
+Your organization restricts the allowed Composer client versions. Please upgrade to one of: 2.2.*, 2.10.*. See https://getcomposer.org/download/ for installation instructions.
 ```
