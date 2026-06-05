@@ -17,7 +17,7 @@ That covers a developer running a current Composer with the default configuratio
 
 Because these are client settings, you cannot rely on every environment configuring them securely. Different environments could be running outdated Composer versions. The repository-wide settings below block Composer from installing flagged versions, so the protection applies regardless of the Composer version or client configuration.
 
-### Block installs of package versions flagged as malware
+### Malware blocking
 
 Private Packagist refuses to serve the dist/artifact file for a malware-flagged version regardless of which Composer version requests it. When Composer requests the dist for a flagged version through `composer install` against an existing lock file or through `composer update` or `composer require`, Private Packagist responds with HTTP 410 and a JSON body naming the package and version and explaining that the download was refused. No flagged version can be installed this way on any Composer client, so a Composer 2.4 installation gets the same protection as a current Composer 2.10 installation.
 
@@ -88,7 +88,7 @@ With it disabled, the `mirrors` array is removed and Private Packagist is the so
 }
 ```
 
-### Hide source code checkout URLs from Composer
+### Source code checkout URLs
 
 Each version in a Composer repository can advertise a source code checkout URL alongside its dist URLs. The source references a commit in the upstream VCS repository and is persisted in `composer.lock`. Composer uses it as a fallback when the dist URL is inaccessible, bypassing Private Packagist's access controls.
 
