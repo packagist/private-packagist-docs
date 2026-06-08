@@ -1,4 +1,5 @@
 # Composer 2.0 Compatibility
+## 
 
 Private Packagist is fully compatible with both Composer versions 1 and 2, you do not need to make any changes to your Private Packagist configuration when upgrading to Composer 2.0.
 

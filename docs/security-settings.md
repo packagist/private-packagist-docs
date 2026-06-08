@@ -1,4 +1,5 @@
 # Security settings
+## 
 
 Your organization's security settings page (_Settings > Security_) controls how Private Packagist serves packages to Composer. The options let you close the download fallback paths Composer would otherwise use when a package cannot be downloaded from Private Packagist, and restrict which Composer clients may access your Composer repository.
 

@@ -1,4 +1,5 @@
 # Private Packagist for Vendors: Using Private Packages in Customer Projects
+## 
 
 Using Private Packagist for Vendors, your customers can install packages with Composer using a unique URL and an authentication token. You can create customers and manage their package access on the vendor page in your organization.
 

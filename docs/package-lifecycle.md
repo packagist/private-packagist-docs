@@ -1,4 +1,5 @@
 # Package Lifecycle
+## 
 
 This page explains how Private Packagist handles package versions, updates, and deletions for both private packages and mirrored packages.
 

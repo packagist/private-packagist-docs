@@ -1,4 +1,5 @@
 # Reading package metadata via API
+## 
 
 To read the package metadata via API, use the Composer API on your Private Packagist repository.
 

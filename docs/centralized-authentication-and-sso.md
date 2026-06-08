@@ -1,4 +1,5 @@
 # Centralized authentication and SSO
+## 
 
 Private Packagist can be configured to synchronize user access with your code hosting platform (GitHub, Bitbucket, or GitLab), 
 which in turn support authentication mechanisms like Microsoft Entra ID (formerly Azure Active Directory), Okta, LDAP, SAML or 
