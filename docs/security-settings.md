@@ -1,7 +1,7 @@
 # Security settings
 ## 
 
-Your organization's security settings page (_Settings > Security_) controls how Private Packagist serves packages to Composer. The options let you close the download fallback paths Composer would otherwise use when a package cannot be downloaded from Private Packagist, and restrict which Composer clients may access your Composer repository.
+Your organization's security settings page (_Settings > Security_) controls how Private Packagist serves packages to Composer. The options let you close the download fallback paths Composer would otherwise use when a package cannot be downloaded from Private Packagist, restrict which Composer clients may access your Composer repository, and limit which packages may act as Composer plugins.
 
 In organizations with suborganizations, these settings can only be changed on the top-level organization. The chosen values are propagated to all suborganizations so the whole organization tree shares the same fallback behavior.
 
@@ -143,3 +143,37 @@ COMPOSER VERSION NOT ALLOWED
 
 Your organization restricts the allowed Composer client versions. Please upgrade to one of: 2.2.*, 2.10.*. See https://getcomposer.org/download/ for installation instructions.
 ```
+
+### Why Composer plugins are a risk
+
+A Composer plugin is a regular package that declares the type `composer-plugin`. Composer loads and executes its code during `composer install` and `composer update`. This makes them an attractive target for supply chain attacks. 
+
+Unlike a regular library, plugin code will already run before you can inspect it. And any package can become a plugin: any library can change its type to `composer-plugin` in a new version and execute arbitrary code on every machine that updates to it. This happened on April 30th, 2026, when the compromised `intercom/intercom-php` package registered itself as a plugin and ran a credential-harvesting script during installation.
+
+Composer only executes plugins listed in the [`allow-plugins`](https://getcomposer.org/doc/06-config.md#allow-plugins) configuration of a project's `composer.json`. When run interactively, Composer prompts before adding unknown plugins to that list. Both are client-side mechanisms: they rely on each project's configuration and on each developer making the right call at the prompt. The settings below let you manage allowed plugins for your whole organization instead.
+
+### Composer plugins
+
+#### Limit Composer plugins
+
+The _Composer plugin policy_ setting decides which packages may act as Composer plugins across all of your projects:
+
+- **Allow all**: all plugin packages are served normally.
+- **Limit to list below**: only allowlisted packages are served as plugins.
+
+The allowlist takes one package name per line and supports wildcards, e.g. `symfony/*`.
+
+When limited, Private Packagist omits versions with the type `composer-plugin` from the metadata of any package that is not allowlisted. Composer never sees those versions and cannot install them. This way you are protected even if `allow-plugins` is misconfigured in a project's composer.json, or a previously trusted dependency suddenly turns itself into a plugin.
+
+Some packages, such as `php-http/discovery`, declare themselves as plugins but are commonly used as regular libraries. They must be allowlisted to be installable at all. Whether a plugin actually executes is still controlled by each project's `allow-plugins` configuration, so a project can use such a package as a library while opting out of running it as a plugin.
+
+#### Block download of disallowed plugin versions
+
+Limiting plugins does not change existing lock files. A `composer install` can still install a disallowed plugin version, because Composer downloads the dist file referenced in `composer.lock` directly. Enable the _Block downloading disallowed plugin versions from existing lock files_ setting to close this gap: Private Packagist then responds with HTTP 410 when Composer requests the dist file of a disallowed plugin version.
+
+Before enabling it, make sure all plugins your projects use are allowlisted. A forgotten entry will surface as an error on the next deploy from an existing lock file.
+
+**Please note that plugin blocking is only effective combined with closed fallback paths.** Otherwise Composer can still fetch a refused version from the upstream dist URL or a source checkout. To get the full protection make sure the following two config options are configured accordingly:
+
+* [Legacy insecure package download fallback](#legacy-insecure-package-download-fallback) setting should be disabled
+* [Hide source code checkout URLs from Composer](#source-code-checkout-urls) should be enabled for mirrored packages
