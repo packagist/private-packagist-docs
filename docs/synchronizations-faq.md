@@ -112,3 +112,26 @@ In the steps below, we'll consider a migration from GitHub to Bitbucket as an ex
 2. Transfer your repositories in GitLab from the old group to the new one.
 3. Run the new GitLab group synchronization.
 4. In case the old synchronization was primary, you need to promote the new synchronization to primary otherwise you won't be able to delete the old synchronization. After verifying that the new synchronization successfully ran, you can remove the old synchronization with GitLab. Please refer to ["What happens if you promote a synchronization to a primary synchronization?"](#what-happens-if-you-promote-a-synchronization-to-a-primary-synchronization) for more details about promoting a synchronization to primary.
+
+### How to switch the credentials used by a synchronization?
+
+You don't need to recreate the synchronization to change its credentials.
+
+To rotate a token, edit the credential directly: under _Settings > Credentials_, open the credential and enter the new token.
+
+To move to a different credential or account:
+
+1. Under _Settings > Credentials_, add the new credential.
+2. Still under _Settings > Credentials_, click delete on the old credential. A dialog opens where you can select the new credential to use instead.
+
+In both cases the affected synchronizations run again automatically.
+
+### How to switch a Bitbucket App Password (deprecated) to a Bitbucket API Token?
+
+Bitbucket is phasing out App Passwords in favor of API Tokens. Because an App Password can be replaced by an API Token directly, you can switch without recreating your synchronization:
+
+1. Create an API Token in Bitbucket with the same scopes as your App Password.
+2. Under _Settings > Credentials_, add it as a new credential of type _Bitbucket API Token_, entering your _Bitbucket email address_ and the _API token_.
+3. Click delete on the old _Bitbucket App Password_ credential and select the new _Bitbucket API Token_ to use instead.
+
+This follows the same steps as ["How to switch the credentials used by a synchronization?"](#how-to-switch-the-credentials-used-by-a-synchronization). The synchronization runs again automatically with the new token.

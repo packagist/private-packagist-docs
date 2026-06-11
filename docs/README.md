@@ -7,7 +7,7 @@ Log into Private Packagist and create an organization. If you store your private
 
 ### Set up credentials
 
-If you did not create a synchronized organization or if you store additional private code elsewhere, go to _Settings > Manage Credentials_. Enter a description, e.g. "Bitbucket API Key" and then pick the correct authentication type depending on where your code is stored.
+If you did not create a synchronized organization or if you store additional private code elsewhere, go to _Settings > Credentials_. Enter a description, e.g. "Bitbucket API Key" and then pick the correct authentication type depending on where your code is stored.
 
 Alternatively you can copy the SSH public key for your organization on the same page and grant the key access to your repositories.
 

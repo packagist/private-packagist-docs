@@ -9,7 +9,7 @@ By default, packagist.org is enabled as a mirrored repository for all organizati
 
 You can add additional mirrored repositories on your organization's settings page under _Mirroring_.
 
-For private repositories that require authentication, first create credentials under _Settings > Manage Credentials_, then add the mirrored repository and select the credential during setup.
+For private repositories that require authentication, first create credentials under _Settings > Credentials_, then add the mirrored repository and select the credential during setup.
 
 After adding the new mirrored repository, you can then remove the third party mirored repository from your "repositories" section of your composer.json.  
 Run `composer update mirrors` in your projects to update the download locations in your lock file to point to your Private Packagist repository instead. 
