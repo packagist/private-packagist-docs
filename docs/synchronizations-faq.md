@@ -119,7 +119,7 @@ You don't need to recreate the synchronization to change its credentials.
 
 To rotate a token, edit the credential directly: under _Settings > Credentials_, open the credential and enter the new token.
 
-To move to a different credential or account:
+To change the synchronization to use a different credential:
 
 1. Under _Settings > Credentials_, add the new credential.
 2. Still under _Settings > Credentials_, click delete on the old credential. A dialog opens where you can select the new credential to use instead.
