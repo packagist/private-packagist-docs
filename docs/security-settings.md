@@ -24,9 +24,9 @@ Private Packagist refuses to serve the dist/artifact file for a malware-flagged 
 
 The repository-wide blocking hooks directly into the Aikido malware feed, so a refusal takes effect across your entire Private Packagist repository the moment a version is flagged, with no manual intervention. Packagist.org also removes malware versions after manual review and those deletions propagate to Private Packagist, but that review can take hours, during which the version would otherwise still be installable.
 
-Malware install blocking is enabled by default for all organizations. You can turn it off with the _Block installs of package versions flagged as malware_ setting, but we recommend leaving it on.
+Malware download blocking is enabled by default for all organizations. You can turn it off with the _Block downloads of package versions flagged as malware_ setting, but we recommend leaving it on.
 
-**Please note that this repository-wide install blocking is only effective combined with closed fallback paths.** If Composer cannot get the dist from Private Packagist, it can still fetch the same code from the upstream dist URL or a source checkout on any client that has not adopted the Composer 2.10 source-fallback default. To get the full malware protection make sure the following two config options are configured accordingly:
+**Please note that this repository-wide download blocking is only effective combined with closed fallback paths.** If Composer cannot get the dist from Private Packagist, it can still fetch the same code from the upstream dist URL or a source checkout on any client that has not adopted the Composer 2.10 source-fallback default. To get the full malware protection make sure the following two config options are configured accordingly:
 
 * [Legacy insecure package download fallback](#legacy-insecure-package-download-fallback) setting should be disabled
 * [Hide source code checkout URLs from Composer](#hide-source-code-checkout-urls-from-composer) should be enabled for mirrored packages so there is no upstream location left to fall back to. 
