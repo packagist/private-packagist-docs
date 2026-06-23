@@ -13,6 +13,20 @@ you can do so with the click of a button on the Packages tab in your organizatio
 **Update web hooks** notifying Packagist of new code pushes will be installed in the background, and **credentials to access
 the package** will be **configured automatically**.
 
+## An integration is required
+
+Every synchronization is built on top of an OAuth integration with a code hosting platform, and you cannot set up a synchronization without one. The integration is what:
+
+* **Defines the platform to synchronize with.** The integration stores the base URL of the code hosting platform, for example the address of your self-managed GitLab or Bitbucket Data Center instance. Without it, Private Packagist would not know which server to talk to.
+* **Makes it possible to list what you can synchronize.** Creating a synchronization requires you to be authenticated with the platform through OAuth, because that is the only way for Private Packagist to list the organizations, workspaces, or groups available to you to synchronize.
+* **Controls who can access the synchronized data.** A synchronization only grants access to the users who have access on the code hosting platform and who have connected their account to the same integration. Without the integration, the synchronized teams, permissions, and packages would not be accessible to anyone. See ["Accessing packages from Synchronizations across multiple integrations"](#accessing-packages-from-synchronizations-across-multiple-integrations).
+
+Each code hosting platform needs its own integration. For example if you synchronize with GitHub and later also want to synchronize with GitLab, you first need to set up a separate GitLab integration.
+
+On Private Packagist Cloud, the integrations for the default platforms (github.com, bitbucket.org, and gitlab.com) are preconfigured. On Private Packagist Self-Hosted none are preconfigured, so you must create the integration yourself before you can synchronize.
+
+On Private Packagist Self-Hosted, deleting an integration in the admin panel also deletes every synchronization that depends on it. In an organization's own settings, an integration that is still used by a synchronization cannot be deleted until you remove those synchronizations first.
+
 ## Getting started
 
 You can log into Private Packagist using an account on GitHub.com, Bitbucket.org, or GitLab.com with the relevant [OAuth integration](integration-github-bitbucket-gitlab.md)

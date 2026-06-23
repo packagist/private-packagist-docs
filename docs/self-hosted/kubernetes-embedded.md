@@ -122,6 +122,7 @@ or gitlab.com. Follow the instructions to create the respective required identif
 * [GitLab Integration Setup](./gitlab-integration-setup.md)
 * [Authentication with Email Addresses and Passwords](./authentication-email-addresses-passwords-setup.md).
 
+Even if you only plan to let users log in with email addresses and passwords, note that an OAuth integration is also required for [synchronization](../synchronizations-faq#an-integration-is-required) of teams, members, permissions, and packages from GitHub, Bitbucket, or GitLab. This step is required before any synchronization can be set up.
 
 ![Add Integration](/Resources/public/img/docs/self-hosted/08-integration-create.png)
 
