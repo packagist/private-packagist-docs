@@ -13,14 +13,14 @@ Prerequisites for receiving dependency update PRs from Conductor:
 ## Set up synchronization
 
 Once you have a Private Packagist organization and Conductor is enabled for you, log into your Private Packagist organization and head to the "Settings" tab in the main navigation.
-Under the "Synchronization" entry you can add [one or more synchronizations](/features/integration-github-bitbucket-gitlab.md) with an organization on your code hosting platform.
+Under the "Synchronization" entry you can add [one or more synchronizations](/features/integration-github-bitbucket-gitlab) with an organization on your code hosting platform.
 This is how you grant us access to your VCS repositories. The synchronization will automatically add any repository with a composer.json file in the root directory as a package to Private Packagist.
 
 ## Configure Conductor for your packages
 
 Access the "Conductor" tab in the main navigation to see a list of available packages that can have their dependencies updated by Conductor.
 Each package shown is linked to its VCS repository to which Conductor will send pull requests with dependency updates. Your Composer projects or applications are also a kind of package and must be added to Private Packagist as regular packages to use Conductor on them.
-Conductor can only manage dependencies for packages added to Private Packagist [via synchronization](/features/integration-github-bitbucket-gitlab.md) that have a composer.lock file committed to the repository.
+Conductor can only manage dependencies for packages added to Private Packagist [via synchronization](/features/integration-github-bitbucket-gitlab) that have a composer.lock file committed to the repository.
 
 To get started, click on the configure link displayed next to the package which you would like Conductor to update. Follow the instructions for your continuous integration platform.
 

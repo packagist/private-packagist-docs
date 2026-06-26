@@ -29,7 +29,7 @@ On Private Packagist Self-Hosted, deleting an integration in the admin panel als
 
 ## Getting started
 
-You can log into Private Packagist using an account on GitHub.com, Bitbucket.org, or GitLab.com with the relevant [OAuth integration](integration-github-bitbucket-gitlab.md)
+You can log into Private Packagist using an account on GitHub.com, Bitbucket.org, or GitLab.com with the relevant [OAuth integration](/features/integration-github-bitbucket-gitlab)
 If you already have an account you can connect these services to your existing account on your [profile page](https://packagist.com/profile).
 
 You can then either create a new organization directly synchronized with a GitHub organization, Bitbucket workspace or a GitLab group,
