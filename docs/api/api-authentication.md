@@ -1,4 +1,4 @@
-# API authentication
+# REST API authentication
 ##
 
 ## Client library

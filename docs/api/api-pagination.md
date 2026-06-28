@@ -1,4 +1,4 @@
-# API Pagination
+# REST API pagination
 ##
 
 All Private Packagist API endpoints that return lists support pagination using query parameters. This allows you to efficiently retrieve large result sets by fetching data in smaller chunks.
