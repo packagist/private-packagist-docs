@@ -142,10 +142,9 @@ In both cases the affected synchronizations run again automatically.
 
 ### How to switch a Bitbucket App Password (deprecated) to a Bitbucket API Token?
 
-Bitbucket is phasing out App Passwords in favor of API Tokens. Because an App Password can be replaced by an API Token directly, you can switch without recreating your synchronization:
+Bitbucket is phasing out App Passwords in favor of API Tokens. You can switch in place without recreating your synchronization:
 
 1. Create an API Token in Bitbucket with the same scopes as your App Password.
-2. Under _Settings > Credentials_, add it as a new credential of type _Bitbucket API Token_, entering your _Bitbucket email address_ and the _API token_.
-3. Click delete on the old _Bitbucket App Password_ credential and select the new _Bitbucket API Token_ to use instead.
+2. Under _Settings > Credentials_, open your existing _Bitbucket App Password_ credential, enter your _Bitbucket email address_ and paste the new _API token_. Private Packagist recognizes the API token and switches the credential type to _Bitbucket API Token_ for you automatically.
 
-This follows the same steps as ["How to switch the credentials used by a synchronization?"](#how-to-switch-the-credentials-used-by-a-synchronization). The synchronization runs again automatically with the new token.
+The affected synchronizations run again automatically with the new token.
