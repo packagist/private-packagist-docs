@@ -56,3 +56,11 @@ your newly created GitLab integration on the integrations page, and copy the URL
 ![GitLab integration](/Resources/public/img/docs/integration-setup/cloud/gitlab-self-managed-05-integration.png)
 
 This link presents the option to authenticate with your GitLab account and can now be used to log in to Private Packagist. 
+
+## Webhooks
+
+Private Packagist tries to configure two kinds of webhooks on GitLab, which are set up independently.
+
+**Group webhooks** are used for synchronization. They notify Private Packagist about new repositories and changes to memberships and permissions. Group webhooks are only available as part of a GitLab Premium plan. If group webhooks cannot be configured, synchronization still runs on its regular schedule every 20 hours.
+
+**Project webhooks** are used to keep packages up to date, for example when a new commit is pushed. They are linked directly to a single package, so having multiple packages pointing to the same GitLab repository sets up a separate hook for each package.
