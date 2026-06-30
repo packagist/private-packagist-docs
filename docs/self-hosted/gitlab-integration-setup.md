@@ -52,7 +52,7 @@ now log in to your Private Packagist Self-Hosted installation using their GitLab
 
 ## Webhooks
 
-Private Packagist tries to configure two kinds of webhooks on GitLab, which are set up independently. Even when group webhooks cannot be configured, for example because the GitLab plan doesn't include them, project webhooks are still configured.
+Private Packagist configures both group and project webhooks on GitLab. If group webhooks cannot be configured, for example because the GitLab plan doesn't include them, project webhooks are still configured independently.
 
 **Group webhooks** are used for synchronization. They notify Private Packagist about new repositories and changes to memberships and permissions. Group webhooks are only available as part of a GitLab Premium plan. If group webhooks cannot be configured, synchronization still runs on its regular schedule that is configured in the _Global Configuration_ (`/admin/configuration`) of your Private Packagist instance.
 
