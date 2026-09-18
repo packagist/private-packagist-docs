@@ -85,3 +85,9 @@ code-hosting platform to log in.
 
 If you are using one of the default platforms on Private Packagist Cloud, there is no
 need for a custom login link.
+
+### Managing users without a synchronization
+
+A synchronization is optional. If you do not want to use one, you can manage teams, their members and their permissions yourself, either in the web interface or through the [REST API](api/overview). Inviting new users by email is only available in the web interface.
+
+See [Teams and permissions](teams-and-permissions) for the available access levels and who is allowed to change them.

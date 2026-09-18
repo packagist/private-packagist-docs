@@ -91,7 +91,7 @@ To make sure members can access the packages from all synchronizations from mult
 
 ### What happens if you promote a synchronization to a primary synchronization?
 
-Synchronized Private Packagist organizations automatically have all admins and owners of the remote organization of the primary synchronization assigned to the admins and owners teams in Private Packagist. Admins and owners of additional synchronized remote organizations are not added to the admins or owners teams in Private Packagist.
+Synchronized Private Packagist organizations automatically have all admins and owners of the remote organization of the primary synchronization assigned to the admins and owners teams in Private Packagist. Admins and owners of additional synchronized remote organizations are not added to the admins or owners teams in Private Packagist. See [Teams and permissions](teams-and-permissions) for what these teams are allowed to do.
 
 When promoting a synchronization to primary, admins and owners of the corresponding remote organization will now be the sole members of the admins and owners teams on Private Packagist.
 So keep in mind that if you switch the primary synchronization to a different service (e.g. from GitHub to Bitbucket), all admins and owners who do not have their user accounts connected to the new service yet (Bitbucket in the example) will lose admin/owner access to the Private Packagist organization. To restore their access, the users have to connect their account to the new service on the profile page.
@@ -148,3 +148,9 @@ Bitbucket is phasing out App Passwords in favor of API Tokens. You can switch in
 2. Under _Settings > Credentials_, open your existing _Bitbucket App Password_ credential, enter your _Bitbucket email address_ and paste the new _API token_. Private Packagist recognizes the API token and switches the credential type to _Bitbucket API Token_ for you automatically.
 
 The affected synchronizations run again automatically with the new token.
+
+### Can I manage teams and members without a synchronization?
+
+Yes. A synchronization is optional. Without one you manage teams, their members and their permissions yourself, either in the web interface or through the [REST API](api/overview). Inviting new users by email is only available in the web interface.
+
+See [Teams and permissions](teams-and-permissions) for the available access levels and who is allowed to change them.

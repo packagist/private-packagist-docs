@@ -105,7 +105,7 @@ $client->suborganizations()->packages()->createVcsPackage($suborganizationName, 
 
 ### Granting members access
 
-Permissions in suborganizations are managed via teams, the same way permissions are managed in your organization.
+Permissions in suborganizations are managed via teams, the same way [permissions are managed in your organization](teams-and-permissions).
 You can add teams to a suborganization and all members of that team will be granted access to the suborganization.
 Team membership changes e.g. through a synchronization will automatically be applied to suborganizations as well.
 
