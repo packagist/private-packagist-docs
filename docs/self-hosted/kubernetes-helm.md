@@ -26,6 +26,7 @@ to instead install Private Packagist Self-Hosted without an existing Kubernetes 
     - *.packagist.org (required to fetch package metadata)
     - github.com (required to download ZIP files for mirrored packages)
     - api.github.com (required to download ZIP files for mirrored packages)
+    - codeload.github.com (api.github.com redirects every ZIP download to this host)
     - Any other mirrored third-party repository you use like drupal.org, asset-packagist.org, or repo.magento.com
 
 ## Installation
