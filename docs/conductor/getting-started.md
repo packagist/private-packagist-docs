@@ -7,20 +7,18 @@ Prerequisites for receiving dependency update PRs from Conductor:
 
 - Receive early access to Conductor. [Join the waitlist](/features/conductor) and wait for approval.
 - Set up an organization on Private Packagist Cloud either with a free trial or subscribe to the cloud plan.
-- A synchronization in your Private Packagist organization with your code hosting platform.
-- A workflow on your continuous integration platform to run Composer updates.
+- A supported continuous integration platform to run Composer updates.
 
-## Set up synchronization
+## Set up Conductor
 
-Once you have a Private Packagist organization and Conductor is enabled for you, log into your Private Packagist organization and head to the "Settings" tab in the main navigation.
-Under the "Synchronization" entry you can add [one or more synchronizations](/features/integration-github-bitbucket-gitlab) with an organization on your code hosting platform.
-This is how you grant us access to your VCS repositories. The synchronization will automatically add any repository with a composer.json file in the root directory as a package to Private Packagist.
+Once you have a Private Packagist organization and Conductor is enabled for you, log into your Private Packagist organization and head to the "Conductor" tab in the main navigation.
+The first time you visit this tab, you will be prompted to install Conductor on your code hosting platform. For example, on GitHub you can grant access to all repositories in your organization, or to selected ones. We will automatically add any repository with a composer.json file in the root directory as a package to Private Packagist, and every package that also has a committed composer.lock file will be made available to dependency updates with Conductor.
 
 ## Configure Conductor for your packages
 
-Access the "Conductor" tab in the main navigation to see a list of available packages that can have their dependencies updated by Conductor.
-Each package shown is linked to its VCS repository to which Conductor will send pull requests with dependency updates. Your Composer projects or applications are also a kind of package and must be added to Private Packagist as regular packages to use Conductor on them.
-Conductor can only manage dependencies for packages added to Private Packagist [via synchronization](/features/integration-github-bitbucket-gitlab) that have a composer.lock file committed to the repository.
+After you have granted Conductor access to your repositories, you will see a list of available packages that can have their dependencies updated by Conductor.
+Each package shown is linked to its VCS repository to which Conductor will send pull requests with dependency updates.
+Conductor can only manage dependencies for packages that have a composer.lock file committed to the repository.
 
 To get started, click on the configure link displayed next to the package which you would like Conductor to update. Follow the instructions for your continuous integration platform.
 
@@ -94,7 +92,7 @@ The workflow consists of several steps:
 
 If all these steps succeeded, Private Packagist creates a pull request for the newly pushed branch. The PR description will contain details about the update and changelogs from your dependencies. Conductor integrates with [Update Review](https://packagist.com/features/update-review) to present a reviewable list of all updated dependencies.
 
-![Conductor Pull Request](https://packagist.com/img/features/auto-updates/merged-PR-for-a-security-updated.png)
+![Conductor Pull Request](/Resources/public/img/docs/conductor/merged-PR-for-a-security-updated.png)
 
 Once you reviewed the changes and merged the PR, Conductor will schedule the next task.      
 If you close the PR, the task will be paused and Conductor will schedule the next task. Clicking the "Pause" button in the UI has the same effect. Conductor won't attempt to update the dependency to this exact version again but it will schedule updates to newer versions.
