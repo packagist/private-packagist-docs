@@ -25,6 +25,7 @@ Third party mirrored repositories can also set the abandoned property in the com
 #### Security Summaries
 
 In addition to immediate security alerts you can also receive either weekly or monthly summaries listing all open security issues in dependencies of your organization's monitored projects.
+Summary emails list up to 500 issues. If there are more, the email says that it does not list all security issues and links to the list of all packages with open issues.
 
 ### Configuring Notifications
 Every user receives security notifications by email for all projects they have access to by default.
