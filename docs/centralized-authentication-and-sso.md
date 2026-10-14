@@ -55,9 +55,10 @@ in your code hosting platform. If a user is removed, that same user will also be
 
 If you want to control which of your users should be allowed to access Private Packagist at all, you can opt to deactivate
 users discovered by the synchronization by default. Then, only users that you activate manually will be able to log in.
-To enable this behavior, go to the _Teams_ tab, and click on _View and manage all members of this organization_ and check the box:
+You choose this when you set up the first synchronization that synchronizes members. The setting applies to all synchronizations of the organization.
+To change it later, go to the _Teams_ tab, and click on _View and manage all members of this organization_ and check the box:
 
-![Deactivate users discovered by synchronization](/Resources/public/img/docs/articles/centralized-authentication-and-sso/deactivate-sync-members.png)
+![Require manual activation before new members found by the synchronization get access](/Resources/public/img/docs/articles/centralized-authentication-and-sso/deactivate-sync-members.png)
 
 ### 4 - Enforce OAuth authentication
 
