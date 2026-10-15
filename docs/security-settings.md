@@ -146,7 +146,7 @@ Your organization restricts the allowed Composer client versions. Please upgrade
 
 ### Why Composer plugins are a risk
 
-A Composer plugin is a regular package that declares the type `composer-plugin`, or the legacy type `composer-installer`. Composer loads and executes its code during `composer install` and `composer update`. This makes them an attractive target for supply chain attacks. 
+A Composer plugin is a regular package that declares the type `composer-plugin`. Composer loads and executes its code during `composer install` and `composer update`. This makes them an attractive target for supply chain attacks. 
 
 Unlike a regular library, plugin code will already run before you can inspect it. And any package can become a plugin: any library can change its type to `composer-plugin` in a new version and execute arbitrary code on every machine that updates to it. This happened on April 30th, 2026, when the compromised `intercom/intercom-php` package registered itself as a plugin and ran a credential-harvesting script during installation.
 
@@ -165,7 +165,7 @@ Organizations default to _Allow all_. We recommend _Limit to list below_.
 
 The allowlist takes one package name per line and supports wildcards, e.g. `symfony/*`.
 
-When limited, Private Packagist omits versions with the type `composer-plugin` or `composer-installer` from the metadata of any package that is not allowlisted. Composer never sees those versions and cannot install them. This way you are protected even if `allow-plugins` is misconfigured in a project's composer.json, or a previously trusted dependency suddenly turns itself into a plugin.
+When limited, Private Packagist omits versions with the type `composer-plugin` from the metadata of any package that is not allowlisted. Composer never sees those versions and cannot install them. This way you are protected even if `allow-plugins` is misconfigured in a project's composer.json, or a previously trusted dependency suddenly turns itself into a plugin.
 
 Some packages, such as `php-http/discovery`, declare themselves as plugins but are commonly used as regular libraries. They must be allowlisted to be installable at all. Whether a plugin actually executes is still controlled by each project's `allow-plugins` configuration, so a project can use such a package as a library while opting out of running it as a plugin.
 
