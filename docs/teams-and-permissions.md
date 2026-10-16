@@ -6,7 +6,7 @@ Access is granted to teams rather than to individual users. A member's permissio
 ### Access levels
 
 - **Owner**: everything, including billing and the [owner-only actions](#owner-only-actions).
-- **Admin**: all packages, teams, members and settings. Billing only when added to the _Billing_ team.
+- **Admin**: all packages, teams, members and settings, including resetting the multi-factor authentication of a member who belongs to no other organization. Billing only when added to the _Billing_ team.
 - **Edit packages**: change the settings of the team's packages, delete them, give their own other teams access to them, and install them with Composer.
 - **Read packages**: see the team's packages and install them with Composer.
 - **Billing**: billing pages only, no packages. Members who are only in the _Billing_ team do not count towards your subscription usage.
@@ -63,13 +63,10 @@ Owners cannot be locked out of their own organization:
 - Admins cannot remove or deactivate an owner.
 - The last owner is never removed, not even by a synchronization.
 
-Keep at least two owners: only owners can reset another member's multi-factor authentication.
-
 ### Owner-only actions
 
 - Managing the _Owners_ team.
 - Billing: subscription, payment information, invoices. The _Billing_ team has access too.
-- Resetting another member's multi-factor authentication, if that member belongs to no other organization.
 - Deactivating and deleting the organization. On Self-Hosted an instance administrator can disable deletion.
 
 ### Suborganizations
