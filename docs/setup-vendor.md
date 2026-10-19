@@ -94,6 +94,8 @@ restricting them to releases of the major version 1 with the constraint `^1.0`.
 If enabled then the customer will only receive access to versions that were or will be released before the date set. However,
 they keep access to those versions beyond the specified date. If you want to remove their access even to past versions, you need do delete the package from their list entirely.
 
+The date of a version is its [release date](cooldown-dependency-policy#release-date-and-publication-time). This can differ from the publication time that Composer's cooldown policy uses.
+
 This is useful if your customers buy a license from you for a certain timeframe e.g. a full year and therefore should get
 access to all versions that are released within that year.
 

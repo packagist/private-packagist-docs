@@ -26,3 +26,7 @@ Other packages include:
 - repositories which are hosted on other platforms than GitHub, GitLab or Bitbucket
 - packages added from third party mirrored repositories other than packagist.org
 - repositories that have been added without a credential
+
+### Composer's cooldown policy holds back a version
+
+Composer 2.11 can hold back versions that were published recently. Run the command with `-vv` to list them with their publication time. See [When the cooldown policy holds back a version you need](cooldown-dependency-policy#when-the-cooldown-policy-holds-back-a-version-you-need) for why a version can be held back longer than you expect and how to install it earlier.

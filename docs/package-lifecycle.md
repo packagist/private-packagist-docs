@@ -39,6 +39,8 @@ When a tag is removed from the repository:
 - The version is removed from repository metadata (`composer show --available` will not list it)
 - Existing lock files can still install the version because dist files are retained
 
+If the tag is pushed again, it counts as a new version, even on the same commit, so Composer's [cooldown period](cooldown-dependency-policy#all-other-packages) starts again for it.
+
 ### When a tag is force-pushed
 
 When a tag is force-pushed to point to a different commit:
@@ -47,6 +49,7 @@ When a tag is force-pushed to point to a different commit:
 - Both the old and new dist files are preserved
 - Existing lock files referencing the old commit continue to download the original code
 - New or updated lock files reference the new commit and download the updated code
+- Composer's [cooldown period](cooldown-dependency-policy#when-an-existing-version-changes) starts again for the version
 
 This behavior preserves deployment stability while allowing version updates when needed.
 
@@ -58,6 +61,7 @@ When you change the package's `name` property in composer.json, from `acme/packa
 - Private Packagist creates a new package with the new name `acme-inc/other-package`
 - The old package `acme/package` suggests the new package `acme-inc/other-package` as a replacement
 - Existing lock files referencing the old `acme/package` versions continue to download the correct code
+- `acme-inc/other-package` counts as a newly added package, so Composer's [cooldown policy](cooldown-dependency-policy#all-other-packages) uses the release date of its existing tags
 
 ## Mirrored Packages
 
@@ -82,6 +86,8 @@ When a specific version is removed from packagist.org or another mirrored third-
 - The version is no longer available during `composer update`
 - Existing lock files can still install the version because dist files are retained
 
+If the version is published again later, it counts as a new version, so it gets a new [publication time](cooldown-dependency-policy#how-the-publication-time-is-set) for Composer's cooldown policy.
+
 ### When a version is republished with different content
 
 Different mirrored repositories handle version integrity differently:
@@ -98,8 +104,13 @@ These repositories are known to occasionally change dist files after initial pub
 
 For repositories that provide checksums, Private Packagist stores the checksum from the initial mirror. If the repository later changes the file content, Private Packagist continues serving the originally mirrored file with its original checksum. This ensures consistent installations and prevents validation errors, as the served file always matches the stored checksum.
 
+**Composer's cooldown policy:**
+
+For mirrored third-party repositories that serve a publication time, such as packagist.org, the version's publication time follows the repository's value. For other mirrored third-party repositories, a new commit or a new checksum moves the version's [publication time](cooldown-dependency-policy#when-an-existing-version-changes) to the time Private Packagist imports the change, so Composer's cooldown period starts again for it.
+
 ## See Also
 
 - [Composer Project Setup](setup) - How to add packages to your organization
 - [Synchronizations](synchronizations-faq) - Automatic repository imports from GitHub, GitLab, and Bitbucket
 - [Mirrored Third-Party Repositories](mirrored-repositories) - Adding and managing mirrored repositories
+- [Cooldown dependency policy](cooldown-dependency-policy) - How Private Packagist sets the publication time that Composer's cooldown policy uses
