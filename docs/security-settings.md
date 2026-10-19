@@ -1,7 +1,7 @@
 # Security settings
 ## 
 
-Your organization's security settings page (_Settings > Security_) controls how Private Packagist serves packages to Composer. The options let you close the download fallback paths Composer would otherwise use when a package cannot be downloaded from Private Packagist, restrict which Composer clients may access your Composer repository, and limit which packages may act as Composer plugins.
+Your organization's security settings page (_Settings > Security_) controls how Private Packagist serves packages to Composer. The options let you close the download fallback paths Composer would otherwise use when a package cannot be downloaded from Private Packagist, restrict which Composer clients may access your Composer repository, limit which packages may act as Composer plugins, and hold back newly published package versions with a cooldown dependency policy.
 
 In organizations with suborganizations, these settings can only be changed on the top-level organization. The chosen values are propagated to all suborganizations so the whole organization tree shares the same fallback behavior.
 
@@ -179,3 +179,26 @@ Before enabling it, make sure all plugins your projects use are allowlisted. A f
 
 * [Legacy insecure package download fallback](#legacy-insecure-package-download-fallback) setting should be disabled
 * [Hide source code checkout URLs from Composer](#source-code-checkout-urls) should be enabled for mirrored packages
+
+### Why a cooldown dependency policy helps
+
+Supply chain attacks often publish a compromised version of a popular package. Such versions are often detected and removed within hours or days. Projects that update during that time install the compromised version. A cooldown policy holds back new versions until they have been public for a while, so most compromised releases are gone before your projects could install them.
+
+### Cooldown dependency policy
+
+The _Cooldown period_ setting holds back package versions that were published within the period. Enter a number and a unit, e.g. `24 hours`, `7 days` or `2 weeks`. The supported units are second, minute, hour, day and week. Leave the field empty to disable the cooldown policy. Organizations have no cooldown policy by default.
+
+Private Packagist leaves versions that are still in the cooldown period out of the metadata it serves to Composer. `composer update` and `composer require` cannot install them and resolve to an older version instead, or fail if no other version matches your constraints. Once the cooldown period has passed, the version appears in the metadata and the next `composer update` can install it. This also works for Composer clients that have cached the metadata.
+
+The cooldown is measured from the publication time Private Packagist serves as `published-time` for each version. The following versions are never held back:
+
+- Dev versions such as `dev-main`
+- Versions of packages listed under _Packages without cooldown_
+
+`composer install` from an existing lock file is not affected. Private Packagist still serves the dist files of versions in the cooldown, so a lock file created before a version was held back keeps working.
+
+Composer 2.11 can also apply a [cooldown](https://getcomposer.org/doc/06-config.md#cooldown) configured in each project. The Private Packagist cooldown policy applies to all projects that use your organization's Composer repository, independent of the Composer version and the project configuration. You can use both together.
+
+#### Packages without cooldown
+
+The _Packages without cooldown_ list takes one package name per line and supports wildcards, e.g. `acme/*`. Versions of these packages are never held back. Add your own packages, or a package you need to update right away, for example to install a security fix.

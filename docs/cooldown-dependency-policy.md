@@ -23,6 +23,8 @@ Set a cooldown period in the `config` section of your project's composer.json:
 
 The cooldown policy applies when Composer chooses versions, during `composer update` and `composer require`. It does not apply to `composer install`, because the versions in your lock file were already chosen. Dev versions, such as `dev-main` for the branch `main`, are never held back because they are moving targets.
 
+To hold back new versions for all projects that use your organization's Composer repository, independent of their composer.json and Composer version, configure a [cooldown dependency policy](security-settings#cooldown-dependency-policy) under _Settings > Security_. It uses the same publication time.
+
 ## Release date and publication time
 
 A version's release date is often not the same as its publication time, which is then used for the cooldown period. To explain the relationship, Private Packagist takes a version's release date, the `time` in its metadata, from these sources:
@@ -108,10 +110,13 @@ If you trust the code of your own packages, you can exclude your vendor namespac
 }
 ```
 
+If your organization's [cooldown dependency policy](security-settings#cooldown-dependency-policy) holds back the version, Private Packagist leaves it out of the metadata, so Composer does not list it as held back and the options above do not install it. Add the package to _Packages without cooldown_ under _Settings > Security_ instead.
+
 To avoid restarting the cooldown period for your own packages, release a new version instead of force-pushing an existing tag.
 
 ## See also
 
+- [Security settings](security-settings#cooldown-dependency-policy) - Hold back new versions for all projects of your organization
 - [Package lifecycle](package-lifecycle) - How Private Packagist handles new, changed, and deleted versions
 - [Mirrored third-party repositories](mirrored-repositories) - Adding and managing mirrored third-party repositories
 - [Troubleshooting](troubleshooting) - When new versions do not appear
