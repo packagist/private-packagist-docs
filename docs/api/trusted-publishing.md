@@ -34,7 +34,7 @@ Fill in the form fields to configure the publisher:
 * Package name: The name of the existing package or the package that will be created when this publisher is used.
 * Owner name: The GitHub user or organization name that owns the repository.
 * Repository name: The name of the GitHub repository that contains the publishing workflow.
-* Continuous integration file: The filename of the publishing workflow, e.g. `publish.yaml`. The file must exist in the `.github/workflows/` directory.
+* Continuous integration file: The filename of the publishing workflow, e.g. `publish.yaml`. The file must exist in the `.github/workflows/` directory. If the package is published by a reusable workflow, enter the filename of the reusable workflow. It must be in the same repository and be called from the same branch or tag, for example with `uses: ./.github/workflows/publish.yaml`.
 * Continuous integration environment name (optional): The name of the [GitHub Actions environment](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments) that the workflow uses.
 
 ## Configure your CI/CD workflow
