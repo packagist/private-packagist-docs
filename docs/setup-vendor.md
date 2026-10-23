@@ -89,7 +89,7 @@ This is useful if your customers buy a package license for `acme/library` versio
 that version but will have to purchase a new license for a future version 2 of the package. You can achieve this by
 restricting them to releases of the major version 1 with the constraint `^1.0`.
 
-### Limit package access by publication date
+### Limit package access by release date
 
 If enabled then the customer will only receive access to versions that were or will be released before the date set. However,
 they keep access to those versions beyond the specified date. If you want to remove their access even to past versions, you need do delete the package from their list entirely.
