@@ -39,8 +39,6 @@ Anyone who creates a version can choose its release date, for example with a `ti
 - A version that appears after you added a package uses the time when Private Packagist imports the version for the first time as its publication time, even if its release date is older/backdated. Private Packagist ignores a `published-time` in the package's own composer.json. If a mirrored third-party repository serves a publication time, Private Packagist trusts the mirror's publication time instead, see [Mirrored third-party repositories that serve a publication time](#mirrored-third-party-repositories-that-serve-a-publication-time).
 - Once a version has a publication time, it never moves to an earlier date.
 
-The package page on Private Packagist and `composer show` display the release date, not the publication time.
-
 ## How the publication time is set
 
 Private Packagist serves a publication time for every version of every package.
