@@ -190,6 +190,8 @@ The _Cooldown period_ setting holds back package versions that were published wi
 
 Private Packagist leaves versions that are still in the cooldown period out of the metadata it serves to Composer. `composer update` and `composer require` cannot install them and resolve to an older version instead, or fail if no other version matches your constraints. Once the cooldown period has passed, the version appears in the metadata and the next `composer update` can install it. This also works for Composer clients that have cached the metadata.
 
+The version list on the package page greys out versions that are still in the cooldown period. Hover over a version to see when it becomes available to Composer.
+
 The cooldown is measured from the publication time Private Packagist serves as `published-time` for each version. The following versions are never held back:
 
 - Dev versions such as `dev-main`
