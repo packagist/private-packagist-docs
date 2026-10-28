@@ -30,6 +30,8 @@ Independent of the access level, a team's settings page grants:
 
 Owners and admins always have all of these.
 
+Members of every team can always view their own teams, the _Owners_ and _Admins_ teams, and all organization members. The settings page lists this under _Organization Permissions_ and it cannot be turned off.
+
 ### Managing teams and members
 
 #### With a synchronization
