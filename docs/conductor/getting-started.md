@@ -101,3 +101,12 @@ If you want to schedule any other task in the list, click on its name and use th
 
 Tasks fixing security issues have a higher priority. They will be moved to the top of the list and scheduled right away even if there already is a PR for another task open.
 
+### Cooldown policy
+
+Conductor does not show updates to versions that are still in a [cooldown](../cooldown-dependency-policy), because Composer cannot install them yet. It respects the cooldown period and the ignore rules from both sources:
+
+- the `config.policy.cooldown` section of your package's composer.json
+- the [cooldown dependency policy](../security-settings#cooldown-dependency-policy) of your organization under _Settings > Security_
+
+If both apply to a version, the longer period wins. When the cooldown period of a version ends, Conductor calculates the updates for the dependency again and the task appears in the list. This also applies to updates that fix security issues.
+

@@ -118,3 +118,4 @@ To avoid restarting the cooldown period for your own packages, release a new ver
 - [Package lifecycle](package-lifecycle) - How Private Packagist handles new, changed, and deleted versions
 - [Mirrored third-party repositories](mirrored-repositories) - Adding and managing mirrored third-party repositories
 - [Troubleshooting](troubleshooting) - When new versions do not appear
+- [Conductor](conductor/getting-started#cooldown-policy) - Conductor proposes updates only after their cooldown period
