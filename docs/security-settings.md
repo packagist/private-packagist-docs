@@ -26,7 +26,7 @@ The repository-wide blocking hooks directly into the Aikido malware feed, so a r
 
 Malware download blocking is enabled by default for all organizations. You can turn it off with the _Block downloads of package versions flagged as malware_ setting, but we recommend leaving it on.
 
-**Please note that this repository-wide download blocking is only effective combined with closed fallback paths.** If Composer cannot get the dist from Private Packagist, it can still fetch the same code from the upstream dist URL or a source checkout on any client that has not adopted the Composer 2.10 source-fallback default. To get the full malware protection make sure the following two config options are configured accordingly:
+**Please note that this repository-wide download blocking is only effective combined with closed fallback paths.** If Composer cannot get the dist from Private Packagist, it can still fetch the same code from the upstream dist URL. Clients older than Composer 2.10, and Composer 2.10 clients that re-enabled `source-fallback`, can also fall back to a source checkout. To get the full malware protection make sure the following two config options are configured accordingly:
 
 * [Legacy insecure package download fallback](#legacy-insecure-package-download-fallback) setting should be disabled
 * [Hide source code checkout URLs from Composer](#hide-source-code-checkout-urls-from-composer) should be enabled for mirrored packages so there is no upstream location left to fall back to. 
@@ -49,7 +49,7 @@ This rarely helps in practice. CI and deployment environments usually hold crede
 
 Suppose a malicious version of `psr/log` is published. Private Packagist detects it and returns a 410 for that version. Without the settings below, Composer treats the 410 as a transient failure, picks the next URL, and downloads the malicious artifact directly from GitHub. If that also fails, it falls back to a source checkout. Every protection Private Packagist applied is bypassed.
 
-On the client side this is governed by `preferred-install` (prefers `dist` since Composer 2.1) and `source-fallback` (deprecated, defaults to `false` since Composer 2.10). Because these are client settings, you cannot rely on every environment configuring them securely. The settings below remove the fallback paths from the package metadata itself, so the protection applies regardless of the Composer version or client configuration.
+On the client side this is governed by `preferred-install` (prefers `dist` since Composer 2.1) and `source-fallback` (defaults to `false` since Composer 2.10). Composer 2.11 removed the `source-fallback` option, and dist installs no longer fall back to source. Because these are client settings, you cannot rely on every environment configuring them securely. The settings below remove the fallback paths from the package metadata itself, so the protection applies regardless of the Composer version or client configuration.
 
 ### Legacy insecure package download fallback
 
