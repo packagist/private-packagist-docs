@@ -43,8 +43,8 @@ Organization members can only access packages from synchronizations with integra
 
 To make sure members can access the packages from all synchronizations from multiple integrations:
 
-1. All members should go to their User Profile
-2. Under "Connected Accounts" connect to each integration that powers the synchronizations they need
+1. All members should go to their [profile](/profile)
+2. Under _Connected accounts_, connect to each integration that powers the synchronizations they need
 
 ## Supported providers 
 

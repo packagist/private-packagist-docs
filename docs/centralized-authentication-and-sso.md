@@ -34,7 +34,7 @@ Go to _Settings > Integrations_ and press the _Add Integration_ button.
 
 ### 2 - Connect your account via OAuth
 
-Go to your [profile](/profile) and find the _Connected Accounts_ section. Click on the _Connect_ button to go through the OAuth authentication
+Go to your [profile](/profile) and find the _Connected accounts_ section. Click on the _Connect_ button to go through the OAuth authentication
 flow, and associate your Private Packagist account with your GitHub, GitLab or Bitbucket account.
 
 ![Connect your account via OAuth](/Resources/public/img/docs/articles/centralized-authentication-and-sso/profile-connect.png)
