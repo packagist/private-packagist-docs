@@ -5,6 +5,8 @@ Your organization's security settings page (_Settings > Security_) controls how 
 
 In organizations with suborganizations, these settings can only be changed on the top-level organization. The chosen values are propagated to all suborganizations so the whole organization tree shares the same fallback behavior.
 
+These settings apply to your organization's and suborganizations' Composer repositories, not to the repositories of your [customers](setup-vendor). For customers, malware download blocking is always on, and the customer's _Deliver source code URLs to customer through Composer_ setting controls whether source and original download URLs are shown.
+
 ### When Composer's malware policy isn't enough
 
 #### How Composer handles flagged malware
