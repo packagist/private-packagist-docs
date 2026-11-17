@@ -74,3 +74,5 @@ Owners cannot be locked out of their own organization:
 ### Suborganizations
 
 Permissions work through teams as well. Add a team to a suborganization and its members can access every package in it. External collaborators can be invited to a single suborganization without joining your organization. See [Suborganization setup](setup-suborganization).
+
+Members cannot be removed on the _Members_ page of a suborganization. To change who is a member, change the members of the main organization's teams or which teams are added to the suborganization, or remove collaborators on the suborganization's _Collaborators_ page.
