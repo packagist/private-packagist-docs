@@ -12,7 +12,7 @@ We detect two kinds of changes:
 
 For a better overview, packages required directly in your composer.json are highlighted in bold. Other packages in regular font are installed as dependencies of your own composer.json dependencies.
 
-If you installed our GitHub App, then the private-packagist bot will comment on your pull requests. In all other cases, 
+If you installed one of our GitHub Apps, then its bot will comment on your pull requests: private-packagist-synchronization for new synchronizations, or private-packagist for older ones. In all other cases, 
 the comments will be created by the credential owner. Please note that for synchronizations with Bitbucket, you will 
 have to grant us access to the `pullrequest:write` scope, if you haven’t already, to benefit from the feature.
 
